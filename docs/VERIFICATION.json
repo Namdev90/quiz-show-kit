@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "date": "2026-10-13",
+  "checks": {
+    "configuration": "PASS: 41 cards, 30 main, 5 rounds",
+    "engine": "PASS: 22 logical cases",
+    "presentation": "PASS: 2 real-vendor DOM journeys with simulated platform APIs",
+    "builder": "PASS: validation and HTML download in DOM emulation",
+    "originalExample": "PASS: question records, playable media, styles and executable scripts preserved; private credit metadata removed",
+    "hardware": "UNTESTED: newly generated configurable quiz on physical display/speakers",
+    "browser": "UNTESTED: new configurable builder visual journey pending published-site check",
+    "compiler": "PASS: 12 build, escaping, asset-path and SVG cases",
+    "testCases": 37
+  },
+  "sha256": {
+    "quiz.config.json": "ec8b2f616c6ebef07a76ef189b7e1422cbbaca67c678e498a8f4cc56f58f6b45",
+    "index.html": "d050b3cd9765ade13a435066ab05f795e43be9c8d766048e74936fd9327f2364",
+    "examples/biovista/BioVista_Quiz_Offline.html": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6"
+  }
+}

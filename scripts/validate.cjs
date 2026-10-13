@@ -1,0 +1,1 @@
+const fs=require('node:fs'),path=require('node:path');const {root}=require('./runtime.cjs');const c=require('../src/compiler.js').validate(fs.readFileSync(path.join(root,'quiz.config.json'),'utf8'));console.log('PASS configuration:',c.questions.length,'cards,',c.rounds.length,'rounds');

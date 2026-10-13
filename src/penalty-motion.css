@@ -1,0 +1,4 @@
+.penalty-layer{position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none;perspective:1000px;contain:layout style}
+.score-main.score-loss-dip{transform-style:preserve-3d;backface-visibility:hidden}
+.lost-point-token{position:absolute;display:grid;place-items:center;width:39px;height:39px;border:4px double #5f271c;border-radius:50%;color:#fff0ca;background:radial-gradient(circle at 30% 19%,#f0bc7d,#bd6b40 40%,#8c3d2d 75%,#633128);box-shadow:inset 0 2px #ffe1a8,inset 0 -3px #682519,0 4px 0 #522619,0 9px 12px #1d0c0766;font:850 21px/1 "Segoe UI",Arial,sans-serif;font-style:normal;text-shadow:0 1px 1px #431b15;transform-style:preserve-3d;pointer-events:none;will-change:transform,top,left,opacity;user-select:none}
+.lost-point-token:after{content:"";position:absolute;inset:3px;border:1px solid #ffd0a568;border-radius:50%;pointer-events:none}

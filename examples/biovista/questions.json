@@ -1,0 +1,1307 @@
+[
+  {
+    "id": "M01",
+    "status": "main",
+    "round": 1,
+    "topic": "Cell structure",
+    "difficulty": "accessible",
+    "pairId": "R1P1",
+    "stem": "In a typical human body cell, which structure contains most of the cell's DNA?",
+    "options": [
+      "Nucleus",
+      "Golgi apparatus",
+      "Lysosome",
+      "Cell membrane"
+    ],
+    "correct": "A",
+    "explanation": "The nucleus encloses the chromosomes, which contain most of a typical human cell's DNA. Mitochondria also contain a small amount of DNA, so saying that every DNA molecule is in the nucleus would be inaccurate.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NHGRI — Nucleus",
+        "url": "https://www.genome.gov/genetics-glossary/Nucleus"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M02",
+    "status": "main",
+    "round": 1,
+    "topic": "Respiration",
+    "difficulty": "accessible",
+    "pairId": "R1P1",
+    "stem": "Which gas is taken up from inhaled air to support cellular respiration?",
+    "options": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Nitrogen",
+      "Methane"
+    ],
+    "correct": "A",
+    "explanation": "Gas exchange brings oxygen from inhaled air into the bloodstream while carbon dioxide leaves the blood to be exhaled. The lungs and circulation therefore help supply oxygen to the body's cells.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NHLBI — How the Lungs Work",
+        "url": "https://www.nhlbi.nih.gov/health/lungs"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M03",
+    "status": "main",
+    "round": 1,
+    "topic": "Biomolecules and cells",
+    "difficulty": "moderate",
+    "pairId": "R1P2",
+    "stem": "A cell is actively assembling amino acids into new proteins. Which cellular structure directly carries out this assembly?",
+    "options": [
+      "Lysosome",
+      "Ribosome",
+      "Chloroplast",
+      "Golgi apparatus"
+    ],
+    "correct": "B",
+    "explanation": "Ribosomes assemble amino acids into proteins using information carried by messenger RNA. They may occur freely in the cytoplasm or attach to the rough endoplasmic reticulum, depending on the protein being produced.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "OpenStax Biology 2e — Eukaryotic Cells",
+        "url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M04",
+    "status": "main",
+    "round": 1,
+    "topic": "Human physiology",
+    "difficulty": "moderate",
+    "pairId": "R1P2",
+    "stem": "Blood filtration and selective reabsorption help remove wastes while retaining needed substances. Which organs perform this process to produce urine?",
+    "options": [
+      "Lungs",
+      "Kidneys",
+      "Pancreas",
+      "Spleen"
+    ],
+    "correct": "B",
+    "explanation": "Each kidney contains nephrons. Their glomeruli filter blood, and their tubules return needed substances to the circulation while helping remove wastes. The remaining fluid becomes urine, contributing to water and chemical balance.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NIDDK — Your Kidneys and How They Work",
+        "url": "https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M05",
+    "status": "main",
+    "round": 1,
+    "topic": "Membrane transport",
+    "difficulty": "challenging",
+    "pairId": "R1P3",
+    "stem": "An animal cell is placed in a solution with a lower concentration of dissolved, nonpenetrating solute particles than its cytoplasm. Its membrane lets water cross. What initially happens?",
+    "options": [
+      "Net water leaves; the cell shrinks",
+      "No net water movement; size is unchanged",
+      "Net water enters; the cell swells",
+      "Water stops crossing; the cell becomes rigid"
+    ],
+    "correct": "C",
+    "explanation": "The outside solution is hypotonic relative to the cell. Water moves into the cell by osmosis, increasing its volume. Because an animal cell lacks a rigid cell wall, excessive swelling can eventually rupture it.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "OpenStax Biology 2e — Passive Transport",
+        "url": "https://openstax.org/books/biology-2e/pages/5-2-passive-transport"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": false
+  },
+  {
+    "id": "M06",
+    "status": "main",
+    "round": 1,
+    "topic": "Basic chemistry",
+    "difficulty": "challenging",
+    "pairId": "R1P3",
+    "stem": "At a fixed temperature, a catalyst is added to a reversible reaction. Which statement correctly describes its effect?",
+    "options": [
+      "It speeds equilibration and always increases the final product fraction",
+      "It slows equilibration without changing the equilibrium composition",
+      "It changes the equilibrium composition without affecting reaction rates",
+      "It speeds equilibration without changing the equilibrium composition"
+    ],
+    "correct": "D",
+    "explanation": "A catalyst provides a reaction pathway with a lower activation barrier. It increases both forward and reverse reaction rates, so equilibrium is reached sooner; it does not change the equilibrium composition at a fixed temperature.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "OpenStax Chemistry 2e — Catalysis",
+        "url": "https://openstax.org/books/chemistry-2e/pages/12-7-catalysis"
+      },
+      {
+        "title": "OpenStax Chemistry 2e — Shifting Equilibria",
+        "url": "https://openstax.org/books/chemistry-2e/pages/13-3-shifting-equilibria-le-chateliers-principle"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": false
+  },
+  {
+    "id": "M07",
+    "status": "main",
+    "round": 2,
+    "topic": "Microscopy and measurement",
+    "difficulty": "accessible",
+    "pairId": "R2P1",
+    "stem": "A compound microscope uses a 10× eyepiece and a 40× objective. What is its total magnification?",
+    "options": [
+      "400×",
+      "50×",
+      "4×",
+      "40×"
+    ],
+    "correct": "A",
+    "explanation": "For a compound light microscope, multiply the eyepiece magnification by the objective magnification. Here, 10 times 40 gives 400. Adding the two numbers does not give the instrument's total magnification.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "OpenStax Microbiology — Instruments of Microscopy",
+        "url": "https://openstax.org/books/microbiology/pages/2-3-instruments-of-microscopy"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M08",
+    "status": "main",
+    "round": 2,
+    "topic": "Laboratory units",
+    "difficulty": "accessible",
+    "pairId": "R2P1",
+    "stem": "A laboratory bottle contains 250 millilitres of liquid. What is the same volume in litres?",
+    "options": [
+      "2.5 L",
+      "0.25 L",
+      "0.025 L",
+      "25 L"
+    ],
+    "correct": "B",
+    "explanation": "The prefix milli means one thousandth. Therefore, one litre contains 1,000 millilitres, and 250 millilitres equals 250 divided by 1,000 litres: 0.25 litres.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NIST — Metric (SI) Prefixes",
+        "url": "https://www.nist.gov/pml/owm/metric-si-prefixes"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M09",
+    "status": "main",
+    "round": 2,
+    "topic": "Infection prevention",
+    "difficulty": "moderate",
+    "pairId": "R2P2",
+    "stem": "Which statement about gloves and hand hygiene in healthcare is correct?",
+    "options": [
+      "Clean gloves replace hand hygiene for the whole shift",
+      "Hand hygiene is needed only when gloves visibly tear",
+      "Hand hygiene after removing gloves is unnecessary",
+      "Gloves do not replace hand hygiene"
+    ],
+    "correct": "D",
+    "explanation": "Gloves provide a protective barrier but do not replace hand hygiene. Hands can become contaminated during glove use or removal. CDC recommends cleaning hands at the indicated moments, including after removing gloves.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "CDC — Clinical Safety: Hand Hygiene for Healthcare Workers",
+        "url": "https://www.cdc.gov/clean-hands/hcp/clinical-safety/index.html"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M10",
+    "status": "main",
+    "round": 2,
+    "topic": "Microbiology and antibiotics",
+    "difficulty": "moderate",
+    "pairId": "R2P2",
+    "stem": "Why do antibacterial antibiotics not directly treat an ordinary viral cold?",
+    "options": [
+      "They act only when a virus has caused a fever",
+      "They target only viruses outside the respiratory tract",
+      "They act against bacteria, not the cold-causing virus",
+      "They become antiviral when the dose is increased"
+    ],
+    "correct": "C",
+    "explanation": "Antibacterial antibiotics treat certain bacterial infections and do not act against the viruses that cause ordinary colds. Using them unnecessarily offers no benefit against that virus and can still cause adverse effects.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "CDC — Healthy Habits: Antibiotic Do's and Don'ts",
+        "url": "https://www.cdc.gov/antibiotic-use/about/"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M11",
+    "status": "main",
+    "round": 2,
+    "topic": "Environment and One Health",
+    "difficulty": "moderate",
+    "pairId": "R2P3",
+    "stem": "Researchers link resistant bacteria in patients, livestock and nearby water. Which response best reflects One Health?",
+    "options": [
+      "Investigate human health separately from animal and environmental health",
+      "Integrate human, animal and environmental health investigations",
+      "Investigate animal health separately from human and environmental health",
+      "Investigate environmental health separately from human and animal health"
+    ],
+    "correct": "B",
+    "explanation": "One Health recognises the connections among people, animals, plants and their shared environment. Coordinated work across these areas can help address problems such as infections and antimicrobial resistance that cross traditional departmental boundaries.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "WHO — One Health",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/one-health"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": false
+  },
+  {
+    "id": "M12",
+    "status": "main",
+    "round": 2,
+    "topic": "Measurement quality",
+    "difficulty": "moderate",
+    "pairId": "R2P3",
+    "stem": "A balance repeatedly reads 10.8 g for a reference mass whose accepted value is 10.0 g. Which description best fits these measurements?",
+    "options": [
+      "High accuracy with poor precision",
+      "High accuracy with high precision",
+      "High precision with poor accuracy",
+      "Poor accuracy with poor precision"
+    ],
+    "correct": "C",
+    "explanation": "The readings closely agree with each other, indicating high precision or repeatability. Their consistent difference from the reference value indicates poor accuracy. Repeating a measurement does not by itself remove a systematic error.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NIST — TN 1297 Appendix D1: Terminology",
+        "url": "https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-appendix-d1-terminology"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": false
+  },
+  {
+    "id": "M13",
+    "status": "main",
+    "round": 3,
+    "topic": "Genetic terminology",
+    "difficulty": "accessible",
+    "pairId": "R3P1",
+    "stem": "In genetics, what does DNA stand for?",
+    "options": [
+      "Dicarboxylic nucleic acid",
+      "Deoxyribosomal nucleic acid",
+      "Dihydrogen nucleic acid",
+      "Deoxyribonucleic acid"
+    ],
+    "correct": "D",
+    "explanation": "DNA means deoxyribonucleic acid. It carries genetic information, and its sequence helps specify the development and functioning of organisms. The abbreviation describes a particular nucleic acid rather than a protein or an organelle.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NHGRI — Deoxyribonucleic Acid (DNA)",
+        "url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid-DNA"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M14",
+    "status": "main",
+    "round": 3,
+    "topic": "Cellular energy terminology",
+    "difficulty": "accessible",
+    "pairId": "R3P1",
+    "stem": "In cellular metabolism, what does ATP stand for?",
+    "options": [
+      "Adenosine diphosphate",
+      "Adenosine triphosphate",
+      "Guanosine triphosphate",
+      "Adenosine monophosphate"
+    ],
+    "correct": "B",
+    "explanation": "ATP means adenosine triphosphate. It couples energy-releasing processes to cellular work, such as transport and biosynthesis. Its name reflects the adenosine group and the three attached phosphate groups.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "OpenStax Biology 2e — ATP: Adenosine Triphosphate",
+        "url": "https://openstax.org/books/biology-2e/pages/6-4-atp-adenosine-triphosphate"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M15",
+    "status": "main",
+    "round": 3,
+    "topic": "Biotechnology abbreviations",
+    "difficulty": "moderate",
+    "pairId": "R3P2",
+    "stem": "In a laboratory method that amplifies a chosen segment of DNA, what does PCR stand for?",
+    "options": [
+      "Protein chain reaction",
+      "Polymerase chain reaction",
+      "Polymerase cell replication",
+      "Protein chromosome replication"
+    ],
+    "correct": "B",
+    "explanation": "PCR means polymerase chain reaction. Repeated cycles use primers and a DNA polymerase to produce many copies of a selected DNA segment, allowing researchers to study an initially small amount of material.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NHGRI — Polymerase Chain Reaction (PCR)",
+        "url": "https://www.genome.gov/genetics-glossary/Polymerase-Chain-Reaction-PCR"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M16",
+    "status": "main",
+    "round": 3,
+    "topic": "Medical imaging abbreviations",
+    "difficulty": "moderate",
+    "pairId": "R3P2",
+    "stem": "In medical imaging, what does MRI stand for?",
+    "options": [
+      "Magnetic resonance imaging",
+      "Molecular radiation imaging",
+      "Magnetic radiation inspection",
+      "Molecular resonance inspection"
+    ],
+    "correct": "A",
+    "explanation": "MRI means magnetic resonance imaging. It uses strong magnetic fields and radiofrequency signals to obtain detailed internal images. It differs from X-ray imaging because the image formation does not use ionising X-rays.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NIBIB — Magnetic Resonance Imaging (MRI)",
+        "url": "https://www.nibib.nih.gov/science-education/science-topics/magnetic-resonance-imaging-mri"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M17",
+    "status": "main",
+    "round": 3,
+    "topic": "Diagnostic terminology",
+    "difficulty": "challenging",
+    "pairId": "R3P3",
+    "stem": "A screening test identifies 80 of 100 people who truly have the condition. In this group, what is the test's sensitivity?",
+    "options": [
+      "20%",
+      "100%",
+      "80%",
+      "Cannot be calculated without counting healthy people"
+    ],
+    "correct": "C",
+    "explanation": "Sensitivity describes detection among people who truly have the condition. In this example, 80 of the 100 actual cases test positive, giving 80% sensitivity; the remaining 20 cases are false negatives.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NCI — Sensitivity",
+        "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/sensitivity"
+      },
+      {
+        "title": "Google for Developers — Accuracy, Recall, Precision and Related Metrics",
+        "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": false
+  },
+  {
+    "id": "M18",
+    "status": "main",
+    "round": 3,
+    "topic": "Epidemiological terminology",
+    "difficulty": "challenging",
+    "pairId": "R3P3",
+    "stem": "At the start of a year, 40 townspeople already have a disease. During that year, 12 others become new cases. What is the incident-case count for that year?",
+    "options": [
+      "12",
+      "40",
+      "52",
+      "28"
+    ],
+    "correct": "A",
+    "explanation": "Incidence concerns new cases during a specified period, so the incident-case count is 12. The 40 people who already had the disease are existing cases and do not become new cases merely because another year begins.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NCI — Incidence",
+        "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/incidence"
+      },
+      {
+        "title": "NCI — Prevalence",
+        "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/prevalence"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": false
+  },
+  {
+    "id": "M19",
+    "status": "main",
+    "round": 4,
+    "topic": "Science software identity",
+    "difficulty": "accessible",
+    "pairId": "R4P1",
+    "stem": "Which programming language is represented by this official two-snakes logo?",
+    "options": [
+      "Python",
+      "Java",
+      "R",
+      "Julia"
+    ],
+    "correct": "A",
+    "explanation": "The blue and yellow two-snakes device is the official Python logo. Python is a programming language used in many fields, including scientific computing; recognising its identity here requires no programming knowledge.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "Python Software Foundation — The Python Logo",
+        "url": "https://www.python.org/community/logos/"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "visual": {
+      "type": "logo",
+      "key": "Python",
+      "alt": "Official blue and yellow two-snakes mark, shown without its wordmark",
+      "attribution": "Python Software Foundation; unchanged official logo device, educational identity question; no endorsement implied."
+    },
+    "shortMode": true
+  },
+  {
+    "id": "M20",
+    "status": "main",
+    "round": 4,
+    "topic": "AI organisation identity",
+    "difficulty": "accessible",
+    "pairId": "R4P1",
+    "stem": "Which AI organisation owns the official Blossom mark shown here?",
+    "options": [
+      "Google DeepMind",
+      "Anthropic",
+      "Microsoft",
+      "OpenAI"
+    ],
+    "correct": "D",
+    "explanation": "The Blossom is an official OpenAI mark. This question identifies the organisation that owns the mark; the image is included for educational recognition and does not indicate sponsorship or endorsement of BioVista.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "OpenAI — Design Guidelines",
+        "url": "https://openai.com/brand/"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "visual": {
+      "type": "logo",
+      "key": "OpenAI",
+      "alt": "Official six-loop Blossom mark",
+      "attribution": "OpenAI; unchanged official Blossom asset, educational identity question; no endorsement implied."
+    },
+    "shortMode": true
+  },
+  {
+    "id": "M21",
+    "status": "main",
+    "round": 4,
+    "topic": "Visual laboratory equipment",
+    "difficulty": "moderate",
+    "pairId": "R4P2",
+    "stem": "The instrument in this schematic holds a slide on a stage. Which task is it designed to perform?",
+    "options": [
+      "Separate sample components by spinning",
+      "Measure the mass of a specimen",
+      "Magnify small specimens for observation",
+      "Maintain a sample at a fixed temperature"
+    ],
+    "correct": "C",
+    "explanation": "A compound light microscope uses lenses and illumination to produce a magnified view of a specimen on a slide. Its stage positions the slide; the objective and eyepiece lenses contribute to the observed magnification.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "OpenStax Microbiology — Instruments of Microscopy",
+        "url": "https://openstax.org/books/microbiology/pages/2-3-instruments-of-microscopy"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "visual": {
+      "type": "diagram",
+      "key": "microscope",
+      "alt": "Unlabelled schematic of a compound light microscope with an eyepiece, objectives and slide stage",
+      "attribution": "Original schematic; scientific function checked against OpenStax Microbiology, Instruments of Microscopy."
+    },
+    "shortMode": true
+  },
+  {
+    "id": "M22",
+    "status": "main",
+    "round": 4,
+    "topic": "Visual laboratory equipment",
+    "difficulty": "moderate",
+    "pairId": "R4P2",
+    "stem": "Which task best matches the handheld laboratory instrument shown?",
+    "options": [
+      "Measure the mass of a dry powder",
+      "Separate blood components by spinning",
+      "Determine the temperature of a sample",
+      "Transfer a measured small volume of liquid"
+    ],
+    "correct": "D",
+    "explanation": "A micropipette transfers measured small liquid volumes using an appropriate tip and volume setting. The illustration represents this liquid-handling instrument; weighing, centrifugation and temperature measurement require different equipment.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "Eppendorf — Liquid Handling and Pipettes",
+        "url": "https://www.eppendorf.com/at-en/Products/Liquid-Handling/All-Pipettes-Dispensers-Automated-Liquid-Handlers-c-WebPSub-H-44564"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "visual": {
+      "type": "diagram",
+      "key": "pipette",
+      "alt": "Unlabelled schematic of a handheld micropipette with plunger and disposable tip",
+      "attribution": "Original schematic; function checked against Eppendorf official liquid-handling documentation."
+    },
+    "shortMode": true
+  },
+  {
+    "id": "M23",
+    "status": "main",
+    "round": 4,
+    "topic": "Laboratory warning symbols",
+    "difficulty": "moderate",
+    "pairId": "R4P3",
+    "stem": "What kind of hazard is indicated by this standard warning symbol?",
+    "options": [
+      "Ionising radiation",
+      "Flammable material",
+      "Biological hazard",
+      "Strong magnetic field"
+    ],
+    "correct": "C",
+    "explanation": "The biohazard symbol warns of a biological hazard, such as potentially infectious material. It communicates the need for appropriate precautions; it does not identify a specific organism or indicate that the material is radioactive.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "OSHA — Biological Hazards and Infectious Diseases",
+        "url": "https://www.osha.gov/etools/hospitals/hospital-wide-hazards/biological-hazards"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "visual": {
+      "type": "diagram",
+      "key": "biohazard",
+      "alt": "Standard three-lobed biological hazard warning symbol without a text label",
+      "attribution": "Standard biohazard symbol; identity checked against OSHA biological-hazards documentation."
+    },
+    "shortMode": false
+  },
+  {
+    "id": "M24",
+    "status": "main",
+    "round": 4,
+    "topic": "Visual molecular structure",
+    "difficulty": "moderate",
+    "pairId": "R4P3",
+    "stem": "In this schematic of double-stranded DNA, what forms the two outer backbones, or 'rails'?",
+    "options": [
+      "Alternating amino acids and peptide bonds",
+      "Paired nitrogenous bases only",
+      "Alternating fatty acids and glycerol",
+      "Alternating sugar and phosphate groups"
+    ],
+    "correct": "D",
+    "explanation": "Each DNA strand has an outer backbone of alternating deoxyribose sugar and phosphate groups. The nitrogenous bases extend inward and pair between the strands, forming the ladder-like connections shown in this simplified diagram.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NHGRI — Deoxyribonucleic Acid (DNA)",
+        "url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid-DNA"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "visual": {
+      "type": "diagram",
+      "key": "dna",
+      "alt": "Schematic DNA double helix with two outer rails and connecting rungs, without component names",
+      "attribution": "Original simplified schematic; backbone structure checked against NHGRI DNA glossary."
+    },
+    "shortMode": false
+  },
+  {
+    "id": "M25",
+    "status": "main",
+    "round": 5,
+    "topic": "AI hallucinations and evidence",
+    "difficulty": "accessible",
+    "pairId": "R5P1",
+    "stem": "An AI chatbot confidently cites a journal article that does not exist. What is this type of error commonly called?",
+    "options": [
+      "Hallucination",
+      "Data compression",
+      "Model encryption",
+      "Image segmentation"
+    ],
+    "correct": "A",
+    "explanation": "A hallucination is plausible-looking but factually incorrect generated content. A convincing citation can therefore be invented. Scientific claims and references should be checked against the original publication or another reliable source before being relied upon.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "Google for Developers — Machine Learning Glossary",
+        "url": "https://developers.google.com/machine-learning/glossary"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M26",
+    "status": "main",
+    "round": 5,
+    "topic": "Machine-learning foundations",
+    "difficulty": "accessible",
+    "pairId": "R5P1",
+    "stem": "Which description best captures machine learning?",
+    "options": [
+      "Storing every fact without making any predictions",
+      "Learning useful patterns from data to make predictions or generate content",
+      "Following only a fixed rule written for every possible example",
+      "Measuring a sample without analysing its data"
+    ],
+    "correct": "B",
+    "explanation": "Machine learning trains a model using data so it can make useful predictions or generate content. The learned relationships can be applied to new examples, but their reliability still depends on the data and evaluation.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "Google for Developers — What Is Machine Learning?",
+        "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M27",
+    "status": "main",
+    "round": 5,
+    "topic": "Training versus use",
+    "difficulty": "moderate",
+    "pairId": "R5P2",
+    "stem": "A previously trained image model is given a new microscope image and returns a prediction, without updating its learned parameters. What stage is this?",
+    "options": [
+      "Training",
+      "Inference",
+      "Data labelling",
+      "Parameter fitting"
+    ],
+    "correct": "B",
+    "explanation": "Inference uses an already trained model to produce a prediction or response for a new input. Training changes the model's learned parameters. Simply supplying an input for a prediction does not automatically retrain the model.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "Google for Developers — Machine Learning Glossary",
+        "url": "https://developers.google.com/machine-learning/glossary"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M28",
+    "status": "main",
+    "round": 5,
+    "topic": "Data quality and bias",
+    "difficulty": "moderate",
+    "pairId": "R5P2",
+    "stem": "An AI study recruits only young adults but intends to serve people of every age. What is the clearest concern?",
+    "options": [
+      "The sample may not represent the intended population",
+      "The sample guarantees equal performance at every age",
+      "The model becomes unbiased simply because it uses numbers",
+      "The sample removes the need for external evaluation"
+    ],
+    "correct": "A",
+    "explanation": "Selecting only one age group can leave other intended users poorly represented. This is a form of selection or coverage bias. Performance should be checked on data representing the population where the model will be used.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "Google for Developers — Fairness: Types of Bias",
+        "url": "https://developers.google.com/machine-learning/crash-course/fairness/types-of-bias"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": true
+  },
+  {
+    "id": "M29",
+    "status": "main",
+    "round": 5,
+    "topic": "Independent model validation",
+    "difficulty": "challenging",
+    "pairId": "R5P3",
+    "stem": "A team repeatedly changes its model after checking the same final test set. Which statement best describes the resulting evaluation?",
+    "options": [
+      "Its score remains independent because weights were fitted only on training data",
+      "Its score becomes independent once the same test rows are shuffled",
+      "Its score becomes independent by averaging repeated scores on those rows",
+      "Its score may be optimistic because decisions were tuned to that test set"
+    ],
+    "correct": "D",
+    "explanation": "Repeatedly using final test results to guide model changes can adapt development to the test set's peculiarities. A separate validation set supports development, while an untouched final test set gives a more independent assessment.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "Google for Developers — Dividing the Original Dataset",
+        "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": false
+  },
+  {
+    "id": "M30",
+    "status": "main",
+    "round": 5,
+    "topic": "AI evaluation and class imbalance",
+    "difficulty": "challenging",
+    "pairId": "R5P3",
+    "stem": "Of 100 samples, 95 are negative and 5 are positive. An AI model labels every sample negative. Which conclusion is correct?",
+    "options": [
+      "It has 5% accuracy and detects every positive sample",
+      "It has 95% accuracy and detects 95% of positive samples",
+      "It has 95% accuracy but detects none of the positive samples",
+      "It has 100% accuracy because negative samples are more common"
+    ],
+    "correct": "C",
+    "explanation": "The model correctly labels the 95 negative samples, giving 95% overall accuracy. It misses all five positive samples, so its positive-case detection is zero. High accuracy can therefore conceal failure on a rare class.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "Google for Developers — Accuracy, Recall, Precision and Related Metrics",
+        "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "shortMode": false
+  },
+  {
+    "id": "R01",
+    "status": "reserve",
+    "round": 2,
+    "topic": "Scientific quantities",
+    "difficulty": "accessible",
+    "pairId": "RESERVE1",
+    "stem": "An AI transcription labels a body-temperature reading '37 kilograms'. Which unit fits the temperature reading instead?",
+    "options": [
+      "Millilitres",
+      "Degrees Celsius",
+      "Milligrams",
+      "Centimetres"
+    ],
+    "correct": "B",
+    "explanation": "Temperature and mass are different physical quantities. Degrees Celsius can express a body-temperature reading, whereas kilograms express mass. Checking units is a simple way to catch an implausible transcription before using the result.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NIST — SI Units: Temperature",
+        "url": "https://www.nist.gov/pml/owm/si-units-temperature"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "suitableRounds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "R02",
+    "status": "reserve",
+    "round": 2,
+    "topic": "Laboratory pH measurement",
+    "difficulty": "moderate",
+    "pairId": "RESERVE2",
+    "stem": "For dilute aqueous samples, the approximate hydrogen-ion concentration at pH 3 is how many times that at pH 5?",
+    "options": [
+      "10 times greater",
+      "100 times smaller",
+      "10 times smaller",
+      "100 times greater"
+    ],
+    "correct": "D",
+    "explanation": "The pH scale is logarithmic: each decrease of one pH unit corresponds approximately to ten times the hydrogen-ion concentration in a dilute aqueous solution. A decrease from pH 5 to pH 3 therefore corresponds to 100 times.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "USGS Water Science School — pH and Water",
+        "url": "https://www.usgs.gov/water-science-school/science/ph-and-water"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "visual": {
+      "type": "diagram",
+      "key": "ph",
+      "alt": "Two unlabelled sample containers displaying pH 3 and pH 5",
+      "attribution": "Original two-sample schematic; pH interpretation checked against USGS Water Science School, pH and Water."
+    },
+    "suitableRounds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "R03",
+    "status": "reserve",
+    "round": 3,
+    "topic": "Infection-control terminology",
+    "difficulty": "moderate",
+    "pairId": "RESERVE3",
+    "stem": "Which process is intended to eliminate all forms of microbial life, including bacterial spores, from an object?",
+    "options": [
+      "Sterilisation",
+      "High-level disinfection",
+      "Intermediate-level disinfection",
+      "Routine surface cleaning"
+    ],
+    "correct": "A",
+    "explanation": "Sterilisation aims to eliminate all microbial forms, including bacterial spores. Cleaning removes material, while disinfection has different levels of microbial inactivation and does not necessarily eliminate spores. The terms are therefore not interchangeable.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "CDC — Sterilization",
+        "url": "https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/sterilization.html"
+      },
+      {
+        "title": "CDC — A Rational Approach to Disinfection and Sterilization",
+        "url": "https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/rational-approach.html"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "suitableRounds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "R04",
+    "status": "reserve",
+    "round": 5,
+    "topic": "Responsible interpretation",
+    "difficulty": "challenging",
+    "pairId": "RESERVE4",
+    "stem": "An AI report says two measured variables are correlated. Which statement is justified by that information alone?",
+    "options": [
+      "The first variable has been proved to cause the second",
+      "The second variable has been proved to cause the first",
+      "They are associated; a causal effect has not been established",
+      "They cannot share any other influencing variable"
+    ],
+    "correct": "C",
+    "explanation": "Correlation describes an association between variables. It does not by itself establish that changing one causes the other; shared influences or other explanations may exist. Causal conclusions need an appropriate study design and supporting evidence.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NIST — Correlation",
+        "url": "https://www.nist.gov/glossary-term/21291"
+      }
+    ],
+    "verificationDate": "2026-10-13",
+    "suitableRounds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "T01",
+    "status": "tie",
+    "round": 2,
+    "topic": "Scientific base units",
+    "difficulty": "moderate",
+    "pairId": "TIE1",
+    "stem": "Which is the SI base unit of thermodynamic temperature?",
+    "options": [
+      "Degree Celsius",
+      "Joule",
+      "Kelvin",
+      "Watt"
+    ],
+    "correct": "C",
+    "explanation": "The kelvin is the SI base unit of thermodynamic temperature. Degrees Celsius are also used for temperature, but are not the base unit. Joules measure energy and watts measure power.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 0
+    },
+    "sources": [
+      {
+        "title": "NIST — SI Units",
+        "url": "https://www.nist.gov/pml/owm/metric-si/si-units"
+      }
+    ],
+    "verificationDate": "2026-10-13"
+  },
+  {
+    "id": "T02",
+    "status": "tie",
+    "round": 2,
+    "topic": "Scientific base units",
+    "difficulty": "moderate",
+    "pairId": "TIE1",
+    "stem": "Which is the SI base unit of amount of substance?",
+    "options": [
+      "Mole",
+      "Kilogram",
+      "Litre",
+      "Pascal"
+    ],
+    "correct": "A",
+    "explanation": "The mole is the SI base unit of amount of substance. It relates a sample to a specified number of elementary entities. Kilograms express mass, litres express volume, and pascals express pressure.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 0
+    },
+    "sources": [
+      {
+        "title": "NIST — SI Units",
+        "url": "https://www.nist.gov/pml/owm/metric-si/si-units"
+      }
+    ],
+    "verificationDate": "2026-10-13"
+  },
+  {
+    "id": "T03",
+    "status": "tie",
+    "round": 1,
+    "topic": "Plant structural biomolecules",
+    "difficulty": "moderate",
+    "pairId": "TIE2",
+    "stem": "Which polysaccharide forms the main structural framework of plant cell walls?",
+    "options": [
+      "Chitin",
+      "Starch",
+      "Glycogen",
+      "Cellulose"
+    ],
+    "correct": "D",
+    "explanation": "Cellulose forms the main structural framework of plant cell walls. These walls lie outside the plasma membrane, providing shape and structural support. Their rigid material helps explain why plants and animals differ in cell structure.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 0
+    },
+    "sources": [
+      {
+        "title": "OpenStax Biology 2e — Eukaryotic Cells",
+        "url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+      }
+    ],
+    "verificationDate": "2026-10-13"
+  },
+  {
+    "id": "T04",
+    "status": "tie",
+    "round": 1,
+    "topic": "Biomolecule building blocks",
+    "difficulty": "moderate",
+    "pairId": "TIE2",
+    "stem": "Which subunits are joined together to form a strand of RNA?",
+    "options": [
+      "Amino acids",
+      "Nucleotides",
+      "Triglycerides",
+      "Disaccharides"
+    ],
+    "correct": "B",
+    "explanation": "RNA is a nucleic acid built from nucleotides. Each RNA nucleotide includes a ribose sugar, a phosphate group and a nitrogenous base. The ordered nucleotide sequence carries information used in cellular processes.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 0
+    },
+    "sources": [
+      {
+        "title": "OpenStax Biology 2e — Nucleic Acids",
+        "url": "https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids"
+      }
+    ],
+    "verificationDate": "2026-10-13"
+  },
+  {
+    "id": "T05",
+    "status": "tie",
+    "round": 1,
+    "topic": "Ecosystem energy",
+    "difficulty": "moderate",
+    "pairId": "TIE3",
+    "stem": "In a sunlit grassland food web, which organisms initially capture sunlight and convert it into chemical energy?",
+    "options": [
+      "Green plants",
+      "Herbivorous insects",
+      "Insect-eating birds",
+      "Soil earthworms"
+    ],
+    "correct": "A",
+    "explanation": "Photosynthetic producers such as green plants capture solar energy and convert it into chemical energy. Consumers obtain energy by feeding on organisms or organic material rather than by directly capturing sunlight in this food web.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 0
+    },
+    "sources": [
+      {
+        "title": "OpenStax Biology 2e — Energy Flow through Ecosystems",
+        "url": "https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems"
+      }
+    ],
+    "verificationDate": "2026-10-13"
+  },
+  {
+    "id": "T06",
+    "status": "tie",
+    "round": 1,
+    "topic": "Biogeochemical cycling",
+    "difficulty": "moderate",
+    "pairId": "TIE3",
+    "stem": "Which activity most directly returns nutrients from dead organic matter to the environment?",
+    "options": [
+      "Predation by carnivores",
+      "Photosynthesis by leaves",
+      "Decomposition by microbes",
+      "Pollination by insects"
+    ],
+    "correct": "C",
+    "explanation": "Microbial decomposition breaks down dead organic material and contributes to nutrient cycling. This makes elements available for reuse in ecosystems. Predation, photosynthesis and pollination perform other roles and are not the same process.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 0
+    },
+    "sources": [
+      {
+        "title": "OpenStax Biology 2e — Biogeochemical Cycles",
+        "url": "https://openstax.org/books/biology-2e/pages/46-3-biogeochemical-cycles"
+      }
+    ],
+    "verificationDate": "2026-10-13"
+  },
+  {
+    "id": "DEMO",
+    "status": "demo",
+    "round": 1,
+    "topic": "Scientific measurement",
+    "difficulty": "accessible",
+    "pairId": "DEMO",
+    "stem": "Which of these is a unit of length?",
+    "options": [
+      "Second",
+      "Metre",
+      "Kilogram",
+      "Kelvin"
+    ],
+    "correct": "B",
+    "explanation": "The metre is the SI base unit of length. Seconds measure time, kilograms measure mass, and kelvins measure thermodynamic temperature. This demonstration is unscored and does not use a participant's official answer attempt.",
+    "seconds": 15,
+    "timing": {
+      "primary": 15,
+      "passed": 7
+    },
+    "sources": [
+      {
+        "title": "NIST — SI Units",
+        "url": "https://www.nist.gov/pml/owm/metric-si/si-units"
+      }
+    ],
+    "verificationDate": "2026-10-13"
+  }
+]

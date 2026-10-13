@@ -1,0 +1,74 @@
+[
+  {
+    "name": "gsap",
+    "version": "3.15.0",
+    "packageSource": "https://registry.npmjs.org/gsap/3.15.0",
+    "tarballSource": "https://registry.npmjs.org/gsap/-/gsap-3.15.0.tgz",
+    "npmIntegrityVerified": true,
+    "licenseMetadata": "Standard 'no charge' license: https://gsap.com/standard-license.",
+    "sha256": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+    "bytes": 72927,
+    "verificationDate": "2026-10-13",
+    "file": "vendor/gsap.min.js",
+    "licenseFiles": [
+      "vendor/licenses/gsap-1-gsap-LICENSE-reference.txt"
+    ]
+  },
+  {
+    "name": "canvas-confetti",
+    "version": "1.9.4",
+    "packageSource": "https://registry.npmjs.org/canvas-confetti/1.9.4",
+    "tarballSource": "https://registry.npmjs.org/canvas-confetti/-/canvas-confetti-1.9.4.tgz",
+    "npmIntegrityVerified": true,
+    "licenseMetadata": "ISC",
+    "sha256": "49f4bcbc56e7ceb5c3d25d13db1d0da965b6cd1c8a54a707bb055be0685b0a95",
+    "bytes": 24914,
+    "verificationDate": "2026-10-13",
+    "file": "vendor/canvas-confetti.browser.js",
+    "licenseFiles": [
+      "vendor/licenses/canvas-confetti-1-canvas-confetti-LICENSE"
+    ]
+  },
+  {
+    "name": "howler",
+    "version": "2.2.4",
+    "packageSource": "https://registry.npmjs.org/howler/2.2.4",
+    "tarballSource": "https://registry.npmjs.org/howler/-/howler-2.2.4.tgz",
+    "npmIntegrityVerified": true,
+    "licenseMetadata": "MIT",
+    "sha256": "736c339444c88baad593e24afdf1d6e8f574019b4e37a110ecb453ff745ffd41",
+    "bytes": 36173,
+    "verificationDate": "2026-10-13",
+    "file": "vendor/howler.min.js",
+    "licenseFiles": [
+      "vendor/licenses/howler-1-howler-LICENSE.md"
+    ]
+  },
+  {
+    "name": "three",
+    "version": "0.186.1",
+    "packageSource": "https://registry.npmjs.org/three/0.186.1",
+    "tarballSource": "https://registry.npmjs.org/three/-/three-0.186.1.tgz",
+    "npmIntegrityVerified": true,
+    "licenseMetadata": "MIT",
+    "sha256": "fc5afeaf77d033cb1bbc38a0874664b50bd02b1442b3ea1e7afe59fe996bf39a",
+    "bytes": 541302,
+    "verificationDate": "2026-10-13",
+    "officialSources": [
+      "https://threejs.org/docs/pages/WebGLRenderer.html",
+      "https://github.com/mrdoob/three.js/blob/r186/LICENSE"
+    ],
+    "globalName": "BioThree",
+    "dependencies": [],
+    "commercialUse": "Permitted under MIT with copyright and license notice preserved",
+    "cost": "No fee or service quota",
+    "runtimeDataDestination": "None; local embedded rendering only. No loaders, remote assets, analytics or runtime network requests are used.",
+    "permissions": "Browser WebGL2 GPU rendering; Canvas2D fallback when unavailable. No microphone, camera, credentials or screen permissions.",
+    "maintenance": "Pin 0.186.1; separately review before upgrades. Official WebGL2 API, dispose on removal/context loss.",
+    "boundedPilot": "One decorative DNA reading bubble, HTML text and quiz controls independent of rendering; no framework migration.",
+    "file": "vendor/three-biovista.min.js",
+    "licenseFiles": [
+      "vendor/licenses/three-1-LICENSE"
+    ]
+  }
+]

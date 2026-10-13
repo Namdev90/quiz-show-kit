@@ -1,0 +1,4 @@
+GSAP 3.15.0
+Package license metadata: Standard 'no charge' license: https://gsap.com/standard-license.
+Official terms verified on 13 October 2026 at https://gsap.com/community/standard-license/ .
+The npm tarball does not contain a standalone LICENSE file. Retain the original minified bundle's copyright/licence notice. This quiz is a digital interface permitted by the Standard No Charge GSAP License; it is not a visual animation-building product.

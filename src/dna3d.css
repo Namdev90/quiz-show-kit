@@ -1,0 +1,13 @@
+/* The molecular reading space and carrier share one coordinate system. */
+.turn-lane.dna3d-ready{isolation:isolate;overflow:visible}
+.dna3d-surface{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:visible;contain:layout style}
+.dna3d-canvas{display:block;width:100%;height:100%;pointer-events:none}
+.turn-lane.dna3d-ready>svg{visibility:hidden}
+.turn-lane.dna3d-ready .turn-puck{z-index:2;top:calc(50% - 35px);height:70px;transform:translateX(-50%);border-radius:22px;border:1px solid #badac078;background:linear-gradient(145deg,#233d43f5,#15272df5 56%,#101d25f5);box-shadow:inset 0 1px #edf9df73,inset 0 -3px #031219aa,0 4px 0 #07151c,0 10px 17px #08101555;transition:border-color .45s,box-shadow .45s;will-change:transform}
+.turn-lane.dna3d-ready .turn-puck:before,.turn-lane.dna3d-ready .turn-puck:after{content:"";position:absolute;top:17px;width:6px;height:34px;border-radius:5px;background:linear-gradient(#ddeddcb3,#80afab55,#203f4280);box-shadow:inset 0 1px #f1ffe595,0 1px 4px #0008;pointer-events:none}
+.turn-lane.dna3d-ready .turn-puck:before{left:-10px}
+.turn-lane.dna3d-ready .turn-puck:after{right:-10px}
+.turn-lane.dna3d-ready .timer-ring{width:52px;height:52px;flex:0 0 52px}
+.turn-lane.dna3d-ready .timer-ring svg{width:52px;height:52px}
+.turn-lane.dna3d-ready .puck-copy b{font-size:23px;line-height:1.1;color:#f4f4df;text-shadow:0 2px 2px #020d11}
+.turn-lane.dna3d-ready .puck-copy small{font-size:14px;color:#c3d9d4;line-height:1.2}

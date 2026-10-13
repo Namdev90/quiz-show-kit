@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+test-results/
+*.log
+.env
+.env.*
+!.env.example
+*.webm
+*.mp4
+*.pem
+*.key
+.DS_Store
+Thumbs.db
