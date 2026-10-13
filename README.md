@@ -6,7 +6,7 @@ The included example is the **real BioVista quiz**: 30 main questions across fiv
 
 ## Make your quiz
 
-The easiest route is the browser builder. Download the kit from [Releases](https://github.com/Namdev90/quiz-show-kit/releases), extract it, and open `index.html`.
+Open the [live browser builder](https://namdev90.github.io/quiz-show-kit/), or use it offline. Download the kit from [Releases](https://github.com/Namdev90/quiz-show-kit/releases), extract it, and open `index.html`.
 
 1. Start from the included BioVista configuration or import your `quiz.config.json`.
 2. Customize the event and import the complete reviewed question bank. Select local logos and other assets referenced by your configuration.

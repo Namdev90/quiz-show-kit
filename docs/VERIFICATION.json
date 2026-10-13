@@ -8,13 +8,14 @@
     "builder": "PASS: validation and HTML download in DOM emulation",
     "originalExample": "PASS: question records, playable media, styles and executable scripts preserved; private credit metadata removed",
     "hardware": "UNTESTED: newly generated configurable quiz on physical display/speakers",
-    "browser": "UNTESTED: new configurable builder visual journey pending published-site check",
+    "browser": "PASS: published builder loaded, validated BioVista, rendered sandboxed preview, began announcement and downloaded HTML through real in-app browser. Configuration upload and full timed browser journey remain UNTESTED.",
     "compiler": "PASS: 12 build, escaping, asset-path and SVG cases",
-    "testCases": 37
+    "testCases": 37,
+    "ci": "PASS: GitHub Actions clean Ubuntu build/check on 954f3d611d7531de078095d3e0327f866f5032b9"
   },
   "sha256": {
     "quiz.config.json": "ec8b2f616c6ebef07a76ef189b7e1422cbbaca67c678e498a8f4cc56f58f6b45",
-    "index.html": "d050b3cd9765ade13a435066ab05f795e43be9c8d766048e74936fd9327f2364",
+    "index.html": "6f0bdf2c71ecaf749c45e464d13440efc1b66e4543abddb502b7567b840d90d5",
     "examples/biovista/BioVista_Quiz_Offline.html": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6"
   }
 }
