@@ -4,32 +4,39 @@ Build a complete quiz show as one offline HTML file. Customize the event, two te
 
 The included example is the **real BioVista quiz**: 30 main questions across five rounds, four reserves, six tie cards, and one unscored demonstration. Its 41 cards, visual assets, and presentation are preserved in [BioVista_Quiz_Offline.html](examples/biovista/BioVista_Quiz_Offline.html). Download that file and open it in a browser to try the original event. See its [source questions](examples/biovista/questions.json), [provenance](examples/biovista/origin.json), and [asset notices](examples/biovista/ASSET_NOTICES.md).
 
-## Make your quiz
+## Make your quiz — for every teacher
 
-Open the [live browser builder](https://namdev90.github.io/quiz-show-kit/), or use it offline. Download the kit from [Releases](https://github.com/Namdev90/quiz-show-kit/releases), extract it, and open `index.html`.
+**Curated for Parul University Goa · Open to every teacher.** Created by **Namdev Shirodkar**, a Parul University Goa student. Any teacher, subject, department or college can use and adapt it. This is an independent toolkit.
 
-1. Describe your lesson, audience and quiz title. A new quiz starts with neutral text branding and two teams.
-2. Click **Copy prompt for ChatGPT**, open ChatGPT, and paste the prepared instructions. If automatic copying is unavailable, copy the selected prompt text shown on the page.
-3. Copy ChatGPT's entire reply back into **Paste ChatGPT's reply**. Choose **Read reply**, check the import summary, and choose **Use these questions**. **Back to paste** keeps your current work.
-4. Edit questions, answer choices, correct answers, explanations and sources using ordinary form fields. Check the content yourself; AI output and a passing format check are not factual verification.
-5. Preview and rehearse the quiz, confirm your review, then download its offline HTML file. **Save work** keeps an editable backup you can reopen in the builder.
+Paste this short instruction into ChatGPT, Gemini, Claude or another capable assistant:
 
-Read the [faculty builder guide](docs/FACULTY_BUILDER.md) for the complete workflow and recovery tips. **More options** contains timing, scoring, appearance, local media and the complete configuration editor. Existing configuration files and the original BioVista example remain available. This builder creates interactive two-team quiz presentations; slide-only decks and arbitrary quiz formats are outside its supported format.
+```text
+https://github.com/Namdev90/quiz-show-kit
+Read docs/TEACHER_PROMPT.md fully and follow it. Guide me one question at a time to create my customized offline quiz. Use visual choices where supported, offer voice replies and defaults, and extend the engine for any new features I request.
+```
 
-The browser builder needs no installation or API key. The downloaded event file includes its scripts and media; it does not need a server, a backend, runtime CDNs, or adjacent asset files to play. Source links in host review are references and need an internet connection only if you choose to open them.
+The short instruction points to the [expanded teacher prompt](docs/TEACHER_PROMPT.md). ChatGPT reads it, asks about your lesson, logos, theme, animation, sound, teams, timing and scoring, then writes the questions for you. Say **choose for me** for suggested defaults. Turn on voice mode yourself if you prefer speaking. Repository retrieval depends on the tools in that conversation; if it cannot open the file, paste the file's full contents instead.
 
-The main-screen prompt contains the full return format, so ChatGPT can draft a compatible reply without repository access, an API key or installation. Research still depends on the capabilities of that conversation: missing sources must remain visible for teacher review. The longer [ChatGPT event handoff](docs/CHATGPT_HANDOFF.md) remains available for advanced, researched events and environments with file/build tools.
+Open the [browser builder](https://namdev90.github.io/quiz-show-kit/) to edit, preview and download. No installation or API key is needed. For offline authoring, download the kit, extract it and open `index.html`.
+
+1. Choose your AI assistant and click **Copy & open**. Paste the short instruction in its new tab. Choose “Another assistant” to copy without opening a provider. Existing lesson/settings details travel with it. The linked prompt guides quick or detailed setup. If ChatGPT cannot retrieve repository files, the builder can copy a self-contained questions-only prompt; customize its rules and appearance in the builder.
+2. If your conversation can build files, it can deliver the offline HTML directly. Otherwise paste its entire configuration reply into **Paste ChatGPT's reply**, choose **Read reply**, check the summary and choose **Use these questions**. A complete configuration includes your customization choices; a questions-only draft retains your current settings.
+3. Edit questions, answers, explanations, sources and images. **Customize your quiz** contains logos, themes, team colors, timing, points, motion, sound, editable intro text and optional audio replacements. Add rounds, reserves, practice cards or complete tie pairs with buttons.
+4. Preview and rehearse, review every answer/source, then download one offline HTML file. **Save work** keeps an editable backup you can reopen.
+
+The downloaded event contains its scripts and media; it needs no server, backend, runtime CDN or adjacent asset files. Opening source links needs internet. Sound requires a real browser gesture. A passing format check is not factual verification. Read the [faculty guide](docs/FACULTY_BUILDER.md), [configuration reference](docs/CONFIGURATION.md), and [current verification](docs/TEACHER_UPGRADE_QA.md).
 
 ## What you can configure
 
 Use [quiz.config.json](quiz.config.json) as the editable BioVista starting point. Keep the preserved example unchanged and give a new competition its own `event.id`.
 
-- Two team names and colors, event wording, approved corner logos, system font, palette, and optional DNA motif.
+- Two team names and colors, editable opening wording, direct corner-logo uploads, three theme presets, custom palettes/system fonts, and optional DNA motif.
+- Cinematic, gentle or no decorative motion; optional intro, confetti and point effects; sound on/off, volume, spoken A–D cues and individual audio replacements.
 - Matched question pairs, four options with one correct answer, explanations, sources, diagrams or approved images, reserves, an optional demonstration, and optional tie pairs.
 - An even number of main questions per round, within the documented limits.
 - Answer, consultation, and entry-grace durations; sequential option entrances; scoring; optional passing and teacher lifelines; and short-mode pair counts.
 
-The format remains two teams with matched primary opportunities. Extra teams, arbitrary tournament formats, open-answer marking, and a translated control interface are not configuration features. Event and question text can use UTF-8; controls are in English. See [Configuration](docs/CONFIGURATION.md) for exact fields, accepted assets, limits, and examples.
+The current bundled mode uses two teams with matched primary opportunities. Extra teams, other formats, open-answer marking and interface translation require an engine extension; they are not existing configuration switches. See [extending the engine](docs/EXTENDING_ENGINE.md). Event and question text can use UTF-8; controls are in English. See [Configuration](docs/CONFIGURATION.md) for exact fields, accepted assets, limits, and examples.
 
 The BioVista defaults award **+10** for a primary correct answer, **−2** for primary wrong, **+2** for passed correct, and **−5** for passed wrong. Primary answers get 15 seconds; passed answers and the once-per-team teacher consultation get 7 seconds each. A→B→C→D enters sequentially over 1.8 seconds before the answer clock begins. A tried primary-wrong option is blocked on the passed turn. Ties use complete matched pairs, a separate tally, and no passing.
 
@@ -59,6 +66,8 @@ npm run check
 `check` builds the event and browser builder, validates the package, and runs the tests defined in `package.json`. A passing check does not establish factual accuracy, actual browser rendering, or room audio quality. See [Contributing](CONTRIBUTING.md) and [GitHub setup](docs/GITHUB_SETUP.md).
 
 ## Running an event
+
+The exported file’s **Settings** menu includes live sound, volume, motion, coin/question/winner animation, intro, confetti and point-effect switches, plus creator/About details. Changes preserve scores and clocks; Save resume copy carries them to another computer. Toolkit credit appears in welcome/About, not results.
 
 The presentation includes an opening reveal, a coin toss, shared DNA/timer movement, spoken option cues, point-by-point rewards and penalties, confetti, teacher consultation, round statistics, and winner presentation. Host tools provide content review, score corrections, reserves, undo, and resume copies. The engine controls scores and clocks; animations display their results.
 

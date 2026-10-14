@@ -1,5 +1,7 @@
 # Make a quiz with ChatGPT
 
+For the current guided teacher workflow, use [TEACHER_PROMPT.md](TEACHER_PROMPT.md). Paste the repository link plus “Read docs/TEACHER_PROMPT.md fully and follow it; guide me one question at a time.” That file is the expanded prompt for logos, themes, animation, scoring and researched questions. The longer legacy event route below is retained for compatibility.
+
 For the simplest classroom workflow, open the builder's `index.html`, describe the lesson, and click **Copy prompt for ChatGPT** directly on its main screen. Paste that prompt into ChatGPT, then paste its entire reply back into the builder and choose **Read reply**. Accept the import summary, review and edit the questions, preview, and download. The prepared prompt includes a complete return format and does not require the assistant to fetch this repository or build files. See the [faculty guide](FACULTY_BUILDER.md). The prompt below is the longer route for researched events and environments with repository/file tools.
 
 Copy the prompt below into a new conversation and attach your event brief or reference report if you have one. The assistant should research and write the questions for you. You review the proposed content and rules before the final build.

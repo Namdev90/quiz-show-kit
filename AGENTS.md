@@ -6,9 +6,9 @@ This repository packages the real BioVista quiz and its reusable two-team engine
 
 Read `README.md`, `docs/CONFIGURATION.md`, and the scripts in `package.json`. For a new event, edit a copy of `quiz.config.json` and its approved assets. Preserve the example in `examples/biovista/`; do not replace it with an invented demo. Keep internal team IDs `Bio` and `Vista` while configuring display names.
 
-The supported format has exactly two teams and four-option, single-correct-answer questions in matched pairs. Keep complete primary and tie pairs, stable question IDs, numeric correct indices, source records, and honest verification dates. Research and draft questions for the user; do not delegate question authorship back to them. Use `docs/CHATGPT_HANDOFF.md` for the review-and-build workflow.
+The current bundled mode has exactly two teams and four-option, single-correct-answer questions in matched pairs. Keep complete primary and tie pairs, stable question IDs, numeric correct indices, source records, and honest verification dates. Research and draft questions for the user; do not delegate question authorship back to them. Use `docs/TEACHER_PROMPT.md` for the one-question-at-a-time faculty workflow and `docs/CHATGPT_HANDOFF.md` for the legacy event route. Preserve presentation controls on complete imports. Questions-only drafts intentionally retain builder settings.
 
-Change configuration before changing engine code. If a requested rule or game format is unsupported, explain the boundary and agree on the actual scope rather than silently bypassing validation.
+Change configuration before changing engine code. This is an extensible first iteration. For an explicitly requested new rule, feature or format, adapt the relevant source modules and update schema, validation, authoring UI and tests together; do not treat the current mode as a permanent product limit. Do not bypass validation or claim unimplemented behavior. See docs/EXTENDING_ENGINE.md. Preserve the stock example separately.
 
 ## Preserve the runtime contract
 

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "checks": {
     "configuration": "PASS: 41 cards, 30 main, 5 rounds",
     "engine": "PASS: 22 logical cases",
@@ -10,12 +10,14 @@
     "hardware": "UNTESTED: newly generated configurable quiz on physical display/speakers",
     "browser": "PASS: published builder loaded, validated BioVista, rendered sandboxed preview, began announcement and downloaded HTML through real in-app browser. Configuration upload and full timed browser journey remain UNTESTED.",
     "compiler": "PASS: 12 build, escaping, asset-path and SVG cases",
-    "testCases": 37,
-    "ci": "PASS: GitHub Actions clean Ubuntu build/check on 954f3d611d7531de078095d3e0327f866f5032b9"
+    "testCases": 57,
+    "ci": "Previous CI result is historical; the current upgrade commit requires its own CI run",
+    "teacherUpgrade": "PASS: 57 top-level tests plus the engine\u2019s 22 internal cases, including all ten PR-review findings",
+    "currentBrowser": "UNTESTED: local Chromium absent; browser download failed; historical browser checks do not verify the upgraded layout",
+    "teacherConversation": "UNTESTED: actual prompt retrieval/interview in a separate ChatGPT conversation"
   },
   "sha256": {
     "quiz.config.json": "ec8b2f616c6ebef07a76ef189b7e1422cbbaca67c678e498a8f4cc56f58f6b45",
-    "index.html": "6f0bdf2c71ecaf749c45e464d13440efc1b66e4543abddb502b7567b840d90d5",
     "examples/biovista/BioVista_Quiz_Offline.html": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6"
   }
 }
