@@ -1,5 +1,7 @@
 # Make a quiz with ChatGPT
 
+For the simplest classroom workflow, open the builder's `index.html`, describe the lesson, and click **Copy prompt for ChatGPT** directly on its main screen. Paste that prompt into ChatGPT, then paste its entire reply back into the builder and choose **Read reply**. Accept the import summary, review and edit the questions, preview, and download. The prepared prompt includes a complete return format and does not require the assistant to fetch this repository or build files. See the [faculty guide](FACULTY_BUILDER.md). The prompt below is the longer route for researched events and environments with repository/file tools.
+
 Copy the prompt below into a new conversation and attach your event brief or reference report if you have one. The assistant should research and write the questions for you. You review the proposed content and rules before the final build.
 
 This prompt does not install tools or grant access to your computer. Available file, research, execution, and preview tools depend on the environment. OpenAI describes these differences in [Use ChatGPT](https://learn.chatgpt.com/docs/use-chatgpt) and [Work with files](https://learn.chatgpt.com/docs/artifacts-viewer). The prompt includes a manual route when a tool is unavailable.

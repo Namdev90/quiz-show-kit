@@ -8,14 +8,17 @@ The included example is the **real BioVista quiz**: 30 main questions across fiv
 
 Open the [live browser builder](https://namdev90.github.io/quiz-show-kit/), or use it offline. Download the kit from [Releases](https://github.com/Namdev90/quiz-show-kit/releases), extract it, and open `index.html`.
 
-1. Start from the included BioVista configuration or import your `quiz.config.json`.
-2. Customize the event and import the complete reviewed question bank. Select local logos and other assets referenced by your configuration.
-3. Validate, preview, and download the generated HTML.
-4. Open the downloaded quiz and rehearse it on the display and speakers you will use.
+1. Describe your lesson, audience and quiz title. A new quiz starts with neutral text branding and two teams.
+2. Click **Copy prompt for ChatGPT**, open ChatGPT, and paste the prepared instructions. If automatic copying is unavailable, copy the selected prompt text shown on the page.
+3. Copy ChatGPT's entire reply back into **Paste ChatGPT's reply**. Choose **Read reply**, check the import summary, and choose **Use these questions**. **Back to paste** keeps your current work.
+4. Edit questions, answer choices, correct answers, explanations and sources using ordinary form fields. Check the content yourself; AI output and a passing format check are not factual verification.
+5. Preview and rehearse the quiz, confirm your review, then download its offline HTML file. **Save work** keeps an editable backup you can reopen in the builder.
+
+Read the [faculty builder guide](docs/FACULTY_BUILDER.md) for the complete workflow and recovery tips. **More options** contains timing, scoring, appearance, local media and the complete configuration editor. Existing configuration files and the original BioVista example remain available. This builder creates interactive two-team quiz presentations; slide-only decks and arbitrary quiz formats are outside its supported format.
 
 The browser builder needs no installation or API key. The downloaded event file includes its scripts and media; it does not need a server, a backend, runtime CDNs, or adjacent asset files to play. Source links in host review are references and need an internet connection only if you choose to open them.
 
-For help researching and writing a new event, copy the single prompt in [Make a quiz with ChatGPT](docs/CHATGPT_HANDOFF.md). It asks the assistant to gather essential decisions, research balanced questions with sources, present them for your review, and use this kit to build the file. File access, research, execution, and preview depend on the tools available in that conversation; the prompt includes a manual builder route when those tools are unavailable.
+The main-screen prompt contains the full return format, so ChatGPT can draft a compatible reply without repository access, an API key or installation. Research still depends on the capabilities of that conversation: missing sources must remain visible for teacher review. The longer [ChatGPT event handoff](docs/CHATGPT_HANDOFF.md) remains available for advanced, researched events and environments with file/build tools.
 
 ## What you can configure
 
