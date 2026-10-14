@@ -2,7 +2,7 @@
 
 `quiz.config.json` is the canonical input. Its `schemaVersion` is `1`. Start with the included BioVista configuration and edit a copy for your event. Keep the actual example under `examples/biovista/` intact.
 
-The kit supports two teams, matched pairs, four options, and one correct answer. It supports different themes and even main-question counts per round. It is not a configuration language for arbitrary tournament formats, additional teams, buzzers, open answers, or speed multipliers.
+The kit supports two teams, matched pairs, four options, and one correct answer. It supports different themes and even main-question counts per round. Those are the current bundled-mode limits. Additional teams, tournament formats, buzzers, open answers and speed multipliers can be developed as engine extensions; see [the extension guide](EXTENDING_ENGINE.md).
 
 ## Build routes
 
@@ -44,6 +44,27 @@ Team IDs are engine identities, not required display names. For example, `{"id":
 Persistence is separated by event and a configuration fingerprint. Keep `event.id` stable while preparing one competition. Changing questions or rules creates a new profile; an incompatible checkpoint should not be treated as a continuation of the old game. Do not change rules midway through a live session.
 
 Browser privacy settings or an embedded preview can prevent local storage. Use **Save resume copy** to download a complete quiz with its checkpoint, then reopen that file to resume paused. The reusable kit's profiles and the original BioVista application's older checkpoints are different formats; cross-import is not supported.
+
+## Presentation controls
+
+Optional `presentation` settings are validated, saved and embedded in the exported quiz. Omitted settings retain the legacy cinematic defaults. New classroom drafts start with gentle motion and 60% volume.
+
+| Field | Values | Legacy default |
+| --- | --- | --- |
+| `motion` | `cinematic`, `gentle`, `none` | `cinematic` |
+| `sound` | Boolean; false keeps playback silent | `true` |
+| `volume` | Integer percent, 0–100 | `80` |
+| `spokenOptions` | Spoken option/selection A–D clips | `true` |
+| `confetti` | Correct-answer/winner celebration | `true` |
+| `rewards` | Visual point gains/losses; never changes score rules | `true` |
+| `coinAnimation` | Animate the toss; static mode keeps the fair five-second reveal | `true` |
+| `questionAnimation` | Question / explanation decorative entrances | `true` |
+| `winnerAnimation` | Winner entrance animation | `true` |
+| `intro` | Opening announcement; the separate fair coin toss remains available | `true` |
+
+No decorative motion and the device's reduced-motion preference remove decorative movement. Options are still disclosed in order over `optionsRevealMs`; answer time begins after the last option. Gentle style uses fades and immediate score settlement, rather than flying reward/penalty coins. Rehearsal uses the configured settings. The exported file’s Settings menu can change presentation switches while the game stays paused, without changing rules/scores. Preferences persist in the same browser when storage permits. Save resume copy embeds current presentation choices for another computer. Adjust rules and content in the builder and rebuild before play.
+
+Direct uploads embed left/right logos and question images, with editable alternate text and credits. Individual audio replacements use asset keys `coinSound`, `optionA`–`optionD`, and `selectA`–`selectD`; removing a replacement restores the bundled clip. Supported types and size/security limits below still apply. Physical prizes or certificates are event notes, not automated rewards.
 
 ## Rules and units
 

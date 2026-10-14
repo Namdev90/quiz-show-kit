@@ -1,5 +1,7 @@
 # Faculty builder verification
 
+Historical report for the 13 October implementation. See [current teacher upgrade verification](TEACHER_UPGRADE_QA.md) for the changed launch and customization controls.
+
 Verification date: 2026-10-13. The implementation was tested on the connected Windows computer with Node.js 24 and local headless Chromium 156. Browser checks use a representative reply built from the preserved example; an actual ChatGPT conversation was not run. The copied prompt's content and complete return contract were inspected and exercised through the importer.
 
 `npm run check` builds the canonical quiz and both matching builder pages, validates the 41-card example, and passes 35 top-level tests. The engine test file includes its 22-case scoring/timing/recovery suite. Added regressions cover copy completion and repeated clicks, clipboard denial, import cancellation and input preservation, answer editing, preview/export, review reset, letter answer indices in existing banks, incomplete work recovery, bounded input, unsafe keys, SVG policy and invalid source dates.

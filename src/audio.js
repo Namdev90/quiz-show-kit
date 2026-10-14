@@ -37,11 +37,11 @@ function loadClips(){
  return initializing;
 }
 async function enable(){
- try{await loadClips();wireBus();if(context)await context.resume();enabled=!context||context.state==='running';if(!enabled)throw Error('Audio needs another user gesture.');muted=false;Howler.mute(false);Howler.volume(volume);lastError=diagnostics.failures.length?'Some optional audio clips were unavailable.':'';notify();return true;}
+ try{await loadClips();wireBus();if(context)await context.resume();enabled=!context||context.state==='running';if(!enabled)throw Error('Audio needs another user gesture.');Howler.mute(muted);Howler.volume(volume);lastError=diagnostics.failures.length?'Some optional audio clips were unavailable.':'';notify();return true;}
  catch(e){enabled=false;lastError=e.message;notify();return false;}
 }
-function setVolume(){volume=.8;if(window.Howler)Howler.volume(volume);notify();}
-function setMuted(){muted=false;if(window.Howler)Howler.mute(false);notify();}
+function setVolume(value=.8){if(!Number.isFinite(value))return;volume=Math.max(0,Math.min(1,value));if(window.Howler)Howler.volume(volume);notify();}
+function setMuted(value=false){muted=Boolean(value);if(muted)stopAll();if(window.Howler)Howler.mute(muted);notify();}
 function stopAll(){for(const clip of clips.values())try{clip.stop();}catch(_){}for(const node of [...nodes])try{node.stop();}catch(_){}nodes.clear();nextCue=context?.currentTime||0;lastLetter='';}
 function playClip(key,{letter=false,loss=false,rate=1}={}){
  const clip=clips.get(key);if(!clip||clip.state()!=='loaded')return false;
