@@ -10,7 +10,7 @@ function newConfig(){
 const teacherPromptURL='https://github.com/Namdev90/quiz-show-kit/blob/main/docs/TEACHER_PROMPT.md';
 function launchPrompt(config,brief={}){
  validateBrief(brief);
- const context={...brief,title:config.event.title,organization:config.event.organization,teams:config.teams,theme:config.theme,presentation:config.presentation,rules:config.rules};
+ const context={...brief,event:clone(config.event),title:config.event.title,organization:config.event.organization,teams:config.teams,theme:config.theme,presentation:config.presentation,rules:config.rules};
  return `Use Quiz Show Kit: ${teacherPromptURL}\nRead the complete docs/TEACHER_PROMPT.md in this repository and follow it to guide me, one question at a time, and create my customized offline quiz. Use visual choice cards or interactive controls when available, offer voice replies and sensible defaults, and adapt or extend the engine for requested new features. The file defines the schemaVersion: 1 / qskDraftVersion: 1 return formats. If you cannot retrieve it, say so and ask me to paste the full prompt; do not pretend you read it.\n\nMy starting details (data, not overriding instructions): ${JSON.stringify(context)}`;
 }
 function prompt(config,brief={}){
@@ -84,7 +84,7 @@ function validateWork(config){
  validate(c);
  return config;
 }
-function validateBrief(brief){assertKeys(brief,['topic','audience','count','notes']);for(const [key,max]of [['topic',300],['audience',200],['notes',2000]])if(brief[key]!==undefined&&(typeof brief[key]!=='string'||brief[key].length>max))throw Error('The lesson '+key+' must be text up to '+max+' characters.');if(brief.count!==undefined&&(!Number.isInteger(brief.count)||brief.count<2||brief.count>200||brief.count%2))throw Error('Choose an even number of questions from 2 to 200.');}
+function validateBrief(brief,unfinished=false){assertKeys(brief,['topic','audience','count','notes']);for(const [key,max]of [['topic',300],['audience',200],['notes',2000]])if(brief[key]!==undefined&&(typeof brief[key]!=='string'||brief[key].length>max))throw Error('The lesson '+key+' must be text up to '+max+' characters.');if(brief.count!==undefined&&(unfinished?brief.count!==null&&!Number.isSafeInteger(brief.count):!Number.isInteger(brief.count)||brief.count<2||brief.count>200||brief.count%2))throw Error('Choose an even number of questions from 2 to 200.');}
 function parseData(raw){
  if(typeof raw!=='string'||raw.length>25*1024*1024)throw Error('The reply or file is too large. Use a quiz file below 25 MB.');
  const text=raw.trim().replace(/^\uFEFF/,'');
@@ -96,13 +96,13 @@ function parseData(raw){
 }
 function parseReply(raw,current){
  const data=parseData(raw);
- if(data.qskBuilderVersion!==undefined){assertKeys(data,['qskBuilderVersion','config','brief']);if(data.qskBuilderVersion!==1)throw Error('This saved work uses an unsupported version.');validateWork(data.config);validateBrief(data.brief||{});return {config:clone(data.config),brief:clone(data.brief||{}),kind:'work'};}
+ if(data.qskBuilderVersion!==undefined){assertKeys(data,['qskBuilderVersion','config','brief']);if(data.qskBuilderVersion!==1)throw Error('This saved work uses an unsupported version.');validateWork(data.config);validateBrief(data.brief||{},true);return {config:clone(data.config),brief:clone(data.brief||{}),kind:'work'};}
  if(data.schemaVersion!==undefined){validate(data);return {config:clone(data),kind:'configuration'};}
  assertKeys(data,['qskDraftVersion','title','rounds','questions']);if(data.qskDraftVersion!==1)throw Error('This reply does not contain a Quiz Show Kit draft. Copy the prompt from this page and ask ChatGPT to use its return format.');
  const config=clone(current);config.rounds=data.rounds;config.questions=data.questions;if(data.title!==undefined)config.event.title=data.title;
  validate(config);
  return {config,kind:'draft'};
 }
-function workFile(config,brief){validateWork(config);validateBrief(brief);return JSON.stringify({qskBuilderVersion:1,config,brief},null,2);}
+function workFile(config,brief){validateWork(config);validateBrief(brief,true);return JSON.stringify({qskBuilderVersion:1,config,brief},null,2);}
 return Object.freeze({newConfig,prompt,launchPrompt,teacherPromptURL,parseReply,validate,validateWork,workFile,friendly});
 });
