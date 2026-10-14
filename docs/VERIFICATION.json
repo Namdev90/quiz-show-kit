@@ -10,10 +10,10 @@
     "hardware": "UNTESTED: newly generated configurable quiz on physical display/speakers",
     "browser": "PASS: published builder loaded, validated BioVista, rendered sandboxed preview, began announcement and downloaded HTML through real in-app browser. Configuration upload and full timed browser journey remain UNTESTED.",
     "compiler": "PASS: 12 build, escaping, asset-path and SVG cases",
-    "testCases": 57,
-    "ci": "Previous CI result is historical; the current upgrade commit requires its own CI run",
-    "teacherUpgrade": "PASS: 57 top-level tests plus the engine\u2019s 22 internal cases, including all ten PR-review findings",
-    "currentBrowser": "UNTESTED: local Chromium absent; browser download failed; historical browser checks do not verify the upgraded layout",
+    "testCases": 59,
+    "ci": "PASS: Build and test and Pages deployment on merged teacher upgrade 82305f0; final follow-up checked locally with npm run check",
+    "teacherUpgrade": "PASS: 59 top-level tests plus 22 internal engine cases, covering all twelve PR-review findings",
+    "currentBrowser": "PASS: cloud Chrome at 1363x936 on deployed 82305f0: teacher builder, example import, sandboxed preview, live settings and winner preview; responsive variants, clipboard contents and provider interviews untested. Subsequent audio/winner fixes have automated regression coverage.",
     "teacherConversation": "UNTESTED: actual prompt retrieval/interview in a separate ChatGPT conversation"
   },
   "sha256": {

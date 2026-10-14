@@ -4,7 +4,7 @@ The teacher launch is a repository link plus a short instruction naming `docs/TE
 
 ## Executed checks
 
-`npm run check` builds the canonical offline quiz and matching root/Pages builders, validates the real 41-card BioVista bank and passes **57 top-level tests**. The engine test includes **22 internal scoring/timing/recovery cases**. Tests use Node.js 24 and jsdom with simulated browser platform/audio APIs; they do not establish real browser layout, audible sound or physical projector quality.
+`npm run check` builds the canonical offline quiz and matching root/Pages builders, validates the real 41-card BioVista bank and passes **59 top-level tests**. The engine test includes **22 internal scoring/timing/recovery cases**. Tests use Node.js 24 and jsdom with simulated browser platform/audio APIs; they do not establish real browser layout, audible sound or physical projector quality.
 
 New checks additionally verify provider selection, live in-file settings with paused clocks and unchanged ledger, storage restoration, resume-copy embedding, and keeping creator/toolkit credit off results. New checks cover the short prompt’s exact target and settings context, custom even counts, complete configuration import/save fidelity, presentation validation, scoring/theme presets and extended timing controls, recoverable rounds and optional cards, full-prompt fallback, safe logo upload/removal and unsafe SVG rejection. Playback regressions cover silent/no-motion output, sequential disclosure and unchanged answer timing, suppression of decorative effects, and configurable volume/mute with real bundled audio code over simulated platform APIs.
 
@@ -12,10 +12,12 @@ The canonical configuration, assets and preserved `examples/biovista/` were not 
 
 ## Browser boundary
 
-The local Playwright browser check could not start because Chromium was absent. An installation attempt failed to obtain a valid browser archive. Therefore the previous verification screenshots/report are historical evidence; they do not verify the current layout. Rendered responsive inspection and actual clipboard/tab-opening behavior of this upgrade remain unverified here. Teacher source review, a real ChatGPT interview and physical sound/projector rehearsal remain required.
+The local Playwright browser check could not start because Chromium was absent. An installation attempt failed to obtain a valid browser archive. Therefore the previous verification screenshots/report are historical evidence; they do not verify the current layout. A later cloud Chrome check at 1363 × 936 verified the deployed teacher builder (82305f0), example import, sandboxed preview, live sound/motion switches, creator information in Settings and a winner screen without toolkit/creator credit. The copy action reported success, but clipboard contents and provider tab-opening were not independently confirmed. Responsive variants remain untested. Teacher source review, a real ChatGPT interview and physical sound/projector rehearsal remain required.
 
 ## Pull request review fixes
 
 Eight review findings were verified and fixed: recover unfinished question counts without dropping saved quizzes; rehome extra cards when deleting a round’s last scored pair; remove unused uploaded assets while preserving shared references; allocate unused media keys; preserve static announcements when motion is reduced; gate score-pop with point effects; include every edited event field in the AI launch; and allocate an available round ID in the supported range. New regressions exercise each fix. Uploads also rebuild question controls so their actions refer to the current configuration.
 
-Final review follow-up: unfinished sound-volume values and blank image/logo descriptions now survive saved-work and autosave reloads. Final preview/export remains strict. Four regressions cover model validation and the actual builder reload path. `npm run check` passes all 57 top-level tests.
+Final review follow-up: unfinished sound-volume values and blank image/logo descriptions now survive saved-work and autosave reloads. Final preview/export remains strict. Four regressions cover model validation and the actual builder reload path. `npm run check` passes all 59 top-level tests.
+
+Late review fixes preserve imported images sharing reserved audio keys during clip replacement/reset and suppress the results-card CSS entrance when Winner entrance is disabled. Both have regression coverage; the final suite passes 59 top-level tests.
