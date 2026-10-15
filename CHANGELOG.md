@@ -6,7 +6,8 @@
 - Add reviewed editable banks, source/option evidence, discussion/shuffle, paired sequencing, audited reserves, statistics/revision, host/audience tools and recovery checks.
 - Refresh BioVista with the current engine and supplied Chota Namu; preserve its original bank, rules and historical archive.
 - Deliver matching DOCX/settings/review companions, deterministic build provenance and verified versioned release packages.
-- Correct active documentation; retain dated QA as historical evidence. See [release notes](docs/releases/v1.1.0.md) and [actual test scope](docs/IMPLEMENTATION_QA.md).
+- Reject fabricated checkpoint opportunity histories and unbound DOCX publication; bind showcase preservation to the historical archive.
+- Correct active documentation; retain dated QA as historical evidence. See [release notes](docs/releases/v1.1.0.md) and [actual test scope](docs/RELEASE_QA.md).
 
 ## 1.0.0 — 13 October 2026
 

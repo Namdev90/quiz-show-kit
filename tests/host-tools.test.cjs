@@ -28,6 +28,13 @@ test('Repair handoff uses explicit safe fields and never imports raw errors or q
  assert.equal(hostile.feature,'runtime');assert.equal(hostile.questionId,null);assert.equal(hostile.errorCode,'runtime-error');assert.equal(hostile.version,'unknown');
 });
 
+test('Repair provenance leaves unavailable checkout state unknown and retains explicit legacy provenance',()=>{
+ const legacyFields=build=>{const {baseCommit,localChanges}=H.diagnostic({build}).build;return {baseCommit,localChanges};};
+ assert.deepEqual(legacyFields({version:'1.0.0'}),{baseCommit:null,localChanges:null});
+ for(const localChanges of [true,false])assert.deepEqual(legacyFields({baseCommit:'a'.repeat(40),localChanges}),{baseCommit:'a'.repeat(40),localChanges});
+ assert.equal(H.diagnostic({build:{localChanges:'false'}}).build.localChanges,null);
+});
+
 test('Credits export preserves library licenses and identifies missing provenance without embedding media',()=>{
  const report=H.credits({known:{data:'data:audio/wav;base64,HUGE',sourceUrl:'https://example.org',author:'Creator',license:'CC0 1.0'},missing:{data:'data:image/png;base64,HUGE'},libraries:{packages:[{name:'Example',version:'1',license:'MIT',licenseText:'Required license'}]}},[{id:'Q1',visual:{key:'missing',attribution:'Creator permission pending'}}]);
  assert.doesNotMatch(JSON.stringify(report),/base64|HUGE/);

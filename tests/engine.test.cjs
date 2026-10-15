@@ -87,4 +87,52 @@ test('A genuine previous-v5 checkpoint migrates only implicit metadata without c
 test('Legacy letter answer aliases normalize to stable identities and duplicate displayed options fail',()=>{
   const {E}=engine(runtime());const bank=small();for(const q of bank){delete q.correct;q.correctOptionId='A';}const s=E.create(bank);assert.equal(s.bank[0].correct,0);assert.equal(s.bank[0].correctOptionId,'M0-A');const duplicate=small();duplicate[0].options[1]='a';assert.throws(()=>engine(runtime()).E.create(duplicate),/distinct/);
 });
+test('Recovery rejects fabricated direct opportunities at intro, future slots and nested undo frames',()=>{
+ const {E}=engine(runtime());
+ const append=(saved,entry)=>{saved.log.push({id:++saved.sequence,at:0,...entry});return saved;};
+ const intro=JSON.parse(E.checkpoint(E.create(small())));
+ assert.throws(()=>E.hydrate(append(plain(intro),{type:'question-ready',questionId:'M0',team:'Bio',phase:'roundIntro'})),/opportunity|transition|position/i);
+ let s=begin(E),saved=JSON.parse(E.checkpoint(s));
+ for(const entry of [{questionId:'M1',team:'Vista',phase:'read'},{questionId:'M0',team:'Bio',phase:'read'},{questionId:'M0',team:'Vista',phase:'roundIntro'}])assert.throws(()=>E.hydrate(append(plain(saved),{type:'question-ready',...entry})),/opportunity|transition|team|position/i);
+ saved=JSON.parse(E.checkpoint(answer(E,s,0)));append(saved.history[0],{type:'question-ready',questionId:'M1',team:'Vista',phase:'read'});assert.throws(()=>E.hydrate(saved),/opportunity|transition|position/i);
+});
+
+test('Recovery rejects passed opportunities before the receiving turn starts or on another card',()=>{
+ const {E}=engine(runtime());let s=act(E,begin(E),'PASS');
+ const saved=JSON.parse(E.checkpoint(s)),append=(value,questionId='M0',team='Vista')=>{value.log.push({id:++value.sequence,at:s.lastNow,type:'passed-turn-start',questionId,team});return value;};
+ assert.equal(E.stats(E.hydrate(saved)).main.teams.Vista.passesReached,0);
+ assert.throws(()=>E.hydrate(append(plain(saved))),/opportunity|transition|phase/i);
+ s=step(E,s,s.config.passTransitionMs);const reached=JSON.parse(E.checkpoint(s));
+ assert.equal(E.stats(E.hydrate(reached)).main.teams.Vista.passesReached,1);
+ assert.throws(()=>E.hydrate(append(plain(reached))),/opportunity|transition/i);
+ for(const [questionId,team]of [['M1','Vista'],['M0','Bio']]){const corrupt=plain(reached),entry=corrupt.log.find(x=>x.type==='passed-turn-start');entry.questionId=questionId;entry.team=team;assert.throws(()=>E.hydrate(corrupt),/opportunity|transition|team/i);}
+ const missing=plain(reached);missing.log=missing.log.filter(x=>x.type!=='passed-turn-start');missing.sequence=missing.log.at(-1).id;assert.throws(()=>E.hydrate(missing),/opportunity|transition|phase/i);
+});
+
+test('Opportunity recovery preserves metrics through demo, discussion and complete matched tie phases',()=>{
+ const {E}=engine(runtime()),bank=small(1);bank.push({...bank[0],id:'DEMO',status:'demo'});let s=E.create(bank,{discussionSeconds:1});
+ const check=()=>{const restored=E.hydrate(E.checkpoint(s),s.lastNow);assert.deepEqual(plain(E.stats(restored)),plain(E.stats(s)));if(restored.timer)assert.equal(restored.timer.paused,true);};
+ const move=type=>{s=act(E,s,type);check();};
+ const complete=()=>{while(s.phase!=='end'){if(['roundIntro','reveal'].includes(s.phase))move('NEXT');else if(['read','tieRead'].includes(s.phase))move('SHOW_OPTIONS');else if(s.phase==='answering')move('PASS');else{s=step(E,s,s.timer.remainingMs);check();}}};
+ check();move('START');complete();move('START_TIE');complete();
+ const stats=E.stats(s);assert.equal(stats.main.teams.Bio.directOpportunities,2);assert.equal(stats.main.teams.Vista.directOpportunities,2);assert.equal(stats.main.teams.Bio.passesReached,2);assert.equal(stats.main.teams.Vista.passesReached,2);assert.equal(stats.tie.teams.Bio.directOpportunities,1);assert.equal(stats.tie.teams.Vista.directOpportunities,1);
+});
+
+function forgedTieCard(s,index){const saved=JSON.parse(JSON.stringify(s)),card=saved.tieSchedule[index];Object.assign(saved,{kind:'tie',tieCursor:index,questionId:card.id,primaryTeam:card.primaryTeam,activeTeam:card.primaryTeam,turn:'primary',phase:'tieRead',selected:null,lockedAnswer:null,timer:null,answerRemainingMs:null,winner:null});saved.log.push({id:++saved.sequence,at:s.lastNow,type:'question-ready',questionId:card.id,team:card.primaryTeam,phase:'tieRead'});return saved;}
+test('Recovery rejects a tie opportunity after unequal completed main scores',()=>{
+ const {E}=engine(runtime());let s=answer(E,begin(E,small(1)),0);s=finish(E,s);assert.notEqual(s.mainScores.Bio,s.mainScores.Vista);assert.ok(E.dispatch(s,{type:'START_TIE'},s.lastNow).error);
+ assert.throws(()=>E.hydrate(forgedTieCard(JSON.parse(E.checkpoint(s)),0)),/opportunity|transition|tie/i);
+});
+test('Recovery rejects another tie pair once a completed pair resolved the tie',()=>{
+ const {E}=engine(runtime());let s=finish(E,begin(E,small(2)));s=act(E,s,'START_TIE');s=act(E,s,'SHOW_OPTIONS');s=step(E,s,s.config.optionsIntroMs);s=answer(E,s,0);s=act(E,s,'NEXT');s=act(E,s,'SHOW_OPTIONS');s=step(E,s,s.config.optionsIntroMs);s=act(E,s,'PASS');assert.equal(E.dispatch(s,{type:'NEXT'},s.lastNow).state.phase,'end');
+ assert.throws(()=>E.hydrate(forgedTieCard(JSON.parse(E.checkpoint(s)),2)),/opportunity|transition|tie/i);
+});
+test('Recovery tie gates honor explicit score corrections and reserve score rollback',()=>{
+ for(const adjustment of ['correction','replacement']){const {E}=engine(runtime());let s=answer(E,begin(E,small(1)),0);
+  if(adjustment==='replacement')s=act(E,s,'REPLACE',{reserveId:'R',reason:'Reviewed defect',confirmed:true});s=finish(E,s);
+  if(adjustment==='correction')s=act(E,s,'CORRECT_SCORE',{team:'Vista',delta:10,reason:'Host correction',confirmed:true});
+  assert.equal(s.mainScores.Bio,s.mainScores.Vista);s=act(E,s,'START_TIE');assert.deepEqual(plain(E.hydrate(E.checkpoint(s)).mainScores),plain(s.mainScores));
+ }
+});
+
 let failed=0;for(const[name,fn]of tests){try{fn();console.log('PASS',name);}catch(error){failed++;console.error('FAIL',name,'\n ',error.message);}}console.log(`${tests.length-failed}/${tests.length} generic engine/profile tests passed`);if(failed)process.exitCode=1;

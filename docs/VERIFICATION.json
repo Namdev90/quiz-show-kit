@@ -9,24 +9,25 @@
   ],
   "checks": {
     "configuration": "PASS: 41 canonical cards, 30 main, 5 rounds; current showcase and original identities remain distinct.",
-    "automated": "PASS: npm run check; 91 tests, zero failures/cancellations/skips; includes 32 internal engine scenarios.",
-    "reproducibility": "PASS: repeat launcher build preserved all 15 recorded generated files; current and Pages companions match.",
-    "packaging": "PASS: eight packager tests; actual clean-checkout package has nine assets and eight verified checksums. Extracted 166-file tracked-source ZIP rebuilds byte-identical showcase without Git or dependencies; handoff links are commit-pinned.",
+    "automated": "PASS: npm run check; 107 tests, zero failures/cancellations/skips; includes 38 internal engine scenarios.",
+    "reproducibility": "PASS: pre-integration repeat launcher build preserved all15 generated files; combined suite checks unrelated commit/dirty-state stability, current/Pages parity and exact source digest.",
+    "packaging": "PASS: eight packager tests; actual combined clean package has nine assets and eight verified checksums. Extracted167-file tracked-source ZIP rebuilds byte-identical showcase without Git or dependencies; handoff links are commit-pinned.",
     "documentation": "PASS: 191 local Markdown targets resolve; source/documentation whitespace checks pass.",
-    "browser": "PARTIAL: actual final-file Linux Chromium 134.0.6998.35 offline welcome/character/version/repair digest passed, zero page errors/HTTP requests. Practice completion timed out during environment stalls; not a final-file full gameplay pass.",
-    "windows": "NOT ACTUALLY TESTED",
+    "browser": "PARTIAL: actual final-file Linux Chromium134.0.6998.35 welcome/character/version/repair digest passed; zero page errors/HTTP requests. Practice reached reveal with0-0 official scores, but Confirm was no longer present when clicked; planned main/pass/Undo/reload run incomplete. No final-file complete gameplay pass claimed.",
+    "windows": "PR6 reports actual headless Windows Chrome155.0.8059.40/Edge155.0.4283.45 checks on its own revision; not reproduced here and final integrated package not rerun on Windows.",
     "macOS_Safari": "NOT ACTUALLY TESTED",
     "hardware": "UNTESTED: physical speakers, projector and extended-display hardware.",
-    "previousGameplay": "Earlier actual full-event and focused gameplay checks belong to their snapshots in IMPLEMENTATION_QA.md; gameplay engine/UI unchanged for release 1.1.0.",
+    "previousGameplay": "Earlier actual full-event and focused gameplay checks belong to their snapshots in IMPLEMENTATION_QA.md. PR6 changes checkpoint validation; integrated recovery has automated coverage, not a completed final-file browser recovery check.",
     "ci": "See current PR/commit workflow checks; this file records local results."
   },
-  "testCases": 91,
-  "testDurationMs": 134115.192526,
-  "runtimeSourceDigest": "6934c22f78593f6634d4451ba58fbb06c76d3e815d21097a9ca4f9df1fd0ad79",
+  "testCases": 107,
+  "testDurationMs": 106800.224137,
+  "runtimeSourceDigest": "bc31460c878e4976e119e3c0bf2036a0bc65b1f232e540a3ed6bd9f08f1216f0",
   "sha256": {
     "quiz.config.json": "ec8b2f616c6ebef07a76ef189b7e1422cbbaca67c678e498a8f4cc56f58f6b45",
-    "examples/biovista/BioVista_Quiz_Offline.html": "7d1367a92ffc127aae7db77d1aa5e49cf1a5516edcb7164f1af1e78a572bbf72",
+    "examples/biovista/BioVista_Quiz_Offline.html": "d2e2cbea19068e7af1cffbd27cfaaccae477e5e63cdc60d5491c9cd449c7b8d4",
     "examples/biovista/original/BioVista_Quiz_Offline.html": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6",
-    "dist/Quiz_Offline.html": "a29df0e12d72adee02af6274d0196766d1f33999b07b2114daeb25f1912a872f"
-  }
+    "dist/Quiz_Offline.html": "6e52b9073cdb7e90217e976ef5e4ab9ed9c54e08dc249c0f75233c14f7338cd4"
+  },
+  "includedFixPullRequest": "https://github.com/Namdev90/quiz-show-kit/pull/6"
 }

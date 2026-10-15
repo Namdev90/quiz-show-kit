@@ -6005,6 +6005,75 @@ window.BioAudio=Object.freeze({enable,cue,setMuted,setVolume,configureSpeech,lis
   function timerLimit(s, mode) {
     return mode==='discussion'?gameplay(s).discussionSeconds*1000:mode==='grace'?RULES.graceMs:mode==='teacher'?RULES.teacherMs:mode==='options'?RULES.optionsIntroMs:mode==='transition'?RULES.passTransitionMs:s.turn==='passed'?RULES.passedMs:RULES.primaryMs;
   }
+  // Opportunity metrics use these events. Reconcile their phase/position history
+  // with the saved cursor, including demo, replacements, ties and truncated Undo logs.
+  function validateOpportunities(s) {
+    const main=buildSchedule(knownBank,s.config),ties=buildSchedule(knownBank,s.config,'tie'),demo=knownBank.find(q=>q.status==='demo');
+    const scores={main:{Bio:0,Vista:0},tie:{Bio:0,Vista:0}},outcomes=[];
+    let cursor=-1,tieCursor=-1,kind='main',phase='intro',questionId=null,team=s.config.startingTeam,primaryTeam=team,turn='primary';
+    const invalid=()=>{throw new Error('Saved opportunity transition does not match the reached question, team or phase.');};
+    const atCard=entry=>{if(entry.questionId!==questionId||entry.team!==team)invalid();};
+    for(let index=0;index<s.log.length;index++) {
+      const entry=s.log[index];
+      if(entry.type==='question-ready') {
+        let card,expectedPhase;
+        const replacement=s.log[index+1];
+        if(kind==='main'&&cursor>=0&&!['intro','end','outcome'].includes(phase)&&replacement?.type==='faculty-replacement'&&replacement.voidedQuestionId===questionId&&replacement.reserveId===entry.questionId) {
+          card={...main[cursor],id:replacement.reserveId};expectedPhase='read';
+        } else if(phase==='intro'&&demo&&entry.questionId===demo.id) {
+          card={id:demo.id,kind:'demo',primaryTeam:s.config.startingTeam};expectedPhase='read';
+        } else if(phase==='intro'||kind==='demo') {
+          card=main[0];cursor=0;tieCursor=-1;expectedPhase='roundIntro';
+        } else if(kind==='main'&&phase==='reveal') {
+          card=main[cursor+1];expectedPhase=card?.round===main[cursor].round?'read':'roundIntro';cursor++;
+        } else if(kind==='main'&&phase==='end') {
+          if(scores.main.Bio!==scores.main.Vista)invalid();scores.tie={Bio:0,Vista:0};
+          card=ties[0];tieCursor=0;expectedPhase='tieRead';
+        } else if(kind==='tie'&&phase==='reveal') {
+          if(tieCursor%2===1&&scores.tie.Bio!==scores.tie.Vista)invalid();
+          card=ties[++tieCursor];expectedPhase='tieRead';
+        }
+        if(!card||entry.questionId!==card.id||entry.team!==card.primaryTeam||entry.phase!==expectedPhase)invalid();
+        questionId=card.id;kind=card.kind;primaryTeam=card.primaryTeam;team=primaryTeam;turn='primary';phase=expectedPhase;
+      } else if(entry.type==='faculty-replacement') {
+        if(kind!=='main'||cursor<0||questionId!==entry.reserveId||main[cursor].id!==entry.voidedQuestionId)invalid();
+        for(const row of outcomes.filter(row=>row.kind==='main'&&row.questionId===entry.voidedQuestionId))scores.main[row.team]-=row.delta;
+        main[cursor].id=entry.reserveId;
+      } else if(entry.type==='read-stem') {
+        atCard(entry);if(phase!=='roundIntro')invalid();phase='read';
+      } else if(entry.type==='options-shown') {
+        atCard(entry);if(!['read','tieRead'].includes(phase)||turn!=='primary')invalid();phase='optionsIntro';
+      } else if(entry.type==='discussion-started') {
+        atCard(entry);if(phase!=='optionsIntro'||!gameplay(s).discussionSeconds)invalid();phase='discussion';
+      } else if(entry.type==='answer-timer-started') {
+        atCard(entry);if(phase!==(gameplay(s).discussionSeconds?'discussion':'optionsIntro'))invalid();phase='answering';
+      } else if(['acknowledged','acknowledged-by-selection'].includes(entry.type)) {
+        atCard(entry);if(phase!=='answering')invalid();phase='acknowledged';
+      } else if(entry.type==='answer-staged') {
+        atCard(entry);if(phase!=='acknowledged')invalid();
+      } else if(entry.type==='acknowledgement-cancelled') {
+        atCard(entry);if(phase!=='acknowledged')invalid();phase='answering';
+      } else if(['answer-confirmed','pass','timeout'].includes(entry.type)) {
+        atCard(entry);
+        if(!['answering','acknowledged'].includes(phase)||entry.type==='answer-confirmed'&&phase!=='acknowledged'||entry.kind!==kind||entry.turn!==turn)invalid();
+        if(!s.records.some(row=>row.questionId===questionId&&row.kind===kind&&row.team===team&&row.turn===turn&&row.at===entry.at&&row.option===entry.option&&row.correct===entry.correct&&row.delta===entry.delta&&row.origin===(entry.type==='answer-confirmed'?'answer':entry.type)))invalid();
+        outcomes.push(entry);if(kind!=='demo')scores[kind][team]+=entry.delta;
+        if(RULES.passingEnabled&&kind!=='tie'&&turn==='primary'&&entry.correct!==true){turn='passed';team=opposite(primaryTeam);phase='passTransition';}
+        else phase='outcome';
+      } else if(entry.type==='passed-turn-start') {
+        atCard(entry);if(phase!=='passTransition'||turn!=='passed')invalid();phase='answering';
+      } else if(entry.type==='reveal') {
+        atCard(entry);if(phase!=='outcome')invalid();phase='reveal';
+      } else if(entry.type==='end') {
+        atCard(entry);if(phase!=='end'&&!(phase==='reveal'&&(kind==='main'?cursor===main.length-1:kind==='tie'&&tieCursor%2===1&&(tieCursor===ties.length-1||scores.tie.Bio!==scores.tie.Vista))))invalid();phase='end';
+      } else if(entry.type==='tie-referred') {
+        atCard(entry);if(kind!=='tie'&&phase!=='end')invalid();phase='end';
+      } else if(entry.type==='score-correction') {
+        scores[entry.kind][entry.team]+=entry.delta;
+      } else if(['coin-result','gameplay-configured'].includes(entry.type)&&phase!=='intro')invalid();
+    }
+    if(s.cursor!==cursor||s.tieCursor!==tieCursor||s.kind!==kind||s.phase!==phase||s.questionId!==questionId||s.primaryTeam!==primaryTeam||s.activeTeam!==team||s.turn!==turn)invalid();
+  }
   function validateCheckpoint(s, histories=true) {
     if(!knownBank)throw new Error('Initialize the known competition bank with create before recovery.');
     if(!stateProfileValid(s))throw new Error('Checkpoint profile or rules do not match this competition. Standalone BioVista v4 checkpoints are not compatible.');
@@ -6077,6 +6146,7 @@ window.BioAudio=Object.freeze({enable,cue,setMuted,setVolume,configureSpeech,lis
       const use=s.lifelineActive,clock=use.returnClock;
       if(!RULES.teacherEnabled||!timed||s.kind==='demo'||!s.lifelines[use.team]||use.team!==s.activeTeam||use.questionId!==s.questionId||use.kind!==s.kind||!clock||!['answer','grace'].includes(clock.mode)||!Number.isFinite(clock.remainingMs)||clock.remainingMs<0||clock.remainingMs>timerLimit(s,clock.mode)||clock.mode!==(s.phase==='acknowledged'?'grace':'answer'))throw new Error('Saved teacher consultation is invalid.');
     }
+    validateOpportunities(s);
     if(histories)for(const frame of s.history)validateCheckpoint({...frame,bank:knownBank,config:s.config,history:[]},false);
     return s;
   }
@@ -6451,7 +6521,7 @@ function clear(options={}){
 function dispose(){clear({resetDedupe:true});layer?.remove();layer=null;host={};}
 window.BioPenalty=Object.freeze({configure,run,clear,dispose,getStatus:()=>({activeRuns:runs.size,tokens:nodes.size,tweens:tweens.size,seen:seen.size,epoch,error:lastError,gsap:window.gsap?.version||null})});
 })();
-</script><script>window.QSK_BUILD={"version":"1.1.0","sourceDigest":"6934c22f78593f6634d4451ba58fbb06c76d3e815d21097a9ca4f9df1fd0ad79","sourceDigestAlgorithm":"sha256","sourceDigestScope":"runtime-source-v1"};
+</script><script>window.QSK_BUILD={"version":"1.1.0","sourceDigest":"bc31460c878e4976e119e3c0bf2036a0bc65b1f232e540a3ed6bd9f08f1216f0","sourceDigestAlgorithm":"sha256","sourceDigestScope":"runtime-source-v1"};
 /* Offline session checks and an optional, display-only audience window. */
 (function (root, factory) {
   const api = factory(root);
@@ -6639,7 +6709,7 @@ function sourceHTML(source,primary=false){const title=escape(source.title||'Sour
 
 function revealHTML(question){const sources=Array.isArray(question.sources)?question.sources:[],explanations=Array.isArray(question.optionExplanations)?question.optionExplanations:[];return (sources.length?'<div class="answer-sources">'+sourceHTML(sources[0],true)+'<small>External reference links need internet; the quiz stays open.</small>'+(sources.length>1?'<details><summary>Additional sources ('+(sources.length-1)+')</summary>'+sources.slice(1).map(s=>sourceHTML(s)).join('')+'</details>':'')+'</div>':'')+(explanations.some(Boolean)?'<details class="option-explanations"><summary>Why each option?</summary><ol type="A">'+question.options.map((option,index)=>'<li><b>'+escape(option)+'</b> — '+escape(explanations[index]||'Explanation not supplied.')+'</li>').join('')+'</ol></details>':'');}
 function credits(assets,questions){const fields=['title','sourceTitle','sourceUrl','assetUrl','author','creator','license','licenseUrl','version','licenseText','attribution','notes','verificationDate','sha256'];const rows=[];for(const [name,asset]of Object.entries(assets||{})){if(name==='libraries'||!asset||typeof asset!=='object')continue;const row={name};for(const field of fields)if(typeof asset[field]==='string')row[field]=asset[field];row.provenance=asset.license&&(asset.sourceUrl||asset.author||asset.creator)?'Recorded; review license and restrictions':'Incomplete: confirm source and usage rights before distribution';rows.push(row);}return {format:'QSK asset credits 1',assets:rows,libraries:assets?.libraries?.packages||[],questionMedia:(questions||[]).filter(q=>q.visual).map(q=>({questionId:q.id,key:q.visual.key||q.visual.type,attribution:q.visual.attribution||'Attribution not supplied'})),notice:'Recorded metadata is not a new license grant. Review notices and restrictions before distribution.'};}
-function diagnostic({feature='runtime',questionId,phase,code='runtime-error',config={},userAgent='',version='1.0.0',build={}}={}){const allowedFeatures=['runtime','sound','narration','checkpoint','image','preflight','rehearsal','audience','download'];const allowedCodes=['runtime-error','load-failed','unavailable','invalid-checkpoint','preflight-failed','rehearsal-failed','popup-blocked','download-failed'];return {format:'QSK repair handoff 1',repository:'https://github.com/Namdev90/quiz-show-kit',version:/^[\w.-]{1,40}$/.test(version)?version:'unknown',build:{baseCommit:typeof build.baseCommit==='string'&&/^[0-9a-f]{40}$/i.test(build.baseCommit)?build.baseCommit:null,localChanges:build.localChanges===true,sourceDigest:typeof build.sourceDigest==='string'&&/^[0-9a-f]{64}$/i.test(build.sourceDigest)&&build.sourceDigestAlgorithm==='sha256'&&build.sourceDigestScope==='runtime-source-v1'?build.sourceDigest.toLowerCase():null,sourceDigestAlgorithm:build.sourceDigestAlgorithm==='sha256'?'sha256':null,sourceDigestScope:build.sourceDigestScope==='runtime-source-v1'?'runtime-source-v1':null},environment:{os:/Windows/i.test(userAgent)?'Windows':/Macintosh|Mac OS X/i.test(userAgent)?'macOS':/Linux/i.test(userAgent)?'Linux':'Other/unknown',browser:/Edg\//.test(userAgent)?'Edge':/Firefox\//.test(userAgent)?'Firefox':/Chrome\//.test(userAgent)?'Chrome':/Safari\//.test(userAgent)?'Safari':'Other/unknown'},feature:allowedFeatures.includes(feature)?feature:'runtime',questionId:typeof questionId==='string'&&/^[\w-]{1,80}$/.test(questionId)?questionId:null,phase:['intro','roundIntro','read','tieRead','optionsIntro','discussion','answering','acknowledged','passTransition','reveal','end'].includes(phase)?phase:'unknown',errorCode:allowedCodes.includes(code)?code:'runtime-error',configuration:{mode:config.mode==='short'?'short':'full',shuffleOptions:config.shuffleOptions===true,discussionSeconds:Number.isFinite(config.discussionSeconds)?config.discussionSeconds:0,difficultyOrder:['manual','rising','falling'].includes(config.difficultyOrder)?config.difficultyOrder:'manual',roundOrder:config.roundOrder==='alternate'?'alternate':'fixed'},reproduction:['Open the offline quiz using the documented launch route.','Repeat the affected feature and phase listed above.','Add your own reproduction steps here after checking for private information.'],expected:'The feature completes without changing unrelated scores or exposing unrevealed answers.',actual:'The feature reported the safe error code above. Raw errors, full logs and question contents are excluded.',privacy:'No credentials, file paths, question text, answers, team names, logs, cookies or personal attachments are included automatically.',instructions:'Inspect current repository issues and branches to avoid duplicates. Reproduce and diagnose; propose the smallest safe fix, add regression tests and verify compatibility. Do not silently rewrite educational meaning. Prepare a local patch/report or issue/PR draft if access or write authority is missing. Never publish, push or merge without the required explicit authorization.'};}
+function diagnostic({feature='runtime',questionId,phase,code='runtime-error',config={},userAgent='',version='1.0.0',build={}}={}){const allowedFeatures=['runtime','sound','narration','checkpoint','image','preflight','rehearsal','audience','download'];const allowedCodes=['runtime-error','load-failed','unavailable','invalid-checkpoint','preflight-failed','rehearsal-failed','popup-blocked','download-failed'];return {format:'QSK repair handoff 1',repository:'https://github.com/Namdev90/quiz-show-kit',version:/^[\w.-]{1,40}$/.test(version)?version:'unknown',build:{baseCommit:typeof build.baseCommit==='string'&&/^[0-9a-f]{40}$/i.test(build.baseCommit)?build.baseCommit:null,localChanges:typeof build.localChanges==='boolean'?build.localChanges:null,sourceDigest:typeof build.sourceDigest==='string'&&/^[0-9a-f]{64}$/i.test(build.sourceDigest)&&build.sourceDigestAlgorithm==='sha256'&&build.sourceDigestScope==='runtime-source-v1'?build.sourceDigest.toLowerCase():null,sourceDigestAlgorithm:build.sourceDigestAlgorithm==='sha256'?'sha256':null,sourceDigestScope:build.sourceDigestScope==='runtime-source-v1'?'runtime-source-v1':null},environment:{os:/Windows/i.test(userAgent)?'Windows':/Macintosh|Mac OS X/i.test(userAgent)?'macOS':/Linux/i.test(userAgent)?'Linux':'Other/unknown',browser:/Edg\//.test(userAgent)?'Edge':/Firefox\//.test(userAgent)?'Firefox':/Chrome\//.test(userAgent)?'Chrome':/Safari\//.test(userAgent)?'Safari':'Other/unknown'},feature:allowedFeatures.includes(feature)?feature:'runtime',questionId:typeof questionId==='string'&&/^[\w-]{1,80}$/.test(questionId)?questionId:null,phase:['intro','roundIntro','read','tieRead','optionsIntro','discussion','answering','acknowledged','passTransition','reveal','end'].includes(phase)?phase:'unknown',errorCode:allowedCodes.includes(code)?code:'runtime-error',configuration:{mode:config.mode==='short'?'short':'full',shuffleOptions:config.shuffleOptions===true,discussionSeconds:Number.isFinite(config.discussionSeconds)?config.discussionSeconds:0,difficultyOrder:['manual','rising','falling'].includes(config.difficultyOrder)?config.difficultyOrder:'manual',roundOrder:config.roundOrder==='alternate'?'alternate':'fixed'},reproduction:['Open the offline quiz using the documented launch route.','Repeat the affected feature and phase listed above.','Add your own reproduction steps here after checking for private information.'],expected:'The feature completes without changing unrelated scores or exposing unrevealed answers.',actual:'The feature reported the safe error code above. Raw errors, full logs and question contents are excluded.',privacy:'No credentials, file paths, question text, answers, team names, logs, cookies or personal attachments are included automatically.',instructions:'Inspect current repository issues and branches to avoid duplicates. Reproduce and diagnose; propose the smallest safe fix, add regression tests and verify compatibility. Do not silently rewrite educational meaning. Prepare a local patch/report or issue/PR draft if access or write authority is missing. Never publish, push or merge without the required explicit authorization.'};}
 return {escape,revealHTML,credits,diagnostic};
 });
 
