@@ -9,11 +9,11 @@ Suggest a small number of improvements that fit the learning goal, audience, ava
 | Diagram-heavy lesson | Legible local diagrams, useful alternate text, matching visual complexity | Supported image assets; factual/visual review is still required |
 | Mixed preparation levels | Balanced difficulty pairs and explanatory reveals | Authoring design; teacher can customize the mix |
 | Short class | Complete-pair short mode and fewer rounds | Supported counts; preserve equal opportunities |
-| Uncertain projection or sensory load | High-contrast preview, gentle/no motion, silent mode | Supported presentation settings; room testing is separate |
-| Need for discussion | Seminar preset, longer answer time, meaningful explanation | Existing timing; a new discussion clock is an extension |
+| Uncertain projection or busy visuals | Legible preview, gentle/no motion, silent mode | Normal presentation controls; no dedicated sensory-mode preset |
+| Need for discussion | Optional separate thinking time before answers unlock | `gameplay.discussionSeconds`, off at 0 in normal/default setup; verify the built session |
 | Live-event reliability | Resume copy, host rehearsal, reserve questions and tie pairs | Existing host tools; check the selected event and browser |
-| More teams, buzzers, open answers, streak points or remote joining | A concrete extension brief with acceptance criteria | Requires implementation and tests; not an ordinary setting |
-| New layout or UI language | Custom layout/translation brief | Existing text/palette changes may suffice; complete UI translation requires implementation |
+| More than two teams | Ask whether to expand the engine, then specify acceptance criteria | Existing engine is two-team-only; multiteam selector and absent-team controls remain gated |
+| New layout or UI language | Custom layout or supplied control translations | Follow the current configuration's supported labels; question translations need separate checking |
 
 ## Dynamic availability rules
 
@@ -33,6 +33,12 @@ Use the source's supported-choice assessment after relevant changes; do not main
 | Missing build capability | “Download your finished quiz” claims | Complete useful work and provide the exact build handoff |
 
 Keep three separate states in the teacher-facing summary: **ready**, **needs a choice/fix**, and **requires an extension**. A suggested feature is not automatically enabled. Recompute dependencies after changes and once before the final build. Report the specific conflict and one useful resolution; do not bury it in technical validator output.
+
+## Accepted boundaries
+
+The approved question types remain MCQ, including numerical, sequences and mappings represented by alternative options. Do not suggest free-text grading, typed numeric answers, drag-and-drop ordering/matching, rotating roles, routine gameplay confirmations, a dedicated sensory preset, full visual session planner or a retention dashboard as accepted work. Round-order rotation changes the starter/order, not membership. Ordinary readable labeling and keyboard access remain necessary. A feature number without wording and an unexplained/unanswered idea grant no approval.
+
+Offer optional print fallback and revision reports during setup/export, not as compulsory workflows. Keep detailed statistics, evidence review and license downloads in the host surface. Verify the actual implementation against [coverage](../IMPLEMENTATION_COVERAGE.md) before describing any advanced feature as complete; limitations must remain visible.
 
 ## Turn a custom idea into an implementable brief
 

@@ -34,4 +34,57 @@ test('Interruption and bounded custom entry grace preserve time without hidden c
 test('Multiple unresolved tie pairs exhaust only after complete equal opportunities',()=>{const {E}=engine(runtime());let s=finish(E,begin(E,small(2)));s=act(E,s,'START_TIE');s=finish(E,s);assert.equal(s.tieCursor,3);assert.equal(s.records.filter(row=>row.kind==='tie').length,4);assert.equal(s.winner.team,null);assert.equal(s.winner.pending,true);assert.match(s.winner.reason,/faculty/);});
 test('Nested undo-history corruption and duplicate scored opportunities are rejected',()=>{const {E}=engine(runtime());const s=answer(E,begin(E),0),saved=JSON.parse(E.checkpoint(s));let wrong=plain(saved);wrong.history[0].mainScores.Bio=50;assert.throws(()=>E.hydrate(wrong));wrong=plain(saved);wrong.records.push(plain(wrong.records[0]));wrong.mainScores.Bio=20;assert.throws(()=>E.hydrate(wrong));wrong=plain(saved);wrong.version=4;assert.throws(()=>E.hydrate(wrong),/profile|compatible/);});
 test('Invalid nontext questions and fabricated teacher usage are not accepted as valid source or ledger',()=>{for(const mutate of [q=>q[0].stem={},q=>q[0].id=5,q=>q[0].options[0]={},q=>q[0].pairId={}]){const {E}=engine(runtime());const q=small();mutate(q);assert.throws(()=>E.create(q));}const {E}=engine(runtime());const s=begin(E),saved=JSON.parse(E.checkpoint(s));saved.lifelines.Bio=true;saved.lifelineUses.push({team:'Bio',questionId:s.questionId,kind:'main',at:s.lastNow,voided:false});assert.throws(()=>E.hydrate(saved));});
+
+test('Shuffling preserves stable answer, explanations and narration through passes, undo and recovery',()=>{
+  const bank=small();for(const q of bank){q.optionIds=['one','two','three','four'];q.correctOptionId='one';q.optionExplanations=['why-one','why-two','why-three','why-four'];q.narration={stem:'stem',options:['audio-one','audio-two','audio-three','audio-four']};q.sources=[{title:'Evidence',url:'https://example.org/evidence'}];}
+  const {E}=engine(runtime());let s=begin(E,bank,{shuffleOptions:true,shuffleSeed:12345});
+  const shown=plain(E.question(s));assert.deepEqual(shown.optionIds.map(id=>'why-'+id),shown.optionExplanations);assert.deepEqual(shown.optionIds.map(id=>'audio-'+id),shown.narration.options);assert.equal(shown.optionIds[shown.correct],'one');
+  for(let i=0;i<4;i++)assert.equal(shown.options[i],bank[0].options[bank[0].optionIds.indexOf(shown.optionIds[i])]);
+  assert.equal(E.view(s).question.optionExplanations,undefined);assert.equal(E.view(s).question.sources,undefined);
+  const wrong=(shown.correct+1)%4;s=answer(E,s,wrong);assert.equal(s.records[0].optionId,shown.optionIds[wrong]);s=step(E,s,s.config.passTransitionMs);
+  assert.deepEqual(plain(E.question(s)),shown);assert.deepEqual(plain(E.view(s).blockedOptions),[wrong]);
+  s=E.hydrate(E.checkpoint(s),40000);assert.deepEqual(plain(E.question(s)),shown);s=act(E,s,'RESUME');s=answer(E,s,shown.correct);assert.equal(s.mainScores.Vista,2);assert.deepEqual(plain(E.view(s).question.optionExplanations),shown.optionExplanations);assert.deepEqual(plain(E.view(s).question.sources),bank[0].sources);
+  const saved=JSON.parse(E.checkpoint(s));saved.records[0].optionId='invented';assert.throws(()=>E.hydrate(saved),/identity/);
+  s=act(E,s,'UNDO');assert.deepEqual(plain(E.question(s)),shown);assert.equal(s.mainScores.Vista,0);
+});
+test('Discussion locks selections, preserves pause/recovery and starts a complete answer clock afterwards',()=>{
+  const {E}=engine(runtime());let s=begin(E,small(),{discussionSeconds:3});assert.equal(s.phase,'discussion');assert.equal(s.timer.mode,'discussion');assert.equal(E.view(s).optionsVisible,true);assert.equal(E.view(s).question.correct,undefined);assert.ok(E.dispatch(s,{type:'STAGE',option:0},s.lastNow).error);
+  s=step(E,s,1000);s=act(E,s,'PAUSE');assert.equal(E.view(s).remainingMs,2000);s=E.hydrate(E.checkpoint(s),10000);assert.equal(s.phase,'discussion');assert.equal(s.timer.paused,true);s=act(E,s,'RESUME');s=step(E,s,1900);
+  const r=E.dispatch(s,{type:'STAGE',option:0},s.lastNow+100);assert.ok(r.error);s=r.state;assert.equal(s.phase,'answering');assert.equal(E.view(s).remainingMs,15000);assert.equal(s.records.length,0);s=answer(E,s,0);assert.equal(s.mainScores.Bio,10);
+});
+test('Difficulty ordering keeps pairs and short-mode inventory intact; alternate turns swap by round',()=>{
+  const bank=small();for(let round=1;round<=2;round++){bank[(round-1)*2].difficulty='challenging';bank[(round-1)*2+1].difficulty='challenging';for(let i=0;i<2;i++)bank.push({...small()[i],id:'E'+round+i,pairId:'easy'+round,round,difficulty:'accessible'});}
+  const {E}=engine(runtime());const rising=E.create(bank,{difficultyOrder:'rising',roundOrder:'alternate'});assert.deepEqual(plain(rising.schedule.map(x=>x.id)),['E10','E11','M0','M1','E20','E21','M2','M3']);assert.deepEqual(plain(rising.schedule.map(x=>x.primaryTeam)),['Bio','Vista','Bio','Vista','Vista','Bio','Vista','Bio']);
+  const falling=E.create(bank,{difficultyOrder:'falling'});assert.deepEqual(plain(falling.schedule.map(x=>x.id)),['M0','M1','E10','E11','M2','M3','E20','E21']);
+  const shortEngine=engine(runtime({shortPairsPerRound:1})).E,short=shortEngine.create(bank,{mode:'short',difficultyOrder:'rising'});assert.deepEqual(plain(short.schedule.map(x=>x.id)),['M0','M1','M2','M3']);
+  assert.throws(()=>E.create(bank,{difficultyOrder:'rising',difficultyLevels:['standard']}),/legend/);assert.throws(()=>E.create(bank,{roundOrder:'random'}));assert.throws(()=>E.create(bank,{statistics:['made-up']}));
+});
+test('Gameplay setup changes only before play, preserves profile rules and can recover configured states',()=>{
+  const {E}=engine(runtime());let s=E.create(small());s=act(E,s,'CONFIGURE',{gameplay:{shuffleOptions:true,discussionSeconds:2,roundOrder:'alternate',statistics:['passesReached'],revisionReport:true}});assert.equal(s.history.length,0);assert.equal(s.config.primaryMs,15000);const forged=JSON.parse(E.checkpoint(s));forged.config.gameplay.discussionSeconds=100;assert.throws(()=>E.hydrate(forged));s=E.hydrate(E.checkpoint(s),1000);assert.equal(E.view(s).gameplay.discussionSeconds,2);assert.deepEqual(plain(E.stats(s).selected),['passesReached']);s=act(E,s,'BEGIN_MAIN');assert.ok(E.dispatch(s,{type:'CONFIGURE',gameplay:{discussionSeconds:0}},s.lastNow).error);
+});
+test('Avoid ranks matched reserves, discloses mismatches and cannot apply a stale replacement twice',()=>{
+  const bank=small();bank[0].topic='Genetics';bank[0].subtype='graph';bank.push({...bank.at(-1),id:'R2',topic:'Genetics',subtype:'graph'});const {E}=engine(runtime());let s=begin(E,bank);const choices=E.reserves(s);assert.equal(choices[0].question.id,'R2');assert.equal(choices[0].exactMatch,true);assert.equal(choices[1].mismatches.length,2);
+  s=act(E,s,'AVOID',{questionId:'M0'});assert.equal(s.questionId,'R2');assert.equal(s.primaryTeam,'Bio');assert.equal(s.records.length,0);assert.deepEqual(plain(s.mainScores),{Bio:0,Vista:0});assert.ok(E.dispatch(s,{type:'AVOID',questionId:'M0'},s.lastNow).error);assert.ok(E.dispatch(s,{type:'REPLACE',reserveId:'R'},s.lastNow).error);
+  s=act(E,s,'REPLACE',{questionId:'R2',reserveId:'R',acceptMismatch:true,reason:'Host selected a documented topic and format mismatch'});assert.equal(s.questionId,'R');assert.equal(E.reserves(s).length,0);s=E.hydrate(E.checkpoint(s),10000);assert.equal(s.usedReserves.length,2);assert.equal(s.log.filter(x=>x.type==='faculty-replacement').length,2);
+});
+test('Post-answer replacement requires explicit score rollback policy but ordinary avoid does not',()=>{
+  const {E}=engine(runtime());let s=answer(E,begin(E),0);assert.ok(E.dispatch(s,{type:'REPLACE',reserveId:'R'},s.lastNow).error);assert.equal(s.mainScores.Bio,10);s=act(E,s,'REPLACE',{reserveId:'R',reason:'Defective question',confirmed:true});assert.equal(s.mainScores.Bio,0);assert.equal(s.records[0].voided,true);assert.match(s.log.at(-1).scoringPolicy,/Void/);s=E.hydrate(E.checkpoint(s));assert.equal(s.questionId,'R');
+});
+test('Fair opportunity counts distinguish offered and reached passes and revision includes revealed outcomes only',()=>{
+  const {E}=engine(runtime());let s=begin(E,small(),{revisionReport:true});assert.equal(E.stats(s).main.teams.Bio.directOpportunities,1);assert.equal(E.report(s).questions.length,0);s=act(E,s,'PASS');assert.equal(E.stats(s).main.teams.Vista.passesOffered,1);assert.equal(E.stats(s).main.teams.Vista.passesReached,0);assert.equal(E.stats(s).main.teams.Bio.attempted,0);s=step(E,s,s.config.passTransitionMs);assert.equal(E.stats(s).main.teams.Vista.passesReached,1);s=answer(E,s,0);assert.equal(E.stats(s).main.teams.Vista.attempted,1);assert.equal(E.stats(s).main.teams.Vista.scores,2);assert.equal(E.report(s).questions.length,1);assert.equal(E.report(s).topics[0].teams.Vista.correct,1);
+  s=act(E,s,'REPLACE',{reserveId:'R',reason:'Reviewed defect',confirmed:true});assert.equal(E.stats(s).main.teams.Vista.passesOffered,0);assert.equal(E.stats(s).main.teams.Vista.passesReached,0);assert.equal(E.report(s).questions.length,0);assert.equal(E.stats(s).main.teams.Bio.directOpportunities,1);
+});
+test('Starting-team result is recorded once before animation and restores without rerolling',()=>{
+  const {E}=engine(runtime());let s=E.create(small());s=act(E,s,'COIN_RESULT',{team:'Vista',method:'crypto-byte-low-bit'});assert.equal(s.config.startingTeam,'Vista');assert.deepEqual(plain(s.log.at(-1).eligibleTeams),['Bio','Vista']);assert.equal(s.log.at(-1).method,'crypto-byte-low-bit');assert.ok(E.dispatch(s,{type:'COIN_RESULT',team:'Bio'},s.lastNow).error);s=E.hydrate(E.checkpoint(s),1234);assert.equal(s.config.startingTeam,'Vista');assert.ok(E.dispatch(s,{type:'COIN_RESULT',team:'Bio'},s.lastNow).error);
+});
+
+test('A genuine previous-v5 checkpoint migrates only implicit metadata without changing scores or history',()=>{
+  const fixture=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/legacy-engine-v5-checkpoint.json'),'utf8'));
+  const {E}=engine(runtime());E.create(small());let s=E.hydrate(fixture.checkpoint,123456);assert.equal(s.phase,'passTransition');assert.equal(s.mainScores.Bio,-2);assert.equal(s.records[0].option,1);assert.equal(s.bank[0].correctOptionId,'M0-A');assert.match(s.migrationNotice,/unchanged/);s=act(E,s,'RESUME');s=step(E,s,s.timer.remainingMs);assert.deepEqual(plain(E.view(s).blockedOptions),[1]);s=answer(E,s,0);assert.equal(s.mainScores.Vista,2);s=act(E,s,'UNDO');assert.equal(s.mainScores.Vista,0);s=E.hydrate(E.checkpoint(s),333333);assert.equal(s.phase,'acknowledged');
+  const wrong=plain(fixture.checkpoint);wrong.bank[0].correct=2;assert.throws(()=>E.hydrate(wrong));
+});
+
+test('Legacy letter answer aliases normalize to stable identities and duplicate displayed options fail',()=>{
+  const {E}=engine(runtime());const bank=small();for(const q of bank){delete q.correct;q.correctOptionId='A';}const s=E.create(bank);assert.equal(s.bank[0].correct,0);assert.equal(s.bank[0].correctOptionId,'M0-A');const duplicate=small();duplicate[0].options[1]='a';assert.throws(()=>engine(runtime()).E.create(duplicate),/distinct/);
+});
 let failed=0;for(const[name,fn]of tests){try{fn();console.log('PASS',name);}catch(error){failed++;console.error('FAIL',name,'\n ',error.message);}}console.log(`${tests.length-failed}/${tests.length} generic engine/profile tests passed`);if(failed)process.exitCode=1;

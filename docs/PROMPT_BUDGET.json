@@ -47,19 +47,19 @@
     "files": [
       {
         "file": "prompts/START.md",
-        "bytes": 2463,
-        "words": 306
+        "bytes": 3496,
+        "words": 442
       },
       {
         "file": "AGENTS.md",
-        "bytes": 2559,
-        "words": 336
+        "bytes": 2795,
+        "words": 367
       }
     ],
-    "bytes": 5022,
-    "words": 642
+    "bytes": 6291,
+    "words": 809
   },
-  "byteReductionPercent": 87.4,
+  "byteReductionPercent": 84.2,
   "limitations": [
     "Actual total tokens depend on the model, tokenizer, tools, task, later modules and retries.",
     "A shallow clone may lack the baseline commit; current measurements still work.",

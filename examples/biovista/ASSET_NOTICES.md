@@ -1,7 +1,11 @@
 # BioVista asset notices
 
-This directory contains the real BioVista quiz supplied by the project owner. It is not a replacement demo. All 41 question cards and the original quiz presentation are retained. Laptop-specific paths in host credits were removed; playable assets and game code are unchanged.
+This directory contains the real BioVista public question bank and its current Quiz Show Kit feature showcase, updated at the project owner's request. All 41 question cards, answers, explanations, sources and original scoring/timing rules are retained. The current HTML is rebuilt from `biovista.showcase.config.json` with the current toolkit runtime. The earlier public HTML, question bank, provenance and this notice's original version are preserved byte for byte in `original/`; its historical private laptop paths had already been removed.
 
 Parul University Goa, PCAHS, BioVista, Python and OpenAI names and visual marks retain their respective ownership. Their inclusion is reference/event branding and does not imply endorsement or permission to reuse a mark for another competition. These assets are not covered by this repository's MIT licence. Use your own approved branding for a new quiz.
 
 The WAV coin and selection effects are CC0 assets attributed in the main third-party notice. The A–D speech recordings were generated offline by the organiser using Microsoft Zira and are retained in this requested event example; they are not relicensed as MIT software. A fork may provide its own recordings.
+
+The current showcase also opts into the actual Chota Namu PNG supplied by Namdev Shirodkar on 15 October 2026. It is embedded unchanged for welcome/About/settings, with an independent visibility toggle. Preserve `assets/characters/NOTICE.md` and `PROVENANCE.json`: authorization covers this project's use/publication and does not imply MIT relicensing, a general artwork license or independent verification of original authorship. The supplied GIF remains a reference asset, not runtime animation.
+
+The DOCX and quality-review companions reuse only the existing public example bank. Historical verificationDate values remain historical. Only the unscored DEMO received four option explanations and richer source metadata after NIST was inspected on 15 October 2026; the other 40 cards were not newly verified. Rebuilding these files itself performs no source check and invents no missing explanations. The editable DOCX contains answer keys and is host/creator material.

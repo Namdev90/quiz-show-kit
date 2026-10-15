@@ -1,0 +1,8 @@
+{
+  "originalBuild": "2026.10.13-r10",
+  "originalSha256": "2042ce8434790ffde0ebe14ef5d5a37e94199017b63320e96634e007ec32716b",
+  "publicExampleSha256": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6",
+  "questions": 41,
+  "options": 164,
+  "preserved": "Question records, all playable data assets, scripts and visual styles; private local paths removed from metadata."
+}

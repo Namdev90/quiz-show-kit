@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "licenseIdentifier": "LicenseRef-User-Provided-Project-Use",
+  "noticePath": "assets/characters/NOTICE.md",
+  "assets": [
+    {
+      "id": "chotaNamu",
+      "path": "assets/characters/chota-namu.png",
+      "originalFilename": "02-1000495459.png",
+      "suppliedBy": "Namdev Shirodkar",
+      "suppliedOn": "2026-10-15",
+      "source": "User attachment in the implementation conversation",
+      "originalCreator": "Not independently identified",
+      "authorization": "User instructed use in this project and publication of the repository update on 2026-10-15; no broader artwork license inferred",
+      "modifications": "None; byte-identical to the supplied attachment",
+      "role": "optional-static-character",
+      "mimeType": "image/png",
+      "width": 572,
+      "height": 1281,
+      "frames": 1,
+      "bytes": 811281,
+      "sha256": "04bcc707bdebb63b94794b7f4fc5f849b4c798c1673b47cce950da94ecd7089a"
+    },
+    {
+      "id": "chotaNamuIdleSource",
+      "path": "assets/characters/chota-namu-idle.gif",
+      "originalFilename": "01-1000495472.gif",
+      "suppliedBy": "Namdev Shirodkar",
+      "suppliedOn": "2026-10-15",
+      "source": "User attachment in the implementation conversation",
+      "originalCreator": "Not independently identified",
+      "authorization": "User instructed use in this project and publication of the repository update on 2026-10-15; no broader artwork license inferred",
+      "modifications": "None; byte-identical to the supplied attachment",
+      "role": "animation-reference-only",
+      "mimeType": "image/gif",
+      "width": 384,
+      "height": 256,
+      "frames": 73,
+      "bytes": 694219,
+      "sha256": "0267ac9c109fb28b378d6714f981d32a7fc8202caca9f709fbdc2507a70573c2"
+    }
+  ]
+}

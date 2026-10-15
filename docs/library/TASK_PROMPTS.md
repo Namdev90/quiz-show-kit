@@ -23,7 +23,7 @@ Offer the five visual presets plus Custom for this event, with visual previews w
 ## Recommend or add a feature
 
 ```text
-Using my current settings and learning goal, suggest up to three useful additions. Label each as ready to configure or requiring an extension; show its benefit and effect on flow. Recompute compatible choices after every change. For the feature I select, implement the smallest complete change with contract updates and focused tests. Keep the real BioVista example intact and all optional behavior switchable.
+Using my current settings and learning goal, suggest up to three useful additions. Label each as ready to configure or requiring an extension; show its benefit and effect on flow. Recompute compatible choices after every change. For the feature I select, implement the smallest complete change with contract updates and focused tests. Keep the historical examples/biovista/original/ archive intact and all optional behavior switchable; the current showcase may be rebuilt with approved enhancements.
 ```
 
 ## Repair a problem

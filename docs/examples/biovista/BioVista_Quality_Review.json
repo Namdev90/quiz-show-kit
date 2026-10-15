@@ -1,0 +1,536 @@
+{
+  "format": "QSK_EXAMPLE_QUALITY_1",
+  "eventId": "biovista-showcase-2026",
+  "baseFingerprint": "b1752d84",
+  "diff": {
+    "orderChanged": false,
+    "moved": [],
+    "added": [],
+    "removed": [],
+    "changed": []
+  },
+  "repairs": [],
+  "quality": {
+    "topics": {
+      "Cell structure": 1,
+      "Respiration": 1,
+      "Biomolecules and cells": 1,
+      "Human physiology": 1,
+      "Membrane transport": 1,
+      "Basic chemistry": 1,
+      "Microscopy and measurement": 1,
+      "Laboratory units": 1,
+      "Infection prevention": 1,
+      "Microbiology and antibiotics": 1,
+      "Environment and One Health": 1,
+      "Measurement quality": 1,
+      "Genetic terminology": 1,
+      "Cellular energy terminology": 1,
+      "Biotechnology abbreviations": 1,
+      "Medical imaging abbreviations": 1,
+      "Diagnostic terminology": 1,
+      "Epidemiological terminology": 1,
+      "Science software identity": 1,
+      "AI organisation identity": 1,
+      "Visual laboratory equipment": 2,
+      "Laboratory warning symbols": 1,
+      "Visual molecular structure": 1,
+      "AI hallucinations and evidence": 1,
+      "Machine-learning foundations": 1,
+      "Training versus use": 1,
+      "Data quality and bias": 1,
+      "Independent model validation": 1,
+      "AI evaluation and class imbalance": 1,
+      "Scientific quantities": 1,
+      "Laboratory pH measurement": 1,
+      "Infection-control terminology": 1,
+      "Responsible interpretation": 1,
+      "Scientific base units": 2,
+      "Plant structural biomolecules": 1,
+      "Biomolecule building blocks": 1,
+      "Ecosystem energy": 1,
+      "Biogeochemical cycling": 1,
+      "Scientific measurement": 1
+    },
+    "subtypes": {
+      "text": 29,
+      "numerical": 6,
+      "image": 6
+    },
+    "verification": {
+      "verified": 1,
+      "unverified": 40,
+      "disputed": 0,
+      "creator-override": 0
+    },
+    "issues": [
+      {
+        "questionId": "M01",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M01",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M02",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M02",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M03",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M03",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M04",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M04",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M05",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M05",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M06",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M06",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M06",
+        "field": "stem/options",
+        "message": "Review absolute wording and option-dependent answers for ambiguity."
+      },
+      {
+        "questionId": "M07",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M07",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M08",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M08",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M09",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M09",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M09",
+        "field": "stem/options",
+        "message": "Review absolute wording and option-dependent answers for ambiguity."
+      },
+      {
+        "questionId": "M10",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M10",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M10",
+        "field": "stem/options",
+        "message": "Review absolute wording and option-dependent answers for ambiguity."
+      },
+      {
+        "questionId": "M11",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M11",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M12",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M12",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M13",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M13",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M14",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M14",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M15",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M15",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M16",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M16",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M17",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M17",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M17",
+        "field": "options",
+        "message": "Review numerical values and units manually; not every option has a simple comparable numeric form."
+      },
+      {
+        "questionId": "M18",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M18",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M19",
+        "field": "visual.key",
+        "message": "The media identifier may expose the answer; review filenames, captions and accessible labels before play."
+      },
+      {
+        "questionId": "M19",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M19",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M20",
+        "field": "visual.key",
+        "message": "The media identifier may expose the answer; review filenames, captions and accessible labels before play."
+      },
+      {
+        "questionId": "M20",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M20",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M21",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M21",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M22",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M22",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M23",
+        "field": "visual.alt",
+        "message": "Alternative text contains the correct answer text; review pre-answer leakage without removing useful accessibility context."
+      },
+      {
+        "questionId": "M23",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M23",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M24",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M24",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M24",
+        "field": "stem/options",
+        "message": "Review absolute wording and option-dependent answers for ambiguity."
+      },
+      {
+        "questionId": "M25",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M25",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M26",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M26",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M26",
+        "field": "stem/options",
+        "message": "Review absolute wording and option-dependent answers for ambiguity."
+      },
+      {
+        "questionId": "M27",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M27",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M28",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M28",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M28",
+        "field": "stem/options",
+        "message": "Review absolute wording and option-dependent answers for ambiguity."
+      },
+      {
+        "questionId": "M29",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M29",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M29",
+        "field": "stem/options",
+        "message": "Review absolute wording and option-dependent answers for ambiguity."
+      },
+      {
+        "questionId": "M30",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "M30",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "M30",
+        "field": "options",
+        "message": "Review numerical values and units manually; not every option has a simple comparable numeric form."
+      },
+      {
+        "questionId": "R01",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "R01",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "R02",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "R02",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "R02",
+        "field": "options",
+        "message": "Numerical options use different or missing units. Confirm conversions are intentional; no automatic mathematical or factual correction was made."
+      },
+      {
+        "questionId": "R03",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "R03",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "R04",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "R04",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "T01",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "T01",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "T02",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "T02",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "T03",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "T03",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "T04",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "T04",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "T05",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "T05",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      },
+      {
+        "questionId": "T06",
+        "field": "verification",
+        "message": "Independent source verification is not recorded."
+      },
+      {
+        "questionId": "T06",
+        "field": "optionExplanations",
+        "message": "Add a concise explanation for every option; missing explanations are not invented."
+      }
+    ],
+    "notice": "Heuristics identify review candidates, not factual verification or a quality score. External sources were not fetched by this tool."
+  },
+  "notice": "Read-only example of an unchanged-bank quality review. This is not an apply/rollback transaction. DEMO has separately inspected NIST evidence dated 2026-10-15 and four option rationales. The other 40 cards retain inherited evidence gaps. The build itself fetches no sources."
+}

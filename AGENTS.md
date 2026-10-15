@@ -10,7 +10,7 @@ Prefer approved catalog assets → existing purpose-built tools/plugins → repo
 
 ## Keep the working contract
 
-- Preserve `examples/biovista/`. Customize a separate event; use internal team IDs Bio/Vista. The bundled mode has two teams, four options, one answer and complete matched main/tie pairs. Extensions need coordinated schema, source and meaningful tests.
+- Preserve the historical files in `examples/biovista/original/` and the original question bank. The current BioVista example is a regenerable feature showcase built from `biovista.showcase.config.json`; update it through the build script when toolkit features change. Customize a separate event; use internal team IDs Bio/Vista. The bundled mode has two teams, four options, one answer and complete matched main/tie pairs. Extensions need coordinated schema, source and meaningful tests.
 - Keep the final HTML self-contained: no runtime CDNs, API keys, cloud media calls or adjacent-file fetches. Preserve path containment, escaping, restricted SVG validation and CSP.
 - Scoring belongs to the engine. Preserve clocks, answer hiding, pause/undo/recovery, blocked tried choices and equal opportunities. Narration cannot reveal hidden choices or outlive incompatible phases.
 - Review every run within the requested scope. Report actual checks, remaining limits and real PR links. Reuse valid checks for unchanged code; never claim factual, browser or speaker verification from a build alone.
