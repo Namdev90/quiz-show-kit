@@ -1,7 +1,7 @@
 {
   "format": "QSK_EXAMPLE_QUALITY_1",
-  "eventId": "biovista-showcase-2026",
-  "baseFingerprint": "b1752d84",
+  "eventId": "biovista-apex-showcase-2026",
+  "baseFingerprint": "5c5ddd63",
   "diff": {
     "orderChanged": false,
     "moved": [],

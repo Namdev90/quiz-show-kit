@@ -12,7 +12,7 @@
 Read https://github.com/Namdev90/quiz-show-kit/blob/main/prompts/START.md and run QSK1.
 ```
 
-[**Copy the prompt ↗**](https://namdev90.github.io/quiz-show-kit/) · [Full workflow](prompts/START.md) · [Browse the library](docs/library/README.md) · [Try the BioVista feature showcase](https://namdev90.github.io/quiz-show-kit/examples/biovista/BioVista_Quiz_Offline.html)
+[**Copy the launch prompt**](prompts/START.md) · [Full workflow](prompts/START.md) · [Browse the library](docs/library/README.md) · [Try the BioVista Feature Showcase Quiz](https://github.com/Namdev90/quiz-show-kit/releases/download/v1.1.0/BioVista_Quiz_Public_Example.html)
 
 Paste into ChatGPT or another capable assistant. It guides your choices, researches and reviews the questions, builds the quiz when file/build tools are available, and gives you a reusable prompt. **QSK1 is a public workflow shortcut**; the assistant must retrieve its instructions, or ask you to paste them. The website is now a prompt launcher.
 
