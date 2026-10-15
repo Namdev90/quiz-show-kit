@@ -24,14 +24,18 @@ Paste into ChatGPT or another capable assistant. It guides your choices, researc
 
 Choose the experience and visual style independently. Customize sources, difficulty, rules, assets, narration and motion. The workflow offers compatible choices and explains when a new feature needs a tested engine extension. [See the presets and workflow library →](docs/library/README.md)
 
-## What lives here
+## A library, loaded only when needed
 
 | Create | Present | Improve |
 | --- | --- | --- |
-| Research and source guidance | Self-contained offline HTML | Run-by-run repository review |
+| [Directories and search routes](docs/library/DIRECTORY_MAP.md) | Self-contained offline HTML | Scoped repository review |
 | Difficulty and fair question pairs | Configurable visuals, sound and timing | Feature suggestions and fixes |
-| Asset, narration and prompt guidance | Pause, undo, recovery and host tools | Reviewable changes and PR guidance |
+| [Cataloged reusable assets](assets/README.md) | Pause, undo, recovery and host tools | Reviewable changes and PR guidance |
 | Five presets + custom | Local TTS or embedded voice recordings | Reusable next-session prompt |
+
+[Reuse first →](assets/README.md) Choose a checked-in asset before generating media. Missing media can use an available plugin/tool or [open-source authoring library](docs/library/MEDIA_TOOLING.md); all playable output is embedded. The assistant follows [lean, staged instructions](docs/library/LEAN_WORKFLOW.md), adapted from [Ponytail](docs/library/PONYTAIL.md), without sacrificing requested features.
+
+[Measured startup text](docs/PROMPT_BUDGET.json): **39.8 KB → 5.0 KB (87.4% smaller)** through staged loading. This measures instruction bytes, not total tokens or billing.
 
 Smart voice cues say a one-word option on hover, focus or selection; longer options can use full-text speech. Read question aloud before opening choices. [Voice controls](docs/library/VOICE_RUNTIME.md) · [Five voice routes + Custom](docs/library/TTS_MODELS.md)
 

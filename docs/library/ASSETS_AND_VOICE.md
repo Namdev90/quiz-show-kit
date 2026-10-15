@@ -2,6 +2,8 @@
 
 The repository is a reusable asset and workflow library. Reuse only compatible media with appropriate rights; a file's presence is not permission to use its trademark or voice in every new event.
 
+**Reuse order:** repository files → approved uploads → available specialist tools/plugins → established open-source libraries → minimal custom code. Search the [asset shelf](../../assets/README.md) and [catalog](../../assets/catalog.json) before generating anything. Read [Media tooling](MEDIA_TOOLING.md) only if an asset is missing: it covers optional Kokoro/Piper narration, Diffusers image authoring, file export and separate code/model licensing. These are preparation options, not installed services.
+
 | Need | Existing starting place | Adaptation |
 | --- | --- | --- |
 | Scientific diagrams | `examples/biovista/questions.json` and the source diagram rendering | Reuse supported diagrams only when accurate for the new stem; author exact new diagrams as static assets |
@@ -31,3 +33,5 @@ Associate stem audio and each option clip with the current question content. An 
 Check long option reading and clip lengths against reveal/answer timing. Do not silently shorten speech or take a team's response time to satisfy decorative timing. If a clip needs more time, show the proposed timing change, choose a supported narration mode or implement a tested scheduling change. Respect the teacher's selected silent mode and device reduced-motion preference.
 
 Accepted asset types and size limits are in [Configuration](../CONFIGURATION.md). Keep every playable file embedded; no remote runtime media. Never fabricate base64, inject HTML/scripts into labels, or bypass path/SVG validation. Keep personal recordings, private reports and unapproved logos out of public commits and PRs.
+
+Store approved reusable outputs in this repository with source, rights, modifications and hash records, rather than leaving generation URLs as the only asset. Copy the needed files into the event configuration's directory before building: CLI paths cannot escape that directory. Keep private uploads in the private event working directory until publication is explicitly permitted. Keep heavyweight authoring models and caches outside Git; use the resulting small clips/images in the quiz. Existing playback libraries and built-in diagrams should be reused instead of rebuilt.

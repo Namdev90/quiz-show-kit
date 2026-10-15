@@ -4,7 +4,7 @@ Do a compact repository review every time the workflow starts. It should support
 
 ## The short review
 
-1. Read the current instructions, input contract, package scripts and relevant source. Record the actual source commit/version if accessible; otherwise say the current revision could not be checked.
+1. Check the actual source revision once; inspect instructions/source relevant to this stage as they are used. Read the input contract and package scripts before configuration/build work. Reuse unchanged material already read in this conversation. Record the actual source commit/version if accessible; otherwise say the current revision could not be checked.
 2. Compare the teacher's requested features with what that source supports. Look for stale instructions, broken local links, contradictory presets, unsafe or invalid choices, timing/narration conflicts and event-blocking defects.
 3. Check available open issues/PRs only when access is available and relevant, so a new suggestion does not duplicate an existing fix. Do not claim this check happened without a result.
 4. Continue the teacher workflow. At delivery give a short result and up to three actionable suggestions, ranked by teaching impact or actual risk. “No issue found in the inspected scope” is acceptable; do not invent defects to fill a quota.
