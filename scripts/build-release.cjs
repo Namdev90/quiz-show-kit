@@ -2,7 +2,7 @@
 /* Package a validated, clean, committed checkout. No installs, regeneration, publication or network I/O. */
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),cp=require('node:child_process'),crypto=require('node:crypto');
-const Compiler=require('../src/compiler.js'),Presets=require('../src/presets.js'),{buildProvenance}=require('./build-provenance.cjs');
+const Compiler=require('../src/compiler.js'),Presets=require('../src/presets.js'),{buildProvenance}=require('./build-provenance.cjs'),{assertStableVersion}=require('./release-policy.cjs');
 const MANIFEST='Quiz_Show_Kit_Release_Manifest.json',CHECKSUMS='Quiz_Show_Kit_SHA256SUMS.txt';
 const COMPANIONS=['BioVista_Quiz_Offline.html','BioVista_Question_Bank.docx','BioVista_Question_Bank.meta.json','BioVista_Showcase.qsk-settings.json','BioVista_Quality_Review.html','BioVista_Quality_Review.json'];
 const PUBLIC_ARTIFACTS=[['examples/biovista/BioVista_Quiz_Offline.html','BioVista_Quiz_Public_Example.html'],['examples/biovista/BioVista_Question_Bank.docx','BioVista_Question_Bank.docx'],['examples/biovista/BioVista_Showcase.qsk-settings.json','BioVista_Showcase.qsk-settings.json'],['examples/biovista/BioVista_Quality_Review.html','BioVista_Quality_Review.html'],['examples/biovista/BioVista_Quality_Review.json','BioVista_Quality_Review.json'],['docs/CHATGPT_HANDOFF.md','Quiz_Show_Kit_ChatGPT_Handoff.md']];
@@ -48,7 +48,7 @@ function runtimeIdentity(root,html,version){
 }
 function validateRelease(root){
  const identity=cleanIdentity(root),release=jsonAt(root,'release.json'),pkg=jsonAt(root,'package.json'),lock=jsonAt(root,'package-lock.json');
- const version=release.version;if(typeof version!=='string'||!/^\d+\.\d+\.\d+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/.test(version)||version!==pkg.version||version!==lock.version||version!==lock.packages?.['']?.version)throw Error('Release, package and package-lock versions must match a safe semantic version.');
+ const version=assertStableVersion(release.version);if(version!==pkg.version||version!==lock.version||version!==lock.packages?.['']?.version)throw Error('Release, package and package-lock versions must match the same stable semantic version.');
  const tag='v'+version;if(release.tag!==undefined&&release.tag!==tag)throw Error('Release tag must equal v followed by the version.');
  if(typeof release.name!=='string'||!release.name.trim()||release.name.length>160||/[\x00-\x1f\x7f]/.test(release.name))throw Error('Release name must be one nonempty line of at most 160 characters.');
  if(!fileAt(root,release.notes).toString('utf8').trim())throw Error('Release notes must contain text.');

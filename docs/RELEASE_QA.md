@@ -1,6 +1,14 @@
 # Release 1.1.0 verification — 15 October 2026
 
-This is the current release record. [Earlier implementation checks](IMPLEMENTATION_QA.md) describe their own snapshots; [the initial machine-readable record](history/VERIFICATION-2026-10-15-initial.json) remains unchanged. The current machine-readable summary is [VERIFICATION.json](VERIFICATION.json).
+**Publication held:** v1.1.0 has not been published. PR #7 is a draft while the downloadable, read-only BioVista showcase and repository-only delivery scope are reconciled with `codex/offline-showcase-audit`. The release implementation owner also owns the retry/prerelease fixes and final v1.1.0 publication. The separate showcase owner handles confirmed quiz GitHub Pages unpublishing after preserving its configuration/source.
+
+The historical integrated results below describe `fc18169`. They must be refreshed for the final offline-showcase package. [Earlier implementation checks](IMPLEMENTATION_QA.md) describe their own snapshots; [the initial machine-readable record](history/VERIFICATION-2026-10-15-initial.json) remains unchanged. The machine-readable summary is [VERIFICATION.json](VERIFICATION.json).
+
+## Retry and version-policy follow-up
+
+Both PR #7 publication findings are fixed. Packaging and publication share strict stable-only version validation. The publisher resumes exact-source owned drafts, verifies matching published releases without writes, validates existing asset bytes before missing uploads, protects newer stable releases and narrowly recovers abandoned empty upload placeholders. Interrupted successful tag/draft/upload/publish responses are covered by mocked reinvocation tests. No actual release publication was attempted.
+
+`npm run check` passed **165/165 tests**, zero failures/cancellations/skips (76.92 seconds). This includes **56 mocked publisher cases** and **10 packaging tests**. Runtime source and generated showcase bytes are unchanged from the integrated snapshot; this follow-up does not add native-platform or completed browser gameplay evidence. Final offline-showcase integration and package verification remain pending.
 
 The final release incorporates [PR #6](https://github.com/Namdev90/quiz-show-kit/pull/6), merged at `9f11de0cb3190077f0a1575e10d98e8fba496399`: checkpoint opportunity reconciliation, complete DOCX binding checks and archive-bound showcase preservation. The exact PR engine passed 38/38 cases plus 65 additional local checkpoint probes. Its GitHub CI passed 94 tests before integration.
 

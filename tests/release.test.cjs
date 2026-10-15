@@ -1,6 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os'),cp=require('node:child_process'),crypto=require('node:crypto'),zlib=require('node:zlib');
 const {buildRelease}=require('../scripts/build-release.cjs'),{buildProvenance}=require('../scripts/build-provenance.cjs'),Compiler=require('../src/compiler.js'),Presets=require('../src/presets.js');
+const {assertStableVersion}=require('../scripts/release-policy.cjs');
 const MANIFEST='Quiz_Show_Kit_Release_Manifest.json',CHECKSUMS='Quiz_Show_Kit_SHA256SUMS.txt';
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function fixture(){
@@ -62,3 +63,17 @@ test('Runtime version/source drift is rejected even when the current HTML hash i
  for(const file of [htmlFile,'docs/examples/biovista/BioVista_Quiz_Offline.html'])f.write(file,original);origin.publicExampleSha256=hash(original);f.write('examples/biovista/origin.json',origin);f.write('src/runtime-fixture.js','// Changed source after the HTML was built\n');f.commit();assert.throws(()=>buildRelease({root:f.root}),/runtime build version or source digest is stale/);
  }finally{f.cleanup();}});
 test('Standalone handoff refuses escaped relative paths outside the source checkout',()=>{const f=fixture();try{f.write('docs/CHATGPT_HANDOFF.md','[unsafe](%2e%2e/%2e%2e/outside.md)');f.commit();assert.throws(()=>buildRelease({root:f.root}),/inside the checkout/);assert.equal(fs.existsSync(path.join(f.root,'dist/release')),false);}finally{f.cleanup();}});
+
+test('Shared release policy accepts exact stable numeric versions and rejects prerelease or malformed versions',()=>{
+ for(const version of ['0.0.0','1.1.0','12.34.56'])assert.equal(assertStableVersion(version),version);
+ for(const version of ['1.1.0-rc.1','1.1.0-beta','1.1.0+build.1','01.1.0','1.01.0','1.1.00','1.1','v1.1.0',' 1.1.0','1.1.0\n',1,null,undefined])assert.throws(()=>assertStableVersion(version),/Stable releases only:.*semantic version X.Y.Z/);
+});
+test('Aligned prerelease and malformed numeric versions are rejected before any release output',()=>{const f=fixture();try{
+ for(const version of ['1.1.0-rc.1','1.1.0+build.1','01.1.0','1.01.0','1.1.00']){
+  const release=JSON.parse(f.read('release.json')),pkg=JSON.parse(f.read('package.json')),lock=JSON.parse(f.read('package-lock.json'));
+  release.version=pkg.version=lock.version=lock.packages[''].version=version;
+  f.write('release.json',release);f.write('package.json',pkg);f.write('package-lock.json',lock);f.commit();
+  assert.throws(()=>buildRelease({root:f.root}),/Stable releases only:.*semantic version X.Y.Z/);
+  assert.equal(fs.existsSync(path.join(f.root,'dist/release')),false);
+ }
+ }finally{f.cleanup();}});
