@@ -1,23 +1,26 @@
-# Teacher workflow upgrade — 14 October 2026
+# Prompt library and voice verification
 
-The teacher launch is a repository link plus a short instruction naming `docs/TEACHER_PROMPT.md`. The expanded prompt guides one decision at a time, suggests voice replies/defaults, researches questions and produces a complete configuration with the selected customization. The main builder action copies the instruction and opens the selected ChatGPT, Gemini or Claude provider; another-assistant mode copies only; paste is still required. Repository retrieval and actual conversational compliance, including rich UI in ChatGPT/Gemini/Claude depend on the receiving assistant’s available tools. Neither an actual ChatGPT interview nor automatic cross-site transfer was tested.
+Review date: **15 October 2026**. This supersedes the retired browser-builder verification.
 
-## Executed checks
+## Scope delivered
 
-`npm run check` builds the canonical offline quiz and matching root/Pages builders, validates the real 41-card BioVista bank and passes **59 top-level tests**. The engine test includes **22 internal scoring/timing/recovery cases**. Tests use Node.js 24 and jsdom with simulated browser platform/audio APIs; they do not establish real browser layout, audible sound or physical projector quality.
+- One QSK1 launch prompt, a reusable research/design/repair library, five quiz presets plus Custom, and five visual presets plus Custom.
+- Public versioned preset decoder, reusable settings export/application, dynamic authoring availability, and portable configuration output with embedded approved assets.
+- Local-only browser TTS, Smart one-word / Full / Letters option cues, untimed question narration, supplied human/model recordings, language/rate/voice settings, and cancellation on incompatible transitions.
+- A lightweight prompt-copy landing page, a visual README, and removal of the browser quiz editor and its production build path.
 
-New checks additionally verify provider selection, live in-file settings with paused clocks and unchanged ledger, storage restoration, resume-copy embedding, and keeping creator/toolkit credit off results. New checks cover the short prompt’s exact target and settings context, custom even counts, complete configuration import/save fidelity, presentation validation, scoring/theme presets and extended timing controls, recoverable rounds and optional cards, full-prompt fallback, safe logo upload/removal and unsafe SVG rejection. Playback regressions cover silent/no-motion output, sequential disclosure and unchanged answer timing, suppression of decorative effects, and configurable volume/mute with real bundled audio code over simulated platform APIs.
+## Automated checks
 
-The canonical configuration, assets and preserved `examples/biovista/` were not modified. Legacy imports without a `presentation` object retain cinematic defaults. New classroom drafts use gentle motion and 60% volume. Generated root and Pages HTML were rebuilt from source.
+`npm run check` builds the canonical offline quiz and matching root/Pages launchers, validates the real 41-card BioVista bank and runs **38 top-level tests**. The engine suite includes **22 internal scoring/timing/recovery cases**. The checks use Node.js 24 and jsdom with simulated platform/audio APIs. See `VERIFICATION.json` for the recorded result.
 
-## Browser boundary
+The tests cover all 25 quiz/theme combinations; named and custom profile reuse; legacy presentation preservation; relocated asset embedding; rejected unsupported keys and unsafe assets; scoring/timeout/pause/undo/recovery; no hidden-option narration; local-voice filtering; recorded-clip priority; silence and unavailable-voice fallback; live motion dependencies; correct Pass/Skip wording; and exact launcher clipboard/fallback behavior.
 
-The local Playwright browser check could not start because Chromium was absent. An installation attempt failed to obtain a valid browser archive. Therefore the previous verification screenshots/report are historical evidence; they do not verify the current layout. A later cloud Chrome check at 1363 × 936 verified the deployed teacher builder (82305f0), example import, sandboxed preview, live sound/motion switches, creator information in Settings and a winner screen without toolkit/creator credit. The copy action reported success, but clipboard contents and provider tab-opening were not independently confirmed. Responsive variants remain untested. Teacher source review, a real ChatGPT interview and physical sound/projector rehearsal remain required.
+Independent source review found and corrected the relocated-asset and saved-key bugs, ineffective motion controls, misleading Pass labels, broken library navigation, and stale verification claims. Repository Markdown link checks found no broken relative targets. The source configuration and preserved BioVista examples are unchanged.
 
-## Pull request review fixes
+## What remains unverified
 
-Eight review findings were verified and fixed: recover unfinished question counts without dropping saved quizzes; rehome extra cards when deleting a round’s last scored pair; remove unused uploaded assets while preserving shared references; allocate unused media keys; preserve static announcements when motion is reduced; gate score-pop with point effects; include every edited event field in the AI launch; and allocate an available round ID in the supported range. New regressions exercise each fix. Uploads also rebuild question controls so their actions refer to the current configuration.
+Real Chromium inspection was attempted using an installed browser, but launch failed before any page loaded with `socket(): Operation not permitted`. Therefore current browser layout, visual theme quality, real clipboard permissions and audible voice output are **not verified** by this run. No screenshot or recording is claimed.
 
-Final review follow-up: unfinished sound-volume values and blank image/logo descriptions now survive saved-work and autosave reloads. Final preview/export remains strict. Four regressions cover model validation and the actual builder reload path. `npm run check` passes all 59 top-level tests.
+The TTS/model catalog uses official sources checked on the stated date; no paid synthesis, listening benchmark or provider account access was exercised. Installed voices vary by event device. Actual assistant retrieval/interview in a separate conversation, factual accuracy of newly authored questions, physical speakers/projector and end-to-end screen capture require their own checks.
 
-Late review fixes preserve imported images sharing reserved audio keys during clip replacement/reset and suppress the results-card CSS entrance when Winner entrance is disabled. Both have regression coverage; the final suite passes 59 top-level tests.
+Cloud narration is generated before building, when authorized tools are available; it is not a live cloud integration in the event. Custom reuse needs the settings attachment or accessible full configuration. QSK1 is public shorthand, not a secret cipher or cross-chat memory.

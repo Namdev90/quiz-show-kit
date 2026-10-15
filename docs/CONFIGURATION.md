@@ -6,7 +6,7 @@ The kit supports two teams, matched pairs, four options, and one correct answer.
 
 ## Build routes
 
-Open the repository's `index.html` browser builder, import your configuration, add approved images if needed, review the validation result, then preview and download the offline HTML. The builder is the zero-install route; the downloaded quiz is the event file.
+Teachers start with [the launch prompt](../prompts/START.md). The assistant gathers choices, researches questions, validates and builds the downloadable quiz. The repository's landing page only copies that prompt; there is no browser quiz builder. The following configuration/CLI reference is for the assistant or contributors, not a form for teachers to fill in.
 
 With the Node version required by `package.json`, the CLI route is:
 
@@ -37,6 +37,7 @@ Use the validation/build errors to correct the configuration. A successful build
 | `teams` | Exactly two entries. Keep internal IDs `Bio` and `Vista`; customize each `name` and `color`. |
 | `theme.background`, `surface`, `text` | Theme colors. Use six-digit hex values such as `#202829`. |
 | `theme.font` | `Segoe UI`, `Arial`, `Verdana`, `Georgia`, or `Tahoma`; no remote font URL. |
+| `theme.style` | `flat`, `skeuomorphic` (raised tactile panels), or `glass` (frosted panels with opaque fallback). |
 | `theme.motif` | `dna` or `none`. The decorative motif is independent of the question topic. |
 
 Team IDs are engine identities, not required display names. For example, `{"id":"Bio","name":"Team Atlas","color":"#18A878"}` changes the displayed name while preserving the two-team engine contract. Controls remain in English; UTF-8 question and event text can contain other languages. A full interface translation is not a configuration feature.
@@ -54,7 +55,11 @@ Optional `presentation` settings are validated, saved and embedded in the export
 | `motion` | `cinematic`, `gentle`, `none` | `cinematic` |
 | `sound` | Boolean; false keeps playback silent | `true` |
 | `volume` | Integer percent, 0–100 | `80` |
-| `spokenOptions` | Spoken option/selection A–D clips | `true` |
+| `spokenOptions` | Enable spoken option/selection cues | `true` |
+| `optionSpeech` | `smart`: actual one-word text, letters for phrases; `letters`: A–D; `full`: complete option text | `smart` for new presentation settings |
+| `voiceName`, `voiceLang` | Preferred installed local voice and language tag; reselect on another device if unavailable | empty name, `en-IN` |
+| `speechRate` | Browser voice speed, 0.5–2 | `1` |
+| `readQuestions` | Automatically narrate the stem during the untimed reading phase when available | `false` |
 | `confetti` | Correct-answer/winner celebration | `true` |
 | `rewards` | Visual point gains/losses; never changes score rules | `true` |
 | `coinAnimation` | Animate the toss; static mode keeps the fair five-second reveal | `true` |
@@ -62,9 +67,9 @@ Optional `presentation` settings are validated, saved and embedded in the export
 | `winnerAnimation` | Winner entrance animation | `true` |
 | `intro` | Opening announcement; the separate fair coin toss remains available | `true` |
 
-No decorative motion and the device's reduced-motion preference remove decorative movement. Options are still disclosed in order over `optionsRevealMs`; answer time begins after the last option. Gentle style uses fades and immediate score settlement, rather than flying reward/penalty coins. Rehearsal uses the configured settings. The exported file’s Settings menu can change presentation switches while the game stays paused, without changing rules/scores. Preferences persist in the same browser when storage permits. Save resume copy embeds current presentation choices for another computer. Adjust rules and content in the builder and rebuild before play.
+No decorative motion and the device's reduced-motion preference remove decorative movement. Options are still disclosed in order over `optionsRevealMs`; answer time begins after the last option. Gentle style uses fades and immediate score settlement, rather than flying reward/penalty coins. Rehearsal uses the configured settings. The exported file’s Settings menu can change presentation switches while the game stays paused, without changing rules/scores. Preferences persist in the same browser when storage permits. Save resume copy embeds current presentation choices for another computer. Ask the assistant to change rules/content and rebuild before play.
 
-Direct uploads embed left/right logos and question images, with editable alternate text and credits. Individual audio replacements use asset keys `coinSound`, `optionA`–`optionD`, and `selectA`–`selectD`; removing a replacement restores the bundled clip. Supported types and size/security limits below still apply. Physical prizes or certificates are event notes, not automated rewards.
+Give the assistant approved left/right logos, question images and recordings to embed, with alternate text and credits. Individual audio replacements use asset keys `coinSound`, `optionA`–`optionD`, and `selectA`–`selectD`; removing a replacement restores the bundled clip. Supported types and size/security limits below still apply. Physical prizes or certificates are event notes, not automated rewards.
 
 ## Rules and units
 
@@ -152,7 +157,7 @@ For the CLI, relative filenames are resolved inside the selected configuration's
 
 SVG must pass the static-image checks. Scripts, event handlers, stylesheets, embedded objects, animation elements, resource links, and external references are rejected. Use simple self-contained geometry; if an approved SVG depends on unsupported features, export it to PNG or WebP. Acceptance by the validator is not permission to use someone else's artwork.
 
-A browser cannot resolve an arbitrary local pathname written in JSON. Use embedded data URIs, bundled asset keys, or the builder's file selection controls. Select local logos explicitly when importing a configuration with external image files. The finished quiz embeds the accepted media and does not need those neighboring files to play.
+The assistant must resolve actual approved files before building; a pathname in JSON alone does not supply the file. Use embedded data URIs, bundled asset keys, or paths within the selected configuration directory. The finished quiz embeds the accepted media and does not need those neighboring files to play.
 
 Built-in scientific diagrams from BioVista are available; consult the example's `visual` records for their supported type/key combinations. A custom question image can use `"visual": {"key": "myImage", "alt": "Description of the relevant image", "attribution": "Creator and permission or license"}`, where `myImage` exists in `assets`. Do not paste executable SVG, HTML, scripts, or remote embeds into question text.
 
@@ -163,3 +168,29 @@ The MIT license covers the kit's own software as described in the repository lic
 Review every answer and source, then rehearse the generated HTML on the actual display and speakers. Check long questions, the four sequential choices, both correct and wrong paths, teacher timing, undo, recovery, and ties. The offline HTML contains its answers; keep an unreleased event file with the host. Sound begins after a real browser gesture. Optional screen recording requires the host's browser picker and is not a microphone recorder.
 
 Static SVG imports also reject namespace-prefixed elements and numeric character references. Use a plain static export or PNG/WebP for complex artwork.
+
+## Presets and dynamic authoring choices
+
+`src/presets.js` is the public QSK1 decoder: `QSK1 preset=<id> theme=<id>`. The five quiz IDs are `friendly`, `seminar`, `revision`, `competition`, `visual-lab`; theme IDs are `classroom`, `lecture`, `midnight`, `skeuomorphic`, `glass`. Both accept `custom`. See [the preset library](library/PRESETS.md). The decoder rejects unknown versions, IDs, duplicate fields and arbitrary commands. It is a public shorthand, not encryption.
+
+The assistant calls `choices(config, capabilities)` after edits and only offers active settings. Disabled paths have human-readable reasons: pass controls depend on passing, lifeline time on the lifeline, voice on sound/local voice availability, and decorative effects on motion. Structural changes are unavailable during live play. Invalid paired inventories or rule values block compilation; suggestions do not silently alter user decisions. A valid configuration still needs factual and timing review.
+
+Agent-side use:
+
+```sh
+node scripts/preset.cjs --config quiz.config.json --key "QSK1 preset=seminar theme=glass" --output dist/custom.config.json --save-settings dist/my.qsk-settings.json
+```
+
+Reusable settings version 1 contains teams, theme, presentation and rules. Apply with `--settings FILE` after preset defaults. Without an explicit `--key`, the saved key is used. Relocated configuration outputs embed their approved source assets so their relative paths do not break. It omits event identity, questions, rounds, branding and assets; retain the complete event configuration for those. A new chat must receive the profile attachment or accessible link to restore custom choices. The short preset code alone restores only catalog defaults. No hidden cross-chat memory or automatic repository write occurs.
+
+## Voice recordings and TTS
+
+See [voice runtime](library/VOICE_RUNTIME.md) for controls and fallbacks, and [TTS model choices](library/TTS_MODELS.md) for optional pre-generation. Local browser TTS depends on installed voices. A downloaded quiz makes no speech API calls; hosted TTS must be generated with authorized tools before building, then embedded. Human recordings are equally supported. No assistant should claim to have recorded its own voice.
+
+An optional question `narration` record maps a stem and/or four option slots to existing audio assets:
+
+```json
+{"stem":"q1-stem","options":["q1-a",null,"q1-c",null]}
+```
+
+Omit `stem` or `options` when unused. Each non-null reference must be WAV, MP3 or OGG and obey the same asset budget. The source text must match the final question/options; replacing text requires reviewing its recording too. Never embed a clip that gives away the correct answer. Recordings take priority where configured, with local speech/letter fallback as documented. Browser speech is separate from captured Web Audio and may be absent from screen recordings; use embedded clips when the recording must include narration.

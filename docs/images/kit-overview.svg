@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-labelledby="title description">
+<title id="title">Quiz Show Kit: one prompt, a reusable toolkit, an offline quiz</title>
+<desc id="description">The QSK1 launch starts a workflow to choose presets, research and review, then build and reuse. The repository holds question research, sources and difficulty guidance, themes and assets, narration options, safety rules, and contribution guidance.</desc>
+<rect width="1200" height="430" rx="24" fill="#101c2b"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text x="52" y="54" fill="#b7f58a" font-size="13" font-weight="700" letter-spacing="3">RESEARCH · DESIGN · PLAY</text>
+<text x="50" y="118" fill="#f4f7fa" font-size="52" font-weight="750" letter-spacing="-2">One prompt. Your next quiz.</text>
+<text x="52" y="157" fill="#bfd0dc" font-size="20">Curated for Parul University Goa · Open to every teacher.</text>
+<g transform="translate(52 200)">
+<rect width="336" height="168" rx="16" fill="#1a3040" stroke="#425367"/>
+<text x="22" y="35" fill="#b7f58a" font-size="13" font-weight="700">01 / CHOOSE</text>
+<text x="22" y="71" fill="#f4f7fa" font-size="25" font-weight="700">Five presets + custom</text>
+<text x="22" y="105" fill="#bfd0dc" font-size="16">Experience · theme · voice</text>
+<text x="22" y="133" fill="#bfd0dc" font-size="16">Every choice stays adaptable.</text>
+</g>
+<g transform="translate(432 200)">
+<rect width="336" height="168" rx="16" fill="#1a3040" stroke="#425367"/>
+<text x="22" y="35" fill="#b7f58a" font-size="13" font-weight="700">02 / SHAPE</text>
+<text x="22" y="71" fill="#f4f7fa" font-size="25" font-weight="700">Research and review</text>
+<text x="22" y="105" fill="#bfd0dc" font-size="16">Sources · questions · difficulty</text>
+<text x="22" y="133" fill="#bfd0dc" font-size="16">Flow checks and feature suggestions.</text>
+</g>
+<g transform="translate(812 200)">
+<rect width="336" height="168" rx="16" fill="#1a3040" stroke="#425367"/>
+<text x="22" y="35" fill="#b7f58a" font-size="13" font-weight="700">03 / KEEP</text>
+<text x="22" y="71" fill="#f4f7fa" font-size="25" font-weight="700">Play and reuse</text>
+<text x="22" y="105" fill="#bfd0dc" font-size="16">Offline HTML · reusable prompt</text>
+<text x="22" y="133" fill="#bfd0dc" font-size="16">Review and improve the toolkit.</text>
+</g>
+<path d="M400 282h19m-7-7 7 7-7 7M780 282h19m-7-7 7 7-7 7" fill="none" stroke="#b7f58a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="52" y="405" fill="#bfd0dc" font-size="12">A reusable library + prompt workflow + tested quiz engine. Diagram of the workflow.</text>
+</g>
+</svg>

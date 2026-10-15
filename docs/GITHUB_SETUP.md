@@ -18,13 +18,13 @@ Reference actions by reviewed, full commit SHA; keep an adjacent version comment
 
 Avoid running untrusted pull-request code with privileged `pull_request_target` credentials. Where repository settings permit, require the checks and a review for changes to `main`; keep release/deployment decisions separate from an untrusted contributor's test job.
 
-## Hosted browser builder
+## Hosted prompt launcher
 
-In **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/docs**, and save. The checked-in docs/index.html is built by npm run build:builder; its BioVista example is copied into docs/examples/biovista. Publish only these intended public site files.
+In **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/docs**, and save. The checked-in `docs/index.html` is built by `npm run build:launcher`; its unchanged BioVista example is copied into `docs/examples/biovista`. Publish only these intended public site files.
 
-After deployment succeeds, open the URL reported by GitHub Pages and verify the builder loads, imports a configuration, previews it, and downloads a self-contained HTML file. Set the repository's About website to that verified URL. Do not announce the site as live solely because workflow YAML was committed.
+After deployment succeeds, open the URL reported by GitHub Pages and verify the launcher loads, copies the canonical QSK1 prompt (or offers manual selection), links to START.md and opens the preserved BioVista example. Set the repository's About website to that verified URL. Do not announce the site as live solely because workflow YAML was committed.
 
-The hosted builder is optional. People can download the project and open `index.html` locally, or use the Node CLI. Playing a generated quiz does not require GitHub Pages, a server, an API key, or an account.
+The hosted launcher is optional. People can copy the same prompt from README, open `index.html` locally, or use the Node CLI for a reviewed configuration. Playing a generated quiz does not require GitHub Pages, a server, an API key, or an account.
 
 ## Stable release
 
@@ -32,6 +32,6 @@ The hosted builder is optional. People can download the project and open `index.
 2. Check that the real BioVista example, source configuration, question sources, licenses, and notices are included and that private workspace paths were removed from public credits.
 3. Create a version tag and a stable release only after validating that version. Describe changes and any remaining browser/hardware verification limits.
 4. Attach the documented downloadable kit/example artifacts. Include checksums when producing packaged release assets, and verify the uploaded bytes against the local files.
-5. Open the release and download its assets as a user would. Confirm that the handoff's latest-stable route resolves to the intended release and that the builder/CLI instructions still work.
+5. Open the release and download its assets as a user would. Confirm that the handoff's latest-stable route resolves to the intended release and that the prompt/CLI instructions still work.
 
 Review repository visibility, template status, default branch, CI results, Pages status, and release downloads independently. A successful file build does not establish any of the other statuses.

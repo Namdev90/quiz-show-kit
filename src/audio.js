@@ -6,9 +6,11 @@ opening:[[392,.10],[523,.10],[659,.12],[784,.18]],round:[[523,.08],[698,.15]],re
 };
 const clips=new Map(),nodes=new Set(),subscribers=new Set();
 let enabled=false,muted=false,volume=.8,context=null,compressor=null,capture=null,initializing=null,lastError='',lastLetter='',lastLetterAt=-Infinity,nextCue=0;
-const diagnostics={clipPlays:0,coinPlays:0,lossPlays:0,letterPlays:0,synthPlays:0,lastCue:'',loaded:[],failures:[]};
-const sourceKeys=['coinSound','selectA','selectB','selectC','selectD','optionA','optionB','optionC','optionD'];
-function status(){return {enabled,muted,volume,state:context?.state||'uninitialised',engine:'Howler.js + Web Audio',error:lastError,loaded:[...diagnostics.loaded],captureAudioReady:Boolean(capture)};}
+const diagnostics={clipPlays:0,coinPlays:0,lossPlays:0,letterPlays:0,synthPlays:0,speechPlays:0,narrationPlays:0,lastCue:'',lastSpeech:'',loaded:[],failures:[]};
+const speech={voiceName:'',voiceLang:'en-IN',speechRate:1};
+let speechSerial=0,utterance=null,narration=null,speechError='';
+const sourceKeys=[...new Set(['coinSound','selectA','selectB','selectC','selectD','optionA','optionB','optionC','optionD',...Object.keys(assets).filter(key=>/^data:audio\//.test(assets[key]?.data||''))])];
+function status(){return {enabled,muted,volume,state:context?.state||'uninitialised',engine:'Howler.js + Web Audio',error:lastError,loaded:[...diagnostics.loaded],captureAudioReady:Boolean(capture),speech:{available:localVoices().length>0,voices:localVoices().length,speaking:Boolean(utterance||narration),error:speechError,...speech}};}
 function notify(){for(const fn of subscribers){try{fn(status());}catch(_){}}}
 function wireBus(){
  context=window.Howler?.ctx||null;
@@ -40,9 +42,37 @@ async function enable(){
  try{await loadClips();wireBus();if(context)await context.resume();enabled=!context||context.state==='running';if(!enabled)throw Error('Audio needs another user gesture.');Howler.mute(muted);Howler.volume(volume);lastError=diagnostics.failures.length?'Some optional audio clips were unavailable.':'';notify();return true;}
  catch(e){enabled=false;lastError=e.message;notify();return false;}
 }
-function setVolume(value=.8){if(!Number.isFinite(value))return;volume=Math.max(0,Math.min(1,value));if(window.Howler)Howler.volume(volume);notify();}
+function setVolume(value=.8){if(!Number.isFinite(value))return;volume=Math.max(0,Math.min(1,value));if(volume===0)stopSpeech();if(window.Howler)Howler.volume(volume);notify();}
 function setMuted(value=false){muted=Boolean(value);if(muted)stopAll();if(window.Howler)Howler.mute(muted);notify();}
-function stopAll(){for(const clip of clips.values())try{clip.stop();}catch(_){}for(const node of [...nodes])try{node.stop();}catch(_){}nodes.clear();nextCue=context?.currentTime||0;lastLetter='';}
+function stopAll(){stopSpeech();for(const clip of clips.values())try{clip.stop();}catch(_){}for(const node of [...nodes])try{node.stop();}catch(_){}nodes.clear();nextCue=context?.currentTime||0;lastLetter='';}
+
+// Only local browser voices are eligible: an exported quiz never requests a cloud voice.
+function localVoices(){try{return (window.speechSynthesis?.getVoices?.()||[]).filter(v=>v.localService===true);}catch(_){return [];}}
+function listVoices(){return localVoices().map(v=>({name:v.name,lang:v.lang,default:Boolean(v.default)}));}
+function configureSpeech(settings={}){stopSpeech();if(typeof settings.voiceName==='string')speech.voiceName=settings.voiceName.slice(0,160);if(typeof settings.voiceLang==='string'&&/^[a-z]{2,8}(?:-[a-z0-9]{1,8})*$/i.test(settings.voiceLang))speech.voiceLang=settings.voiceLang;if(Number.isFinite(settings.speechRate)&&settings.speechRate>=.5&&settings.speechRate<=2)speech.speechRate=settings.speechRate;notify();}
+function stopSpeech(){speechSerial++;try{if(utterance)window.speechSynthesis?.cancel();}catch(_){}utterance=null;if(narration){try{clips.get(narration)?.stop();}catch(_){}narration=null;}}
+function canSpeak(assetKey){return Boolean(assetKey&&/^data:audio\//.test(assets[assetKey]?.data||''))||Boolean(window.SpeechSynthesisUtterance&&localVoices().length);}
+function speak(text,{assetKey=null}={}){
+ if(!enabled||muted||volume===0||typeof text!=='string'||!text.trim())return false;
+ stopSpeech();for(const key of ['optionA','optionB','optionC','optionD','selectA','selectB','selectC','selectD'])try{clips.get(key)?.stop();}catch(_){}
+ const serial=speechSerial,clip=assetKey&&clips.get(assetKey);
+ if(clip?.state()==='loaded'&&/^data:audio\//.test(assets[assetKey]?.data||'')){
+  narration=assetKey;const done=()=>{if(serial===speechSerial){narration=null;notify();}};
+  try{const id=clip.play();clip.once?.('end',done,id);clip.once?.('playerror',done,id);diagnostics.narrationPlays++;diagnostics.lastSpeech=text;speechError='';notify();return true;}catch(_){narration=null;}
+ }
+ const voices=localVoices(),lang=speech.voiceLang.toLowerCase();
+ const voice=voices.find(v=>v.name===speech.voiceName)||voices.find(v=>v.lang.toLowerCase()===lang)||voices.find(v=>v.lang.toLowerCase().split('-')[0]===lang.split('-')[0]);
+ if(!voice||typeof window.SpeechSynthesisUtterance!=='function'){speechError='No installed local voice matches this language. Choose another language/voice or embed a recording.';notify();return false;}
+ try{
+  utterance=new SpeechSynthesisUtterance(text.trim());utterance.voice=voice;utterance.lang=voice.lang;utterance.rate=speech.speechRate;utterance.volume=volume;
+  utterance.onend=()=>{if(serial===speechSerial){utterance=null;notify();}};
+  utterance.onerror=event=>{if(serial===speechSerial){utterance=null;speechError='Voice playback was interrupted or unavailable ('+(event.error||'speech error')+').';notify();}};
+  window.speechSynthesis.speak(utterance);diagnostics.speechPlays++;diagnostics.lastSpeech=text;speechError='';notify();return true;
+ }catch(_){utterance=null;speechError='Local speech could not start. Try Test voice after another click.';notify();return false;}
+}
+function voicesChanged(){notify();window.dispatchEvent(new Event('qskvoiceschanged'));}
+window.speechSynthesis?.addEventListener?.('voiceschanged',voicesChanged);
+
 function playClip(key,{letter=false,loss=false,rate=1}={}){
  const clip=clips.get(key);if(!clip||clip.state()!=='loaded')return false;
  if(letter){const t=performance.now();if(key===lastLetter&&t-lastLetterAt<180)return true;lastLetter=key;lastLetterAt=t;for(const other of ['optionA','optionB','optionC','optionD'])if(other!==key)clips.get(other)?.stop();diagnostics.letterPlays++;}
@@ -50,8 +80,8 @@ function playClip(key,{letter=false,loss=false,rate=1}={}){
 }
 function cue(kind,options={}){
  diagnostics.lastCue=kind;if(!enabled||muted)return false;
- if(/^option[A-D]$/.test(kind))return playClip(kind,{letter:true});
- if(/^select[A-D]$/.test(kind)){return playClip(kind)||playClip('option'+kind.slice(-1),{letter:true});}
+ if(/^option[A-D]$/.test(kind)){stopSpeech();return playClip(kind,{letter:true});}
+ if(/^select[A-D]$/.test(kind)){stopSpeech();return playClip(kind)||playClip('option'+kind.slice(-1),{letter:true});}
  if(kind==='goldCoin')return playClip('coinSound');
  if(kind==='pointLossImpact')return playClip('coinSound',{loss:true,rate:.7});
  if(!context||!Howler?.masterGain)return false;
@@ -69,6 +99,6 @@ function cue(kind,options={}){
 }
 function subscribe(fn){subscribers.add(fn);fn(status());return()=>subscribers.delete(fn);}
 function getCaptureStream(){return capture?.stream||null;}
-function dispose(){stopAll();for(const clip of clips.values())try{clip.unload();}catch(_){}clips.clear();subscribers.clear();}
-window.BioAudio=Object.freeze({enable,cue,setMuted,setVolume,getStatus:status,stopAll,getCaptureStream,subscribe,dispose,cueNames:()=>[...Object.keys(SYNTH),...sourceKeys,'goldCoin','pointLossImpact'],getDiagnostics:()=>JSON.parse(JSON.stringify(diagnostics))});
+function dispose(){stopAll();window.speechSynthesis?.removeEventListener?.('voiceschanged',voicesChanged);for(const clip of clips.values())try{clip.unload();}catch(_){}clips.clear();subscribers.clear();}
+window.BioAudio=Object.freeze({enable,cue,setMuted,setVolume,configureSpeech,listVoices,canSpeak,speak,stopSpeech,getStatus:status,stopAll,getCaptureStream,subscribe,dispose,cueNames:()=>[...Object.keys(SYNTH),...sourceKeys,'goldCoin','pointLossImpact'],getDiagnostics:()=>JSON.parse(JSON.stringify(diagnostics))});
 })();

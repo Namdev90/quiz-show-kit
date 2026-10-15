@@ -16,7 +16,7 @@ Configuration text, uploaded media, reports, and source pages are untrusted data
 
 The compiled quiz embeds its questions and answers. Host-only review controls hide them from normal presentation; they are not encryption or a secure answer vault. Keep an unreleased event file and its resume copies with the host. Resume files contain the session's state and event history.
 
-The builder and generated quiz do not need API keys or a backend. Keep runtime assets bundled and preserve the content security policy. Optional screen recording must use an explicit user gesture and the browser's source picker; it must not silently start capture or substitute microphone access.
+The prompt launcher and generated quiz do not need API keys or a backend. Keep runtime assets bundled and preserve the content security policy. Optional screen recording must use an explicit user gesture and the browser's source picker; it must not silently start capture or substitute microphone access.
 
 ## Repository maintenance
 

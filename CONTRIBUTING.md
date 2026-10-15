@@ -14,13 +14,19 @@ Check topic and difficulty balance between teams and retain complete matched pai
 
 Read `package.json` and use the existing test and build scripts. Run the relevant checks and `npm run build`; include a small alternate configuration when changing configuration support. Keep generated files reproducible from their inputs.
 
-For scoring, timing, passing, or recovery changes, test the meaningful boundaries: repeated clicks, timeout/confirm races, hidden-page interruption, pause/resume during option entrances, wrong-choice blocking, teacher return time, negative scores, complete tie pairs, undo, and restoring a checkpoint. For importer changes, test rejected executable content and escaping/path boundaries as well as valid media.
+For scoring, timing, passing, or recovery changes, test the meaningful boundaries: repeated clicks, timeout/confirm races, hidden-page interruption, pause/resume during option entrances, wrong-choice blocking, teacher return time, negative scores, complete tie pairs, undo, and restoring a checkpoint. For compiler/input changes, test rejected executable content and escaping/path boundaries as well as valid media.
 
 Changes to presentation need inspection at the supported display sizes and with long question/option text. Report actual browser/rendering and audio checks separately from mocked DOM tests. A source check alone does not establish smooth animation or audible output.
 
+## Prompt and library changes
+
+Keep `prompts/START.md` as the single entry contract and `docs/TEACHER_PROMPT.md` as the guided workflow. Use library modules for reusable presets, sources, difficulty, narration, assets and maintenance guidance. Keep five presets plus custom, and keep suggested controls aligned with tested capabilities. Do not reintroduce a competing website quiz editor or promise a private cipher, automatic memory, unavailable tools or untested extensions.
+
+The public root/Pages HTML is generated from `src/launcher-template.html` by `npm run build:launcher`. Original SVG documentation illustrations live in `docs/images`; label conceptual swatches clearly instead of presenting them as runtime screenshots.
+
 ## Pull requests
 
-Explain the concrete problem, the resulting behavior, and how it was checked. Include an example configuration or minimal reproduction when useful. Note any remaining verification limits. Screenshots or recordings should come from the actual build and contain no private event data.
+Review existing issues/PRs first, then explain the concrete problem, resulting behavior, and how it was checked. A QSK1 run includes a repository review when accessible, but does not authorize public contributions by itself; prepare local suggestions or a patch when publication is not authorized. Include an example configuration or minimal reproduction when useful. Note any remaining verification limits. Screenshots or recordings should come from the actual build and contain no private event data.
 
 Keep attribution and license files with any added dependency or asset. Use reviewed, pinned dependencies and bundled runtime assets. Do not add analytics, remote runtime requests, API credentials, or arbitrary executable configuration values as a shortcut.
 
