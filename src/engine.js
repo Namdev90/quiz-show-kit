@@ -517,6 +517,75 @@
   function timerLimit(s, mode) {
     return mode==='discussion'?gameplay(s).discussionSeconds*1000:mode==='grace'?RULES.graceMs:mode==='teacher'?RULES.teacherMs:mode==='options'?RULES.optionsIntroMs:mode==='transition'?RULES.passTransitionMs:s.turn==='passed'?RULES.passedMs:RULES.primaryMs;
   }
+  // Opportunity metrics use these events. Reconcile their phase/position history
+  // with the saved cursor, including demo, replacements, ties and truncated Undo logs.
+  function validateOpportunities(s) {
+    const main=buildSchedule(knownBank,s.config),ties=buildSchedule(knownBank,s.config,'tie'),demo=knownBank.find(q=>q.status==='demo');
+    const scores={main:{Bio:0,Vista:0},tie:{Bio:0,Vista:0}},outcomes=[];
+    let cursor=-1,tieCursor=-1,kind='main',phase='intro',questionId=null,team=s.config.startingTeam,primaryTeam=team,turn='primary';
+    const invalid=()=>{throw new Error('Saved opportunity transition does not match the reached question, team or phase.');};
+    const atCard=entry=>{if(entry.questionId!==questionId||entry.team!==team)invalid();};
+    for(let index=0;index<s.log.length;index++) {
+      const entry=s.log[index];
+      if(entry.type==='question-ready') {
+        let card,expectedPhase;
+        const replacement=s.log[index+1];
+        if(kind==='main'&&cursor>=0&&!['intro','end','outcome'].includes(phase)&&replacement?.type==='faculty-replacement'&&replacement.voidedQuestionId===questionId&&replacement.reserveId===entry.questionId) {
+          card={...main[cursor],id:replacement.reserveId};expectedPhase='read';
+        } else if(phase==='intro'&&demo&&entry.questionId===demo.id) {
+          card={id:demo.id,kind:'demo',primaryTeam:s.config.startingTeam};expectedPhase='read';
+        } else if(phase==='intro'||kind==='demo') {
+          card=main[0];cursor=0;tieCursor=-1;expectedPhase='roundIntro';
+        } else if(kind==='main'&&phase==='reveal') {
+          card=main[cursor+1];expectedPhase=card?.round===main[cursor].round?'read':'roundIntro';cursor++;
+        } else if(kind==='main'&&phase==='end') {
+          if(scores.main.Bio!==scores.main.Vista)invalid();scores.tie={Bio:0,Vista:0};
+          card=ties[0];tieCursor=0;expectedPhase='tieRead';
+        } else if(kind==='tie'&&phase==='reveal') {
+          if(tieCursor%2===1&&scores.tie.Bio!==scores.tie.Vista)invalid();
+          card=ties[++tieCursor];expectedPhase='tieRead';
+        }
+        if(!card||entry.questionId!==card.id||entry.team!==card.primaryTeam||entry.phase!==expectedPhase)invalid();
+        questionId=card.id;kind=card.kind;primaryTeam=card.primaryTeam;team=primaryTeam;turn='primary';phase=expectedPhase;
+      } else if(entry.type==='faculty-replacement') {
+        if(kind!=='main'||cursor<0||questionId!==entry.reserveId||main[cursor].id!==entry.voidedQuestionId)invalid();
+        for(const row of outcomes.filter(row=>row.kind==='main'&&row.questionId===entry.voidedQuestionId))scores.main[row.team]-=row.delta;
+        main[cursor].id=entry.reserveId;
+      } else if(entry.type==='read-stem') {
+        atCard(entry);if(phase!=='roundIntro')invalid();phase='read';
+      } else if(entry.type==='options-shown') {
+        atCard(entry);if(!['read','tieRead'].includes(phase)||turn!=='primary')invalid();phase='optionsIntro';
+      } else if(entry.type==='discussion-started') {
+        atCard(entry);if(phase!=='optionsIntro'||!gameplay(s).discussionSeconds)invalid();phase='discussion';
+      } else if(entry.type==='answer-timer-started') {
+        atCard(entry);if(phase!==(gameplay(s).discussionSeconds?'discussion':'optionsIntro'))invalid();phase='answering';
+      } else if(['acknowledged','acknowledged-by-selection'].includes(entry.type)) {
+        atCard(entry);if(phase!=='answering')invalid();phase='acknowledged';
+      } else if(entry.type==='answer-staged') {
+        atCard(entry);if(phase!=='acknowledged')invalid();
+      } else if(entry.type==='acknowledgement-cancelled') {
+        atCard(entry);if(phase!=='acknowledged')invalid();phase='answering';
+      } else if(['answer-confirmed','pass','timeout'].includes(entry.type)) {
+        atCard(entry);
+        if(!['answering','acknowledged'].includes(phase)||entry.type==='answer-confirmed'&&phase!=='acknowledged'||entry.kind!==kind||entry.turn!==turn)invalid();
+        if(!s.records.some(row=>row.questionId===questionId&&row.kind===kind&&row.team===team&&row.turn===turn&&row.at===entry.at&&row.option===entry.option&&row.correct===entry.correct&&row.delta===entry.delta&&row.origin===(entry.type==='answer-confirmed'?'answer':entry.type)))invalid();
+        outcomes.push(entry);if(kind!=='demo')scores[kind][team]+=entry.delta;
+        if(RULES.passingEnabled&&kind!=='tie'&&turn==='primary'&&entry.correct!==true){turn='passed';team=opposite(primaryTeam);phase='passTransition';}
+        else phase='outcome';
+      } else if(entry.type==='passed-turn-start') {
+        atCard(entry);if(phase!=='passTransition'||turn!=='passed')invalid();phase='answering';
+      } else if(entry.type==='reveal') {
+        atCard(entry);if(phase!=='outcome')invalid();phase='reveal';
+      } else if(entry.type==='end') {
+        atCard(entry);if(phase!=='end'&&!(phase==='reveal'&&(kind==='main'?cursor===main.length-1:kind==='tie'&&tieCursor%2===1&&(tieCursor===ties.length-1||scores.tie.Bio!==scores.tie.Vista))))invalid();phase='end';
+      } else if(entry.type==='tie-referred') {
+        atCard(entry);if(kind!=='tie'&&phase!=='end')invalid();phase='end';
+      } else if(entry.type==='score-correction') {
+        scores[entry.kind][entry.team]+=entry.delta;
+      } else if(['coin-result','gameplay-configured'].includes(entry.type)&&phase!=='intro')invalid();
+    }
+    if(s.cursor!==cursor||s.tieCursor!==tieCursor||s.kind!==kind||s.phase!==phase||s.questionId!==questionId||s.primaryTeam!==primaryTeam||s.activeTeam!==team||s.turn!==turn)invalid();
+  }
   function validateCheckpoint(s, histories=true) {
     if(!knownBank)throw new Error('Initialize the known competition bank with create before recovery.');
     if(!stateProfileValid(s))throw new Error('Checkpoint profile or rules do not match this competition. Standalone BioVista v4 checkpoints are not compatible.');
@@ -589,6 +658,7 @@
       const use=s.lifelineActive,clock=use.returnClock;
       if(!RULES.teacherEnabled||!timed||s.kind==='demo'||!s.lifelines[use.team]||use.team!==s.activeTeam||use.questionId!==s.questionId||use.kind!==s.kind||!clock||!['answer','grace'].includes(clock.mode)||!Number.isFinite(clock.remainingMs)||clock.remainingMs<0||clock.remainingMs>timerLimit(s,clock.mode)||clock.mode!==(s.phase==='acknowledged'?'grace':'answer'))throw new Error('Saved teacher consultation is invalid.');
     }
+    validateOpportunities(s);
     if(histories)for(const frame of s.history)validateCheckpoint({...frame,bank:knownBank,config:s.config,history:[]},false);
     return s;
   }

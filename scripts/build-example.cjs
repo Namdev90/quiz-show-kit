@@ -2,21 +2,28 @@
 /* Build the current public BioVista showcase without changing its historical archive. */
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto');
-const Compiler=require('../src/compiler.js'),Bank=require('../src/question-bank.js'),Presets=require('../src/presets.js');
+const Compiler=require('../src/compiler.js'),Bank=require('../src/question-bank.js'),Presets=require('../src/presets.js'),Profile=require('../src/profile.js');
 const {runtime,root}=require('./runtime.cjs'),BankCLI=require('./question-bank.cjs');
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const readJSON=file=>JSON.parse(fs.readFileSync(file,'utf8'));
 const json=(file,data)=>fs.writeFileSync(file,JSON.stringify(data,null,2)+'\n');
+// SHA-256 of canonical normalized rules recovered from the digest-checked original HTML engine.
+const historicalRulesSha256='2b424e29feae2cc73c9e6873635b76b701ad09ed1030d81995f4dfb5e8bff0f9';
 function originalMeaning(questions){return questions.map(question=>{const q={...question};delete q.subtype;if(q.status==='demo'){delete q.optionExplanations;delete q.verification;q.sources=q.sources.map(source=>({title:source.title,...(source.url?{url:source.url}:{})}));}return q;});}
 function buildExample({authoring=false}={}){
  const directory=path.join(root,'examples/biovista'),archive=path.join(directory,'original');
  const original=readJSON(path.join(archive,'origin.json'));
  const archiveHash=hash(fs.readFileSync(path.join(archive,'BioVista_Quiz_Offline.html')));
  if(archiveHash!==original.publicExampleSha256)throw Error('The historical BioVista archive differs from its recorded SHA-256. Restore it before regenerating the current example.');
- const configFile=path.join(root,'biovista.showcase.config.json'),raw=readJSON(configFile),baseline=readJSON(path.join(root,'quiz.config.json'));
- if(Compiler.canonical(originalMeaning(raw.questions))!==Compiler.canonical(originalMeaning(baseline.questions))||Compiler.canonical(raw.rules)!==Compiler.canonical(baseline.rules))throw Error('The feature showcase must retain the original public question meaning and scoring/timing rules. Only the independently checked demo receives supplemental option rationales and source-review metadata; create a separate event for edited educational content.');
+ const configFile=path.join(root,'biovista.showcase.config.json'),raw=readJSON(configFile),baseline=readJSON(path.join(archive,'questions.json'));
+ if(Compiler.canonical(originalMeaning(raw.questions))!==Compiler.canonical(originalMeaning(baseline))||hash(Compiler.canonical(Profile.normalizeRules(raw.rules)))!==historicalRulesSha256)throw Error('The feature showcase must retain the original public question meaning and scoring/timing rules from the historical archive. Only the independently checked demo receives supplemental option rationales and source-review metadata; create a separate event for edited educational content.');
  const docxFile=path.join(directory,'BioVista_Question_Bank.docx'),docxMeta=path.join(directory,'BioVista_Question_Bank.meta.json');
- if(!authoring&&fs.existsSync(docxMeta)&&readJSON(docxMeta).baseFingerprint!==Compiler.fingerprint(raw))throw Error('The published example DOCX is stale. Run npm run build:example -- --authoring to regenerate its companion before publishing.');
+ if(!authoring){
+  const regenerate=' Run npm run build:example -- --authoring to regenerate its companions before publishing.';
+  if(!fs.existsSync(docxFile)||!fs.existsSync(docxMeta))throw Error('The published example DOCX and metadata are both required.'+regenerate);
+  const meta=readJSON(docxMeta);
+  if(meta?.format!=='QSK_EXAMPLE_DOCX_1'||meta.eventId!==raw.event.id||meta.cards!==raw.questions.length||meta.baseFingerprint!==Compiler.fingerprint(raw)||meta.sha256!==hash(fs.readFileSync(docxFile)))throw Error('The published example DOCX bytes or metadata do not match the showcase.'+regenerate);
+ }
  const built=Compiler.build(raw,runtime(raw,configFile)),htmlFile=path.join(directory,'BioVista_Quiz_Offline.html');
  fs.writeFileSync(htmlFile,built.html,'utf8');
  const settings=Presets.exportSettings(raw,{setup:'competition'});

@@ -2,7 +2,7 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const C=require('../src/compiler.js'),P=require('../src/presets.js'),CLI=require('../scripts/question-bank.cjs');
 const root=path.resolve(__dirname,'..'),directory=path.join(root,'examples/biovista');
 const read=file=>fs.readFileSync(file,'utf8'),json=file=>JSON.parse(read(file)),hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex'),plain=x=>JSON.parse(JSON.stringify(x));
-const baseline=json(path.join(root,'quiz.config.json')),showcase=json(path.join(root,'biovista.showcase.config.json'));
+const baseline=json(path.join(root,'quiz.config.json')),showcase=json(path.join(root,'biovista.showcase.config.json')),historicalQuestions=json(path.join(directory,'original/questions.json'));
 const html=read(path.join(directory,'BioVista_Quiz_Offline.html'));
 const payload=id=>JSON.parse(html.match(new RegExp('<script id="'+id+'"[^>]*>([\\s\\S]*?)<\\/script>'))[1]);
 
@@ -15,9 +15,9 @@ test('Historical BioVista HTML, question bytes and original provenance remain in
  assert.notEqual(hash(html),historical.publicExampleSha256);
 });
 
-test('Showcase preserves all original question meaning and rules while explicitly enabling supported features',()=>{
- assert.deepEqual(showcase.rules,baseline.rules);assert.equal(showcase.questions.length,41);
- for(const old of baseline.questions){const current=showcase.questions.find(q=>q.id===old.id);for(const key of ['stem','options','correct','explanation','verificationDate','status','round','pairId','difficulty','seconds','timing'])assert.deepEqual(current[key],old[key],old.id+': '+key);assert.deepEqual(current.sources.map(s=>({title:s.title,url:s.url})),old.sources.map(s=>({title:s.title,url:s.url})));}
+test('Showcase preserves archived question meaning while explicitly enabling supported features',()=>{
+ assert.equal(showcase.questions.length,41);
+ for(const old of historicalQuestions){const current=showcase.questions.find(q=>q.id===old.id);for(const key of ['stem','options','correct','explanation','verificationDate','status','round','pairId','difficulty','seconds','timing'])assert.deepEqual(current[key],old[key],old.id+': '+key);assert.deepEqual(current.sources.map(s=>({title:s.title,url:s.url})),old.sources.map(s=>({title:s.title,url:s.url})));}
  assert.notEqual(showcase.event.id,baseline.event.id);assert.equal(baseline.gameplay,undefined);
  assert.equal(showcase.gameplay.shuffleOptions,true);assert.equal(showcase.gameplay.discussionSeconds,3);assert.equal(showcase.gameplay.roundOrder,'alternate');assert.equal(showcase.gameplay.revisionReport,true);
  assert.equal(showcase.questions.filter(q=>q.subtype==='numerical').length,6);assert.equal(showcase.questions.filter(q=>q.subtype==='image').length,6);assert.equal(showcase.questions.filter(q=>q.visual).length,7);
