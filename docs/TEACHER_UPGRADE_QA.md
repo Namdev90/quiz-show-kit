@@ -1,6 +1,6 @@
-# Prompt library and voice verification
+# Historical prompt library and voice verification
 
-Review date: **15 October 2026**. This supersedes the retired browser-builder verification.
+Review date: **15 October 2026**, initial prompt-library snapshot. This record superseded the retired builder checks at that time; later features and checks are documented in [current QA](IMPLEMENTATION_QA.md) and [current verification](VERIFICATION.json).
 
 ## Scope delivered
 
@@ -11,7 +11,7 @@ Review date: **15 October 2026**. This supersedes the retired browser-builder ve
 
 ## Automated checks
 
-`npm run check` builds the canonical offline quiz and matching root/Pages launchers, validates the real 41-card BioVista bank and runs **41 top-level tests**. The engine suite includes **22 internal scoring/timing/recovery cases**. The checks use Node.js 24 and jsdom with simulated platform/audio APIs. See `VERIFICATION.json` for the recorded result.
+`npm run check` builds the canonical offline quiz and matching root/Pages launchers, validates the real 41-card BioVista bank and runs **41 top-level tests**. The engine suite includes **22 internal scoring/timing/recovery cases**. The checks use Node.js 24 and jsdom with simulated platform/audio APIs. See `history/VERIFICATION-2026-10-15-initial.json` for that recorded result.
 
 The tests cover all 25 quiz/theme combinations; named and custom profile reuse; legacy presentation preservation; relocated asset embedding; rejected unsupported keys and unsafe assets; scoring/timeout/pause/undo/recovery; no hidden-option narration; local-voice filtering; recorded-clip priority; silence and unavailable-voice fallback; live motion dependencies; correct Pass/Skip wording; and exact launcher clipboard/fallback behavior.
 

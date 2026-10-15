@@ -15,7 +15,7 @@ Paths in this table refer to this library directory unless a repository-root pat
 
 ## The teacher's side
 
-Ask one missing decision at a time. Offer five presets + Custom where specified, accept “choose for me”, and apply readable saved settings before asking. Keep useful visual choices; remove repeated explanations and duplicate approval loops. Custom preferences need their settings attachment next time. Do not tell teachers to maintain JSON, install libraries or run terminals.
+Start with exactly Teacher mode versus Competition mode unless explicitly supplied/restored. In Teacher mode, choose presets/counts automatically and ask only missing essentials; open the five-presets-plus-Custom menus only when customization is requested. In Competition mode, expose compatible granular choices one at a time, honoring known values and “choose for me.” Keep useful visual choices; remove repeated explanations and duplicate approval loops. Store authoring mode in the reusable key and custom preferences in their settings attachment. Do not tell teachers to maintain JSON, install libraries or run terminals.
 
 Keep a compact working brief in an actual available file/context: learning goal, audience, selected preset and overrides, counts/pairs, media IDs, source revision, source-check status and unresolved decisions. Update changes, not an ever-growing transcript. Do not invent persistence or repeat the full brief on every turn.
 

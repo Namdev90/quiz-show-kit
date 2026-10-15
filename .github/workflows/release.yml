@@ -1,0 +1,53 @@
+name: Publish versioned release
+on:
+  push:
+    branches: [main]
+    paths: [release.json]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: quiz-show-kit-release
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    if: github.repository == 'Namdev90/quiz-show-kit' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Prepare DOCX verification
+        run: |
+          python3 -m venv .venv-authoring
+          .venv-authoring/bin/python -m pip install -r requirements-authoring.txt
+      - run: npm run check
+        env:
+          QSK_PYTHON: ${{ github.workspace }}/.venv-authoring/bin/python
+      - name: Require committed generated files and package the checked version
+        run: npm run build:release
+
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: npm run build:release
+      - name: Publish this exact commit and verify downloaded assets
+        run: node scripts/publish-release.cjs
+        env:
+          GH_TOKEN: ${{ github.token }}

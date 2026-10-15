@@ -8,6 +8,7 @@ The repository is a reusable asset and workflow library. Reuse only compatible m
 | --- | --- | --- |
 | Scientific diagrams | `examples/biovista/questions.json` and the source diagram rendering | Reuse supported diagrams only when accurate for the new stem; author exact new diagrams as static assets |
 | Logos or event artwork | Teacher-approved uploads | Embed accepted files with meaningful alternative text; text-only branding is valid |
+| Actual Chota Namu | `assets/characters/chota-namu.png` and its project-use notice | Optional static welcome/About image only when explicitly configured; the supplied GIF is reference material, not runtime playback |
 | Coin/selection accents | `assets/audio/`, `src/shared-assets.json`, `THIRD_PARTY_NOTICES.md` | Keep provenance and license notices; replace or silence freely within supported settings |
 | Original spoken letters | `assets/audio/optionA.wav` through `optionD.wav` | Retain provenance; do not treat them as a new user's own recordings |
 | Question/option narration | Approved recorded clips, supported local speech, or pre-generated TTS | Link narration to the exact current stem/option text and inspect timing |
@@ -16,7 +17,7 @@ Use the current [voice runtime contract](VOICE_RUNTIME.md) for exact fields, nar
 
 ## Voice choices, always with Custom
 
-Offer **smart option reading**, **full option reading**, **letter cues**, **recorded voice**, **silent**, or **Custom**, as supported by the current runtime. In smart mode, a one-word option should be spoken as that word instead of announcing A/B/C/D. Describe the actual fallback for longer options from the runtime contract. Do not guess pronunciation from a letter label or reveal which option is correct.
+When voice customization is requested or Competition mode reaches its media section, offer **smart option reading**, **full option reading**, **letter cues**, **recorded voice**, **silent**, or **Custom**, as supported by the current runtime. Teacher mode keeps sensible/default or already supplied choices without a compulsory voice questionnaire. In smart mode, a one-word option should be spoken as that word instead of announcing A/B/C/D. Describe the actual fallback for longer options from the runtime contract. Do not guess pronunciation from a letter label or reveal which option is correct.
 
 Use only voices the runtime verifies as local when local speech is available. Let the teacher choose language/accent and a comfortable rate after hearing a real sample where possible. A saved voice name is a preference, not proof that the same voice exists on another device. Do not promise consistent quality or offline availability of every system voice; verify on the event machine, or embed approved audio clips for predictable offline playback.
 
@@ -33,5 +34,7 @@ Associate stem audio and each option clip with the current question content. An 
 Check long option reading and clip lengths against reveal/answer timing. Do not silently shorten speech or take a team's response time to satisfy decorative timing. If a clip needs more time, show the proposed timing change, choose a supported narration mode or implement a tested scheduling change. Respect the teacher's selected silent mode and device reduced-motion preference.
 
 Accepted asset types and size limits are in [Configuration](../CONFIGURATION.md). Keep every playable file embedded; no remote runtime media. Never fabricate base64, inject HTML/scripts into labels, or bypass path/SVG validation. Keep personal recordings, private reports and unapproved logos out of public commits and PRs.
+
+The original A–D fallback recordings have event-specific provenance. Muting sound or omitting their keys from a new configuration does not remove their embedded fallback bytes. Check [the asset shelf](../../assets/README.md) before distributing another event: use authorized replacements for all four or a separately validated omission route. Playing an existing file offline does not grant broader recording rights.
 
 Store approved reusable outputs in this repository with source, rights, modifications and hash records, rather than leaving generation URLs as the only asset. Copy the needed files into the event configuration's directory before building: CLI paths cannot escape that directory. Keep private uploads in the private event working directory until publication is explicitly permitted. Keep heavyweight authoring models and caches outside Git; use the resulting small clips/images in the quiz. Existing playback libraries and built-in diagrams should be reused instead of rebuilt.

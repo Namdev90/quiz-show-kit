@@ -42,4 +42,4 @@ Offer optional print fallback and revision reports during setup/export, not as c
 
 ## Turn a custom idea into an implementable brief
 
-Capture the desired user action, visible behavior, rule/timer effects, pause/undo/recovery expectations, accessibility needs, offline constraints and acceptance example. Prefer the smallest change that delivers that behavior. Follow [extension guidance](../EXTENDING_ENGINE.md) and [review/fix guidance](REVIEW_AND_FIXES.md). Keep experimental behavior separate from the preserved BioVista example until verified.
+Capture the desired user action, visible behavior, rule/timer effects, pause/undo/recovery expectations, accessibility needs, offline constraints and acceptance example. Prefer the smallest change that delivers that behavior. Follow [extension guidance](../EXTENDING_ENGINE.md) and [review/fix guidance](REVIEW_AND_FIXES.md). Verify enhancements before rebuilding the current BioVista showcase; keep the historical files in `examples/biovista/original/` unchanged.

@@ -10,13 +10,18 @@
 | Browse icons visually | [Asset shelf](../../assets/README.md) | Eight local Lucide SVGs and their stable IDs |
 | UI/reward audio | [`assets/audio/`](../../assets/audio/) | Five CC0 effects; distinguish four restricted example letter clips |
 | Existing marks | [`assets/images/`](../../assets/images/) | Reference/event branding; check permission before reuse |
+| Actual Chota Namu | [`assets/characters/`](../../assets/characters/) | User-supplied static PNG, GIF reference and project-specific authorization/provenance; not a general artwork license |
 | Media permissions | [`assets/LICENSES/`](../../assets/LICENSES/) and [third-party notices](../../THIRD_PARTY_NOTICES.md) | Complete notices and source provenance |
 | Built-in question diagrams | [`src/ui.js`](../../src/ui.js), `visual()` | Existing keys: `microscope`, `pipette`, `dna`, `ph`, `biohazard`; confirm exact meaning and accessibility |
-| Question examples and sources | [`examples/biovista/questions.json`](../../examples/biovista/questions.json) | Only relevant cards and their source records |
+| Current feature showcase | [`examples/biovista/README.md`](../../examples/biovista/README.md), [`biovista.showcase.config.json`](../../biovista.showcase.config.json) | Current runtime/settings and matching DOCX/quality companions; only the demo has the added independent review metadata |
+| Historical question examples and sources | [`examples/biovista/original/questions.json`](../../examples/biovista/original/questions.json) | Preserved original cards/source dates; not freshly verified by rebuilding |
+| DOCX editing and recovery | [Bank workflow](QUESTION_BANK.md), [`scripts/question-bank.cjs`](../../scripts/question-bank.cjs) | Exported template, matching configuration, preview/apply/rollback commands |
 | Presets and custom choices | [Presets](PRESETS.md), [`src/presets.js`](../../src/presets.js) | A matching starting configuration |
 | Narration routes | [Assets and voice](ASSETS_AND_VOICE.md), [voice choices](TTS_MODELS.md) | Existing recordings/local speech before new generation |
 | Reusable packages | [`vendor/manifest.json`](../../vendor/manifest.json), [`package.json`](../../package.json) | Versions, purpose and license paths; use the existing implementation |
 | Build or verify | [`scripts/`](../../scripts/), [`tests/`](../../tests/) | Relevant existing command/check |
+| Rebuild the public example | [`scripts/build-example.cjs`](../../scripts/build-example.cjs), [`requirements-authoring.txt`](../../requirements-authoring.txt) | `--authoring` regenerates the matching DOCX; the launcher build refreshes Pages copies |
+| Prepare a versioned release | [`release.json`](../../release.json), [release instructions](../GITHUB_SETUP.md#stable-release) | Version/notes and `npm run build:release`; identified source kit, playable files, companions and hashes |
 | Save a setup for next time | [Reuse protocol](REUSE_PROTOCOL.md) | Compact prompt plus supplied settings attachment |
 
 Built-in drawings are schematics tied to the original questions: the DNA key is a ladder-style sketch, the pH drawing contains fixed values, and the biohazard mark uses a system glyph. Inspect before reuse; do not describe any of them as a newly validated scientific illustration. The bundled Lucide icons are a separate decorative shelf.
