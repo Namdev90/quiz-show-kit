@@ -24,3 +24,16 @@ test('Supplied static character is optional, persists visibility, and stays out 
   assert.equal(e.query('img[src^="data:image/gif"]'),null);assert.deepEqual(result.resourceRequests,[]);assert.deepEqual(result.errors,[]);
  }finally{restored?.close();e.close();}
 });
+
+test('Optional character response turns the unchanged supplied PNG toward the pointer without storing coordinates',async()=>{
+ const c=withCharacter();c.presentation.motion='cinematic';c.presentation.characterMotion=true;const e=await load({html:C.build(c,runtime(c)).html});try{
+  const original=c.assets.chotaNamu.data,before=e.get();assert.ok(e.query('.chota-namu--motion'));
+  e.w.document.dispatchEvent(new e.w.MouseEvent('pointermove',{clientX:20,clientY:50,bubbles:true}));await e.advance(32);const left=e.query('.chota-namu img').style.transform;
+  e.w.document.dispatchEvent(new e.w.MouseEvent('pointermove',{clientX:950,clientY:500,bubbles:true}));await e.advance(32);const right=e.query('.chota-namu img').style.transform;assert.notEqual(left,right);assert.match(right,/rotateY/);assert.equal(e.query('.chota-namu img').getAttribute('src'),original);assert.deepEqual(e.get().mainScores,before.mainScores);assert.ok([...e.memory.keys()].every(key=>!key.includes('pointer')));
+  e.w.__setReducedMotion(true);await e.advance(32);assert.equal(e.query('.chota-namu--motion'),null);assert.equal(e.query('.chota-namu img').style.transform,'');
+ }finally{e.close();}
+});
+
+test('Character response remains optional, validates its flag and can be changed in a normal quiz',async()=>{
+ const c=withCharacter();c.presentation.characterMotion='yes';assert.throws(()=>C.validate(c),/characterMotion/);c.presentation.characterMotion=true;c.presentation.motion='cinematic';const e=await load({html:C.build(c,runtime(c)).html});try{await e.ui('settings');const node=e.query('#live-characterMotion');assert.equal(node.disabled,false);node.checked=false;node.dispatchEvent(new e.w.Event('input',{bubbles:true}));assert.equal(e.query('.chota-namu--motion'),null);assert.equal(e.query('#live-characterMotion').checked,false);}finally{e.close();}
+});

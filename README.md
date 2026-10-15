@@ -4,7 +4,7 @@
 
 **Curated for Parul University Goa · Open to every teacher.** Created by **Namdev Shirodkar**, a Parul University Goa student. Independent toolkit.
 
-**Current toolkit: v1.1.0.** [Latest tested release and downloads](https://github.com/Namdev90/quiz-show-kit/releases/latest) · [Changes](CHANGELOG.md) · [Release contents and limits](docs/releases/v1.1.0.md)
+**Current toolkit: v1.1.1.** [Latest tested release and downloads](https://github.com/Namdev90/quiz-show-kit/releases/latest) · [Changes](CHANGELOG.md) · [Release contents and limits](docs/releases/v1.1.1.md)
 
 ## Start with one prompt
 
@@ -12,7 +12,7 @@
 Read https://github.com/Namdev90/quiz-show-kit/blob/main/prompts/START.md and run QSK1.
 ```
 
-[**Copy the launch prompt**](prompts/START.md) · [Full workflow](prompts/START.md) · [Browse the library](docs/library/README.md) · [Try the BioVista Feature Showcase Quiz](https://github.com/Namdev90/quiz-show-kit/releases/download/v1.1.0/BioVista_Quiz_Public_Example.html)
+[**Copy the launch prompt**](prompts/START.md) · [Full workflow](prompts/START.md) · [Browse the library](docs/library/README.md) · [Try the BioVista Feature Showcase Quiz](https://github.com/Namdev90/quiz-show-kit/releases/download/v1.1.1/BioVista_Quiz_Public_Example.html)
 
 Paste into ChatGPT or another capable assistant. It guides your choices, researches and reviews the questions, builds the quiz when file/build tools are available, and gives you a reusable prompt. **QSK1 is a public workflow shortcut**; the assistant must retrieve its instructions, or ask you to paste them. GitHub is the public destination; the ZIP also includes a local prompt launcher.
 
@@ -71,7 +71,7 @@ The assistant should deliver the file directly when capable. Otherwise it prepar
 
 The current example runs the latest engine with **30 main questions, four reserves, six tie cards and one practice card**. Its original question content and scoring are retained. The **Apex showcase profile** enables compatible supported features, with settings visible and read-only and the supplied Chota Namu character shown. Your own quizzes and reusable settings remain configurable. Apex names this example profile; it is not an additional engine tier or preset. The [requirements audit](docs/SHOWCASE_AUDIT.md) distinguishes demonstrated features, authoring tools and remaining decisions.
 
-[Try the BioVista Feature Showcase Quiz](https://github.com/Namdev90/quiz-show-kit/releases/download/v1.1.0/BioVista_Quiz_Public_Example.html) · [Feature tour](examples/biovista/README.md) · [Original archived HTML source](examples/biovista/original/BioVista_Quiz_Offline.html) · [Question bank](examples/biovista/questions.json) · [Provenance](examples/biovista/origin.json) · [Asset notices](examples/biovista/ASSET_NOTICES.md)
+[Try the BioVista Feature Showcase Quiz](https://github.com/Namdev90/quiz-show-kit/releases/download/v1.1.1/BioVista_Quiz_Public_Example.html) · [Feature tour](examples/biovista/README.md) · [Original archived HTML source](examples/biovista/original/BioVista_Quiz_Offline.html) · [Question bank](examples/biovista/questions.json) · [Provenance](examples/biovista/origin.json) · [Asset notices](examples/biovista/ASSET_NOTICES.md)
 
 </details>
 

@@ -21,7 +21,7 @@ The current release pack includes the full source kit, playable showcase and mat
 - A saved profile or reusable next-session prompt, when continuing an existing event.
 - For DOCX editing, the matching configuration and the original exported template/review workspace. For the showcase, retain `BioVista_Question_Bank.meta.json`; a different revision's bank/configuration is not an interchangeable pair.
 
-Keep the historical BioVista archive under `examples/biovista/original/` intact and build a teacher's new event separately. The current `examples/biovista/` showcase is rebuilt with approved enhancements. Preserve complete matched pairs and the current runtime contract unless implementing a deliberate tested extension.
+Keep the historical BioVista archive under `examples/biovista/original/` intact and build a teacher's new event separately. The current `examples/biovista/` showcase is a fixed Apex demonstration with read-only settings. Use its reusable settings or remove `showcase: true` in a separate full event copy for customization. Preserve complete matched pairs and the current runtime contract unless implementing a deliberate tested extension.
 
 ## Deliver the quiz
 
@@ -35,9 +35,9 @@ npm run build -- --config path/to/quiz.config.json --output dist/Quiz_Offline.ht
 
 `npm run build` uses Node.js 22+ and built-in Node modules. Local media paths resolve within the configuration's directory. Do not return a partial JSON example, invent a built file, or send users to a retired browser editor. A custom extension still needs implementation and verification.
 
-DOCX export/import tests use the separately pinned Python authoring environment described in [Configuration](CONFIGURATION.md). Updating the public showcase's bank requires `npm run build:example -- --authoring`; `npm run build:launcher` then refreshes its public copies. These contributor steps do not require teachers to install tools to play the delivered HTML.
+DOCX export/import tests use the separately pinned Python authoring environment described in [Configuration](CONFIGURATION.md). Updating the public showcase's bank requires `npm run build:example -- --authoring`; `npm run build:launcher` then refreshes its local mirrors. These contributor steps do not require teachers to install tools to play the delivered HTML.
 
-The finished event needs no runtime server, API key or adjacent asset files. Source links require internet; sound requires a real initial browser gesture. Optional screen capture requires the person's browser source-selection approval.
+The repository is the public destination; the exact **Try the BioVista Feature Showcase Quiz** CTA downloads the release HTML. Keep quiz hosting disabled. The finished event needs no runtime server, API key or adjacent asset files. Source links require internet; sound requires a real initial browser gesture. Optional screen capture requires the person's browser source-selection approval.
 
 ## Reuse and improve
 

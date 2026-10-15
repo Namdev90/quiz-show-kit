@@ -6,7 +6,7 @@ const html=raw=>C.build(raw,runtime(raw,path.join(root,'biovista.showcase.config
 
 test('The Apex showcase explicitly enables the supported rich presentation profile',()=>{
  assert.equal(source.showcase,true);assert.equal(source.theme.style,'skeuomorphic');
- for(const key of ['sound','spokenOptions','readQuestions','confetti','rewards','coinAnimation','questionAnimation','winnerAnimation','intro','character'])assert.equal(source.presentation[key],true,key);
+ for(const key of ['sound','spokenOptions','readQuestions','confetti','rewards','coinAnimation','questionAnimation','winnerAnimation','intro','character','characterMotion'])assert.equal(source.presentation[key],true,key);
  assert.equal(source.presentation.motion,'cinematic');assert.equal(source.presentation.optionSpeech,'full');
  assert.equal(source.gameplay.shuffleOptions,true);assert.equal(source.gameplay.revisionReport,true);assert.ok(source.gameplay.discussionSeconds>0);assert.equal(source.gameplay.statistics.length,11);
  assert.equal(C.validate(source).showcase,true);for(const value of ['true',{},1])assert.throws(()=>C.validate({...source,showcase:value}),/showcase/);

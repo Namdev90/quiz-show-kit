@@ -90,15 +90,15 @@ function validate(input){
  if(!['Segoe UI','Arial','Verdana','Georgia','Tahoma'].includes(theme.font))fail('theme.font','must use a supported system font');if(!['dna','none'].includes(theme.motif))fail('theme.motif','must be dna or none');
  let presentation;
  if(input.presentation!==undefined){
-  keys(input.presentation,['motion','sound','volume','spokenOptions','confetti','rewards','intro','coinAnimation','questionAnimation','winnerAnimation','optionSpeech','voiceName','voiceLang','speechRate','readQuestions','character'],'presentation');
-  presentation={motion:'cinematic',sound:true,volume:80,spokenOptions:true,confetti:true,rewards:true,intro:true,coinAnimation:true,questionAnimation:true,winnerAnimation:true,optionSpeech:'smart',voiceName:'',voiceLang:'en-IN',speechRate:1,readQuestions:false,character:Boolean(input.branding?.character),...input.presentation};
+  keys(input.presentation,['motion','sound','volume','spokenOptions','confetti','rewards','intro','coinAnimation','questionAnimation','winnerAnimation','optionSpeech','voiceName','voiceLang','speechRate','readQuestions','character','characterMotion'],'presentation');
+  presentation={motion:'cinematic',sound:true,volume:80,spokenOptions:true,confetti:true,rewards:true,intro:true,coinAnimation:true,questionAnimation:true,winnerAnimation:true,optionSpeech:'smart',voiceName:'',voiceLang:'en-IN',speechRate:1,readQuestions:false,characterMotion:false,character:Boolean(input.branding?.character),...input.presentation};
   if(!['smart','letters','full'].includes(presentation.optionSpeech))fail('presentation.optionSpeech','must be smart, letters or full');
   text(presentation.voiceName,'presentation.voiceName',160);
   if(typeof presentation.voiceLang!=='string'||presentation.voiceLang.length>35||! /^[a-z]{2,8}(?:-[a-z0-9]{1,8})*$/i.test(presentation.voiceLang))fail('presentation.voiceLang','must be a language tag such as en-IN');
   if(typeof presentation.speechRate!=='number'||!Number.isFinite(presentation.speechRate)||presentation.speechRate<.5||presentation.speechRate>2)fail('presentation.speechRate','must be from 0.5 to 2');
   if(!['cinematic','gentle','none'].includes(presentation.motion))fail('presentation.motion','must be cinematic, gentle or none');
   if(!Number.isInteger(presentation.volume)||presentation.volume<0||presentation.volume>100)fail('presentation.volume','must be an integer from 0 to 100');
-  for(const key of ['sound','spokenOptions','confetti','rewards','intro','coinAnimation','questionAnimation','winnerAnimation','readQuestions','character'])if(typeof presentation[key]!=='boolean')fail('presentation.'+key,'must be true or false');
+  for(const key of ['sound','spokenOptions','confetti','rewards','intro','coinAnimation','questionAnimation','winnerAnimation','readQuestions','character','characterMotion'])if(typeof presentation[key]!=='boolean')fail('presentation.'+key,'must be true or false');
  }
  const rules=Profile.normalizeRules(input.rules||{});
  if(!Array.isArray(input.rounds)||!input.rounds.length||input.rounds.length>20)fail('rounds','must contain 1–20 rounds');const rounds=[],ids=new Set();for(const [i,r]of input.rounds.entries()){keys(r,['id','name'],'rounds['+i+']');if(!Number.isSafeInteger(r.id)||r.id<1||r.id>1000||ids.has(r.id))fail('rounds['+i+'].id','must be a unique positive integer');ids.add(r.id);rounds.push({id:r.id,name:text(r.name,'rounds['+i+'].name',80,true)});}

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.1 - 15 October 2026
+
+- Make BioVista a fixed Apex feature showcase with visible read-only settings; keep ordinary quizzes and reusable settings configurable.
+- Enable compatible rich presentation, full option speech and question narration while respecting reduced motion and local voice availability.
+- Fix motion staying disabled after a live system preference change; add native animation fallback and visible motion status.
+- Add optional pointer-responsive tilt and idle motion using the unchanged supplied character PNG.
+- Make **Try the BioVista Feature Showcase Quiz** download the versioned offline HTML from GitHub releases.
+- Keep GitHub as the public destination, unpublish confirmed quiz Pages hosting and preserve its source and history.
+- Add a requirement-by-requirement audit and regression coverage; retain the original bank, scores and historical archive.
+
 ## 1.1.0 — 15 October 2026
 
 - Add Teacher/Competition authoring paths and saved setup choices.

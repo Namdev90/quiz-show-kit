@@ -38,6 +38,7 @@
       "voiceLang": "en-IN",
       "speechRate": 1,
       "readQuestions": true,
+      "characterMotion": true,
       "character": true
     },
     "rules": {

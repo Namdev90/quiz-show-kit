@@ -1,6 +1,6 @@
 {
   "name": "quiz-show-kit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "Prompt-led research and design toolkit with a reusable offline two-team quiz-show engine and the real BioVista example.",
   "license": "MIT",

@@ -1661,7 +1661,8 @@
     "questionAnimation": true,
     "winnerAnimation": true,
     "intro": true,
-    "character": true
+    "character": true,
+    "characterMotion": true
   },
   "gameplay": {
     "shuffleOptions": true,

@@ -1,6 +1,6 @@
 # BioVista: current feature showcase
 
-[Try the BioVista Feature Showcase Quiz](https://github.com/Namdev90/quiz-show-kit/releases/download/v1.1.0/BioVista_Quiz_Public_Example.html) · [Editable configuration source](../../biovista.showcase.config.json) · [Question bank DOCX](BioVista_Question_Bank.docx) · [Reusable settings](BioVista_Showcase.qsk-settings.json) · [Quality review source](BioVista_Quality_Review.html) · [Historical original source](original/BioVista_Quiz_Offline.html)
+[Try the BioVista Feature Showcase Quiz](https://github.com/Namdev90/quiz-show-kit/releases/download/v1.1.1/BioVista_Quiz_Public_Example.html) · [Editable configuration source](../../biovista.showcase.config.json) · [Question bank DOCX](BioVista_Question_Bank.docx) · [Reusable settings](BioVista_Showcase.qsk-settings.json) · [Quality review source](BioVista_Quality_Review.html) · [Historical original source](original/BioVista_Quiz_Offline.html)
 
 The current example runs the current Quiz Show Kit engine with the original public BioVista bank: **30 main questions, four reserves, six tie cards and one practice card**. Question wording, options, intended answers, overall explanations, source titles/URLs and historical verification dates are unchanged. The unscored DEMO alone adds four concise option explanations and richer verification metadata after the NIST source was inspected on 15 October 2026. The other 40 cards were not newly verified. Six existing numerical items and six image questions receive descriptive subtype labels without changes to their content. There are seven existing visual cards in total: the numerical M30 also includes a visual. The [historical HTML, bank and provenance](original/README.md) are preserved byte for byte. The ordinary root `quiz.config.json` remains the baseline configuration; the showcase has its own event identity and settings.
 
@@ -25,7 +25,7 @@ The CTA downloads the release HTML; open the saved file in a laptop browser. Gam
 | Round turn order | Alternate | The two teams swap who starts each new round; membership is unchanged. |
 | Statistics | All 11 supported metrics selected | Normal quizzes can choose a subset. Illustrative winning chances retain their explicit assumptions. |
 | Revision report | On | Local host reports describe observed revealed-question performance by topic/team. |
-| Character | Supplied Chota Namu PNG, visible | Welcome and About/settings only; its showcase visibility is fixed. No invented artwork or interactive gaze. |
+| Character | Supplied Chota Namu PNG, visible | Welcome and About/settings only; its showcase visibility is fixed. Pointer-responsive tilt and gentle idle motion use the unchanged PNG; system reduced motion is respected. |
 | Motion/audio | Cinematic effects, full option speech, question narration, 80% volume | Local voice availability still applies, with embedded A-D/selection fallback clips. Physical audio remains an event-machine check. |
 | Control language | English | An exact-label dictionary is supported for a separate event; no unreviewed translation was invented. |
 
