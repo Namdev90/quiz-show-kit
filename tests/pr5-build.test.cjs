@@ -54,6 +54,18 @@ test('Root-only customization leaves showcase preservation bound to the archive'
  fs.writeFileSync(file,JSON.stringify(config));const result=build(directory);assert.equal(result.status,0,result.stderr);
 });
 
+test('Removing reviewed card evidence cannot publish an all-verified showcase claim',t=>{
+ const directory=fixture(t),file=path.join(directory,'biovista.showcase.config.json'),raw=readJSON(file),q=raw.questions.find(q=>q.id==='M01');
+ const original=readJSON(path.join(directory,'examples/biovista/original/questions.json')).find(q=>q.id==='M01');
+ delete q.verification;delete q.optionExplanations;q.sources=original.sources;
+ fs.writeFileSync(file,JSON.stringify(raw));
+ const ledgerFile=path.join(directory,'examples/biovista/evidence-review.json'),ledger=readJSON(ledgerFile);
+ ledger.cards.find(r=>r.id===q.id).questionSha256=hash(C.canonical(q));fs.writeFileSync(ledgerFile,JSON.stringify(ledger));
+ const metaFile=path.join(directory,'examples/biovista/BioVista_Question_Bank.meta.json'),meta=readJSON(metaFile);meta.baseFingerprint=C.fingerprint(raw);fs.writeFileSync(metaFile,JSON.stringify(meta));
+ const before=published(directory),result=build(directory);
+ assert.notEqual(result.status,0,'incomplete evidence must fail before publishing verification claims');assert.match(result.stderr,/review|evidence|rationale/i);assert.deepEqual(published(directory),before);
+});
+
 test('Explicit authoring repairs missing companions and produces a publishable bound DOCX',t=>{
  const directory=fixture(t),bank=path.join(directory,'examples/biovista/BioVista_Question_Bank.docx'),metaFile=bank.replace('.docx','.meta.json');
  fs.unlinkSync(bank);fs.unlinkSync(metaFile);

@@ -1,0 +1,30 @@
+{
+  "version": "1.1.1",
+  "date": "2026-10-15",
+  "scope": "Pre-publication source and generated-candidate checks on Windows; actual GitHub release checks are separate.",
+  "details": "RELEASE_QA.md",
+  "history": [
+    "IMPLEMENTATION_QA.md",
+    "history/VERIFICATION-2026-10-15-initial.json"
+  ],
+  "testCases": 176,
+  "testDurationMs": 202545.1476,
+  "runtimeSourceDigest": "d31b4b63f79825cc968d4172e42a9b7479e557f1bc296288361fce6e855a85fd",
+  "checks": {
+    "build": "PASS: canonical build, current showcase/launcher regeneration and validation; DOCX regenerated for its matching fixed configuration.",
+    "automated": "PASS:176 tests, zero failures/cancellations/skips;38 retained engine scenarios,56 mocked publisher cases,10 packaging cases,4 motion/fallback regressions and2 new character regressions.",
+    "windowsMotion": "PASS: installed Windows Chrome155.0.8059.40 and Edge155.0.4283.45 each passed10 actual offline preference/pointer/coin/disclosure checks. Native animation frame probes passed in the candidate and freshly generated normal quiz in both browsers.",
+    "animationDiagnosis": "Actual published v1.1.0 animates in clean sessions. Reproduced shared live reduced-motion latch and missing-GSAP fallback gap; repaired both. This does not establish the exact original user setting/file.",
+    "browserHistory": "Earlier v1.1.1 candidate completed30 main plus6 tie cards in Chrome and focused Edge scoring/recovery checks. Final published-file checks must identify their actual artifact hash.",
+    "macOS_Safari": "NOT ACTUALLY TESTED",
+    "hardware": "UNTESTED: physical speakers, pronunciation, projector/extended displays and Word GUI.",
+    "hosting": "Confirmed quiz Pages unpublished with source/configuration preserved; repository homepage empty, has_pages=false, former root and example endpoints404. No replacement or unrelated hosting changed.",
+    "publication": "v1.1.0 is preserved. v1.1.1 publication/download verification belongs to its exact release manifest, workflow and final report."
+  },
+  "sha256": {
+    "quiz.config.json": "ec8b2f616c6ebef07a76ef189b7e1422cbbaca67c678e498a8f4cc56f58f6b45",
+    "examples/biovista/BioVista_Quiz_Offline.html": "8bc4e813c81ab150d64fe69ed3fda5f6d21009c31485b868bfa18e5d71fd10e8",
+    "examples/biovista/original/BioVista_Quiz_Offline.html": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6",
+    "dist/Quiz_Offline.html": "a327b39a448ac85c747f30b3a70ff3f84e77510b2fa4ef25b8eaf71a285a310a"
+  }
+}

@@ -2,11 +2,11 @@
   "schemaVersion": 2,
   "kind": "current-engine-feature-showcase",
   "sourceConfiguration": "biovista.showcase.config.json",
-  "profileId": "biovista-apex-showcase-2026:281f7c9f",
-  "publicExampleSha256": "8bc4e813c81ab150d64fe69ed3fda5f6d21009c31485b868bfa18e5d71fd10e8",
+  "profileId": "biovista-apex-showcase-2026:ccfb3a47",
+  "publicExampleSha256": "ce9a683df2187cc651b6c7d85a0526a3263bcfe01d33ab9fd3629c33550b0196",
   "questions": 41,
   "options": 164,
-  "preserved": "All original public question stems, answer options/keys, overall explanations, source titles/URLs, historical verificationDate values, paired inventories and scoring/timing rules. Only DEMO adds separately checked option rationales and source-review metadata; existing numerical and visual cards receive descriptive subtype labels. The current runtime and explicit optional showcase settings are regenerated from source.",
+  "preserved": "All original public question stems, answer options/keys, overall explanations, original source titles/URLs, historical verificationDate values, paired inventories and scoring/timing rules. Reviewed source metadata, corroborating citations and option rationales are bound to exact question receipts. M23 alone receives a neutral geometric accessible label; visual identities/artwork remain intact. The current runtime and explicit optional showcase settings are regenerated from source.",
   "historicalArchive": {
     "directory": "original",
     "originalBuild": "2026.10.13-r10",
@@ -41,8 +41,9 @@
   "authoringSetup": "competition",
   "authoringSetupMeaning": "Choice of detailed creator workflow only; not a live gameplay mode.",
   "review": {
-    "issues": 93,
-    "sourceVerification": "DEMO: NIST Base and Derived Units inspected 2026-10-15. Other 40 cards retain historical metadata; the build fetches no sources.",
-    "missingPerOptionExplanations": 40
+    "issues": 12,
+    "sourceVerification": "All 41 cards have manually inspected evidence and four option rationales dated 2026-10-15; source details and manual warning dispositions are in evidence-review.json. Builds fetch no sources.",
+    "evidenceReviewSha256": "86dac7e15a1a4e946ca5f54141d9732dd5c820062073c4563c1a9d9380c9a257",
+    "missingPerOptionExplanations": 0
   }
 }

@@ -1,7 +1,7 @@
 {
   "format": "QSK_EXAMPLE_QUALITY_1",
   "eventId": "biovista-apex-showcase-2026",
-  "baseFingerprint": "cf42071a",
+  "baseFingerprint": "1150f422",
   "diff": {
     "orderChanged": false,
     "moved": [],
@@ -58,106 +58,16 @@
       "image": 6
     },
     "verification": {
-      "verified": 1,
-      "unverified": 40,
+      "verified": 41,
+      "unverified": 0,
       "disputed": 0,
       "creator-override": 0
     },
     "issues": [
       {
-        "questionId": "M01",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M01",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M02",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M02",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M03",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M03",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M04",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M04",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M05",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M05",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M06",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M06",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
         "questionId": "M06",
         "field": "stem/options",
         "message": "Review absolute wording and option-dependent answers for ambiguity."
-      },
-      {
-        "questionId": "M07",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M07",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M08",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M08",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M09",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M09",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
       },
       {
         "questionId": "M09",
@@ -166,88 +76,8 @@
       },
       {
         "questionId": "M10",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M10",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M10",
         "field": "stem/options",
         "message": "Review absolute wording and option-dependent answers for ambiguity."
-      },
-      {
-        "questionId": "M11",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M11",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M12",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M12",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M13",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M13",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M14",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M14",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M15",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M15",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M16",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M16",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M17",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M17",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
       },
       {
         "questionId": "M17",
@@ -255,29 +85,9 @@
         "message": "Review numerical values and units manually; not every option has a simple comparable numeric form."
       },
       {
-        "questionId": "M18",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M18",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
         "questionId": "M19",
         "field": "visual.key",
         "message": "The media identifier may expose the answer; review filenames, captions and accessible labels before play."
-      },
-      {
-        "questionId": "M19",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M19",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
       },
       {
         "questionId": "M20",
@@ -285,109 +95,14 @@
         "message": "The media identifier may expose the answer; review filenames, captions and accessible labels before play."
       },
       {
-        "questionId": "M20",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M20",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M21",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M21",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M22",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M22",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M23",
-        "field": "visual.alt",
-        "message": "Alternative text contains the correct answer text; review pre-answer leakage without removing useful accessibility context."
-      },
-      {
-        "questionId": "M23",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M23",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M24",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M24",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
         "questionId": "M24",
         "field": "stem/options",
         "message": "Review absolute wording and option-dependent answers for ambiguity."
       },
       {
-        "questionId": "M25",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M25",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M26",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M26",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
         "questionId": "M26",
         "field": "stem/options",
         "message": "Review absolute wording and option-dependent answers for ambiguity."
-      },
-      {
-        "questionId": "M27",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M27",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M28",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M28",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
       },
       {
         "questionId": "M28",
@@ -396,141 +111,698 @@
       },
       {
         "questionId": "M29",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M29",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "M29",
         "field": "stem/options",
         "message": "Review absolute wording and option-dependent answers for ambiguity."
-      },
-      {
-        "questionId": "M30",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "M30",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
       },
       {
         "questionId": "M30",
         "field": "options",
         "message": "Review numerical values and units manually; not every option has a simple comparable numeric form."
-      },
-      {
-        "questionId": "R01",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "R01",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "R02",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "R02",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
       },
       {
         "questionId": "R02",
         "field": "options",
         "message": "Numerical options use different or missing units. Confirm conversions are intentional; no automatic mathematical or factual correction was made."
-      },
-      {
-        "questionId": "R03",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "R03",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "R04",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "R04",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "T01",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "T01",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "T02",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "T02",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "T03",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "T03",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "T04",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "T04",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "T05",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "T05",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
-      },
-      {
-        "questionId": "T06",
-        "field": "verification",
-        "message": "Independent source verification is not recorded."
-      },
-      {
-        "questionId": "T06",
-        "field": "optionExplanations",
-        "message": "Add a concise explanation for every option; missing explanations are not invented."
       }
     ],
     "notice": "Heuristics identify review candidates, not factual verification or a quality score. External sources were not fetched by this tool."
   },
-  "notice": "Read-only example of an unchanged-bank quality review. This is not an apply/rollback transaction. DEMO has separately inspected NIST evidence dated 2026-10-15 and four option rationales. The other 40 cards retain inherited evidence gaps. The build itself fetches no sources."
+  "evidenceReview": {
+    "checkedAt": "2026-10-15",
+    "sha256": "86dac7e15a1a4e946ca5f54141d9732dd5c820062073c4563c1a9d9380c9a257",
+    "counts": {
+      "newlyReviewedCards": 40,
+      "newOptionExplanations": 160,
+      "verifiedCards": 41,
+      "optionExplanations": 164,
+      "sourceRecords": 88,
+      "reviewedHeuristicWarnings": 13
+    },
+    "warningDispositions": [
+      {
+        "questionId": "M06",
+        "field": "stem/options",
+        "status": "reviewed-retain",
+        "note": "The absolute-wording warning is triggered by 'always' in false distractor A. That assertion is deliberately incorrect; it does not create another defensible answer. Retain the stem, options and D key.",
+        "observation": "The absolute 'always increases' occurs in a distractor about equilibrium product fraction; fixed temperature scopes the stem."
+      },
+      {
+        "questionId": "M09",
+        "field": "stem/options",
+        "status": "reviewed-retain",
+        "note": "The absolute statements are intentional false misconceptions. CDC explicitly contradicts each; D is uniquely correct.",
+        "observation": "The restrictive glove/hand-hygiene statements are the distractor misconceptions being contrasted with the general key."
+      },
+      {
+        "questionId": "M10",
+        "field": "stem/options",
+        "status": "reviewed-retain",
+        "note": "The only/antiviral claims are deliberate false distractors. The stem explicitly limits the question to direct treatment of an ordinary viral cold.",
+        "observation": "The 'only' statements are distractors about an ordinary viral cold. 'Antibacterial' in the stem already offers a strong semantic cue, which makes this closer to recognition than substantial application."
+      },
+      {
+        "questionId": "M17",
+        "field": "options",
+        "status": "reviewed-retain",
+        "note": "Manual arithmetic and percentage units checked. D intentionally tests whether a healthy denominator is needed; mixing this conceptual alternative with percentages creates no ambiguity.",
+        "observation": "Three percentage options are deliberately contrasted with one textual claim of insufficient data. They are alternative conclusions about one percentage quantity, not inconsistent physical units."
+      },
+      {
+        "questionId": "M19",
+        "field": "visual.key",
+        "status": "reviewed-retain",
+        "note": "Retain Python. src/ui.js:67 resolves it to an embedded data URI; it does not render the identifier or original filename as a caption, tooltip, title or accessible name. The stage uses neutral visual.alt and the fixed Enlarge question image label. Zoom clones these labels; the display-only audience copies current public fragments, not bank/host metadata. Host credits/source code retain identities as expected; they should not be presented as audience content.",
+        "observation": "The internal key is Python. The player image uses an embedded data URI and a neutral two-snakes alt; the key/asset filename is not printed as the question label."
+      },
+      {
+        "questionId": "M20",
+        "field": "visual.key",
+        "status": "reviewed-retain",
+        "note": "Retain OpenAI. src/ui.js:67 uses it for lookup and selects the literal dark CSS class, but does not place the identifier or original SVG filename in audience-facing text/ARIA/title attributes. The image gets the existing six-loop Blossom alt, already consistent with the stem. Zoom clones the same image; src/session-tools.js:145-174 copies public stage fragments and omits host panels, scripts and banks. Do not rename a stable asset solely to silence this heuristic.",
+        "observation": "The internal key is OpenAI. The player image uses an embedded data URI and 'Official six-loop Blossom mark' as alt, matching the context already in the stem without naming the organisation."
+      },
+      {
+        "questionId": "M23",
+        "field": "visual.alt",
+        "status": "corrected",
+        "note": "Replace the direct answer with a useful description of the actual shape, preserving accessibility and the image-identification task.",
+        "observation": "The accessible pre-answer label names Biological hazard, the keyed answer."
+      },
+      {
+        "questionId": "M24",
+        "field": "stem/options",
+        "status": "reviewed-retain",
+        "note": "The heuristic is triggered by only in the distractor Paired nitrogenous bases only. This restriction is deliberate and makes the incorrect rails-versus-rungs claim clear. NHGRI supports the distinction; no ambiguity, multi-option dependency or unsupported absolute is introduced. Retain the stem/options and key.",
+        "observation": "'Paired nitrogenous bases only' is a distractor about rails versus rungs."
+      },
+      {
+        "questionId": "M26",
+        "field": "stem/options",
+        "status": "reviewed-retain",
+        "note": "The word 'only' occurs in C's deliberately restrictive fixed-rule distractor. It distinguishes handwritten case rules from data-derived learning without making B ambiguous.",
+        "observation": "Fixed rules for every example and storing every fact are distractors against learning useful relationships from data."
+      },
+      {
+        "questionId": "M28",
+        "field": "stem/options",
+        "status": "reviewed-retain",
+        "note": "'Only young adults' is the essential recruitment condition. Retain A's 'may': the sample raises a coverage concern without proving unequal age-specific error rates.",
+        "observation": "The stem's only-young-adults qualification is essential to the sampling scenario. Distractors claim guarantees or automatic lack of bias, making the cautious key comparatively conspicuous."
+      },
+      {
+        "questionId": "M29",
+        "field": "stem/options",
+        "status": "reviewed-retain",
+        "note": "A's 'only on training data' is the misconception being tested: direct parameter fitting is not the only route for test-set information to affect development. Retain D's 'may'.",
+        "observation": "The 'weights were fitted only on training data' distractor is the misconception challenged by repeated decisions based on final-test results."
+      },
+      {
+        "questionId": "M30",
+        "field": "options",
+        "status": "reviewed-retain",
+        "note": "Options are prose statements, so the simple leading-number parser cannot compare them. Counts total 100 and all rates use percent. No unit or conversion ambiguity.",
+        "observation": "Options are complete conclusions containing overall-accuracy and positive-detection percentages rather than four single numeric entries."
+      },
+      {
+        "questionId": "R02",
+        "field": "options",
+        "status": "reviewed-retain",
+        "note": "Keep the ratio/direction choices. Scientific qualification of the pH rule is for the source review.",
+        "observation": "All four options express dimensionless factors with greater/smaller direction; the differing words are the alternatives being tested, not different measurement units."
+      }
+    ],
+    "sequenceReview": {
+      "acceptedSharedTeaching": {
+        "ids": [
+          "DEMO",
+          "T01"
+        ],
+        "type": "earlier_shared_teaching",
+        "observation": "The unscored shared DEMO offers Kelvin and its revealed explanation says that kelvins measure thermodynamic temperature. Its supplied Kelvin option explanation repeats that relationship. T01 later asks for the SI base unit of thermodynamic temperature, keyed Kelvin.",
+        "distinction": "This is teaching revealed after an earlier shared demonstration, rather than disclosure of T01's answer during T01's pre-answer phase. Both teams can hear/read the same teaching.",
+        "limitation": "T01 can therefore draw on rehearsed knowledge while its partner T02 asks the unpractised amount-of-substance unit. Equal exposure to DEMO does not establish equal difficulty of the two later tie cards.",
+        "decision": "Accepted overlap for this archived bank. Preserve existing DEMO and T01 stems, options, keys and overall explanations; record the pedagogical limitation.",
+        "status": "reviewed_accepted_overlap",
+        "notAFactualOverride": true,
+        "requiredContentChange": false
+      },
+      "repeatAndSequenceDispositions": [
+        {
+          "ids": [
+            "M01",
+            "M03",
+            "M05",
+            "M13",
+            "M15",
+            "M24",
+            "T03",
+            "T04"
+          ],
+          "observation": "Cell/nucleic-acid concepts recur, but the objectives differ: DNA location, protein assembly, osmotic volume change, abbreviation expansion, amplification terminology, DNA backbone composition, plant-wall material and RNA subunits.",
+          "decision": "Retain as related teaching/revision. Earlier wording does not state the later distinct keyed facts. Do not rewrite the historical cards merely because they share biological vocabulary.",
+          "status": "reviewed_reinforcement"
+        },
+        {
+          "ids": [
+            "M07",
+            "M21"
+          ],
+          "observation": "M07 establishes microscope magnification and tests a numerical multiplication. M21 later tests the function of a pictured instrument. Earlier material supplies familiar background once the instrument is recognised, but does not duplicate M07's calculation objective.",
+          "decision": "Retain as related microscopy reinforcement; disclose the scaffolding rather than claim the later task is wholly independent of earlier teaching.",
+          "status": "reviewed_reinforcement"
+        },
+        {
+          "ids": [
+            "M17",
+            "M30"
+          ],
+          "observation": "M17 teaches detection among actual cases. M30 later requires combining overall accuracy with failed positive-case detection under class imbalance; the earlier card does not give M30's numerical conclusion.",
+          "decision": "Retain as transfer from a definition to a different evaluation scenario.",
+          "status": "reviewed_reinforcement"
+        },
+        {
+          "ids": [
+            "M25",
+            "M26",
+            "M27",
+            "M28",
+            "M29",
+            "M30",
+            "R04"
+          ],
+          "observation": "The AI cards share a broad theme but ask different concepts: fabricated content, learning from data, inference, population representation, adaptive test-set use, class imbalance and association versus causation.",
+          "decision": "No unintended conceptual duplicate or later exact key supplied by an earlier stem/overall rationale was found in this group.",
+          "status": "reviewed_distinct_objectives"
+        },
+        {
+          "ids": [
+            "DEMO",
+            "M08",
+            "R01",
+            "T01",
+            "T02"
+          ],
+          "observation": "Unit identification, litre conversion and SI base quantities share a measurement theme. DEMO to T01 is the explicit accepted overlap above; R01's Celsius context does not itself supply the Kelvin base-unit key, and T02 asks a different quantity.",
+          "decision": "Retain the theme and document the one accepted taught-answer overlap.",
+          "status": "reviewed_with_accepted_overlap"
+        },
+        {
+          "ids": [
+            "T03",
+            "T04",
+            "T05",
+            "T06"
+          ],
+          "observation": "The remaining tie pairs use analogous recall tasks on different facts. T05 teaches producers/solar-energy capture; it does not state T06's decomposition key. T03's cellulose explanation does not state T04's RNA nucleotide key.",
+          "decision": "Retain. Shared topic or the ability to eliminate one distractor is not classified as a direct giveaway of a later unique answer.",
+          "status": "reviewed_distinct_objectives"
+        },
+        {
+          "ids": [
+            "M19",
+            "M20",
+            "M21",
+            "M22",
+            "M24",
+            "R02"
+          ],
+          "observation": "M19/M20 alts describe the marks without naming the keyed organisations/language. M21/M22 alts identify the depicted equipment while the task asks its function; these provide useful accessible context. M24's alt repeats the DNA context already in its stem and does not name sugar/phosphate rails. R02's visual repeats the two pH inputs already supplied in its stem.",
+          "decision": "Keep the useful accessibility context. M23 is the separate answer-naming alt correction.",
+          "status": "reviewed_no_additional_direct_alt_disclosure"
+        }
+      ],
+      "duplicateResult": {
+        "exactNormalizedStemDuplicates": [],
+        "manualNearRepeatConclusion": "No unintended near-repeat was found after distinguishing shared teaching from distinct objectives. The accepted DEMO to T01 overlap is recorded prominently rather than hidden inside a no-duplicates claim.",
+        "limits": "This is a human semantic review plus a normalized-stem comparison, not a proof that every possible implicit cue or future content edit has been detected."
+      },
+      "pairReview": [
+        {
+          "pairId": "R1P1",
+          "ids": [
+            "M01",
+            "M02"
+          ],
+          "status": "comparable_recognition",
+          "note": "Two familiar single-concept recognition tasks; combined stem/option word counts 20 and 17."
+        },
+        {
+          "pairId": "R1P2",
+          "ids": [
+            "M03",
+            "M04"
+          ],
+          "status": "comparable_brief_context",
+          "note": "Both use a brief biological-process context to identify a structure/organ; combined word counts 23 and 24."
+        },
+        {
+          "pairId": "R1P3",
+          "ids": [
+            "M05",
+            "M06"
+          ],
+          "status": "comparable_conceptual_reasoning",
+          "note": "Both require keeping an important condition in view. Combined word counts 54 and 53 give closely matched reading load; osmosis and catalyst/equilibrium content differ by design."
+        },
+        {
+          "pairId": "R2P1",
+          "ids": [
+            "M07",
+            "M08"
+          ],
+          "status": "comparable_one_step_numerical",
+          "note": "One multiplication versus one familiar metric conversion, with units/scale shown in the choices; combined word counts 20 and 23."
+        },
+        {
+          "pairId": "R2P2",
+          "ids": [
+            "M09",
+            "M10"
+          ],
+          "status": "comparable_recognition_with_label_caveat",
+          "note": "Both identify a basic health misconception, combined word counts 42 and 45. Their moderate label is creator-assigned; the wording supports recognition more strongly than a new applied analysis."
+        },
+        {
+          "pairId": "R2P3",
+          "ids": [
+            "M11",
+            "M12"
+          ],
+          "status": "advisory_demand_difference",
+          "note": "M11 selects integrated work over three explicit separation choices; M12 distinguishes accuracy and precision from a measurement pattern. M12 has the stronger application demand despite both being moderate. With Bio as toss starter, M11 belongs to Vista and M12 to Bio. Preserve archived content and record the limitation; no measured unfairness claim."
+        },
+        {
+          "pairId": "R3P1",
+          "ids": [
+            "M13",
+            "M14"
+          ],
+          "status": "comparable_abbreviation_recall",
+          "note": "DNA and ATP expansions, combined word counts 18 and 16."
+        },
+        {
+          "pairId": "R3P2",
+          "ids": [
+            "M15",
+            "M16"
+          ],
+          "status": "comparable_abbreviation_recall",
+          "note": "PCR and MRI expansions, combined word counts 28 and 20; the longer PCR stem supplies useful context. Audience familiarity may differ, but no new correction is justified from this audit alone."
+        },
+        {
+          "pairId": "R3P3",
+          "ids": [
+            "M17",
+            "M18"
+          ],
+          "status": "advisory_demand_and_label_limit",
+          "note": "Reading load is close, 31 and 32 combined words. M17 interprets a detection denominator and percentage; M18 selects the stated new-case count. M18 is the simpler operation, and neither strongly demonstrates the research guide's two-concept challenging rubric. With Bio starting, M17 is Bio's and M18 Vista's. Preserve content; any substantive rebalancing belongs to a separately scoped new bank."
+        },
+        {
+          "pairId": "R4P1",
+          "ids": [
+            "M19",
+            "M20"
+          ],
+          "status": "comparable_identity_recognition",
+          "note": "Two official-mark identity questions, combined word counts 14 and 15, with neutral descriptive alts. Difficulty depends on prior brand exposure."
+        },
+        {
+          "pairId": "R4P2",
+          "ids": [
+            "M21",
+            "M22"
+          ],
+          "status": "comparable_equipment_function",
+          "note": "Both identify a depicted laboratory instrument's task, combined word counts 41 and 34. Naming equipment in the alt preserves access to the input; it does not directly name the functional option. Microscope familiarity can exceed micropipette familiarity for some audiences."
+        },
+        {
+          "pairId": "R4P3",
+          "ids": [
+            "M23",
+            "M24"
+          ],
+          "status": "direct_alt_correction_then_advisory",
+          "note": "M23's key-naming alt must be neutralised. After that correction, the cards still differ between hazard-symbol recognition and molecular-component knowledge, with combined word counts 20 and 34. Preserve the assigned moderate pair; do not claim psychometric equivalence."
+        },
+        {
+          "pairId": "R5P1",
+          "ids": [
+            "M25",
+            "M26"
+          ],
+          "status": "comparable_definition_recognition_with_reading_note",
+          "note": "Both recognise an introductory AI concept. M25 totals 27 words and M26 41, largely because M26 has longer definition choices; the accessible label remains a reasonable qualitative authoring choice."
+        },
+        {
+          "pairId": "R5P2",
+          "ids": [
+            "M27",
+            "M28"
+          ],
+          "status": "advisory_reading_and_cue_difference",
+          "note": "M27 totals 30 words versus 53 for M28, whose choices contain conspicuous guarantees against one cautious key. Both apply a short scenario to a concept, but the longer reading load and different distractor plausibility are recorded. No content rewrite is required within the archive scope."
+        },
+        {
+          "pairId": "R5P3",
+          "ids": [
+            "M29",
+            "M30"
+          ],
+          "status": "comparable_evaluation_reasoning",
+          "note": "Both evaluate a tempting model-performance claim and require considering a limitation; combined word counts 67 and 61. Earlier M17 scaffolds M30's detection concept without supplying its answer."
+        },
+        {
+          "pairId": "TIE1",
+          "ids": [
+            "T01",
+            "T02"
+          ],
+          "status": "accepted_shared_teaching_overlap",
+          "note": "The forms and reading load match, but DEMO has already taught the temperature-unit relationship used by T01. See prominentAcceptedOverlap; preserve as directed, with the tie-difficulty limitation explicit."
+        },
+        {
+          "pairId": "TIE2",
+          "ids": [
+            "T03",
+            "T04"
+          ],
+          "status": "comparable_biomolecule_recall",
+          "note": "Two different biomolecule/composition facts, combined word counts 15 and 16. These are recall tasks even though both carry moderate labels."
+        },
+        {
+          "pairId": "TIE3",
+          "ids": [
+            "T05",
+            "T06"
+          ],
+          "status": "comparable_ecosystem_role_recall",
+          "note": "Energy capture versus nutrient return, combined word counts 25 and 25. The earlier producer explanation does not give the decomposition key; both are basic conceptual recall despite moderate labels."
+        }
+      ],
+      "coverageEvidence": {
+        "inventory": {
+          "main": 30,
+          "reserve": 4,
+          "tie": 6,
+          "demo": 1,
+          "mainDistinctTopicLabels": 29
+        },
+        "mainRounds": {
+          "1": "Six shared-science cards across cells, physiology and chemistry",
+          "2": "Six laboratory/health cards including measurement, infection prevention and One Health",
+          "3": "Four abbreviation expansions plus two diagnostic/epidemiological terminology tasks",
+          "4": "Two brand identities plus four scientific instrument/symbol/molecular visual tasks",
+          "5": "Six AI foundations, evidence and evaluation tasks"
+        },
+        "difficulty": {
+          "main": {
+            "accessible": 10,
+            "moderate": 14,
+            "challenging": 6
+          },
+          "short": {
+            "accessible": 10,
+            "moderate": 10,
+            "challenging": 0
+          },
+          "note": "These are creator-assigned labels. The full distribution is approximately 33/47/20 percent; short mode deliberately removes all challenging pairs. No real-student difficulty calibration was performed."
+        },
+        "formats": {
+          "wholeBank": {
+            "text": 29,
+            "numerical": 6,
+            "image": 6
+          },
+          "main": {
+            "text": 19,
+            "numerical": 5,
+            "image": 6
+          },
+          "short": {
+            "text": 14,
+            "numerical": 2,
+            "image": 4
+          },
+          "note": "M12 contains numerical measurement data but is authored as text. The visual cards are identity/equipment/symbol/schematic tasks; there are no graph, code/output, mapping or sequence items. A guide's optional format menu does not require adding such content to an archived bank."
+        },
+        "shortOmissions": [
+          "M05",
+          "M06",
+          "M11",
+          "M12",
+          "M17",
+          "M18",
+          "M23",
+          "M24",
+          "M29",
+          "M30"
+        ],
+        "shortOmissionEffect": "Short mode drops osmosis/catalyst reasoning, One Health and measurement-quality interpretation, sensitivity/incidence, hazard/DNA-backbone visuals, and the final independent-test/class-imbalance AI evaluation pair. Each team loses one primary card per round equally; the topic and cognitive coverage is narrower.",
+        "perTeamTopicLimitation": "Each team receives one card from every pair and equal counts in every round/assigned level, but not identical subtopics. With Bio starting, its first-round cards concentrate on cellular/molecular biology while Vista receives respiration, renal physiology and catalyst chemistry. Later round-three cards similarly split genetics/PCR from ATP/MRI. This is descriptive asymmetry, not evidence of measured unfairness.",
+        "bankConcentrations": "Four of six round-three cards are abbreviation expansions. The two brand identities occupy two of six visual-round slots. Ecology is concentrated in T05/T06, with environmental health also present in M11; pure ecology is not guaranteed to appear in main play.",
+        "blueprintLimitation": "No audience-specific learning-objective blueprint was present in the reviewed configuration, so suitability against a course syllabus cannot be certified. No extra topics or historical rewrites are proposed without a new scope decision."
+      },
+      "reserveReview": {
+        "ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04"
+        ],
+        "actualEligibility": "All four reserves explicitly list suitableRounds [1,2,3,4,5], notwithstanding their nominal round values. Availability then depends on matching current difficulty/timing and remaining unused status.",
+        "inventory": {
+          "accessible": [
+            "R01"
+          ],
+          "moderate": [
+            "R02",
+            "R03"
+          ],
+          "challenging": [
+            "R04"
+          ]
+        },
+        "topicAndFormatLimit": "Every reserve has a different exact topic label from every main card. R02 is numerical; the other reserves are text. Thus the set can replace cards structurally but cannot promise topic/format equivalence for every main slot, especially visual cards. A single accessible reserve and single challenging reserve also cannot supply independent replacements for both teams at those levels after reuse is exhausted.",
+        "engineMitigation": "src/engine.js:268 onward checks round/difficulty/timing, ranks available reserves and records topic/format mismatches. The host tools expose those mismatches. This prevents presenting nominal eligibility as a guaranteed content match.",
+        "decision": "Record reserves as broad fallback material requiring slot-specific content review. Preserve the archived reserve meanings. Producing a topic-complete reserve bank would be a separate scope decision.",
+        "status": "reviewed_with_coverage_limit"
+      },
+      "limitations": [
+        "Difficulty descriptions and pair-demand review are author judgments, not participant-calibrated psychometrics.",
+        "Full mode gives each team 15 primary opportunities; short mode gives 10 and omits the challenging pairs.",
+        "The shared DEMO teaches the later T01 unit; equal exposure does not prove equal difficulty with T02.",
+        "No actual screen reader, physical audio/display, Windows Word GUI or macOS verification is implied.",
+        "All 164 option rationales, 41 overall explanations and expandable evidence notes received a final sequence pass; the exact configuration hash and simulated-runtime scope are recorded below."
+      ],
+      "finalRationaleReview": {
+        "reviewedAt": "2026-10-15T15:57:24.126Z",
+        "configurationFileSha256": "7ec625aacc0f25dafdea263395698506f340033ab36c6661103b02b61bdf995e",
+        "questionRecordsSha256": "7f5444a91163dcb1c58b7b5e3a851c4a55e96dfc7593f993e7812b64689fe432",
+        "questionRecordsSha256Method": "SHA-256 of JSON.stringify(rawConfiguration.questions), preserving parsed property and question order.",
+        "cards": 41,
+        "optionRationalesRead": 164,
+        "overallExplanationsReread": 41,
+        "status": "final_snapshot_reviewed_with_accepted_shared_teaching",
+        "newUnresolvedDirectPreAnswerDisclosuresFound": 0,
+        "newUnresolvedUniqueLaterAnswerCuesFound": 0,
+        "resolvedFindings": [
+          {
+            "id": "M23-ALT",
+            "questionIds": [
+              "M23"
+            ],
+            "type": "own_card_direct_pre_answer_disclosure",
+            "status": "resolved_in_reviewed_snapshot"
+          },
+          {
+            "id": "T01-T02-SOURCE",
+            "questionIds": [
+              "T01",
+              "T02"
+            ],
+            "type": "earlier_revealed_paired_answer_cue",
+            "status": "resolved_in_reviewed_snapshot"
+          },
+          {
+            "id": "T05-T06-SOURCE",
+            "questionIds": [
+              "T05",
+              "T06"
+            ],
+            "type": "earlier_revealed_paired_conceptual_answer_cue",
+            "status": "resolved_in_reviewed_snapshot"
+          },
+          {
+            "id": "R01-T02-SOURCE",
+            "questionIds": [
+              "R01",
+              "T02"
+            ],
+            "type": "conditional_reserve_path_later_answer_cue",
+            "status": "resolved_in_reviewed_snapshot"
+          }
+        ],
+        "acceptedTeachingAndScaffolding": [
+          {
+            "questionIds": [
+              "DEMO",
+              "T01"
+            ],
+            "status": "accepted_shared_teaching_preserved",
+            "observation": "DEMO's existing overall explanation, Kelvin option note and source detail teach that kelvin measures thermodynamic temperature before T01 later asks its SI base unit.",
+            "distinction": "This is earlier shared teaching after an unscored demonstration, not disclosure during T01's own pre-answer phase. Both teams receive the same exposure. T01 is nevertheless rehearsed while T02's amount-of-substance fact is not; equal exposure does not prove equal tie-card difficulty.",
+            "decision": "Preserve as explicitly directed under the archived-content scope. This is a pedagogical acceptance, not a factual creator override or a claim that no overlap exists."
+          },
+          {
+            "questionIds": [
+              "M03",
+              "M13",
+              "M14",
+              "M15",
+              "M24",
+              "T03",
+              "T04"
+            ],
+            "status": "reviewed_related_biomolecule_teaching",
+            "observation": "Protein/amino-acid and fat-component rationales help distinguish later distractor categories. M15's source note names nucleotides in DNA copying before T04 asks RNA subunits. M13's deoxyribose and M14's phosphate/nucleotide terminology similarly prepare later molecular content.",
+            "decision": "Retain as shared foundational teaching. These statements do not explicitly state RNA's nucleotide-polymer fact before T04, or the alternating sugar/phosphate DNA-backbone relationship before M24. Shared terminology and partial distractor elimination are not treated as proof of a unique later-key giveaway."
+          },
+          {
+            "questionIds": [
+              "M07",
+              "M21"
+            ],
+            "status": "reviewed_related_microscopy_teaching",
+            "observation": "New M07 notes explain the magnification multiplication, reinforcing the microscope context later used in M21.",
+            "decision": "Retain the distinction between a numerical total-magnification task and an instrument-function/visual task, with the earlier scaffolding disclosed as in the original review."
+          },
+          {
+            "questionIds": [
+              "M17",
+              "M30"
+            ],
+            "status": "reviewed_transfer_to_new_evaluation_scenario",
+            "observation": "M17's new notes state the true-case denominator and false-negative relationship. M30 still requires applying detection to a different count scenario and combining it with overall accuracy.",
+            "decision": "Retain. The earlier definition/formula does not supply M30's 95%-accuracy/zero-positive-detection result. Both are omitted in short mode."
+          },
+          {
+            "questionIds": [
+              "M26",
+              "M28",
+              "M29"
+            ],
+            "status": "reviewed_general_evaluation_scaffolding",
+            "observation": "M26's new reliability source note mentions realistic representative tests; M28 later applies representativeness to an age-restricted sample. M28's evaluation source note mentions independent assessment, but does not state M29's repeated-test-tuning result.",
+            "decision": "Retain as general background requiring a new scenario interpretation, not an exact later-key disclosure."
+          }
+        ],
+        "runtimeEvidence": {
+          "method": "Required the current compiler, validated the configuration, and ran the actual profile/engine in a Node VM. Full and short journeys used startingTeam Bio, shuffleSeed 42, the unscored DEMO, every scheduled main card and all six tie cards, answering correctly through the public dispatch/tick API. Timed phases used 100 ms simulated ticks, respecting the interruption guard.",
+          "fullMainOrder": [
+            "M01",
+            "M02",
+            "M03",
+            "M04",
+            "M05",
+            "M06",
+            "M07",
+            "M08",
+            "M09",
+            "M10",
+            "M11",
+            "M12",
+            "M13",
+            "M14",
+            "M15",
+            "M16",
+            "M17",
+            "M18",
+            "M19",
+            "M20",
+            "M21",
+            "M22",
+            "M23",
+            "M24",
+            "M25",
+            "M26",
+            "M27",
+            "M28",
+            "M29",
+            "M30"
+          ],
+          "shortMainOrder": [
+            "M01",
+            "M02",
+            "M03",
+            "M04",
+            "M07",
+            "M08",
+            "M09",
+            "M10",
+            "M13",
+            "M14",
+            "M15",
+            "M16",
+            "M19",
+            "M20",
+            "M21",
+            "M22",
+            "M25",
+            "M26",
+            "M27",
+            "M28"
+          ],
+          "tieOrderBothModes": [
+            "T01",
+            "T02",
+            "T03",
+            "T04",
+            "T05",
+            "T06"
+          ],
+          "mainRoundStartersForBioStart": [
+            "Bio",
+            "Vista",
+            "Bio",
+            "Vista",
+            "Bio"
+          ],
+          "ordering": "Rising difficulty sorts complete pairs within rounds. Short mode selects the first two authored pairs per round before sorting. Alternating round starters preserve equal primary counts. Tie cards retain the configured pair order and starting-team pattern.",
+          "full": {
+            "mainPrimaryOpportunities": {
+              "Bio": 15,
+              "Vista": 15
+            },
+            "visitedCardsIncludingDemoAndTies": 37,
+            "preRevealGuardChecks": 1894,
+            "finishedPhase": "end"
+          },
+          "short": {
+            "mainPrimaryOpportunities": {
+              "Bio": 10,
+              "Vista": 10
+            },
+            "visitedCardsIncludingDemoAndTies": 27,
+            "preRevealGuardChecks": 1384,
+            "finishedPhase": "end"
+          },
+          "guardAssertions": "At every checked non-reveal engine view containing a question, correct/correctOptionId/explanation/optionExplanations/sources were absent. Every reached reveal had four option rationales. Normal UI code renders rationale/source details only after reveal, while visual alt is used before reveal.",
+          "sourceRenderChecks": {
+            "T01HasWholeWordMole": false,
+            "T05HasBacteriaFungiMicrobialOrDecompositionTerm": false,
+            "R01HasWholeWordMole": false
+          },
+          "reserveScope": "All four reserve rationales, overall explanations and evidence notes were manually read. R01's all-round accessible eligibility was included in the conditional cue analysis. Reserve replacement paths were not simulated in the runtime journeys."
+        },
+        "limits": [
+          "This supplement supersedes the earlier report's pending status for M23 and its warning that the other 40 cards lacked option rationales. Prior qualitative pair-demand, topic-coverage and reserve-equivalence limitations remain; they were not rewritten or represented as measured fairness.",
+          "The snapshot hashes bound this result. Later content/source-note/alt edits require checking their affected sequence relationships.",
+          "Human semantic comparison and targeted rendered-text checks cannot prove that every implicit cue has been removed. The accepted DEMO teaching overlap remains explicit.",
+          "No external factual browsing, live browser/projection, screen-reader, speaker or narration playback was performed. The runtime check exercised deterministic all-correct paths, not passes, lifelines, recovery or all replacement branches."
+        ]
+      }
+    }
+  },
+  "notice": "Read-only example of an unchanged-bank quality review. This is not an apply/rollback transaction. All 41 cards have inspected-source records and four option rationales dated 2026-10-15. Thirteen inherited heuristic warnings have explicit manual dispositions: M23 accessible text was corrected; twelve deliberate wording, numeric-form or internal-identifier candidates remain visible to the heuristic. Shared teaching and difficulty/coverage limits are recorded. The build itself fetches no sources."
 }

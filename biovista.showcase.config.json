@@ -336,11 +336,54 @@
       "sources": [
         {
           "title": "NHGRI — Nucleus",
-          "url": "https://www.genome.gov/genetics-glossary/Nucleus"
+          "url": "https://www.genome.gov/genetics-glossary/Nucleus",
+          "section": "Definition and Narration",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the definition placing chromosomes within the nucleus."
+        },
+        {
+          "title": "MedlinePlus Genetics - What is DNA?",
+          "url": "https://medlineplus.gov/genetics/understanding/basics/dna/",
+          "section": "Opening paragraph",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Explicitly distinguishes the majority of human cellular DNA in the nucleus from the small mitochondrial amount."
+        },
+        {
+          "title": "OpenStax Biology 2e - Eukaryotic Cells",
+          "url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+          "section": "The Plasma Membrane; Lysosomes",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked membrane transport and lysosomal degradation functions for distractors C and D."
+        },
+        {
+          "title": "OpenStax Biology 2e - The Endomembrane System and Proteins",
+          "url": "https://openstax.org/books/biology-2e/pages/4-4-the-endomembrane-system-and-proteins",
+          "section": "The Golgi Apparatus",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked Golgi modification, sorting and packaging functions for distractor B."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "The nucleus contains most DNA in a typical human cell; mitochondria contain a small amount.",
+        "The Golgi modifies and packages proteins and lipids; it is not the main DNA store.",
+        "Lysosomes break down cellular materials; they do not house the cell's chromosomes.",
+        "The cell membrane regulates passage into and out of the cell; it does not contain most cellular DNA."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "All four choices checked. 'Typical' and 'most' appropriately preserve the mitochondrial-DNA qualification."
+      }
     },
     {
       "id": "M02",
@@ -366,11 +409,36 @@
       "sources": [
         {
           "title": "NHLBI — How the Lungs Work",
-          "url": "https://www.nhlbi.nih.gov/health/lungs"
+          "url": "https://www.nhlbi.nih.gov/health/lungs",
+          "section": "The Lungs - gas exchange",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked oxygen movement from inhaled air into blood and carbon dioxide movement in the opposite direction."
+        },
+        {
+          "title": "OpenStax Biology 2e - Oxidative Phosphorylation",
+          "url": "https://openstax.org/books/biology-2e/pages/7-4-oxidative-phosphorylation",
+          "section": "Electron Transport Chain; Chemiosmosis",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Identifies molecular oxygen as the final respiratory electron acceptor, excluding nitrogen and methane from that role."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Oxygen enters the blood from inhaled air and serves as the final electron acceptor in aerobic respiration.",
+        "Carbon dioxide is a respiratory waste gas that moves from blood into the lungs for exhalation.",
+        "Nitrogen does not perform oxygen's role as the final electron acceptor in human aerobic respiration.",
+        "Methane does not replace oxygen as the gas required for human aerobic respiration."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "All choices checked in the intended human breathing context; oxygen is the unique supported answer."
+      }
     },
     {
       "id": "M03",
@@ -396,11 +464,36 @@
       "sources": [
         {
           "title": "OpenStax Biology 2e — Eukaryotic Cells",
-          "url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+          "url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+          "section": "Ribosomes; Lysosomes; Chloroplasts",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked direct protein assembly by ribosomes, lysosomal degradation, and chloroplast photosynthesis plus internal ribosomes."
+        },
+        {
+          "title": "OpenStax Biology 2e - The Endomembrane System and Proteins",
+          "url": "https://openstax.org/books/biology-2e/pages/4-4-the-endomembrane-system-and-proteins",
+          "section": "The Golgi Apparatus",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked Golgi processing and distribution of proteins for distractor D."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Lysosomes degrade cellular materials rather than join amino acids into new proteins.",
+        "Ribosomes translate mRNA and join amino acids into proteins.",
+        "Chloroplasts carry out photosynthesis; their internal ribosomes perform their protein assembly.",
+        "The Golgi modifies, sorts and packages proteins after their initial assembly."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Direct assembly uniquely identifies ribosomes. The chloroplast explanation preserves its possession of internal ribosomes."
+      }
     },
     {
       "id": "M04",
@@ -426,11 +519,54 @@
       "sources": [
         {
           "title": "NIDDK — Your Kidneys and How They Work",
-          "url": "https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work"
+          "url": "https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work",
+          "section": "How do my kidneys work?; The tubule returns needed substances to your blood and removes wastes",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked glomerular filtration, tubular reabsorption, waste removal and formation of urine."
+        },
+        {
+          "title": "NHLBI - How the Lungs Work: The Lungs",
+          "url": "https://www.nhlbi.nih.gov/health/lungs",
+          "section": "The Lungs - gas exchange",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked the lungs' gas-exchange function for distractor A."
+        },
+        {
+          "title": "NIDDK - Your Digestive System and How it Works",
+          "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works",
+          "section": "The digestive process; Hormones",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked pancreatic digestive juice and hormone production for distractor C."
+        },
+        {
+          "title": "NCI Dictionary of Cancer Terms - Spleen",
+          "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/spleen",
+          "section": "Definition",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked that splenic blood filtering concerns microorganisms and old or damaged red blood cells, rather than urine production."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Lungs exchange oxygen and carbon dioxide with blood; they do not produce urine.",
+        "Kidney nephrons filter blood and reabsorb needed substances; the remaining fluid becomes urine.",
+        "The pancreas supplies digestive enzymes and hormones; it does not filter blood into urine.",
+        "The spleen removes microbes and old blood cells from blood; it does not form urine."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "All four organ functions checked. The urine-production qualification distinguishes kidneys from the blood-filtering spleen."
+      }
     },
     {
       "id": "M05",
@@ -456,11 +592,27 @@
       "sources": [
         {
           "title": "OpenStax Biology 2e — Passive Transport",
-          "url": "https://openstax.org/books/biology-2e/pages/5-2-passive-transport"
+          "url": "https://openstax.org/books/biology-2e/pages/5-2-passive-transport",
+          "section": "Osmosis; Tonicity; Hypotonic, Hypertonic and Isotonic Solutions; Tonicity in Living Systems",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked all three tonicity outcomes, continuing water exchange, animal-cell swelling and the protective role of cell walls."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": false
+      "shortMode": false,
+      "optionExplanations": [
+        "Net water loss and shrinkage occur in a hypertonic solution, which has more nonpenetrating solute outside.",
+        "No net movement describes isotonic conditions; the stated outside solution is hypotonic.",
+        "The lower outside solute concentration drives net water entry by osmosis, so the animal cell swells.",
+        "Water continues crossing the permeable membrane; an animal cell has no rigid cell wall."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The nonpenetrating-solute and water-permeability conditions make initial water influx and swelling uniquely correct."
+      }
     },
     {
       "id": "M06",
@@ -486,15 +638,36 @@
       "sources": [
         {
           "title": "OpenStax Chemistry 2e — Catalysis",
-          "url": "https://openstax.org/books/chemistry-2e/pages/12-7-catalysis"
+          "url": "https://openstax.org/books/chemistry-2e/pages/12-7-catalysis",
+          "section": "Opening discussion and Figure 12.19",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked faster reaction through an alternative mechanism with a lower activation barrier."
         },
         {
           "title": "OpenStax Chemistry 2e — Shifting Equilibria",
-          "url": "https://openstax.org/books/chemistry-2e/pages/13-3-shifting-equilibria-le-chateliers-principle"
+          "url": "https://openstax.org/books/chemistry-2e/pages/13-3-shifting-equilibria-le-chateliers-principle",
+          "section": "Effect of a Catalyst; Figure 13.8",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Explicitly confirms acceleration of both directions and faster equilibration without changing the equilibrium constant."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": false
+      "shortMode": false,
+      "optionExplanations": [
+        "A catalyst accelerates equilibration, but it does not increase the equilibrium product fraction at fixed temperature.",
+        "A catalyst speeds equilibration rather than slowing it; the equilibrium composition remains unchanged.",
+        "A catalyst changes reaction rates while leaving the equilibrium composition unchanged at fixed temperature.",
+        "A catalyst accelerates both reaction directions, reaching the same equilibrium composition sooner."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "All four rate/composition combinations checked; D uniquely matches the stated fixed-temperature condition."
+      }
     },
     {
       "id": "M07",
@@ -520,12 +693,28 @@
       "sources": [
         {
           "title": "OpenStax Microbiology — Instruments of Microscopy",
-          "url": "https://openstax.org/books/microbiology/pages/2-3-instruments-of-microscopy"
+          "url": "https://openstax.org/books/microbiology/pages/2-3-instruments-of-microscopy",
+          "section": "Light Microscopy - Brightfield Microscopes",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the multiplication rule and explicit 10x ocular with 40x objective example yielding 400x; checked all distractor arithmetic."
         }
       ],
       "verificationDate": "2026-10-13",
       "shortMode": true,
-      "subtype": "numerical"
+      "subtype": "numerical",
+      "optionExplanations": [
+        "Total magnification is eyepiece times objective: 10 x 40 = 400x.",
+        "50x adds the lens magnifications; total magnification requires multiplication.",
+        "4x divides 40 by 10; division does not calculate total magnification.",
+        "40x counts only the objective and omits the eyepiece's 10-fold magnification."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Magnifications multiply: 10 x 40 = 400. All four numerical choices checked."
+      }
     },
     {
       "id": "M08",
@@ -551,12 +740,37 @@
       "sources": [
         {
           "title": "NIST — Metric (SI) Prefixes",
-          "url": "https://www.nist.gov/pml/owm/metric-si-prefixes"
+          "url": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+          "section": "Prefixes table - milli",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked milli as the factor 10^-3, including the milliliter example."
+        },
+        {
+          "title": "NIST - SI Units: Volume",
+          "url": "https://www.nist.gov/pml/owm/si-units-volume",
+          "section": "Common Units of Volume",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the explicit equality 1,000 mL = 1 L and checked every option's equivalent milliliter value."
         }
       ],
       "verificationDate": "2026-10-13",
       "shortMode": true,
-      "subtype": "numerical"
+      "subtype": "numerical",
+      "optionExplanations": [
+        "2.5 L equals 2,500 mL, ten times the stated volume.",
+        "250 mL divided by 1,000 equals 0.25 L.",
+        "0.025 L equals 25 mL, one tenth of the stated volume.",
+        "25 L equals 25,000 mL, one hundred times the stated volume."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "250/1,000 = 0.25 L; A, C and D correspond respectively to 2,500, 25 and 25,000 mL."
+      }
     },
     {
       "id": "M09",
@@ -582,11 +796,36 @@
       "sources": [
         {
           "title": "CDC — Clinical Safety: Hand Hygiene for Healthcare Workers",
-          "url": "https://www.cdc.gov/clean-hands/hcp/clinical-safety/index.html"
+          "url": "https://www.cdc.gov/clean-hands/hcp/clinical-safety/index.html",
+          "section": "Know when to clean your hands; Know when to wear (and change) gloves",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected CDC's hand-hygiene indications and glove recommendations. Gloves do not substitute for hand hygiene; hands should be cleaned after removal and at other clinical indications. This rejects the whole-shift, tear-only and unnecessary-after-removal distractors."
+        },
+        {
+          "title": "WHO - World Hand Hygiene Day 2025",
+          "url": "https://www.who.int/campaigns/world-hand-hygiene-day/2025",
+          "section": "Key messages; Health and care workers",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Independent WHO corroboration: gloves can become contaminated, hand hygiene is needed regardless of glove use, and appropriate glove use must accompany the WHO hand-hygiene moments."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Gloves do not replace hand hygiene during a shift; clean hands whenever a clinical indication occurs.",
+        "Visible tears are not the only indication for hand hygiene; patient contact and glove removal also matter.",
+        "Hands should be cleaned after glove removal because contamination can occur during use or removal.",
+        "Correct. Gloves provide a barrier, while hand hygiene remains necessary at the indicated moments."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Healthcare scope, key D and all distractors checked against CDC and WHO. No factual change needed."
+      }
     },
     {
       "id": "M10",
@@ -612,11 +851,36 @@
       "sources": [
         {
           "title": "CDC — Healthy Habits: Antibiotic Do's and Don'ts",
-          "url": "https://www.cdc.gov/antibiotic-use/about/"
+          "url": "https://www.cdc.gov/antibiotic-use/about/",
+          "section": "Take antibiotics ONLY when you need them",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the distinction between certain bacterial infections and viral infections. CDC explicitly includes colds among illnesses antibiotics do not treat and states unnecessary use can still cause harm. Fever, body location and dose are not exceptions to this distinction."
+        },
+        {
+          "title": "NHS - Overview: Antibiotics",
+          "url": "https://www.nhs.uk/medicines/antibiotics/",
+          "section": "Overview; How to take antibiotics; Accidentally taking an extra dose",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Independent corroboration of the narrow claim: antibiotics treat or prevent some bacterial infections and do not work for viral colds. The dose discussion concerns side effects, not conversion to antiviral activity. Page last reviewed 2022-11-11; current CDC guidance agrees."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Fever does not make antibacterial antibiotics act against a cold-causing virus.",
+        "The distinction is bacteria versus viruses, not whether the infection is inside or outside the respiratory tract.",
+        "Correct. Antibacterial antibiotics treat susceptible bacterial infections, not the viruses causing ordinary colds.",
+        "Increasing the dose does not turn an antibacterial antibiotic into an antiviral treatment."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Key C, all distractors and adverse-effect explanation checked. Ordinary viral cold is an appropriate qualification; the card makes no claim about treatment of a separate bacterial complication."
+      }
     },
     {
       "id": "M11",
@@ -642,11 +906,27 @@
       "sources": [
         {
           "title": "WHO — One Health",
-          "url": "https://www.who.int/news-room/fact-sheets/detail/one-health"
+          "url": "https://www.who.int/news-room/fact-sheets/detail/one-health",
+          "section": "Key facts; Overview; Challenges",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected WHO's integrated definition linking people, animals, plants and ecosystems, its antimicrobial-resistance application, and the need for cross-sector coordination. These support the combined investigation and reject each proposed separation."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": false
+      "shortMode": false,
+      "optionExplanations": [
+        "Separating human investigations from animal and environmental work misses the connections central to One Health.",
+        "Correct. One Health coordinates human, animal and environmental investigations of connected health problems.",
+        "Keeping animal investigations separate conflicts with One Health's integrated approach.",
+        "Keeping environmental investigations separate excludes a connected part of the One Health approach."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Scenario, key B, all three separated-investigation distractors and explanation agree with WHO's definition. No factual change needed."
+      }
     },
     {
       "id": "M12",
@@ -672,11 +952,27 @@
       "sources": [
         {
           "title": "NIST — TN 1297 Appendix D1: Terminology",
-          "url": "https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-appendix-d1-terminology"
+          "url": "https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-appendix-d1-terminology",
+          "section": "D.1.1.1 accuracy; D.1.1.2 repeatability; D.1.1.6 systematic error; D.1.2 precision",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected accuracy, repeatability, precision and systematic-error definitions. Applying them to the supplied readings gives close mutual agreement with a consistent 10.8-10.0=0.8 g offset. Repetition does not itself correct that offset; no numerical accuracy or uncertainty is claimed."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": false
+      "shortMode": false,
+      "optionExplanations": [
+        "The readings agree closely, so precision is high; their 0.8 g offset also contradicts high accuracy.",
+        "The readings repeat well but do not closely match the accepted 10.0 g reference.",
+        "Correct. Repeated 10.8 g readings agree with one another but are 0.8 g above the reference.",
+        "The offset supports poor accuracy, but the repeated readings show high precision."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Key C is the best qualitative description. The arithmetic and gram units are consistent; A, B and D misdescribe accuracy or precision."
+      }
     },
     {
       "id": "M13",
@@ -702,11 +998,27 @@
       "sources": [
         {
           "title": "NHGRI — Deoxyribonucleic Acid (DNA)",
-          "url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid-DNA"
+          "url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid-DNA",
+          "section": "Definition",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the explicit DNA expansion, deoxyribose-containing nucleotide backbone and information-carrying sequence. All three distractor names differ from the accepted expansion; the existing explanation's development and functioning claim is supported."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Dicarboxylic nucleic acid is not the accepted expansion of DNA.",
+        "Deoxyribosomal nucleic acid is not DNA's name; the correct word is deoxyribonucleic.",
+        "Dihydrogen nucleic acid is not the accepted expansion; DNA contains the sugar deoxyribose.",
+        "Correct. DNA stands for deoxyribonucleic acid."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Key D, each alternative expansion and the explanation checked. No factual change needed."
+      }
     },
     {
       "id": "M14",
@@ -732,11 +1044,54 @@
       "sources": [
         {
           "title": "OpenStax Biology 2e — ATP: Adenosine Triphosphate",
-          "url": "https://openstax.org/books/biology-2e/pages/6-4-atp-adenosine-triphosphate"
+          "url": "https://openstax.org/books/biology-2e/pages/6-4-atp-adenosine-triphosphate",
+          "section": "6.4; ATP structure, hydrolysis and energy coupling",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the ATP expansion, adenosine and three-phosphate structure, hydrolysis to adenosine diphosphate plus phosphate, and coupling to cellular transport. This supports ATP and distinguishes ADP."
+        },
+        {
+          "title": "OpenStax Biology 2e - Energy and Metabolism",
+          "url": "https://openstax.org/books/biology-2e/pages/6-1-energy-and-metabolism",
+          "section": "6.1; Anabolic and Catabolic Pathways",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the explanation that biosynthetic pathways require energy supplied by ATP and other energy carriers, supporting the existing biosynthesis example."
+        },
+        {
+          "title": "NLM MeSH - Adenosine Monophosphate",
+          "url": "https://meshb.nlm.nih.gov/record/ui?ui=D000249",
+          "section": "MeSH Descriptor Data 2026; Scope Note; Entry Terms",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the accepted AMP name and one-phosphate description, confirming that adenosine monophosphate is distinct from ATP."
+        },
+        {
+          "title": "NLM MeSH - Guanosine Triphosphate",
+          "url": "https://meshb.nlm.nih.gov/record/ui?ui=D006160",
+          "section": "MeSH Descriptor Data 2026; Scope Note; Entry Terms",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the GTP entry and its description as a guanine nucleotide with three phosphate groups, distinguishing it from ATP."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Adenosine diphosphate is ADP, with two phosphate groups rather than ATP's three.",
+        "Correct. ATP is adenosine triphosphate, containing three phosphate groups.",
+        "Guanosine triphosphate is GTP, a different nucleotide from adenosine triphosphate.",
+        "Adenosine monophosphate is AMP and contains one phosphate group, not three."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Key B, all four names and phosphate distinctions, transport and biosynthesis explanation checked. No factual change needed."
+      }
     },
     {
       "id": "M15",
@@ -762,11 +1117,36 @@
       "sources": [
         {
           "title": "NHGRI — Polymerase Chain Reaction (PCR)",
-          "url": "https://www.genome.gov/genetics-glossary/Polymerase-Chain-Reaction-PCR"
+          "url": "https://www.genome.gov/genetics-glossary/Polymerase-Chain-Reaction-PCR",
+          "section": "Definition",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the PCR expansion and definition: primers select a DNA segment and repeated synthesis amplifies it. This supports the stem and rejects the three alternative expansions."
+        },
+        {
+          "title": "NCBI - Polymerase Chain Reaction (PCR)",
+          "url": "https://www.ncbi.nlm.nih.gov/probe/docs/techpcr/",
+          "section": "Introduction; Components of PCR",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the roles of template DNA, DNA polymerase, primers and nucleotides in copying a selected sequence. This corroborates the existing mechanism explanation."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "PCR copies a selected DNA segment; protein chain reaction is not its accepted expansion.",
+        "Correct. PCR stands for polymerase chain reaction.",
+        "Polymerase is involved, but PCR's C and R mean chain reaction, not cell replication.",
+        "Protein chromosome replication is not the accepted expansion of PCR."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Key B, all alternative expansions and the primer/polymerase/cycling explanation checked. No factual change needed."
+      }
     },
     {
       "id": "M16",
@@ -792,11 +1172,27 @@
       "sources": [
         {
           "title": "NIBIB — Magnetic Resonance Imaging (MRI)",
-          "url": "https://www.nibib.nih.gov/science-education/science-topics/magnetic-resonance-imaging-mri"
+          "url": "https://www.nibib.nih.gov/science-education/science-topics/magnetic-resonance-imaging-mri",
+          "section": "What is MRI?; How does MRI work?; What is MRI used for?",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the explicit MRI expansion, use of a strong magnetic field and radiofrequency excitation/detection, and comparison with ionising X-ray imaging. These support the stem, key and existing explanation; the other expansions are incorrect."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Correct. MRI stands for magnetic resonance imaging.",
+        "Molecular radiation imaging is not the accepted expansion; MRI's M means magnetic.",
+        "MRI's R means resonance and its I means imaging, not radiation inspection.",
+        "Molecular resonance inspection is not MRI's accepted expansion."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Key A, all alternative expansions and the image-formation explanation checked. The card gives terminology, not patient-specific imaging advice."
+      }
     },
     {
       "id": "M17",
@@ -822,16 +1218,46 @@
       "sources": [
         {
           "title": "NCI — Sensitivity",
-          "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/sensitivity"
+          "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/sensitivity",
+          "section": "Medical test definition",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the definition concerning detection among people who actually have the condition and identification of missed cases as false negatives. Only this conditional definition is relied on, not the entry's broader sentence about no test having 100% sensitivity."
         },
         {
           "title": "Google for Developers — Accuracy, Recall, Precision and Related Metrics",
-          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+          "section": "Recall, or true positive rate",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the true-positive-rate formula TP/(TP+FN). For the supplied group TP=80 and FN=20, giving 0.8 or 80%; healthy counts do not enter that denominator."
+        },
+        {
+          "title": "FDA - Statistical Guidance on Reporting Results from Studies Evaluating Diagnostic Tests",
+          "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/statistical-guidance-reporting-results-studies-evaluating-diagnostic-tests-guidance-industry-and-fda",
+          "section": "7.1 Calculating Estimates of Sensitivity and Specificity",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the clinical 2x2 table and estimated sensitivity formula 100% × TP/(TP+FN). Actual condition status is stipulated in the stem. Calculating within-group sensitivity requires the diseased counts supplied, rather than healthy-person counts."
         }
       ],
       "verificationDate": "2026-10-13",
       "shortMode": false,
-      "subtype": "numerical"
+      "subtype": "numerical",
+      "optionExplanations": [
+        "20% is the missed-case fraction: 20 of 100 actual cases are false negatives.",
+        "100% sensitivity would require identifying all 100 actual cases, rather than 80.",
+        "Correct. Sensitivity is 80/(80+20) × 100 = 80%.",
+        "Healthy-person counts are unnecessary for sensitivity; its denominator contains people who truly have the condition."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Key C verified by 80/(80+20) × 100 = 80%. The other numeric choices and missing-healthy-count misconception are false. The phrase 'In this group' appropriately limits the result to the supplied group."
+      }
     },
     {
       "id": "M18",
@@ -857,16 +1283,37 @@
       "sources": [
         {
           "title": "NCI — Incidence",
-          "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/incidence"
+          "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/incidence",
+          "section": "Definition",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected the definition based on new disease cases diagnosed during a year. Applying that distinction to the supplied counts gives 12 incident cases; 40, 52 and 28 do not count the new cases."
         },
         {
           "title": "NCI — Prevalence",
-          "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/prevalence"
+          "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/prevalence",
+          "section": "Definition",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inspected prevalence's inclusion of existing disease in a population at a specified time or period. This supports distinguishing the 40 existing cases from the 12 incident cases. The sum 52 is not asserted to be end-of-year prevalence."
         }
       ],
       "verificationDate": "2026-10-13",
       "shortMode": false,
-      "subtype": "numerical"
+      "subtype": "numerical",
+      "optionExplanations": [
+        "Correct. The 12 people who become new cases during the year are the incident cases.",
+        "40 counts people who already had the disease at the start, not new cases during the year.",
+        "52 adds existing and new cases; the incident-case count includes only the 12 new cases.",
+        "28 subtracts new cases from existing cases, which does not calculate an incident-case count."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Key A and all four counts checked. Incident-case count is 12 people; the question asks neither an incidence rate nor end-of-year prevalence."
+      }
     },
     {
       "id": "M19",
@@ -892,7 +1339,12 @@
       "sources": [
         {
           "title": "Python Software Foundation — The Python Logo",
-          "url": "https://www.python.org/community/logos/"
+          "url": "https://www.python.org/community/logos/",
+          "section": "The Python Logo; Logo device only; Guidelines for Use",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The official PSF page identifies the two-snakes device as Python's logo and supplies the device-only asset. The local blue/yellow PNG was visually inspected; the logo identity supports Python and excludes the other three language names."
         }
       ],
       "verificationDate": "2026-10-13",
@@ -903,7 +1355,18 @@
         "attribution": "Python Software Foundation; unchanged official logo device, educational identity question; no endorsement implied."
       },
       "shortMode": true,
-      "subtype": "image"
+      "subtype": "image",
+      "optionExplanations": [
+        "Python is represented by the pictured two-snakes logo device.",
+        "Java is a different language; the PSF identifies this device as Python's logo.",
+        "R is a different language; the pictured mark is identified by the PSF as Python's.",
+        "Julia is a different language; this two-snakes device represents Python."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The official device identity supports original A/Python (index 0). All distractors name other languages. The local PNG matches the device described by the PSF. No scientific or key correction is needed."
+      }
     },
     {
       "id": "M20",
@@ -929,7 +1392,12 @@
       "sources": [
         {
           "title": "OpenAI — Design Guidelines",
-          "url": "https://openai.com/brand/"
+          "url": "https://openai.com/brand/",
+          "section": "Introduction; Blossom; How to use our Logos; Usage terms",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The official page names the Blossom as OpenAI's logo and states that OpenAI owns its marks. This uniquely supports OpenAI rather than the other organisations. The local white SVG was rendered unchanged in memory and visually inspected. Verification of identity is not a new permission or endorsement grant."
         }
       ],
       "verificationDate": "2026-10-13",
@@ -940,7 +1408,18 @@
         "attribution": "OpenAI; unchanged official Blossom asset, educational identity question; no endorsement implied."
       },
       "shortMode": true,
-      "subtype": "image"
+      "subtype": "image",
+      "optionExplanations": [
+        "Google DeepMind is a different organisation; the official page attributes the Blossom mark to OpenAI.",
+        "Anthropic is a different organisation; the Blossom is an OpenAI mark.",
+        "Microsoft is a different organisation; this mark belongs to OpenAI.",
+        "OpenAI's official design guidelines identify the Blossom as its logo."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The inspected official brand page supports original D/OpenAI (index 3). All other options name different organisations. The local six-loop mark visually matches the identified Blossom; no key or wording correction is needed."
+      }
     },
     {
       "id": "M21",
@@ -966,7 +1445,12 @@
       "sources": [
         {
           "title": "OpenStax Microbiology — Instruments of Microscopy",
-          "url": "https://openstax.org/books/microbiology/pages/2-3-instruments-of-microscopy"
+          "url": "https://openstax.org/books/microbiology/pages/2-3-instruments-of-microscopy",
+          "section": "2.3 Light Microscopy - Brightfield Microscopes; Figure 2.12",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The section describes ocular and objective lenses working together to magnify a specimen, a glass slide held on the stage, and illumination. These functions support option C; the other tasks do not describe the illustrated lens-and-stage instrument."
         }
       ],
       "verificationDate": "2026-10-13",
@@ -977,7 +1461,18 @@
         "attribution": "Original schematic; scientific function checked against OpenStax Microbiology, Instruments of Microscopy."
       },
       "shortMode": true,
-      "subtype": "image"
+      "subtype": "image",
+      "optionExplanations": [
+        "The schematic shows lenses and a stage, not a spinning separation mechanism.",
+        "The stage supports a slide for viewing; it is not a mass readout.",
+        "Objective and eyepiece lenses create a magnified image of the specimen on the slide.",
+        "The stage positions the specimen for viewing rather than providing temperature control."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The textbook and existing schematic support original C/magnify small specimens (index 2). All distractors describe functions absent from this microscope schematic. The alt names the instrument appropriately because the question tests its task, not its name."
+      }
     },
     {
       "id": "M22",
@@ -1003,7 +1498,22 @@
       "sources": [
         {
           "title": "Eppendorf — Liquid Handling and Pipettes",
-          "url": "https://www.eppendorf.com/at-en/Products/Liquid-Handling/All-Pipettes-Dispensers-Automated-Liquid-Handlers-c-WebPSub-H-44564"
+          "url": "https://www.eppendorf.com/at-en/Products/Liquid-Handling/All-Pipettes-Dispensers-Automated-Liquid-Handlers-c-WebPSub-H-44564",
+          "section": "All Pipettes, Dispensers & Automated Liquid Handlers; product descriptions",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The original page was inspected. Its pipette and dispenser descriptions support the liquid-handling context, but the operating manual is the stronger primary source for the precise measured-volume transfer function."
+        },
+        {
+          "title": "Eppendorf Reference 2 - Operating manual",
+          "url": "https://www.eppendorf.com/product-media/doc/en/58185/Eppendorf_Liquid-Handling_Operating-manual_Reference-2_Eppendorf-Reference-2.pdf",
+          "section": "2.1 Intended use (p.7); 3.1 Features (p.9); 4.1-4.4 (pp.13-14)",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The official manual states that the pipette transfers liquids within a specified volume range using matching tips, and describes aspiration, dispensing and volume selection. This directly supports D and distinguishes the device from weighing, centrifugation and temperature measurement.",
+          "edition": "4924 900 011-03/022022"
         }
       ],
       "verificationDate": "2026-10-13",
@@ -1014,7 +1524,18 @@
         "attribution": "Original schematic; function checked against Eppendorf official liquid-handling documentation."
       },
       "shortMode": true,
-      "subtype": "image"
+      "subtype": "image",
+      "optionExplanations": [
+        "This handheld pipette transfers liquid; it does not weigh dry powders.",
+        "The pipette aspirates and dispenses liquid; it does not spin blood samples to separate their components.",
+        "A volume setting selects liquid volume; the instrument is not a thermometer.",
+        "A pipette with the correct tip aspirates and dispenses a selected small volume of liquid."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The official operating manual supports original D/transfer a measured small liquid volume (index 3), matching the plunger, display and tip in the schematic. All distractors describe other operations. No key or educational-meaning change is needed."
+      }
     },
     {
       "id": "M23",
@@ -1040,18 +1561,43 @@
       "sources": [
         {
           "title": "OSHA — Biological Hazards and Infectious Diseases",
-          "url": "https://www.osha.gov/etools/hospitals/hospital-wide-hazards/biological-hazards"
+          "url": "https://www.osha.gov/etools/hospitals/hospital-wide-hazards/biological-hazards",
+          "section": "Labeling and Signs; Sharps Containers",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The eTool links the biohazard symbol to blood and other potentially infectious materials and requires it on specified biological-hazard labels. This identifies C and excludes the three other hazard labels."
+        },
+        {
+          "title": "OSHA - Bloodborne pathogens, 29 CFR 1910.1030",
+          "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1030",
+          "section": "1910.1030(g)(1)(i)(A)-(C), Labels; biohazard-symbol image",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The regulation's labeling section links its displayed biohazard legend to containers holding blood or other potentially infectious materials. The exact three-lobed symbol is linked on that page; identity supports C rather than radiation, flammability or magnetic-field warnings."
         }
       ],
       "verificationDate": "2026-10-13",
       "visual": {
         "type": "diagram",
         "key": "biohazard",
-        "alt": "Standard three-lobed biological hazard warning symbol without a text label",
+        "alt": "Three open, curved lobes arranged evenly around a small central circle, with three short arcs between them; no text.",
         "attribution": "Standard biohazard symbol; identity checked against OSHA biological-hazards documentation."
       },
       "shortMode": false,
-      "subtype": "image"
+      "subtype": "image",
+      "optionExplanations": [
+        "This symbol warns about biological material; it does not by itself indicate ionising radiation.",
+        "The displayed symbol identifies biological hazards, not flammability.",
+        "The three-lobed mark is the biohazard symbol used for potentially infectious materials.",
+        "This mark identifies biological hazards; it does not indicate a strong magnetic field."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The official labeling references and rendered symbol support original C/Biological hazard (index 2). The key and distractors are sound. The existing alt contains the answer before reveal; apply the neutral shape description supplied below."
+      }
     },
     {
       "id": "M24",
@@ -1077,7 +1623,30 @@
       "sources": [
         {
           "title": "NHGRI — Deoxyribonucleic Acid (DNA)",
-          "url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid-DNA"
+          "url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid-DNA",
+          "section": "Definition",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "NHGRI explicitly describes each DNA strand's backbone as alternating deoxyribose sugar and phosphate groups, with bases attached to sugars and bonded across strands. This directly supports D and rejects bases-only rails."
+        },
+        {
+          "title": "OpenStax Biology 2e - Proteins",
+          "url": "https://openstax.org/books/biology-2e/pages/3-4-proteins",
+          "section": "Amino Acids; peptide-bond formation, Figure 3.24",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The inspected amino-acid section describes peptide bonds joining amino acids into polypeptide chains. It supports the explanation of why option A describes protein-related chemistry rather than the DNA backbone."
+        },
+        {
+          "title": "OpenStax Biology 2e - Lipids",
+          "url": "https://openstax.org/books/biology-2e/pages/3-3-lipids",
+          "section": "Fats and Oils; Figure 3.13",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The inspected section identifies glycerol and fatty acids as the main components of fat molecules. It supports distinguishing option C from the sugar-phosphate DNA backbone."
         }
       ],
       "verificationDate": "2026-10-13",
@@ -1088,7 +1657,18 @@
         "attribution": "Original simplified schematic; backbone structure checked against NHGRI DNA glossary."
       },
       "shortMode": false,
-      "subtype": "image"
+      "subtype": "image",
+      "optionExplanations": [
+        "Amino acids joined by peptide bonds form protein chains; DNA's backbone uses sugar and phosphate.",
+        "Paired bases connect the strands like rungs; they do not form the outer backbones.",
+        "Fatty acids and glycerol are components of fats, not the DNA backbone.",
+        "Each DNA strand has an alternating deoxyribose-sugar and phosphate backbone."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "NHGRI supports original D/sugar and phosphate (index 3); the two textbook sections clarify the protein and fat distractors. The bases-only option is unambiguously wrong for the outer rails. The simple ladder is scientifically adequate for this task; its alt can more precisely describe the pictured shape."
+      }
     },
     {
       "id": "M25",
@@ -1114,11 +1694,63 @@
       "sources": [
         {
           "title": "Google for Developers — Machine Learning Glossary",
-          "url": "https://developers.google.com/machine-learning/glossary"
+          "url": "https://developers.google.com/machine-learning/glossary",
+          "section": "hallucination",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Defines credible-sounding but factually wrong generated claims; supports identifying the invented citation as a hallucination."
+        },
+        {
+          "title": "NIST AI 600-1 - Generative Artificial Intelligence Profile",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+          "section": "2.2 Confabulation (printed p. 6); MEASURE 2.5, MS-2.5-003",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Names hallucination as a common term for confidently false generated content, explicitly includes confabulated citations, and advises verifying sources."
+        },
+        {
+          "title": "zlib - Technical Details",
+          "url": "https://www.zlib.net/zlib_tech.html",
+          "section": "Maximum Expansion Factor; Maximum Compression Factor",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Maintainer documentation describes data compression and encoded size ratios; compression concerns data representation, not factual invention."
+        },
+        {
+          "title": "NIST CSRC Glossary - encryption",
+          "url": "https://csrc.nist.gov/glossary/term/encryption",
+          "section": "Definitions",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Defines encryption as a cryptographic transformation into ciphertext; this differs from fabricating a reference."
+        },
+        {
+          "title": "TensorFlow Core - Image segmentation",
+          "url": "https://www.tensorflow.org/tutorials/images/segmentation",
+          "section": "Opening explanation of image classification versus segmentation",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Explains segmentation as assigning classes to image pixels, distinguishing D from the textual citation error."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "The invented citation is plausible but false; this generated factual error is commonly called a hallucination.",
+        "Compression aims to encode data in less space; inventing an article is a factual-generation error.",
+        "Encryption transforms data into ciphertext; it does not describe a fabricated citation.",
+        "Segmentation assigns classes to image pixels; the stem instead describes an invented textual reference."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The nonexistent citation matches hallucination; compression, encryption and segmentation describe different operations. Stem, key, four options and supplied explanation checked."
+      }
     },
     {
       "id": "M26",
@@ -1144,11 +1776,36 @@
       "sources": [
         {
           "title": "Google for Developers — What Is Machine Learning?",
-          "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml"
+          "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml",
+          "section": "Opening definition; supervised learning; unsupervised learning; Generative AI",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Describes learning relationships from data for prediction or content creation; distinguishes this from mere storage, handwritten per-case rules and measurement alone."
+        },
+        {
+          "title": "NIST AI 100-1 - Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          "section": "3.1 Valid and Reliable (printed pp. 13-14)",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Explains validation for intended use and the need for realistic representative tests, supporting the supplied explanation's reliability qualification."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Storing facts alone omits learning relationships that support predictions or content generation.",
+        "ML derives useful patterns from data and uses them to predict outputs or produce content.",
+        "Writing a separate fixed rule for every case does not describe learning patterns from examples.",
+        "Taking a measurement alone does not train a model to learn from the resulting data."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "B is the best general description. Storage and measurement alone omit learning; C specifies per-case handwritten rules. Supplied explanation's data and evaluation qualification is supported."
+      }
     },
     {
       "id": "M27",
@@ -1174,11 +1831,27 @@
       "sources": [
         {
           "title": "Google for Developers — Machine Learning Glossary",
-          "url": "https://developers.google.com/machine-learning/glossary"
+          "url": "https://developers.google.com/machine-learning/glossary",
+          "section": "inference; training; label; labeled example",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Inference uses a trained model for predictions. Training adjusts learned parameters; labels provide target answers. These definitions distinguish all four options."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "Training learns or adjusts model parameters; the stem explicitly says no parameters change.",
+        "Inference applies the trained model to the new image to obtain a prediction.",
+        "Data labelling supplies target answers for examples; here the model predicts an answer.",
+        "Parameter fitting estimates model parameters; they remain unchanged in this scenario."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The trained-model, new-image and unchanged-parameter conditions specify inference. Training, labelling and parameter fitting do not describe this stated operation; supplied explanation checked."
+      }
     },
     {
       "id": "M28",
@@ -1204,11 +1877,36 @@
       "sources": [
         {
           "title": "Google for Developers — Fairness: Types of Bias",
-          "url": "https://developers.google.com/machine-learning/crash-course/fairness/types-of-bias"
+          "url": "https://developers.google.com/machine-learning/crash-course/fairness/types-of-bias",
+          "section": "Opening discussion; Selection bias; Coverage bias",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Defines nonrepresentative selection and coverage gaps, and states ML models are not inherently objective. Applying these definitions supports A and rejects B/C."
+        },
+        {
+          "title": "NIST AI 100-1 - Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          "section": "3.1 Valid and Reliable; MEASURE 1.3 and 2.2-2.5 (printed pp. 13-14, 29)",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Calls for tests representing intended use, relevant populations, independent assessment and documented limits of generalization; supports evaluating beyond the restricted sample."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": true
+      "shortMode": true,
+      "optionExplanations": [
+        "A sample restricted to young adults may leave other intended age groups unrepresented.",
+        "Age coverage gaps provide no guarantee that performance will be equal across ages.",
+        "Numerical inputs and calculations do not by themselves prevent biased data or predictions.",
+        "Limited age coverage strengthens the need to evaluate performance in the intended population."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Applied the coverage-bias definition to the age restriction. A states a concern, not a proven age disparity. Neither equal performance nor freedom from bias follows; evaluation is still needed."
+      }
     },
     {
       "id": "M29",
@@ -1234,11 +1932,27 @@
       "sources": [
         {
           "title": "Google for Developers — Dividing the Original Dataset",
-          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
+          "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets",
+          "section": "Initial train/test exercise; three-subset workflow; warning that test and validation sets wear out",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Explicitly explains that test-guided feature or hyperparameter changes can fit test-set peculiarities; separates development validation from final testing."
         }
       ],
       "verificationDate": "2026-10-13",
-      "shortMode": false
+      "shortMode": false,
+      "optionExplanations": [
+        "Model-development decisions can adapt to test results even when weights use training rows only.",
+        "Shuffling changes row order, not the test examples already used to guide development.",
+        "Averaging reused-test scores does not undo the influence those results had on model choices.",
+        "Repeated test-guided changes can fit that set's peculiarities and make its score optimistic."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Test-guided choices reuse information even if weights use training rows. Reordering or averaging the same rows cannot remove that influence. D correctly says the score may be optimistic."
+      }
     },
     {
       "id": "M30",
@@ -1264,12 +1978,28 @@
       "sources": [
         {
           "title": "Google for Developers — Accuracy, Recall, Precision and Related Metrics",
-          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+          "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+          "section": "Accuracy; Recall, or true positive rate; What does NaN mean in the metrics?",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Gives accuracy and positive-recall formulas and the majority-negative pitfall. With TN=95,TP=0,FP=0,FN=5: accuracy=95/100=95%, recall=0/5=0%."
         }
       ],
       "verificationDate": "2026-10-13",
       "shortMode": false,
-      "subtype": "numerical"
+      "subtype": "numerical",
+      "optionExplanations": [
+        "The 95 negatives are correct: accuracy is 95%, and all five positives are missed.",
+        "The 95% figure is overall accuracy; positive detection is 0/5, or 0%.",
+        "TN=95 and TP=0 give 95/100 accuracy; all five positives are false negatives, so recall is 0%.",
+        "The five missed positives remain errors, so predicting the majority class gives 95%, not 100%."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "All four prose options manually checked from the fixed 100-sample confusion matrix. C alone gives 95% observed accuracy and zero positive detection; supplied explanation checked."
+      }
     },
     {
       "id": "R01",
@@ -1295,7 +2025,39 @@
       "sources": [
         {
           "title": "NIST — SI Units: Temperature",
-          "url": "https://www.nist.gov/pml/owm/si-units-temperature"
+          "url": "https://www.nist.gov/pml/owm/si-units-temperature",
+          "section": "Touchstone Temperatures (Approximate); Temperature Conversion (Exact)",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The temperature table gives approximate body temperature as 37 degrees Celsius."
+        },
+        {
+          "title": "NIST — SI Units",
+          "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+          "section": "Base and Derived Units",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked that the compared base quantities include mass and length; this distinguishes the milligram and centimetre choices from temperature."
+        },
+        {
+          "title": "NIST — SP 330, Section 3: Decimal multiples and sub-multiples of SI units",
+          "url": "https://www.nist.gov/pml/special-publication-330/sp-330-section-3",
+          "section": "Table 7; prefix examples; mass-unit paragraph",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Defines centi and milli prefixes, illustrates centimeters and explicitly identifies milligram as a mass unit."
+        },
+        {
+          "title": "NIST — SP 330, Section 4: Non-SI units accepted for use with the SI",
+          "url": "https://www.nist.gov/pml/special-publication-330/sp-330-section-4",
+          "section": "Table 8",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Lists the liter as a volume unit accepted for use with SI; its prefixed forms also express volume."
         }
       ],
       "verificationDate": "2026-10-13",
@@ -1305,7 +2067,18 @@
         3,
         4,
         5
-      ]
+      ],
+      "optionExplanations": [
+        "Millilitres measure volume, so they cannot express this temperature reading.",
+        "Correct. Degrees Celsius express temperature; 37 degrees Celsius is a familiar approximate body-temperature reading.",
+        "Milligrams measure mass, so they cannot express this temperature reading.",
+        "Centimetres measure length, so they cannot express this temperature reading."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Checked the temperature context and all four unit quantities. B remains the sole appropriate answer; no scientific correction required."
+      }
     },
     {
       "id": "R02",
@@ -1331,7 +2104,21 @@
       "sources": [
         {
           "title": "USGS Water Science School — pH and Water",
-          "url": "https://www.usgs.gov/water-science-school/science/ph-and-water"
+          "url": "https://www.usgs.gov/water-science-school/science/ph-and-water",
+          "section": "pH: Definition and measurement units",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Relates lower pH to more hydrogen ions and describes a tenfold change for each pH step."
+        },
+        {
+          "title": "OpenStax Chemistry 2e — 14.2 pH and pOH",
+          "url": "https://openstax.org/books/chemistry-2e/pages/14-2-ph-and-poh",
+          "section": "p-function, pH and inverse hydronium-concentration equations",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Gives pH = -log[H3O+] and [H3O+] = 10^(-pH), supporting the dilute-solution calculation and concentration units."
         }
       ],
       "verificationDate": "2026-10-13",
@@ -1348,7 +2135,18 @@
         4,
         5
       ],
-      "subtype": "numerical"
+      "subtype": "numerical",
+      "optionExplanations": [
+        "A tenfold increase corresponds to a decrease of one pH unit; this decrease spans two units.",
+        "The direction is reversed: lower pH corresponds approximately to higher hydrogen-ion concentration.",
+        "Both direction and factor are wrong: pH 3 has approximately 100 times the concentration at pH 5.",
+        "Correct. The ratio is 10^(-3) / 10^(-5) = 100, using the dilute-solution approximation."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Checked all factors and directions. Approximate concentrations are 0.001 mol/L and 0.00001 mol/L; their ratio is 100. Retain the dilute-aqueous and approximate qualifiers and key D."
+      }
     },
     {
       "id": "R03",
@@ -1374,11 +2172,31 @@
       "sources": [
         {
           "title": "CDC — Sterilization",
-          "url": "https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/sterilization.html"
+          "url": "https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/sterilization.html",
+          "section": "Sterilization; sterility assurance level",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The inspected section states that sterilization destroys all microorganisms on an article or in fluid and discusses spore survival and sterility assurance. It supports sterilisation as the process intended by the stem, rather than a promise that every individual treatment is infallible."
         },
         {
           "title": "CDC — A Rational Approach to Disinfection and Sterilization",
-          "url": "https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/rational-approach.html"
+          "url": "https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/rational-approach.html",
+          "section": "Semicritical Items",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The inspected section defines high-level disinfection as eliminating microorganisms except small numbers of bacterial spores, directly supporting why B does not meet the stem."
+        },
+        {
+          "title": "CDC - Guideline for Disinfection and Sterilization in Healthcare Facilities (2008)",
+          "url": "https://www.cdc.gov/infection-control/media/pdfs/Guideline-Disinfection-H.pdf",
+          "section": "Definition of Terms, pp.9-10",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The current CDC PDF defines sterilization as elimination of all microbial forms, distinguishes high-level and intermediate-level disinfection from reliable spore elimination, and defines cleaning as removal of visible organic/inorganic soil. This directly checks all four options.",
+          "edition": "2008 guideline; June 2024 update"
         }
       ],
       "verificationDate": "2026-10-13",
@@ -1388,7 +2206,18 @@
         3,
         4,
         5
-      ]
+      ],
+      "optionExplanations": [
+        "Sterilisation is intended to destroy or eliminate all microbial forms, including spores.",
+        "High-level disinfection can leave small numbers of bacterial spores, so it is not sterilisation.",
+        "Intermediate-level disinfection does not necessarily kill bacterial spores.",
+        "Cleaning removes soil and material; it does not by itself eliminate all microbial life."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The CDC definitions support original A/Sterilisation (index 0) and explicitly distinguish all three distractors. Intended to eliminate is an appropriate formulation given the same guidance's sterility-assurance discussion. No correction or creator override is required."
+      }
     },
     {
       "id": "R04",
@@ -1414,7 +2243,21 @@
       "sources": [
         {
           "title": "NIST — Correlation",
-          "url": "https://www.nist.gov/glossary-term/21291"
+          "url": "https://www.nist.gov/glossary-term/21291",
+          "section": "OSAC Lexicon definition: Correlation",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The inspected NIST definition says correlation is an association between two variables and does not imply cause. This supports C and rejects causal proof in either direction; the information also cannot exclude other influences."
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook - Scatter Plot",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/scatterp.htm",
+          "section": "1.3.3.26; Causality Is Not Proved By Association; Combining Scatter Plots",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "The inspected handbook explains that observed association does not prove causality and discusses examining a third variable through conditioning plots. Together with the glossary this supports retaining an association-only conclusion and keeping shared influences possible."
         }
       ],
       "verificationDate": "2026-10-13",
@@ -1424,7 +2267,18 @@
         3,
         4,
         5
-      ]
+      ],
+      "optionExplanations": [
+        "An association alone does not establish that the first variable causes the second.",
+        "Correlation also fails to establish causation in the reverse direction.",
+        "Correlation supports an association; causal effects require additional evidence.",
+        "A shared influencing variable remains possible, so correlation alone cannot rule it out."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "The original NIST glossary and handbook cross-check support original C/association without established causal effect (index 2). A and B overclaim causal direction; D excludes a possibility that the supplied correlation does not rule out. No factual correction is needed."
+      }
     },
     {
       "id": "T01",
@@ -1450,10 +2304,35 @@
       "sources": [
         {
           "title": "NIST — SI Units",
-          "url": "https://www.nist.gov/pml/owm/metric-si/si-units"
+          "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+          "section": "Base and Derived Units",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Confirms kelvin as the SI base unit of thermodynamic temperature."
+        },
+        {
+          "title": "NIST — SP 330, Section 2: The International System of Units",
+          "url": "https://www.nist.gov/pml/special-publication-330/sp-330-section-2",
+          "section": "2.3.1 Base units, Table 2; 2.3.3 Dimensions; 2.3.4 Derived units, Table 4",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked the temperature base unit and the energy/power quantities of joule and watt; degree Celsius is not the thermodynamic-temperature base unit."
         }
       ],
-      "verificationDate": "2026-10-13"
+      "verificationDate": "2026-10-13",
+      "optionExplanations": [
+        "Degree Celsius expresses Celsius temperature; the SI base unit of thermodynamic temperature is kelvin.",
+        "The joule is the SI derived unit for energy, work and heat.",
+        "Correct. The kelvin (K) is the SI base unit of thermodynamic temperature.",
+        "The watt is the SI derived unit for power."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Checked the base-unit qualification and the quantity measured by every distractor. C is correct; no correction required."
+      }
     },
     {
       "id": "T02",
@@ -1479,10 +2358,44 @@
       "sources": [
         {
           "title": "NIST — SI Units",
-          "url": "https://www.nist.gov/pml/owm/metric-si/si-units"
+          "url": "https://www.nist.gov/pml/owm/metric-si/si-units",
+          "section": "Base and Derived Units",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Lists kelvin for temperature, mole for amount of substance, kilogram for mass and meter for length."
+        },
+        {
+          "title": "NIST — SP 330, Section 2: The International System of Units",
+          "url": "https://www.nist.gov/pml/special-publication-330/sp-330-section-2",
+          "section": "2.3.1 Base units, Table 2; 2.3.3 Dimensions; 2.3.4 Derived units, Table 4",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Confirms kelvin and mole as base units; joule for energy, watt for power, pascal for pressure and degree Celsius for Celsius temperature."
+        },
+        {
+          "title": "NIST — SP 330, Section 4: Non-SI units accepted for use with the SI",
+          "url": "https://www.nist.gov/pml/special-publication-330/sp-330-section-4",
+          "section": "Table 8",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Lists the liter as a volume unit accepted for use with SI; its prefixed forms also express volume."
         }
       ],
-      "verificationDate": "2026-10-13"
+      "verificationDate": "2026-10-13",
+      "optionExplanations": [
+        "Correct. The mole (mol) is the SI base unit of amount of substance.",
+        "The kilogram (kg) is the SI base unit of mass.",
+        "The litre measures volume; it is a non-SI unit accepted for use with SI.",
+        "The pascal (Pa) is the SI derived unit of pressure and stress."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Checked all four unit quantities and the base-unit distinction. A is correct; no correction required."
+      }
     },
     {
       "id": "T03",
@@ -1508,10 +2421,35 @@
       "sources": [
         {
           "title": "OpenStax Biology 2e — Eukaryotic Cells",
-          "url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+          "url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+          "section": "The Cell Wall",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Identifies cellulose as the major plant-wall organic molecule and describes the wall's external position, rigidity, support and shape."
+        },
+        {
+          "title": "OpenStax Biology 2e — 3.2 Carbohydrates",
+          "url": "https://openstax.org/books/biology-2e/pages/3-2-carbohydrates",
+          "section": "Molecular Structures: Disaccharides and Polysaccharides",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Distinguishes plant structural cellulose, storage starch and glycogen, fungal/arthropod chitin, and sugars consisting of two monosaccharides."
         }
       ],
-      "verificationDate": "2026-10-13"
+      "verificationDate": "2026-10-13",
+      "optionExplanations": [
+        "Chitin occurs in fungal cell walls and arthropod exoskeletons; it is not the main plant-wall framework.",
+        "Starch stores glucose in plants rather than forming their main cell-wall framework.",
+        "Glycogen stores glucose in animals; it is not the main plant-wall framework.",
+        "Correct. Cellulose chains form strong structural microfibrils in plant cell walls."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Checked wall structure and the distinct functions of all four polysaccharides. D is correct; no correction required."
+      }
     },
     {
       "id": "T04",
@@ -1537,10 +2475,53 @@
       "sources": [
         {
           "title": "OpenStax Biology 2e — Nucleic Acids",
-          "url": "https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids"
+          "url": "https://openstax.org/books/biology-2e/pages/3-5-nucleic-acids",
+          "section": "DNA and RNA",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "RNA is a nucleotide polymer; its nucleotides contain ribose, phosphate and a nitrogenous base."
+        },
+        {
+          "title": "OpenStax Biology 2e — 3.4 Proteins",
+          "url": "https://openstax.org/books/biology-2e/pages/3-4-proteins",
+          "section": "Amino Acids",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Identifies amino acids as protein monomers connected through peptide bonds."
+        },
+        {
+          "title": "OpenStax Biology 2e — 3.3 Lipids",
+          "url": "https://openstax.org/books/biology-2e/pages/3-3-lipids",
+          "section": "Fats and Oils; Figure 3.13",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Describes triglycerides as fats comprising glycerol and three fatty acids, distinguishing them from RNA subunits."
+        },
+        {
+          "title": "OpenStax Biology 2e — 3.2 Carbohydrates",
+          "url": "https://openstax.org/books/biology-2e/pages/3-2-carbohydrates",
+          "section": "Molecular Structures: Disaccharides and Polysaccharides",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Distinguishes plant structural cellulose, storage starch and glycogen, fungal/arthropod chitin, and sugars consisting of two monosaccharides."
         }
       ],
-      "verificationDate": "2026-10-13"
+      "verificationDate": "2026-10-13",
+      "optionExplanations": [
+        "Amino acids join by peptide bonds to form proteins.",
+        "Correct. RNA strands consist of nucleotides containing ribose, phosphate and a nitrogenous base.",
+        "Triglycerides are fats made from glycerol and three fatty acids; they are not RNA subunits.",
+        "Disaccharides contain two joined monosaccharides; they are not RNA subunits."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Checked RNA monomers and the chemical identities of all distractors. B is correct; no correction required."
+      }
     },
     {
       "id": "T05",
@@ -1566,10 +2547,44 @@
       "sources": [
         {
           "title": "OpenStax Biology 2e — Energy Flow through Ecosystems",
-          "url": "https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems"
+          "url": "https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems",
+          "section": "How Organisms Acquire Energy in a Food Web",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Plants are photoautotrophs that convert sunlight into chemical energy; heterotrophs obtain energy by consuming organisms or organic material."
+        },
+        {
+          "title": "OpenStax Biology 2e — 46.1 Ecology of Ecosystems",
+          "url": "https://openstax.org/books/biology-2e/pages/46-1-ecology-of-ecosystems",
+          "section": "Food Chains and Food Webs",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Checked producer and consumer roles in food chains, distinguishing energy capture from feeding in the insect and bird distractors."
+        },
+        {
+          "title": "USDA — Earthworms Work Wonders for Soils",
+          "url": "https://www.usda.gov/about-usda/news/blog/earthworms-work-wonders-soils",
+          "section": "Opening feeding and soil-health paragraphs",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Earthworms feed primarily on fresh and decaying organic material in soil, confirming their feeding rather than photosynthetic role."
         }
       ],
-      "verificationDate": "2026-10-13"
+      "verificationDate": "2026-10-13",
+      "optionExplanations": [
+        "Correct. Green plants use photosynthesis to convert sunlight into chemical energy.",
+        "Herbivorous insects obtain energy by eating plants, making them primary consumers.",
+        "Insect-eating birds obtain energy by eating insects, making them consumers.",
+        "Soil earthworms obtain energy by feeding on organic material in soil."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Checked photosynthetic capture and all three feeding roles within the stated sunlit grassland context. A is correct; no correction required."
+      }
     },
     {
       "id": "T06",
@@ -1595,10 +2610,44 @@
       "sources": [
         {
           "title": "OpenStax Biology 2e — Biogeochemical Cycles",
-          "url": "https://openstax.org/books/biology-2e/pages/46-3-biogeochemical-cycles"
+          "url": "https://openstax.org/books/biology-2e/pages/46-3-biogeochemical-cycles",
+          "section": "Introduction; The Biological Carbon Cycle; The Nitrogen Cycle",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Matter cycles through ecosystems; certain bacteria and fungi convert nitrogen in dead remains into ammonium. Photosynthesis incorporates carbon dioxide into organic compounds."
+        },
+        {
+          "title": "OpenStax Biology 2e — 46.1 Ecology of Ecosystems",
+          "url": "https://openstax.org/books/biology-2e/pages/46-1-ecology-of-ecosystems",
+          "section": "Food Chains and Food Webs",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Distinguishes producers, herbivores, carnivores and detrital food webs; bacteria and fungi recycle material from dead organisms."
+        },
+        {
+          "title": "OpenStax Biology 2e — 32.2 Pollination and Fertilization",
+          "url": "https://openstax.org/books/biology-2e/pages/32-2-pollination-and-fertilization",
+          "section": "Pollination definition; Pollination by Insects",
+          "accessedAt": "2026-10-15",
+          "verifiedAt": "2026-10-15",
+          "status": "verified",
+          "supportNote": "Defines pollen transfer in plant reproduction and describes insect transport of pollen between flowers."
         }
       ],
-      "verificationDate": "2026-10-13"
+      "verificationDate": "2026-10-13",
+      "optionExplanations": [
+        "Predation transfers matter through feeding; decomposition directly breaks down dead organic matter.",
+        "Photosynthesis uses light to build organic compounds from carbon dioxide; it does not decompose dead matter.",
+        "Correct. Microbial decomposition breaks down dead organic matter and releases nutrients for reuse.",
+        "Pollination transfers pollen for plant reproduction; it does not decompose dead organic matter."
+      ],
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-10-15",
+        "note": "Checked decomposition and nutrient cycling against predation, photosynthesis and pollination. The 'most directly' qualifier makes C unambiguous."
+      }
     },
     {
       "id": "DEMO",

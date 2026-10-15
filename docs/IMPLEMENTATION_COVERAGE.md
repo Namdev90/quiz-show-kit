@@ -43,7 +43,7 @@ Scope: the consolidated implementation handoff dated 15 October 2026. Starting r
 
 | Requirement | Coverage and remaining limit |
 | --- | --- |
-| Supplied and researched questions | Same independent verification instructions, checked-source records, option explanations, review/override choices and quality report. The showcase practice question has newly checked NIST unit evidence and per-option rationale; the other 40 inherited cards retain their historical evidence gaps. No wholesale fresh verification is claimed. |
+| Supplied and researched questions | Same independent verification instructions, checked-source records, option explanations, review/override choices and quality report. All 41 showcase cards now have inspected-source records and four option rationales; the 40 inherited gaps were reviewed on 15 October 2026. Original content and historical dates remain intact. The evidence ledger records thirteen warning dispositions and pedagogical limits. |
 | Evidence-backed reveal | One compact primary source after reveal, expandable extra sources/option rationale, local bibliographic notes and separate external links. Old sources retain their historical dates. |
 | Honest override | Question/source verification statuses are distinct; explicit creator override records a chosen option and unresolved disagreement. Structural validation still blocks unsafe data. |
 | MCQ subtype variety | Text, numerical, image, graph, code, sequence and matching metadata; all retain four choices and one intended key. Exact scientific figures require appropriate supplied/deterministic assets. |
