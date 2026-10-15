@@ -22,6 +22,7 @@ These eight small Lucide files are exact upstream SVGs under ISC, with the [comp
 | Coin and selection effects | 5 | CC0; existing creator/source records retained |
 | Spoken A–D letters | 4 | Original BioVista example only; no general voice/recording license granted |
 | Event and identification marks | 4 | Permission/policy review required; not covered by the code license |
+| Supplied Chota Namu character | 2 | Project-specific user authorization; unrelated reuse requires permission |
 
 See [third-party notices](../THIRD_PARTY_NOTICES.md) and [example notices](../examples/biovista/ASSET_NOTICES.md). A public file is not permission to use a trademark, someone's likeness, or a voice. Open-source software licenses do not establish rights to model weights, generated output, or voice recordings.
 
@@ -48,3 +49,7 @@ Use an available JSON/file tool if `jq` is absent; do not require the teacher to
 The catalog uses repository-root paths and records `id`, `type`, `mimeType`, `tags`, `alt`, `license`, `reuse`, `provenance`, `sha256`, and `bytes`. IDs are stable and unique. Every entry points to an actual local file and a local notice. New upstream assets should pin a source revision or retain a stable download URL and checksum; describe modifications. Existing provenance dates remain historical, not newly verified claims.
 
 Store approved reusable media in this repository, with notices under `assets/LICENSES/`. Add only selected files, not a complete stock library or model checkpoint. Record private teacher uploads and voice clips in the private event package; publish them here only with explicit authorization and suitable rights. See the [directory map](../docs/library/DIRECTORY_MAP.md) for current locations and where future media belongs.
+
+## Supplied Chota Namu character
+
+The [unchanged PNG](characters/chota-namu.png) is the optional static runtime choice. The [original GIF](characters/chota-namu-idle.gif) is preserved as an animation/reference source with its original caption and background; GIF is not a supported runtime import in this version. Neither file is automatically added to generic quizzes or the shared asset bundle. Select the PNG explicitly through `branding.character` and include the [complete project-use notice](characters/NOTICE.md) in its asset `licenseText`. The [provenance record](characters/PROVENANCE.json) identifies supplied filenames, dates, sizes and hashes without claiming an independent general artwork license.

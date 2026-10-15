@@ -11,7 +11,7 @@ Offer the quiz experience separately from its appearance. Every preset can be ch
 | **5 · Visual laboratory** `visual-lab` | Diagrams, observations and lab decisions | 45s / 15s / 15s | +10, 0 / +5, 0 | On / on |
 | **6 · Custom** | Describe the experience in your own words | Any supported values; new rules need an extension | Any supported values | Teacher's choice |
 
-Each score cell lists correct, wrong. All five start with 8 seconds of answer-entry grace, 1.8 seconds of sequential option reveal, a 1-second pass transition when applicable, and two complete pairs per round in short mode. Consultation, when enabled, is once per team for the competition. Keep inactive timing values out of the teacher's active choices. A seminar preset does not add a new discussion timer, and a visual preset does not fabricate approved images.
+Each score cell lists correct, wrong. All five start with 8 seconds of answer-entry grace, 1.8 seconds of sequential option reveal, a 1-second pass transition when applicable, and two complete pairs per round in short mode. Consultation, when enabled, is once per team for the competition. Keep inactive timing values out of the teacher's active choices. A seminar preset does not automatically enable the optional discussion phase: `gameplay.discussionSeconds` defaults to 0 and is a separate creator choice. A visual preset does not fabricate approved images.
 
 Question counts, round names and difficulty distribution are suggested after learning the subject, class level and available time. Do not equate a preset with a rigid syllabus. Allow time for instruction, the practice card, explanations, consultation, transitions and possible ties; longer speech or visual analysis needs more room.
 

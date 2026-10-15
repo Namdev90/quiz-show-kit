@@ -12,4 +12,10 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --ignore-scripts
+      - name: Prepare the DOCX authoring test environment
+        run: |
+          python3 -m venv .venv-authoring
+          .venv-authoring/bin/python -m pip install -r requirements-authoring.txt
       - run: npm run check
+        env:
+          QSK_PYTHON: ${{ github.workspace }}/.venv-authoring/bin/python

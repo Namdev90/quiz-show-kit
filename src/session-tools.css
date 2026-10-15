@@ -1,0 +1,11 @@
+/* Keep long content reachable without moving the timer or host controls. */
+.content{overflow:auto;overscroll-behavior:contain;padding:0 5px 12px;scrollbar-gutter:stable}
+.question-body{min-height:160px;max-height:none}
+.question-body .stem{min-width:0;overflow-wrap:anywhere}
+.option{height:auto;min-height:104px;overflow-wrap:anywhere}
+.option>span:not(.letter){min-width:0}
+.explanation{max-height:none;min-height:91px}
+.score .team-name{max-width:640px;overflow-wrap:anywhere;font-size:clamp(24px,2.1vw,40px);line-height:1.1}
+.controls{min-width:0;flex-wrap:wrap}
+.utilities{flex-shrink:0}
+textarea:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--white);outline-offset:4px}

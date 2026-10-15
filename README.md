@@ -35,11 +35,13 @@ Choose the experience and visual style independently. Customize sources, difficu
 
 [Reuse first →](assets/README.md) Choose a checked-in asset before generating media. Missing media can use an available plugin/tool or [open-source authoring library](docs/library/MEDIA_TOOLING.md); all playable output is embedded. The assistant follows [lean, staged instructions](docs/library/LEAN_WORKFLOW.md), adapted from [Ponytail](docs/library/PONYTAIL.md), without sacrificing requested features.
 
-[Measured startup text](docs/PROMPT_BUDGET.json): **39.8 KB → 5.0 KB (87.4% smaller)** through staged loading. This measures instruction bytes, not total tokens or billing.
+[Measured startup text](docs/PROMPT_BUDGET.json) tracks the current START + AGENTS loading budget against the recorded baseline. Detailed modules load only when needed. This measures instruction bytes, not total tokens or billing.
 
 Smart voice cues say a one-word option on hover, focus or selection; longer options can use full-text speech. Read question aloud before opening choices. [Voice controls](docs/library/VOICE_RUNTIME.md) · [Five voice routes + Custom](docs/library/TTS_MODELS.md)
 
 The tested bundled mode uses **two teams, four choices and one correct answer**, with complete matched pairs. New formats can be implemented in the source; choosing a custom idea alone does not implement it. [Configuration reference](docs/CONFIGURATION.md) · [Extending the engine](docs/EXTENDING_ENGINE.md)
+
+Supplied and researched questions share the same independent evidence review, with per-option explanations, explicit verification disagreements and a compact quality report. [Editable-bank workflow](docs/library/QUESTION_BANK.md) covers DOCX review/rollback and optional print material. [Implementation coverage](docs/IMPLEMENTATION_COVERAGE.md) separates completed work, remaining limits, rejected ideas and decisions still needed; [actual test evidence](docs/IMPLEMENTATION_QA.md) reports the environments exercised.
 
 ## Build and play
 
@@ -67,10 +69,12 @@ The real event is preserved: **30 main questions, four reserves, six tie cards a
 
 ```sh
 npm ci --ignore-scripts
-npm run check
+python3 -m venv .venv-authoring
+.venv-authoring/bin/python -m pip install -r requirements-authoring.txt
+QSK_PYTHON=.venv-authoring/bin/python npm run check
 ```
 
-This builds the quiz and prompt launcher, validates the original configuration, and runs the automated tests. Browser layout, factual correctness and physical audio/projector quality require separate checks. The optional `node scripts/browser-smoke.cjs` checks the launcher with an installed Playwright Core and Chromium.
+These POSIX-shell commands prepare the existing DOCX authoring toolchain, build the quiz and prompt launcher, validate the original configuration, and run the automated tests. On Windows, use the virtual environment's `Scripts/python.exe` and set `QSK_PYTHON` to that executable in your shell. An existing Python environment with the pinned packages can be selected instead. Python is needed for DOCX authoring/tests, not for building or playing an ordinary quiz. Browser layout, factual correctness and physical audio/projector quality require separate checks. The optional `node scripts/browser-smoke.cjs` checks the launcher with an installed Playwright Core and Chromium.
 
 [Contributing](CONTRIBUTING.md) · [Agent guidance](AGENTS.md) · [Verification](docs/TEACHER_UPGRADE_QA.md) · [GitHub setup](docs/GITHUB_SETUP.md) · [Security](SECURITY.md)
 
@@ -79,6 +83,6 @@ This builds the quiz and prompt launcher, validates the original configuration, 
 <details>
 <summary><strong>License and credits</strong></summary>
 
-Own code uses the [MIT license](LICENSE). Bundled libraries retain their own terms, including GSAP's Standard No Charge license. Logos, trademarks, recordings and separately credited media are not covered by the code license. Use approved branding and media for your event. [Third-party notices](THIRD_PARTY_NOTICES.md) · [BioVista asset notices](examples/biovista/ASSET_NOTICES.md)
+Own code uses the [MIT license](LICENSE). Bundled libraries retain their own terms, including GSAP's Standard No Charge license. Logos, trademarks, recordings and separately credited media are not covered by the code license. Use approved branding and media for your event. [Third-party notices](THIRD_PARTY_NOTICES.md) · [BioVista asset notices](examples/biovista/ASSET_NOTICES.md) · [Current asset/permission review](docs/ASSET_REUSE_REVIEW.md)
 
 </details>

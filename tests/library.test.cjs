@@ -9,7 +9,7 @@ test('Catalog assets and notices are contained, intact and explicitly scoped for
 test('Reusable icons embed through the existing compiler with their complete notices',()=>{
  const c=JSON.parse(fs.readFileSync(path.join(root,'quiz.config.json'),'utf8'));
  const icons=catalog.assets.filter(a=>a.id.startsWith('lucide-'));assert.equal(icons.length,8);
- c.assets={};c.branding={};for(const a of icons)c.assets[a.id]={data:loadAsset(root,a.path),licenseText:fs.readFileSync(path.join(root,a.license.noticePath),'utf8')};
+ c.assets={};c.branding={};for(const q of c.questions)delete q.visual;for(const a of icons)c.assets[a.id]={data:loadAsset(root,a.path),licenseText:fs.readFileSync(path.join(root,a.license.noticePath),'utf8')};
  const built=Compiler.build(c,runtime(c));const data=JSON.parse(built.html.match(/<script id="asset-data"[^>]*>([\s\S]*?)<\/script>/)[1]);
  for(const a of icons){assert.equal(data[a.id].data,c.assets[a.id].data);assert.equal(data[a.id].licenseText,c.assets[a.id].licenseText);}
  assert.doesNotMatch(built.html,/<script\b[^>]*\bsrc=/i);

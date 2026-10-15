@@ -1,0 +1,5 @@
+# Existing authoring toolchain used by DOCX export and regression tests.
+# Offline gameplay does not use Python or these packages.
+python-docx==1.2.0
+lxml==6.1.1
+typing_extensions==4.16.0

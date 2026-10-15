@@ -153,7 +153,7 @@
         "instructions": "Reuse with the existing provenance; audition volume on event speakers."
       },
       "provenance": {
-        "sourceTitle": "StarNinjas — 12 Coin Sound Effects",
+        "sourceTitle": "StarNinjas \u2014 12 Coin Sound Effects",
         "sourceUrl": "https://opengameart.org/node/123368",
         "sourceAssetUrl": "https://opengameart.org/sites/default/files/coins_-_starninjas.zip",
         "recordedVerificationDate": "2026-10-13",
@@ -188,7 +188,7 @@
         "instructions": "Reuse with the existing provenance; audition volume on event speakers."
       },
       "provenance": {
-        "sourceTitle": "Kenney — 51 UI sound effects (buttons, switches and clicks)",
+        "sourceTitle": "Kenney \u2014 51 UI sound effects (buttons, switches and clicks)",
         "sourceUrl": "https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks",
         "sourceAssetUrl": "https://opengameart.org/sites/default/files/UI_SFX_Set.zip",
         "recordedVerificationDate": "2026-10-13",
@@ -223,7 +223,7 @@
         "instructions": "Reuse with the existing provenance; audition volume on event speakers."
       },
       "provenance": {
-        "sourceTitle": "Kenney — 51 UI sound effects (buttons, switches and clicks)",
+        "sourceTitle": "Kenney \u2014 51 UI sound effects (buttons, switches and clicks)",
         "sourceUrl": "https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks",
         "sourceAssetUrl": "https://opengameart.org/sites/default/files/UI_SFX_Set.zip",
         "recordedVerificationDate": "2026-10-13",
@@ -258,7 +258,7 @@
         "instructions": "Reuse with the existing provenance; audition volume on event speakers."
       },
       "provenance": {
-        "sourceTitle": "Kenney — 51 UI sound effects (buttons, switches and clicks)",
+        "sourceTitle": "Kenney \u2014 51 UI sound effects (buttons, switches and clicks)",
         "sourceUrl": "https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks",
         "sourceAssetUrl": "https://opengameart.org/sites/default/files/UI_SFX_Set.zip",
         "recordedVerificationDate": "2026-10-13",
@@ -293,7 +293,7 @@
         "instructions": "Reuse with the existing provenance; audition volume on event speakers."
       },
       "provenance": {
-        "sourceTitle": "Kenney — 51 UI sound effects (buttons, switches and clicks)",
+        "sourceTitle": "Kenney \u2014 51 UI sound effects (buttons, switches and clicks)",
         "sourceUrl": "https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks",
         "sourceAssetUrl": "https://opengameart.org/sites/default/files/UI_SFX_Set.zip",
         "recordedVerificationDate": "2026-10-13",
@@ -329,7 +329,7 @@
         "instructions": "Preserved original BioVista speech; no general redistribution grant. Use authorized recordings for new events."
       },
       "provenance": {
-        "sourceTitle": "Offline spoken option A — installed Microsoft Zira voice",
+        "sourceTitle": "Offline spoken option A \u2014 installed Microsoft Zira voice",
         "sourceUrl": "",
         "sourceAssetUrl": "",
         "recordedVerificationDate": "2026-10-13",
@@ -361,7 +361,7 @@
         "instructions": "Preserved original BioVista speech; no general redistribution grant. Use authorized recordings for new events."
       },
       "provenance": {
-        "sourceTitle": "Offline spoken option B — installed Microsoft Zira voice",
+        "sourceTitle": "Offline spoken option B \u2014 installed Microsoft Zira voice",
         "sourceUrl": "",
         "sourceAssetUrl": "",
         "recordedVerificationDate": "2026-10-13",
@@ -393,7 +393,7 @@
         "instructions": "Preserved original BioVista speech; no general redistribution grant. Use authorized recordings for new events."
       },
       "provenance": {
-        "sourceTitle": "Offline spoken option C — installed Microsoft Zira voice",
+        "sourceTitle": "Offline spoken option C \u2014 installed Microsoft Zira voice",
         "sourceUrl": "",
         "sourceAssetUrl": "",
         "recordedVerificationDate": "2026-10-13",
@@ -425,7 +425,7 @@
         "instructions": "Preserved original BioVista speech; no general redistribution grant. Use authorized recordings for new events."
       },
       "provenance": {
-        "sourceTitle": "Offline spoken option D — installed Microsoft Zira voice",
+        "sourceTitle": "Offline spoken option D \u2014 installed Microsoft Zira voice",
         "sourceUrl": "",
         "sourceAssetUrl": "",
         "recordedVerificationDate": "2026-10-13",
@@ -730,6 +730,82 @@
       "bytes": 358,
       "width": 24,
       "height": 24
+    },
+    {
+      "id": "chotaNamu",
+      "path": "assets/characters/chota-namu.png",
+      "type": "character-image",
+      "mimeType": "image/png",
+      "tags": [
+        "chota-namu",
+        "user-supplied",
+        "project-specific",
+        "optional-static-character"
+      ],
+      "alt": "Chota Namu character supplied by Namdev Shirodkar",
+      "license": {
+        "id": "LicenseRef-User-Provided-Project-Use",
+        "noticePath": "assets/characters/NOTICE.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "permission-required",
+        "instructions": "Authorized by the supplying user for this project and its repository update. Obtain rights holder permission for unrelated reuse; not covered by the software MIT license."
+      },
+      "provenance": {
+        "sourceTitle": "Chota Namu character supplied by Namdev Shirodkar",
+        "sourceUrl": "",
+        "metadataSource": "assets/characters/PROVENANCE.json#chotaNamu",
+        "suppliedOn": "2026-10-15",
+        "originalFilename": "02-1000495459.png",
+        "modifications": "None; byte-identical to the supplied attachment",
+        "originalCreator": "Not independently identified",
+        "notes": "User instructed use in this project and publication of the repository update on 2026-10-15; no broader artwork license inferred; optional-static-character"
+      },
+      "runtimeSupported": true,
+      "sha256": "04bcc707bdebb63b94794b7f4fc5f849b4c798c1673b47cce950da94ecd7089a",
+      "bytes": 811281,
+      "width": 572,
+      "height": 1281,
+      "frames": 1
+    },
+    {
+      "id": "chotaNamuIdleSource",
+      "path": "assets/characters/chota-namu-idle.gif",
+      "type": "character-reference",
+      "mimeType": "image/gif",
+      "tags": [
+        "chota-namu",
+        "user-supplied",
+        "project-specific",
+        "animation-reference-only"
+      ],
+      "alt": "Chota Namu idle animation reference with its original caption and background",
+      "license": {
+        "id": "LicenseRef-User-Provided-Project-Use",
+        "noticePath": "assets/characters/NOTICE.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "permission-required",
+        "instructions": "Authorized by the supplying user for this project and its repository update. Obtain rights holder permission for unrelated reuse; not covered by the software MIT license."
+      },
+      "provenance": {
+        "sourceTitle": "Chota Namu character supplied by Namdev Shirodkar",
+        "sourceUrl": "",
+        "metadataSource": "assets/characters/PROVENANCE.json#chotaNamuIdleSource",
+        "suppliedOn": "2026-10-15",
+        "originalFilename": "01-1000495472.gif",
+        "modifications": "None; byte-identical to the supplied attachment",
+        "originalCreator": "Not independently identified",
+        "notes": "User instructed use in this project and publication of the repository update on 2026-10-15; no broader artwork license inferred; animation-reference-only"
+      },
+      "runtimeSupported": false,
+      "sha256": "0267ac9c109fb28b378d6714f981d32a7fc8202caca9f709fbdc2507a70573c2",
+      "bytes": 694219,
+      "width": 384,
+      "height": 256,
+      "frames": 73
     }
   ]
 }

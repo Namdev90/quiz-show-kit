@@ -1,0 +1,749 @@
+{
+  "sourceRevision": "404ca0114b4815605f9726549dfb0e068d4d9fdd",
+  "checkpoint": {
+    "version": 5,
+    "profileId": "test-event",
+    "profileIdentity": "514:fdf69356",
+    "bankIdentity": "948:597f19fe",
+    "bank": [
+      {
+        "id": "M0",
+        "status": "main",
+        "round": 1,
+        "pairId": "P0",
+        "difficulty": "standard",
+        "stem": "Question 0",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct": 0,
+        "seconds": 15,
+        "timing": {
+          "primary": 15,
+          "passed": 7
+        }
+      },
+      {
+        "id": "M1",
+        "status": "main",
+        "round": 1,
+        "pairId": "P0",
+        "difficulty": "standard",
+        "stem": "Question 1",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct": 0,
+        "seconds": 15,
+        "timing": {
+          "primary": 15,
+          "passed": 7
+        }
+      },
+      {
+        "id": "M2",
+        "status": "main",
+        "round": 2,
+        "pairId": "P1",
+        "difficulty": "standard",
+        "stem": "Question 2",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct": 0,
+        "seconds": 15,
+        "timing": {
+          "primary": 15,
+          "passed": 7
+        }
+      },
+      {
+        "id": "M3",
+        "status": "main",
+        "round": 2,
+        "pairId": "P1",
+        "difficulty": "standard",
+        "stem": "Question 3",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct": 0,
+        "seconds": 15,
+        "timing": {
+          "primary": 15,
+          "passed": 7
+        }
+      },
+      {
+        "id": "R",
+        "status": "reserve",
+        "round": 1,
+        "suitableRounds": [
+          1,
+          2
+        ],
+        "difficulty": "standard",
+        "stem": "Reserve",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct": 0,
+        "seconds": 15,
+        "timing": {
+          "primary": 15,
+          "passed": 7
+        }
+      }
+    ],
+    "config": {
+      "primaryMs": 15000,
+      "passedMs": 7000,
+      "teacherMs": 7000,
+      "graceMs": 8000,
+      "optionsIntroMs": 1800,
+      "passTransitionMs": 1000,
+      "maxTickGapMs": 2500,
+      "directPoints": 10,
+      "passedPoints": 2,
+      "wrongPoints": -2,
+      "passedWrongPoints": -5,
+      "passingEnabled": true,
+      "teacherEnabled": true,
+      "shortPairsPerRound": 2,
+      "ruleVersion": 5,
+      "mode": "full",
+      "startingTeam": "Bio"
+    },
+    "schedule": [
+      {
+        "id": "M0",
+        "round": 1,
+        "pairId": "P0",
+        "kind": "main",
+        "primaryTeam": "Bio"
+      },
+      {
+        "id": "M1",
+        "round": 1,
+        "pairId": "P0",
+        "kind": "main",
+        "primaryTeam": "Vista"
+      },
+      {
+        "id": "M2",
+        "round": 2,
+        "pairId": "P1",
+        "kind": "main",
+        "primaryTeam": "Bio"
+      },
+      {
+        "id": "M3",
+        "round": 2,
+        "pairId": "P1",
+        "kind": "main",
+        "primaryTeam": "Vista"
+      }
+    ],
+    "tieSchedule": [],
+    "cursor": 0,
+    "tieCursor": -1,
+    "kind": "main",
+    "phase": "passTransition",
+    "questionId": "M0",
+    "primaryTeam": "Bio",
+    "activeTeam": "Vista",
+    "turn": "passed",
+    "selected": null,
+    "lockedAnswer": null,
+    "timer": {
+      "mode": "transition",
+      "remainingMs": 1000,
+      "deadline": null,
+      "paused": true
+    },
+    "answerRemainingMs": null,
+    "mainScores": {
+      "Bio": -2,
+      "Vista": 0
+    },
+    "tieScores": {
+      "Bio": 0,
+      "Vista": 0
+    },
+    "lifelines": {
+      "Bio": false,
+      "Vista": false
+    },
+    "lifelineActive": null,
+    "lifelineUses": [],
+    "records": [
+      {
+        "questionId": "M0",
+        "kind": "main",
+        "team": "Bio",
+        "turn": "primary",
+        "option": 1,
+        "correct": false,
+        "delta": -2,
+        "origin": "answer",
+        "at": 1800,
+        "voided": false
+      }
+    ],
+    "log": [
+      {
+        "id": 1,
+        "at": 0,
+        "type": "question-ready",
+        "questionId": "M0",
+        "team": "Bio",
+        "phase": "roundIntro"
+      },
+      {
+        "id": 2,
+        "at": 0,
+        "type": "read-stem",
+        "questionId": "M0",
+        "team": "Bio"
+      },
+      {
+        "id": 3,
+        "at": 0,
+        "type": "options-shown",
+        "questionId": "M0",
+        "team": "Bio",
+        "answerSeconds": 15,
+        "revealMs": 1800
+      },
+      {
+        "id": 4,
+        "at": 1800,
+        "type": "answer-timer-started",
+        "questionId": "M0",
+        "team": "Bio",
+        "seconds": 15
+      },
+      {
+        "id": 5,
+        "at": 1800,
+        "type": "acknowledged-by-selection",
+        "questionId": "M0",
+        "team": "Bio"
+      },
+      {
+        "id": 6,
+        "at": 1800,
+        "type": "answer-staged",
+        "questionId": "M0",
+        "team": "Bio",
+        "option": 1
+      },
+      {
+        "id": 7,
+        "at": 1800,
+        "type": "answer-confirmed",
+        "questionId": "M0",
+        "team": "Bio",
+        "turn": "primary",
+        "option": 1,
+        "correct": false,
+        "delta": -2,
+        "kind": "main"
+      }
+    ],
+    "history": [
+      {
+        "version": 5,
+        "profileId": "test-event",
+        "profileIdentity": "514:fdf69356",
+        "bankIdentity": "948:597f19fe",
+        "schedule": [
+          {
+            "id": "M0",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M1",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          },
+          {
+            "id": "M2",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M3",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          }
+        ],
+        "tieSchedule": [],
+        "cursor": -1,
+        "tieCursor": -1,
+        "kind": "main",
+        "phase": "intro",
+        "questionId": null,
+        "primaryTeam": "Bio",
+        "activeTeam": "Bio",
+        "turn": "primary",
+        "selected": null,
+        "lockedAnswer": null,
+        "timer": null,
+        "answerRemainingMs": null,
+        "mainScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "tieScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "lifelines": {
+          "Bio": false,
+          "Vista": false
+        },
+        "lifelineActive": null,
+        "lifelineUses": [],
+        "records": [],
+        "log": [],
+        "usedReserves": [],
+        "winner": null,
+        "lastNow": 0,
+        "sequence": 0,
+        "pauseReason": "",
+        "migrationNotice": ""
+      },
+      {
+        "version": 5,
+        "profileId": "test-event",
+        "profileIdentity": "514:fdf69356",
+        "bankIdentity": "948:597f19fe",
+        "schedule": [
+          {
+            "id": "M0",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M1",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          },
+          {
+            "id": "M2",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M3",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          }
+        ],
+        "tieSchedule": [],
+        "cursor": 0,
+        "tieCursor": -1,
+        "kind": "main",
+        "phase": "roundIntro",
+        "questionId": "M0",
+        "primaryTeam": "Bio",
+        "activeTeam": "Bio",
+        "turn": "primary",
+        "selected": null,
+        "lockedAnswer": null,
+        "timer": null,
+        "answerRemainingMs": null,
+        "mainScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "tieScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "lifelines": {
+          "Bio": false,
+          "Vista": false
+        },
+        "lifelineActive": null,
+        "lifelineUses": [],
+        "records": [],
+        "log": [
+          {
+            "id": 1,
+            "at": 0,
+            "type": "question-ready",
+            "questionId": "M0",
+            "team": "Bio",
+            "phase": "roundIntro"
+          }
+        ],
+        "usedReserves": [],
+        "winner": null,
+        "lastNow": 0,
+        "sequence": 1,
+        "pauseReason": "",
+        "migrationNotice": ""
+      },
+      {
+        "version": 5,
+        "profileId": "test-event",
+        "profileIdentity": "514:fdf69356",
+        "bankIdentity": "948:597f19fe",
+        "schedule": [
+          {
+            "id": "M0",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M1",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          },
+          {
+            "id": "M2",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M3",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          }
+        ],
+        "tieSchedule": [],
+        "cursor": 0,
+        "tieCursor": -1,
+        "kind": "main",
+        "phase": "read",
+        "questionId": "M0",
+        "primaryTeam": "Bio",
+        "activeTeam": "Bio",
+        "turn": "primary",
+        "selected": null,
+        "lockedAnswer": null,
+        "timer": null,
+        "answerRemainingMs": null,
+        "mainScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "tieScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "lifelines": {
+          "Bio": false,
+          "Vista": false
+        },
+        "lifelineActive": null,
+        "lifelineUses": [],
+        "records": [],
+        "log": [
+          {
+            "id": 1,
+            "at": 0,
+            "type": "question-ready",
+            "questionId": "M0",
+            "team": "Bio",
+            "phase": "roundIntro"
+          },
+          {
+            "id": 2,
+            "at": 0,
+            "type": "read-stem",
+            "questionId": "M0",
+            "team": "Bio"
+          }
+        ],
+        "usedReserves": [],
+        "winner": null,
+        "lastNow": 0,
+        "sequence": 2,
+        "pauseReason": "",
+        "migrationNotice": ""
+      },
+      {
+        "version": 5,
+        "profileId": "test-event",
+        "profileIdentity": "514:fdf69356",
+        "bankIdentity": "948:597f19fe",
+        "schedule": [
+          {
+            "id": "M0",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M1",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          },
+          {
+            "id": "M2",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M3",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          }
+        ],
+        "tieSchedule": [],
+        "cursor": 0,
+        "tieCursor": -1,
+        "kind": "main",
+        "phase": "answering",
+        "questionId": "M0",
+        "primaryTeam": "Bio",
+        "activeTeam": "Bio",
+        "turn": "primary",
+        "selected": null,
+        "lockedAnswer": null,
+        "timer": {
+          "mode": "answer",
+          "remainingMs": 15000,
+          "deadline": null,
+          "paused": true
+        },
+        "answerRemainingMs": null,
+        "mainScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "tieScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "lifelines": {
+          "Bio": false,
+          "Vista": false
+        },
+        "lifelineActive": null,
+        "lifelineUses": [],
+        "records": [],
+        "log": [
+          {
+            "id": 1,
+            "at": 0,
+            "type": "question-ready",
+            "questionId": "M0",
+            "team": "Bio",
+            "phase": "roundIntro"
+          },
+          {
+            "id": 2,
+            "at": 0,
+            "type": "read-stem",
+            "questionId": "M0",
+            "team": "Bio"
+          },
+          {
+            "id": 3,
+            "at": 0,
+            "type": "options-shown",
+            "questionId": "M0",
+            "team": "Bio",
+            "answerSeconds": 15,
+            "revealMs": 1800
+          },
+          {
+            "id": 4,
+            "at": 1800,
+            "type": "answer-timer-started",
+            "questionId": "M0",
+            "team": "Bio",
+            "seconds": 15
+          }
+        ],
+        "usedReserves": [],
+        "winner": null,
+        "lastNow": 1800,
+        "sequence": 4,
+        "pauseReason": "",
+        "migrationNotice": ""
+      },
+      {
+        "version": 5,
+        "profileId": "test-event",
+        "profileIdentity": "514:fdf69356",
+        "bankIdentity": "948:597f19fe",
+        "schedule": [
+          {
+            "id": "M0",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M1",
+            "round": 1,
+            "pairId": "P0",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          },
+          {
+            "id": "M2",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Bio"
+          },
+          {
+            "id": "M3",
+            "round": 2,
+            "pairId": "P1",
+            "kind": "main",
+            "primaryTeam": "Vista"
+          }
+        ],
+        "tieSchedule": [],
+        "cursor": 0,
+        "tieCursor": -1,
+        "kind": "main",
+        "phase": "acknowledged",
+        "questionId": "M0",
+        "primaryTeam": "Bio",
+        "activeTeam": "Bio",
+        "turn": "primary",
+        "selected": 1,
+        "lockedAnswer": null,
+        "timer": {
+          "mode": "grace",
+          "remainingMs": 8000,
+          "deadline": null,
+          "paused": true
+        },
+        "answerRemainingMs": 15000,
+        "mainScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "tieScores": {
+          "Bio": 0,
+          "Vista": 0
+        },
+        "lifelines": {
+          "Bio": false,
+          "Vista": false
+        },
+        "lifelineActive": null,
+        "lifelineUses": [],
+        "records": [],
+        "log": [
+          {
+            "id": 1,
+            "at": 0,
+            "type": "question-ready",
+            "questionId": "M0",
+            "team": "Bio",
+            "phase": "roundIntro"
+          },
+          {
+            "id": 2,
+            "at": 0,
+            "type": "read-stem",
+            "questionId": "M0",
+            "team": "Bio"
+          },
+          {
+            "id": 3,
+            "at": 0,
+            "type": "options-shown",
+            "questionId": "M0",
+            "team": "Bio",
+            "answerSeconds": 15,
+            "revealMs": 1800
+          },
+          {
+            "id": 4,
+            "at": 1800,
+            "type": "answer-timer-started",
+            "questionId": "M0",
+            "team": "Bio",
+            "seconds": 15
+          },
+          {
+            "id": 5,
+            "at": 1800,
+            "type": "acknowledged-by-selection",
+            "questionId": "M0",
+            "team": "Bio"
+          },
+          {
+            "id": 6,
+            "at": 1800,
+            "type": "answer-staged",
+            "questionId": "M0",
+            "team": "Bio",
+            "option": 1
+          }
+        ],
+        "usedReserves": [],
+        "winner": null,
+        "lastNow": 1800,
+        "sequence": 6,
+        "pauseReason": "",
+        "migrationNotice": ""
+      }
+    ],
+    "usedReserves": [],
+    "winner": null,
+    "lastNow": 0,
+    "sequence": 7,
+    "pauseReason": "",
+    "migrationNotice": ""
+  }
+}

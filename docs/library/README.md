@@ -11,6 +11,7 @@ The [one-line launcher](../../prompts/START.md) starts the staged workflow; [the
 | Generate a missing asset | [Optional open-source tools and plugin routes](MEDIA_TOOLING.md) |
 | Choose a starting experience | [Five quiz presets + five visual presets, both with Custom](PRESETS.md) |
 | Research, ideate and calibrate questions | [Sources and difficulty rubric](QUESTION_RESEARCH.md) |
+| Edit supplied questions, review changes or export DOCX/optional print | [Question-bank workflow](QUESTION_BANK.md) |
 | Add diagrams, logos or a clear voice | [Assets and narration](ASSETS_AND_VOICE.md) |
 | Suggest useful features safely | [Feature recommendations and dependencies](FEATURES.md) |
 | Review the repository or repair a defect | [Review, fixes and real PRs](REVIEW_AND_FIXES.md) |

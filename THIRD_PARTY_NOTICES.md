@@ -48,3 +48,9 @@ Question references identify sources supporting the educational content. Linking
 ## Workflow and additional reusable assets
 
 The reuse-first workflow adapts principles from DietrichGebert/ponytail (MIT); its pinned source and full copyright/license notice are in [Ponytail provenance](docs/library/PONYTAIL.md). New Lucide/Feather-derived icons have their upstream license in [assets/LICENSES](assets/LICENSES/); exact file provenance, rights and reuse scope are recorded in [the asset catalog](assets/catalog.json). These grants do not cover event trademarks or personal voice recordings.
+
+## User supplied Chota Namu character
+
+The original PNG and GIF supplied by Namdev Shirodkar on 15 October 2026 are retained in [assets/characters](assets/characters/NOTICE.md), with original-byte hashes and provenance. The user authorized their use for Quiz Show Kit and publication of this repository update. The PNG can be selected as an optional static entry/About character; the GIF is a preserved reference and is not embedded by default.
+
+This records project-specific authorization, not a general artwork license, MIT relicensing, institutional endorsement, or independent verification of the original artist and underlying rights. Permission for unrelated reuse remains with the relevant rights holder. Retain the [character notice](assets/characters/NOTICE.md) with project distributions containing these files.

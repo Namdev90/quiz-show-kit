@@ -36,7 +36,7 @@ function apply(config,key,saved){
  if(saved!==undefined){
   if(!saved||saved.qskPresetVersion!==1||!saved.settings||typeof saved.settings!=='object'||Array.isArray(saved.settings))throw Error('Expected a QSK settings file, version 1.');
   if(Object.keys(saved).some(k=>!['qskPresetVersion','key','settings'].includes(k)))throw Error('Unsupported settings file field.');
-  const allowed=['teams','theme','presentation','rules'];
+  const allowed=['teams','theme','presentation','rules','gameplay','localization'];
   for(const [field,value]of Object.entries(saved.settings)){if(!allowed.includes(field))throw Error('Unsupported reusable setting: '+field);c[field]=copy(value);}
  }
  Compiler.validate(c);return c;
@@ -44,7 +44,7 @@ function apply(config,key,saved){
 function exportSettings(config){
  const validated=Compiler.validate(config);
  const presentation=validated.presentation||{motion:'cinematic',sound:true,volume:80,spokenOptions:true,confetti:true,rewards:true,intro:true,coinAnimation:true,questionAnimation:true,winnerAnimation:true,optionSpeech:'letters',voiceName:'',voiceLang:'en-IN',speechRate:1,readQuestions:false};
- return {qskPresetVersion:1,key:'QSK1 preset=custom theme=custom',settings:copy({teams:config.teams,theme:validated.theme,presentation,rules:config.rules||{}})};
+ return {qskPresetVersion:1,key:'QSK1 preset=custom theme=custom',settings:copy({teams:config.teams,theme:validated.theme,presentation,rules:config.rules||{},...(validated.gameplay?{gameplay:validated.gameplay}:{}),...(validated.localization?{localization:validated.localization}:{})})};
 }
 function choices(config,capabilities={}){
  const p=config.presentation||{},r=config.rules||{};
@@ -59,7 +59,7 @@ function choices(config,capabilities={}){
  if(!capabilities.localTTS)hide(['presentation.voiceName','presentation.voiceLang','presentation.speechRate'],'No verified local speech voice; use embedded recordings or letter cues.');
  if(!sound||(!capabilities.localTTS&&!capabilities.stemRecording))hide(['readQuestion'],'Question narration needs enabled sound and a local voice or an embedded stem recording.');
  if(p.motion==='none'||capabilities.reducedMotion)hide(['presentation.coinAnimation','presentation.questionAnimation','presentation.winnerAnimation','presentation.confetti','presentation.rewards'],'Decorative motion is disabled; gameplay and scoring remain active.');
- if(capabilities.live)hide(['rules','teams','questions','rounds','theme'],'Change game structure before the event, then rebuild; live settings are presentation-only.');
+ if(capabilities.live)hide(['rules','teams','questions','rounds','theme','gameplay','localization'],'Change game structure before the event, then rebuild; live settings are presentation-only.');
  let errors=[];try{Compiler.validate(config);}catch(error){errors=[error.message];}
  const warnings=[];
  if(p.optionSpeech==='full')warnings.push('Read full options on host request; do not lengthen or block the scoring clock with narration.');
