@@ -1,22 +1,23 @@
 # Extend the first iteration
 
-Quiz Show Kit is editable source for an adaptable teaching toolkit. Its current bundled mode has two teams, four-choice questions and matched pairs. These are tested capabilities of this iteration, not a permanent limit on what can be built.
+Quiz Show Kit is editable source. Its current bundled mode has two teams, four choices and matched pairs. These are tested capabilities, not a permanent limit on what can be built.
 
-Teachers describe their desired behavior to the AI assistant. The assistant should use existing configuration switches first, and implement an extension when the request needs new behavior. A conversation without code/build tools should provide a concrete handoff rather than an unbuildable configuration or a claim that the extension already works.
+Use existing validated configuration first. For a new rule, layout or format, implement the requested behavior and check the resulting flow before offering it as available. Without code/build tools, provide a concrete handoff and label the extension as pending.
 
 | Change | Modules to inspect |
 | --- | --- |
-| New rules, scores, teams, question formats | `src/profile.js`, `src/engine.js`, `src/compiler.js` |
-| New visual layouts and controls | `src/quiz-template.html`, `src/ui.js` |
-| New animations or audio | `src/motion.js`, `src/penalty-motion.js`, `src/audio.js` |
-| Authoring fields and import/export | `src/builder-template.html`, `src/builder-ui.js`, `src/builder-model.js` |
-| Bundling and offline output | `scripts/runtime.cjs`, `scripts/build.cjs`, `scripts/build-builder.cjs` |
-| Guided AI workflow | `docs/TEACHER_PROMPT.md` |
+| Rules, scores, teams and question formats | `src/profile.js`, `src/engine.js`, `src/compiler.js` |
+| Visual layouts and host controls | `src/quiz-template.html`, `src/ui.js` |
+| Motion and audio | `src/motion.js`, `src/penalty-motion.js`, `src/audio.js` |
+| Validation and configuration | `src/compiler.js`, `docs/CONFIGURATION.md` |
+| Offline bundling | `scripts/runtime.cjs`, `scripts/build.cjs` |
+| Guided choices, research and reuse | `prompts/START.md`, `docs/TEACHER_PROMPT.md`, `docs/library/` |
+| Public prompt launcher | `src/launcher-template.html`, `scripts/build-launcher.cjs` |
 
-Update the input contract and validator together when a new feature changes configuration. Introduce a new schema/version and migration when required rather than accepting incompatible fields silently. Keep optional features switchable in the relevant settings, and preserve the ordinary teacher flow. Do not put implementation jargon into classroom controls.
+The browser quiz editor has been removed. Add authoring capabilities to the guided workflow and reusable source, not a second competing website builder.
 
-Keep the scoring engine authoritative and animations presentational. Test every new rule at its timing boundaries, fairness, answer review, pause/recovery and undo where applicable. A decorative switch must never alter the ledger or answer deadlines. Update checkpoint identity/migration when rules or question formats change.
+Update input contracts and validators together; use a version and migration when needed. Match offered choices to actual capabilities and dependencies, hiding unavailable controls or explaining what must change. Keep custom choices available as requests for implementation. Never disable validation to accommodate a preset.
 
-Preserve the real BioVista example and its existing mode separately from custom events. Retain escaping, restricted media validation, path containment, CSP, offline bundling and license notices. A genuinely networked extension should state its connectivity needs rather than claim offline operation.
+Keep scoring authoritative; presentation must not alter the ledger, fairness or deadlines. Test timing boundaries, reveal state, pause/recovery and undo where relevant. Preserve checkpoint compatibility or add explicit migration. Narration should finish or stop at the correct phase without changing the answer clock.
 
-Run `npm run check` and relevant new regressions. Report exactly which logic, browser and physical classroom checks actually ran. Toolkit credit belongs in welcome/About/Settings; creator credit stays out of winner/results screens. Event branding remains the teacher's choice.
+Preserve the original BioVista example, escaping, restricted media validation, path containment, CSP, offline bundling and notices. A deliberately networked extension must state its connectivity requirements. Run `npm run check` and relevant regressions; report actual browser and classroom checks separately. Toolkit credit stays in welcome/About/Settings and out of results.

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="One prompt. A reusable research, design and offline quiz toolkit for every teacher.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'; connect-src 'none'">
+<title>Quiz Show Kit · Start with one prompt</title>
+<style>
+:root{color-scheme:dark;--bg:#101c2b;--panel:#18283b;--text:#f4f7fa;--muted:#bfd0dc;--accent:#b7f58a;--line:#425367;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);line-height:1.6}a{color:var(--accent);text-underline-offset:4px}a:hover{text-decoration-thickness:2px}a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid #f8cf78;outline-offset:5px}.skip{position:absolute;top:-100px;left:16px;background:var(--accent);color:var(--bg);padding:8px 16px;border-radius:8px}.skip:focus{top:12px;z-index:2}.wrap{max-width:1120px;margin:auto;padding:28px clamp(20px,5vw,68px) 48px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{font-size:16px;font-weight:750;letter-spacing:.04em}.mark{display:inline-grid;place-items:center;width:36px;height:36px;background:var(--accent);color:var(--bg);border-radius:11px;margin-right:10px}.top a{font-size:14px;color:var(--muted)}main{padding-top:52px}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}h1{font-size:clamp(44px,7.5vw,84px);letter-spacing:-.055em;line-height:1.04;max-width:800px;margin:0 0 24px}h1 span{color:var(--accent)}.lead{font-size:clamp(18px,2.2vw,22px);max-width:690px;color:var(--muted);margin:0 0 30px}.launch{padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:20px;max-width:850px}.launch label{display:block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}textarea{resize:vertical;width:100%;min-height:90px;padding:16px;border:1px solid var(--line);border-radius:10px;background:#101c2b;color:var(--text);font:15px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}.actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:15px}button{cursor:pointer;padding:13px 23px;border:0;border-radius:10px;font:700 15px system-ui;background:var(--accent);color:#152117}button:hover{background:#cef9b1}.actions a{font-size:14px}.status{font-size:13px;min-height:22px;color:var(--muted);margin:10px 0 0}.next{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin:46px 0 36px}.next article{border-top:1px solid var(--line);padding-top:18px}.step{font-size:12px;color:var(--accent);font-weight:750}h2{font-size:18px;margin:8px 0}.next p{font-size:14px;color:var(--muted);margin:0}.links{display:flex;gap:14px 26px;flex-wrap:wrap;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px}.note{font-size:13px;color:var(--muted);max-width:810px;margin:22px 0 0}footer{margin-top:36px;color:var(--muted);font-size:12px}footer strong{color:var(--text)}@media(max-width:600px){.wrap{padding-top:20px}main{padding-top:36px}.launch{padding:18px}.next{grid-template-columns:1fr;gap:18px;margin-top:32px}.top{gap:10px}textarea{font-size:13px;min-height:112px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#start">Skip to launch prompt</a>
+<div class="wrap">
+<header class="top"><div class="brand"><span class="mark" aria-hidden="true">Q</span>QUIZ SHOW KIT</div><a href="https://github.com/Namdev90/quiz-show-kit">Explore the repository ↗</a></header>
+<main id="start" tabindex="-1">
+<p class="eyebrow">Research · Design · Play</p>
+<h1>Your next quiz.<br><span>One small prompt.</span></h1>
+<p class="lead">A reusable question library, teaching workflow and offline quiz engine. Describe the lesson; shape the experience together.</p>
+<section class="launch" aria-label="Start in your AI conversation">
+<label for="launchPrompt">Copy into your AI conversation</label>
+<textarea id="launchPrompt" readonly spellcheck="false">Read https://github.com/Namdev90/quiz-show-kit/blob/main/prompts/START.md and run QSK1.</textarea>
+<div class="actions"><button type="button" id="copyPrompt">Copy launch prompt</button><a href="https://github.com/Namdev90/quiz-show-kit/blob/main/prompts/START.md">Read the full workflow ↗</a></div>
+<p class="status" id="copyStatus" role="status" aria-live="polite">Paste it into ChatGPT or another assistant with repository access.</p>
+</section>
+<div class="next" aria-label="What happens next">
+<article><span class="step">01 / CHOOSE</span><h2>Five presets + custom</h2><p>Choose an experience and a visual style. Every choice can be adapted.</p></article>
+<article><span class="step">02 / SHAPE</span><h2>Research and review</h2><p>Set the audience, difficulty, sources, visuals and voice. Review the questions and flow.</p></article>
+<article><span class="step">03 / KEEP</span><h2>Play and reuse</h2><p>Build one offline HTML quiz and keep a reusable prompt for your next session.</p></article>
+</div>
+<nav class="links" aria-label="Toolkit resources"><a href="https://github.com/Namdev90/quiz-show-kit/tree/main/docs/library">Browse the library ↗</a><a href="https://github.com/Namdev90/quiz-show-kit/blob/main/docs/CONFIGURATION.md">Configuration reference ↗</a><a href="__EXAMPLE_PATH__">Open the original BioVista quiz ↗</a></nav>
+<p class="note">This page launches the conversation. The assistant needs file/build tools to deliver a playable quiz; otherwise it prepares a complete handoff for a build-capable assistant. If it cannot retrieve the workflow, paste the full START.md file. QSK1 is a public shortcut, not a private code.</p>
+</main>
+<footer><strong>Curated for Parul University Goa · Open to every teacher.</strong><br>Created by Namdev Shirodkar, a Parul University Goa student. Independent toolkit.</footer>
+</div>
+<script>
+'use strict';
+const prompt=document.getElementById('launchPrompt'),copy=document.getElementById('copyPrompt'),status=document.getElementById('copyStatus');
+copy.addEventListener('click',async()=>{copy.disabled=true;try{if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(prompt.value);status.textContent='Copied. Paste it into your AI conversation to begin.';}catch{prompt.focus();prompt.select();status.textContent='Select and copy the prompt above, then paste it into your AI conversation.';}finally{copy.disabled=false;}});
+</script>
+</body>
+</html>
