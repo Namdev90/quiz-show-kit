@@ -1,0 +1,46 @@
+# BioVista requirement and showcase audit
+
+Audited on 15 October 2026 against the consolidated accepted handoff and current source, including PR #6's four PR #5 fixes and PR #7's release safeguards. **Apex** names the compatible rich BioVista demonstration profile; the kit has no additional Apex subscription, engine tier or sixth preset. The download CTA is exactly **Try the BioVista Feature Showcase Quiz** and targets the versioned repository release HTML. GitHub Pages was unpublished with source/configuration preserved; no replacement hosting is part of delivery.
+
+The current example sets `showcase: true`: full playback, shuffle, 3-second discussion, rising paired difficulty, alternating round starters, all 11 statistics, revision reports, cinematic effects, full option speech, question narration and the supplied character. Settings remain visible and read-only. Rehearsal, host actions, reports, recovery and the fair two-team toss remain usable. System reduced-motion preferences and local voice availability still apply. The general engine and exported reusable settings remain configurable. See [configuration](CONFIGURATION.md), [feature tour](../examples/biovista/README.md), and [actual verification](RELEASE_QA.md).
+
+Tests below establish their stated source/runtime behavior; automated DOM tests do not establish actual hardware or factual correctness. Authoring instructions are not represented as buttons inside the playable quiz.
+
+| Accepted brief item | Implementation and tests | In this BioVista download / remaining boundary |
+| --- | --- | --- |
+| 1. Independent quality report | `src/question-bank.js`, `scripts/question-bank.cjs`, `docs/library/QUESTION_RESEARCH.md`; `question-bank.test.cjs`, `showcase.test.cjs` | Matching quality HTML/JSON accompany the download. One DEMO has checked NIST evidence and four option rationales; the other 40 retain disclosed inherited evidence/rationale gaps. No new whole-bank fact-check claimed. |
+| 2. Host/audience privacy | `src/session-tools.js`, `src/ui.js`; `session-tools.test.cjs`, `brief-regression.test.cjs` | Audience-window action retains visible presentation content and excludes host bank/tools. Privacy requires an extended display; physical dual-display testing is pending. |
+| 3. Isolated rehearsal/preflight | `src/session-tools.js`; `session-tools.test.cjs`, `host-ui.test.cjs` | Full simulated rehearsal, readiness and on-screen practice remain enabled. Official scores are separate. Physical audio quality is not inferred. |
+| 4. Visual planner | No accepted implementation | Unresolved and excluded. |
+| 5. Avoid/replace and audit | `src/engine.js`, `src/host-tools.js`, `src/ui.js`; `host-tools.test.cjs`, `host-ui.test.cjs` | Four inherited reserves; round/difficulty/time compatibility and mismatch disclosure. Scored replacement audits score/lifeline consequences; not every topic has an exact reserve. |
+| 6. Editable DOCX | `src/question-bank.js`, `scripts/question-bank.cjs`, `scripts/question-bank-docx.py`; `question-bank.test.cjs`, `pr5-build.test.cjs` | Stable-ID DOCX and matching metadata are included. Both actual document hashes and configuration binding are checked. Requires the documented authoring toolchain/editor, not runtime Python. |
+| 7. Image zoom | `src/ui.js`; `brief-regression.test.cjs` | Seven existing visual cards; click or keyboard opens fit view, Escape returns without revealing the key. |
+| 8. Optional discussion | `src/engine.js`, `src/ui.js`; `engine.test.cjs`, `brief-regression.test.cjs` | Three seconds enabled here; answers stay locked. Ordinary default remains off and normal quizzes can select zero. |
+| 9. Revision report | `src/engine.js`, `src/ui.js`; `host-tools.test.cjs`, `host-ui.test.cjs` | Enabled local host report; public final results stay concise. No student diagnosis. |
+| 10. Localization | `src/compiler.js`, `src/ui.js`; `host-tools.test.cjs`, `host-ui.test.cjs` | English retained. Configurable language/exact-label dictionary exists for other events; no invented translation. |
+| 11. Topic coverage | `src/question-bank.js`, research workflow; `question-bank.test.cjs` | Companion counts identify inherited topics; syllabus adequacy remains author judgment. |
+| 12. Repeat warnings | `src/question-bank.js`, research workflow; `question-bank.test.cjs` | Heuristic warnings in the quality companion; conceptual duplicates still require review. |
+| 13. Safe shuffle | `src/engine.js`, `src/ui.js`; `engine.test.cjs`, `brief-regression.test.cjs` | Enabled; option identities, keys, narration and rationales remain aligned through passes/recovery. |
+| 14. Sequence/leakage review | `src/question-bank.js`, research workflow; `question-bank.test.cjs` | Quality warnings plus required whole-bank author review, including alt text and media. No certainty guarantee. |
+| 15. Difficulty curve | `src/engine.js`; `host-tools.test.cjs`, `engine.test.cjs` | Rising intact pairs and legend. Falling/manual are alternatives for another event, not simultaneous modes. |
+| 16. Preview/apply/rollback | `scripts/question-bank.cjs`, `src/question-bank.js`; `question-bank.test.cjs` | Companion edit workflow preserves last valid bank, checks stale/unsafe imports and offers exact rollback. Authoring operation, not a live event upload. |
+| 17. Offline package | `src/compiler.js`, `scripts/runtime.cjs`, release packager; `compiler.test.cjs`, `release.test.cjs` | One self-contained playable HTML. Included images, recordings, scripts and fonts are embedded. External references need internet; optional local TTS needs installed voices. |
+| 18. Optional print | `docs/library/QUESTION_BANK.md` | Accepted authoring offer. No print artifact was selected and no automatic participant-sheet renderer is claimed; the answer-bearing bank is not a safe participant handout. |
+| 19. Absent teams | `docs/EXTENDING_ENGINE.md` | Conditional more-than-two-team decision remains unresolved. Genuine two-team engine retained; no reel selector or absent-team recalculation fabricated. |
+| 20. Routine click confirmation | Rejected | Excluded. Existing destructive reset and scoring-integrity confirmations are retained separately. |
+| 21. Fair opportunity statistics | `src/engine.js`, `src/ui.js`; `engine.test.cjs`, `host-tools.test.cjs` | All 11 selected, offered/reached/attempted separate. Checkpoint transitions are reconciled so fabricated opportunity events cannot inflate metrics. |
+| 22. Rotating student roles | Rejected | Excluded. |
+| 23. Privacy-friendly aliases | `src/compiler.js`, configuration/workflow; `compiler.test.cjs` | Team names only, no participant accounts/profiles/contact collection. |
+| 24. Regrouping | `src/engine.js`; `host-tools.test.cjs`, `engine.test.cjs` | Accepted two-team interpretation: alternate round starters. Team memberships never rotate. |
+| 25. Numerical questions | Compiler/bank subtype; `compiler.test.cjs`, `question-bank.test.cjs` | Six existing numerical MCQs with values/units in choices. No typed-number grading. |
+| 26. Free-text/spelling grading | Rejected | Excluded. |
+| 27. Ordering | Compiler/bank subtype; `question-bank.test.cjs` | Supported sequence-as-MCQ authoring alternative, not populated by rewriting this historical bank. No drag-and-drop. |
+| 28. Matching | Compiler/bank subtype; `question-bank.test.cjs` | Supported matching-as-MCQ authoring alternative, not populated here. No interactive matching. |
+| 29. New special labels/shapes | Not explicitly accepted | No new feature inferred; ordinary focus, keyboard and readable labels retained. |
+| 30. Dedicated sensory preset | Rejected | Excluded; existing accessibility/reduced-motion behavior remains. |
+| 31. License/asset credits | `src/host-tools.js`, notices/catalog; `host-tools.test.cjs`, `host-character.test.cjs` | Local credits download, supplied unchanged character PNG and existing event marks. Project-scoped permission is not a new general logo/artwork license. No generated substitute or interactive gaze. |
+| 32. Retention dashboard | Unanswered | No cloud collection/dashboard; existing local storage and portable paused recovery retained. |
+
+Cross-cutting preservation: 30 main, four reserve, six tie and one DEMO card; original question meanings, keys and scoring; historical HTML/bank/rules archive. `pr5-build.test.cjs` binds preservation to the immutable archive rather than mutable root configuration. `build-provenance.test.cjs` verifies stable generated bytes across Git HEAD/dirty changes and exact source digests; unavailable checkout identity remains unknown in repair diagnostics. `showcase-policy.test.cjs` verifies the fixed profile, visible read-only controls, stored/synthetic preference resistance, normal editable settings, and exact release-download CTA. `publish-release.test.cjs` covers exact-source retry safety and shared stable-only version policy.
+
+Five experience presets, five visual presets, Custom, Teacher/Competition authoring modes and reusable QSK1 keys remain available. Mutually exclusive themes/subtypes are supported alternatives rather than falsely advertised as all present. Actual Mac/Safari, physical speakers/projectors/extended displays and external document-editor interaction are not established by the Windows/automated checks.

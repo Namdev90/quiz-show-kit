@@ -14,7 +14,7 @@ Read https://github.com/Namdev90/quiz-show-kit/blob/main/prompts/START.md and ru
 
 [**Copy the launch prompt**](prompts/START.md) · [Full workflow](prompts/START.md) · [Browse the library](docs/library/README.md) · [Try the BioVista Feature Showcase Quiz](https://github.com/Namdev90/quiz-show-kit/releases/download/v1.1.0/BioVista_Quiz_Public_Example.html)
 
-Paste into ChatGPT or another capable assistant. It guides your choices, researches and reviews the questions, builds the quiz when file/build tools are available, and gives you a reusable prompt. **QSK1 is a public workflow shortcut**; the assistant must retrieve its instructions, or ask you to paste them. The website is now a prompt launcher.
+Paste into ChatGPT or another capable assistant. It guides your choices, researches and reviews the questions, builds the quiz when file/build tools are available, and gives you a reusable prompt. **QSK1 is a public workflow shortcut**; the assistant must retrieve its instructions, or ask you to paste them. GitHub is the public destination; the ZIP also includes a local prompt launcher.
 
 The first setup question is **Teacher mode or Competition mode?**
 
@@ -69,9 +69,9 @@ The assistant should deliver the file directly when capable. Otherwise it prepar
 <details>
 <summary><strong>BioVista feature showcase and original archive</strong></summary>
 
-The current example runs the latest engine with **30 main questions, four reserves, six tie cards and one practice card**. Its original question content and scoring are retained, with configurable showcase settings and the supplied Chota Namu character. The feature tour explains which controls to try and which capabilities belong to the authoring workflow.
+The current example runs the latest engine with **30 main questions, four reserves, six tie cards and one practice card**. Its original question content and scoring are retained. The **Apex showcase profile** enables compatible supported features, with settings visible and read-only and the supplied Chota Namu character shown. Your own quizzes and reusable settings remain configurable. Apex names this example profile; it is not an additional engine tier or preset. The [requirements audit](docs/SHOWCASE_AUDIT.md) distinguishes demonstrated features, authoring tools and remaining decisions.
 
-[Open current showcase](examples/biovista/BioVista_Quiz_Offline.html) · [Feature tour](examples/biovista/README.md) · [Original archived HTML](examples/biovista/original/BioVista_Quiz_Offline.html) · [Question bank](examples/biovista/questions.json) · [Provenance](examples/biovista/origin.json) · [Asset notices](examples/biovista/ASSET_NOTICES.md)
+[Try the BioVista Feature Showcase Quiz](https://github.com/Namdev90/quiz-show-kit/releases/download/v1.1.0/BioVista_Quiz_Public_Example.html) · [Feature tour](examples/biovista/README.md) · [Original archived HTML source](examples/biovista/original/BioVista_Quiz_Offline.html) · [Question bank](examples/biovista/questions.json) · [Provenance](examples/biovista/origin.json) · [Asset notices](examples/biovista/ASSET_NOTICES.md)
 
 </details>
 
