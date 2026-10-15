@@ -29,8 +29,9 @@ test('Repair handoff uses explicit safe fields and never imports raw errors or q
 });
 
 test('Repair provenance leaves unavailable checkout state unknown and retains explicit legacy provenance',()=>{
- assert.deepEqual(H.diagnostic({build:{version:'1.0.0'}}).build,{baseCommit:null,localChanges:null});
- for(const localChanges of [true,false])assert.deepEqual(H.diagnostic({build:{baseCommit:'a'.repeat(40),localChanges}}).build,{baseCommit:'a'.repeat(40),localChanges});
+ const legacyFields=build=>{const {baseCommit,localChanges}=H.diagnostic({build}).build;return {baseCommit,localChanges};};
+ assert.deepEqual(legacyFields({version:'1.0.0'}),{baseCommit:null,localChanges:null});
+ for(const localChanges of [true,false])assert.deepEqual(legacyFields({baseCommit:'a'.repeat(40),localChanges}),{baseCommit:'a'.repeat(40),localChanges});
  assert.equal(H.diagnostic({build:{localChanges:'false'}}).build.localChanges,null);
 });
 
@@ -40,4 +41,20 @@ test('Credits export preserves library licenses and identifies missing provenanc
  assert.match(report.assets[1].provenance,/Incomplete/);
  assert.equal(report.libraries[0].licenseText,'Required license');
  assert.equal(report.questionMedia[0].attribution,'Creator permission pending');
+});
+
+test('Repair handoff preserves validated source provenance and legacy build fields',()=>{
+ const digest='AB'.repeat(32),commit='cd'.repeat(20);
+ const report=H.diagnostic({version:'1.1.0',build:{sourceDigest:digest,sourceDigestAlgorithm:'sha256',sourceDigestScope:'runtime-source-v1',baseCommit:commit,localChanges:true}});
+ assert.equal(report.build.sourceDigest,digest.toLowerCase());assert.equal(report.build.sourceDigestAlgorithm,'sha256');assert.equal(report.build.sourceDigestScope,'runtime-source-v1');
+ assert.equal(report.build.baseCommit,commit);assert.equal(report.build.localChanges,true);assert.equal(report.version,'1.1.0');
+ const legacy=H.diagnostic({version:'1.0.0',build:{baseCommit:commit,localChanges:false}});
+ assert.equal(legacy.build.baseCommit,commit);assert.equal(legacy.build.localChanges,false);assert.equal(legacy.build.sourceDigest,null);
+ for(const build of [
+  {sourceDigest:'/Users/private/secret',sourceDigestAlgorithm:'sha256',sourceDigestScope:'runtime-source-v1'},
+  {sourceDigest:digest,sourceDigestAlgorithm:'private-path',sourceDigestScope:'runtime-source-v1'},
+  {sourceDigest:digest,sourceDigestAlgorithm:'sha256',sourceDigestScope:'private-path'}
+ ]){
+  const bad=H.diagnostic({build});assert.equal(bad.build.sourceDigest,null);assert.doesNotMatch(JSON.stringify(bad.build),/private|secret/);
+ }
 });

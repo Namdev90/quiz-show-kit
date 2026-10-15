@@ -5,7 +5,7 @@ const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function fixture(t){
  const base=fs.realpathSync(os.tmpdir()),directory=fs.mkdtempSync(path.join(base,'qsk-pr5-build-'));
  t.after(()=>{const relative=path.relative(base,path.resolve(directory));assert.ok(relative&&!relative.startsWith('..')&&!path.isAbsolute(relative)&&path.basename(directory).startsWith('qsk-pr5-build-'));fs.rmSync(directory,{recursive:true,force:true});});
- for(const file of ['scripts','src','vendor','assets','examples','package.json','quiz.config.json','biovista.showcase.config.json'])fs.cpSync(path.join(root,file),path.join(directory,file),{recursive:true});
+ for(const file of ['scripts','src','vendor','assets','examples','package.json','package-lock.json','quiz.config.json','biovista.showcase.config.json'])fs.cpSync(path.join(root,file),path.join(directory,file),{recursive:true});
  fs.mkdirSync(path.join(directory,'docs'));
  return directory;
 }

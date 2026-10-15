@@ -1,26 +1,35 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-15",
+  "scope": "Retry/prerelease follow-up based on fc18169. v1.1.0 publication is held pending the separate offline-showcase integration and final package checks.",
+  "details": "RELEASE_QA.md",
+  "history": [
+    "IMPLEMENTATION_QA.md",
+    "history/VERIFICATION-2026-10-15-initial.json"
+  ],
   "checks": {
-    "configuration": "PASS: 41 cards, 30 main, 5 rounds",
-    "automated": "PASS: npm run check; 41 top-level tests and 22 internal engine cases",
-    "presets": "PASS: all 25 preset/theme combinations; custom and legacy settings restoration; relocated asset embedding",
-    "voice": "PASS: 7 DOM/platform-simulation cases; no real voice-quality claim",
-    "launcher": "PASS: 3 DOM tests for generated parity, exact clipboard text and denied/unavailable clipboard fallback",
-    "documentation": "PASS: 151 relative Markdown links resolve; diff whitespace check clean",
-    "originalExample": "PASS: canonical config and examples unchanged from base db4131297dca035d037ed06510702657b9fd8910",
-    "browser": "BLOCKED: installed Chromium failed before page load with socket(): Operation not permitted; current rendering not verified",
-    "hardware": "UNTESTED: physical speakers, projector and full recording",
-    "cloudTTS": "DOCUMENTATION ONLY: official catalogs checked; no paid audio generation or audible benchmark",
-    "teacherConversation": "UNTESTED: launch prompt retrieval/interview in a separate assistant conversation",
-    "ci": "Check the PR/commit checks for remote CI; this file records local verification.",
-    "library": "PASS: 21 catalog files with verified paths, hashes and notices; 8 imported icons embed through existing compiler with complete license text",
-    "promptBudget": "MEASURED: startup text 39796 to 5022 UTF-8 bytes (87.4% smaller); not a token or billing measurement; see PROMPT_BUDGET.json"
+    "configuration": "PASS: 41 canonical cards, 30 main, 5 rounds; current showcase and original identities remain distinct.",
+    "automated": "PASS: npm run check; 165 tests, zero failures/cancellations/skips; retained38 internal engine scenarios.",
+    "reproducibility": "PASS: pre-integration repeat launcher build preserved all15 generated files; combined suite checks unrelated commit/dirty-state stability, current/Pages parity and exact source digest.",
+    "packaging": "PASS:10 packager tests including aligned stable-only policy. Earlier fc18169 clean package verification (nine assets/eight checksums/167 tracked files) is a historical snapshot, not the pending offline-showcase package.",
+    "documentation": "Earlier fc18169 snapshot:191 local Markdown targets resolved. Current source/documentation whitespace checks pass.",
+    "browser": "PARTIAL: actual final-file Linux Chromium134.0.6998.35 welcome/character/version/repair digest passed; zero page errors/HTTP requests. Practice reached reveal with0-0 official scores, but Confirm was no longer present when clicked; planned main/pass/Undo/reload run incomplete. No final-file complete gameplay pass claimed.",
+    "windows": "PR6 reports actual headless Windows Chrome155.0.8059.40/Edge155.0.4283.45 checks on its own revision; not reproduced here and final integrated package not rerun on Windows.",
+    "macOS_Safari": "NOT ACTUALLY TESTED",
+    "hardware": "UNTESTED: physical speakers, projector and extended-display hardware.",
+    "previousGameplay": "Earlier actual full-event and focused gameplay checks belong to their snapshots in IMPLEMENTATION_QA.md. PR6 changes checkpoint validation; integrated recovery has automated coverage, not a completed final-file browser recovery check.",
+    "ci": "See current PR/commit workflow checks; this file records local results.",
+    "publication": "HELD: PR7 is a draft pending downloadable read-only offline showcase reconciliation and confirmed quiz hosting removal. Latest published release remains v1.0.0.",
+    "publisher": "PASS:56 mocked publisher cases covering resumable interrupted operations, exact ownership, byte verification, guarded starter cleanup, published-state preservation and newer stable releases; no real publication attempted."
   },
-  "testCases": 41,
+  "testCases": 165,
+  "testDurationMs": 76919.201789,
+  "runtimeSourceDigest": "bc31460c878e4976e119e3c0bf2036a0bc65b1f232e540a3ed6bd9f08f1216f0",
   "sha256": {
     "quiz.config.json": "ec8b2f616c6ebef07a76ef189b7e1422cbbaca67c678e498a8f4cc56f58f6b45",
-    "examples/biovista/BioVista_Quiz_Offline.html": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6",
-    "dist/Quiz_Offline.html": "1b0d2e2a843fd7d95f5cadc5423b4eef507063fcff98a5aec49cb0257bb6db73"
-  }
+    "examples/biovista/BioVista_Quiz_Offline.html": "d2e2cbea19068e7af1cffbd27cfaaccae477e5e63cdc60d5491c9cd449c7b8d4",
+    "examples/biovista/original/BioVista_Quiz_Offline.html": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6",
+    "dist/Quiz_Offline.html": "6e52b9073cdb7e90217e976ef5e4ab9ed9c54e08dc249c0f75233c14f7338cd4"
+  },
+  "includedFixPullRequest": "https://github.com/Namdev90/quiz-show-kit/pull/6"
 }

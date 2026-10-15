@@ -14,7 +14,7 @@ Use tools and models that materially improve the task. Do not invoke every conne
 | Clear synthetic narration | Suitable recording, verified local speech or synthesis with file output | Reuse matching clips; generate only missing/changed scripts before building |
 | Personal voice | Actual teacher recording or an explicitly consented supported voice tool | Incorporate real uploads; never claim an assistant has recorded a human voice |
 | Settings and complete event files | Read/write files, repository access and build execution | Use the real compiler, validated configuration and approved assets |
-| Engine extensions or fixes | Source editing and focused automated tests | Use a coding environment; review diffs and preserve the example |
+| Engine extensions or fixes | Source editing and focused automated tests | Use a coding environment; review diffs, verify the current showcase and preserve its historical archive |
 | Visual QA | Real browser rendering and interaction | Inspect the relevant screen/flow; distinguish DOM simulation from a real browser |
 | Public contribution | GitHub read/write tools, actual patch and authorization | Open a real PR only when those requirements are met |
 

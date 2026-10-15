@@ -22,6 +22,8 @@ npm run build -- --config path/to/quiz.config.json --output dist/Quiz_Offline.ht
 
 Use the validation/build errors to correct the configuration. A successful build confirms compilation, not question accuracy or projector/speaker quality.
 
+The public BioVista showcase has separate companion files. After changing `biovista.showcase.config.json`, run `npm run build:example -- --authoring` with the documented Python toolchain to regenerate its matching DOCX; then `npm run build:launcher` refreshes both launchers and the Pages copies. A plain `npm run build:example` rebuilds HTML/settings/review without regenerating DOCX and rejects a mismatched existing DOCX fingerprint. Do not pair a current DOCX with an older configuration: keep `BioVista_Question_Bank.meta.json` and the reviewed source revision with the companions. See [the showcase guide](../examples/biovista/README.md).
+
 ## Event, teams, and theme
 
 | Field | Meaning |
@@ -46,7 +48,7 @@ Persistence is separated by event and a configuration fingerprint. Keep `event.i
 
 Use team names only, not participant profiles or contact details. Names must be nonempty and distinct. A changed round order changes who starts, not who belongs to a team. No absent-team control applies to this two-team mode.
 
-Browser privacy settings or an embedded preview can prevent local storage. Use **Save resume copy** to download a complete quiz with its checkpoint, then reopen that file to resume paused. The reusable kit's profiles and the original BioVista application's older checkpoints are different formats; cross-import is not supported.
+Browser privacy settings or an embedded preview can prevent local storage. Use **Save resume copy** to download a complete quiz with its checkpoint, then reopen that file to resume paused. The engine narrowly migrates compatible version-5 checkpoints that lack the newer default option metadata: the source bank, profile, scoring and rules must still match, with no newly enabled gameplay settings. This is not arbitrary checkpoint import. A changed answer key, question meaning, event profile or gameplay configuration remains incompatible; do not transfer an old live event into the enhanced showcase just because it has the same title. Keep the original resumable file for an ongoing event and test recovery on its actual browser.
 
 ## Presentation controls
 
@@ -70,7 +72,7 @@ Optional `presentation` settings are validated, saved and embedded in the export
 | `intro` | Opening announcement; the separate fair coin toss remains available | `true` |
 | `character` | Show the configured actual Chota Namu PNG on welcome/About/settings; visibility is independent of game rules | `true` when `branding.character` is configured; otherwise absent/false |
 
-No decorative motion and the device's reduced-motion preference remove decorative movement. Options are still disclosed in order over `optionsRevealMs`; answer time begins after the last option. Gentle style uses fades and immediate score settlement, rather than flying reward/penalty coins. Rehearsal uses the configured settings. The exported file’s Settings menu can change presentation switches while the game stays paused, without changing rules/scores. Preferences persist in the same browser when storage permits. Save resume copy embeds current presentation choices for another computer. Ask the assistant to change rules/content and rebuild before play.
+No decorative motion and the device's reduced-motion preference remove decorative movement. Options are still disclosed in order over `optionsRevealMs`; answer time begins after the last option and any configured discussion phase. Gentle style uses fades and immediate score settlement, rather than flying reward/penalty coins. Rehearsal uses the configured settings. The exported file’s Settings menu can change presentation switches while the game stays paused, without changing rules/scores. Preferences persist in the same browser when storage permits. Save resume copy embeds current presentation choices for another computer. Ask the assistant to change rules/content and rebuild before play.
 
 Give the assistant approved left/right logos, question images and recordings to embed, with alternate text and credits. Individual audio replacements use asset keys `coinSound`, `optionA`–`optionD`, and `selectA`–`selectD`; removing a replacement restores the bundled clip. Supported types and size/security limits below still apply. Physical prizes or certificates are event notes, not automated rewards.
 
@@ -94,7 +96,7 @@ The public configuration uses seconds for answer/consultation/grace limits and m
 | `teacher` | `true` | Enables one teacher consultation per team across the competition. |
 | `shortPairsPerRound` | 2 | 1–10000 complete pairs retained per round in short mode, up to those available. |
 
-Passes and timeouts score zero. Negative totals are permitted. The primary timer begins after the final option finishes appearing. A confirmed primary wrong answer is unavailable on the passed turn; a voluntary pass or timeout does not block a choice. The teacher clock temporarily replaces the answer clock and then restores its saved remainder.
+Passes and timeouts score zero. Negative totals are permitted. The primary timer begins after the final option finishes appearing and any configured discussion phase ends. A confirmed primary wrong answer is unavailable on the passed turn; a voluntary pass or timeout does not block a choice. The teacher clock temporarily replaces the answer clock and then restores its saved remainder.
 
 The full configuration uses the public names above. Internal millisecond/profile aliases are implementation details; do not mix both spellings or add unknown rule keys. Unsupported or conflicting values are errors rather than silently adjusted rules.
 

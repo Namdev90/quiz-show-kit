@@ -4,14 +4,16 @@ Use **Settings → Sound and narration** to choose the installed voice, language
 
 | Choice | What participants hear | When it runs |
 | --- | --- | --- |
-| Smart | The actual answer text for a one-word option; A–D for a phrase. An embedded option recording takes priority. | Hover, keyboard focus or selection after all choices become available. |
-| Full option text | The actual option text, or its embedded recording. | Hover, keyboard focus or selection. |
-| Letters | The existing A–D clips. | Hover, keyboard focus or selection. |
+| Smart | The actual option text for a one-word option; A–D for a phrase. An embedded option recording takes priority. | Hover, keyboard focus or selection after answer entry unlocks. |
+| Full option text | The actual option text, or its embedded recording. | Hover, keyboard focus or selection after answer entry unlocks. |
+| Letters | The existing A–D clips. | Hover, keyboard focus or selection after answer entry unlocks. |
 | Read aloud | The visible question stem, or its embedded recording. | Untimed question-reading phase, before choices. |
 | Read question automatically | Reads each newly displayed question stem. | Same untimed reading phase; off by default. |
 | Custom recording | Your own recording or reviewed model-generated audio. | Replaces the mapped stem/option narration. |
 
 The question stem is never combined with its hidden options, answer key or explanation for automatic speech. **Show choices + start** stops question narration and retains the configured reveal/answer timing. Options do not autoplay in a four-clip queue while the answer clock runs. Reading a hovered option does not stop or extend the clock. Long option wording should be revised or rehearsed at an appropriate answer duration.
+
+When optional discussion time is enabled, visible options remain locked and option speech cues do not run during that phase. Option narration starts only in the answering/acknowledged phases, with no paused clock, consultation or open host panel. Shuffling preserves the narration associated with each option's identity; A–D letter cues reflect current displayed positions.
 
 A new utterance replaces the current one. Stop reading, pause, consultation, timeout, a different phase/question, mute, hidden page and leaving the page cancel narration. Settings pause live play. Voice controls are unavailable when sound is disabled or volume is zero; local voice settings require an installed local voice. If local TTS is unavailable or the language cannot be matched, option cues fall back to the bundled letter clips. A prepared recording works without a browser TTS voice.
 
@@ -59,7 +61,7 @@ Example fragments, merged into a complete configuration:
 }
 ```
 
-The `questions` fragment is not a complete question bank. Preserve every required question field. `narration.options`, when present, contains exactly four asset keys or null entries in A–D order. An existing asset key must refer to audio; image files, remote audio URLs and missing references are rejected. Sparse recordings are supported: unmapped options use the selected browser speech/letter behavior. Explicit **Letters** mode uses letter clips even when option recordings exist. Stem recordings remain available through **Read aloud**.
+The `questions` fragment is not a complete question bank. Preserve every required question field. `narration.options`, when present, contains exactly four asset keys or null entries in the authored option order, aligned with `optionIds`; this may differ from displayed A–D after shuffling. An existing asset key must refer to audio; image files, remote audio URLs and missing references are rejected. Sparse recordings are supported: unmapped options use the selected browser speech/letter behavior. Explicit **Letters** mode uses letter clips even when option recordings exist. Stem recordings remain available through **Read aloud**.
 
 For authoring-time provider/model choices, read [TTS models and presets](TTS_MODELS.md). For broader event choices, return to the [teacher workflow](../TEACHER_PROMPT.md).
 
