@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.2 - 15 October 2026
+
+- Complete the 40 inherited BioVista evidence reviews with inspected primary sources and 160 original option rationales; retain all educational content, keys and scoring.
+- Replace M23's answer-naming accessible label with a neutral geometric description.
+- Keep native keyboard expansion of source/rationale details from activating Next.
+- Record all 13 manual heuristic dispositions, shared teaching, pair-demand and reserve-coverage limits; keep advisory heuristics visible.
+- Bind supplemental metadata to exact reviewed question receipts while protecting the immutable archived bank/rules and original citation identities.
+- Regenerate matching HTML, editable DOCX, settings, quality review and provenance for the versioned offline download.
+
 ## 1.1.1 - 15 October 2026
 
 - Make BioVista a fixed Apex feature showcase with visible read-only settings; keep ordinary quizzes and reusable settings configurable.

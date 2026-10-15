@@ -17,12 +17,12 @@ test('Historical BioVista HTML, question bytes and original provenance remain in
 
 test('Showcase preserves archived question meaning while explicitly enabling supported features',()=>{
  assert.equal(showcase.questions.length,41);
- for(const old of historicalQuestions){const current=showcase.questions.find(q=>q.id===old.id);for(const key of ['stem','options','correct','explanation','verificationDate','status','round','pairId','difficulty','seconds','timing'])assert.deepEqual(current[key],old[key],old.id+': '+key);assert.deepEqual(current.sources.map(s=>({title:s.title,url:s.url})),old.sources.map(s=>({title:s.title,url:s.url})));}
+ for(const old of historicalQuestions){const current=showcase.questions.find(q=>q.id===old.id);for(const key of ['stem','options','correct','explanation','verificationDate','status','round','pairId','difficulty','seconds','timing'])assert.deepEqual(current[key],old[key],old.id+': '+key);assert.deepEqual(current.sources.slice(0,old.sources.length).map(s=>({title:s.title,url:s.url})),old.sources.map(s=>({title:s.title,url:s.url})));}
  assert.notEqual(showcase.event.id,baseline.event.id);assert.equal(baseline.gameplay,undefined);
  assert.equal(showcase.gameplay.shuffleOptions,true);assert.equal(showcase.gameplay.discussionSeconds,3);assert.equal(showcase.gameplay.roundOrder,'alternate');assert.equal(showcase.gameplay.revisionReport,true);
  assert.equal(showcase.questions.filter(q=>q.subtype==='numerical').length,6);assert.equal(showcase.questions.filter(q=>q.subtype==='image').length,6);assert.equal(showcase.questions.filter(q=>q.visual).length,7);
  const demo=showcase.questions.find(q=>q.id==='DEMO');assert.equal(demo.optionExplanations.length,4);assert.equal(demo.verification.checkedAt,'2026-10-15');assert.equal(demo.sources[0].section,'Base and Derived Units');
- assert.equal(showcase.questions.filter(q=>q.verification?.status==='verified').length,1);
+ assert.equal(showcase.questions.filter(q=>q.verification?.status==='verified').length,41);
  assert.equal(showcase.branding.character.asset,'chotaNamu');assert.equal(showcase.presentation.character,true);
 });
 
@@ -41,14 +41,16 @@ test('Published example embeds the current engine and configured feature behavio
  assert.equal(state.phase,'answering');assert.equal(E.view(state).remainingMs,15000);const shown=E.question(state);act('STAGE',{option:shown.correct});act('CONFIRM');
  assert.equal(state.phase,'reveal');assert.match(E.view(state).question.optionExplanations[shown.correct],/metre measures length/);assert.equal(E.view(state).question.sources[0].status,'verified');assert.deepEqual(plain(state.mainScores),{Bio:0,Vista:0});
  act('NEXT');assert.equal(state.schedule.find(q=>q.round===2).primaryTeam,'Vista');assert.equal(state.config.gameplay.revisionReport,true);
- const origin=json(path.join(directory,'origin.json'));assert.equal(origin.publicExampleSha256,hash(html));assert.equal(origin.review.missingPerOptionExplanations,40);
+ const origin=json(path.join(directory,'origin.json'));assert.equal(origin.publicExampleSha256,hash(html));assert.equal(origin.review.missingPerOptionExplanations,0);
 });
 
 test('Reusable companion settings preserve gameplay and authoring depth without embedding the bank or character',()=>{
  const settings=json(path.join(directory,'BioVista_Showcase.qsk-settings.json'));
  assert.deepEqual(settings,P.exportSettings(showcase,{setup:'competition'}));assert.equal(P.decode(settings.key).setup,'competition');assert.equal(settings.settings.questions,undefined);assert.equal(settings.settings.assets,undefined);assert.equal(settings.settings.branding,undefined);
  const reapplied=P.apply(baseline,undefined,settings);assert.deepEqual(reapplied.gameplay,showcase.gameplay);assert.equal(reapplied.event.id,baseline.event.id);assert.equal(reapplied.setup,undefined);
- const review=json(path.join(directory,'BioVista_Quality_Review.json'));assert.equal(review.format,'QSK_EXAMPLE_QUALITY_1');assert.equal(review.quality.verification.verified,1);assert.equal(review.quality.verification.unverified,40);assert.ok(review.quality.issues.some(issue=>issue.field==='optionExplanations'));assert.equal(review.quality.score,undefined);assert.deepEqual(review.diff.changed,[]);
+ const review=json(path.join(directory,'BioVista_Quality_Review.json'));assert.equal(review.format,'QSK_EXAMPLE_QUALITY_1');assert.equal(review.quality.verification.verified,41);assert.equal(review.quality.verification.unverified,0);assert.ok(!review.quality.issues.some(issue=>['verification','optionExplanations','visual.alt'].includes(issue.field)));assert.equal(review.quality.score,undefined);assert.deepEqual(review.diff.changed,[]);
+ assert.equal(review.quality.issues.length,12);assert.equal(review.evidenceReview.warningDispositions.length,13);assert.equal(review.evidenceReview.warningDispositions.filter(w=>w.status==='corrected').length,1);
+ for(const issue of review.quality.issues)assert.ok(review.evidenceReview.warningDispositions.some(w=>w.questionId===issue.questionId&&w.field===issue.field&&w.status==='reviewed-retain'));
 });
 
 test('Published example DOCX round-trips 41 stable IDs and demo evidence without changing the source configuration',()=>{

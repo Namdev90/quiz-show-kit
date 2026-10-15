@@ -1,30 +1,63 @@
 {
-  "version": "1.1.1",
+  "version": "1.1.2",
   "date": "2026-10-15",
-  "scope": "Pre-publication source and generated-candidate checks on Windows; actual GitHub release checks are separate.",
+  "scope": "Source and focused generated-candidate verification on Windows. Actual publication/download identity is verified separately by the release manifest, workflow and final delivery report.",
   "details": "RELEASE_QA.md",
   "history": [
+    "history/VERIFICATION-v1.1.1.json",
     "IMPLEMENTATION_QA.md",
     "history/VERIFICATION-2026-10-15-initial.json"
   ],
-  "testCases": 176,
-  "testDurationMs": 202545.1476,
-  "runtimeSourceDigest": "d31b4b63f79825cc968d4172e42a9b7479e557f1bc296288361fce6e855a85fd",
+  "testCases": 185,
+  "testDurationMs": 106530.675,
+  "runtimeSourceDigest": "0f678cd72885b1e401f0b330e21d27b1340d114b2a7b316f0a77353382829387",
+  "evidence": {
+    "newlyReviewedCards": 40,
+    "newOptionExplanations": 160,
+    "verifiedCards": 41,
+    "optionExplanations": 164,
+    "sourceRecords": 88,
+    "reviewedHeuristicWarnings": 13,
+    "remainingVisibleHeuristicCandidates": 12,
+    "evidenceReviewSha256": "86dac7e15a1a4e946ca5f54141d9732dd5c820062073c4563c1a9d9380c9a257",
+    "configurationFileSha256": "7ec625aacc0f25dafdea263395698506f340033ab36c6661103b02b61bdf995e"
+  },
   "checks": {
-    "build": "PASS: canonical build, current showcase/launcher regeneration and validation; DOCX regenerated for its matching fixed configuration.",
-    "automated": "PASS:176 tests, zero failures/cancellations/skips;38 retained engine scenarios,56 mocked publisher cases,10 packaging cases,4 motion/fallback regressions and2 new character regressions.",
-    "windowsMotion": "PASS: installed Windows Chrome155.0.8059.40 and Edge155.0.4283.45 each passed10 actual offline preference/pointer/coin/disclosure checks. Native animation frame probes passed in the candidate and freshly generated normal quiz in both browsers.",
-    "animationDiagnosis": "Actual published v1.1.0 animates in clean sessions. Reproduced shared live reduced-motion latch and missing-GSAP fallback gap; repaired both. This does not establish the exact original user setting/file.",
-    "browserHistory": "Earlier v1.1.1 candidate completed30 main plus6 tie cards in Chrome and focused Edge scoring/recovery checks. Final published-file checks must identify their actual artifact hash.",
+    "build": "PASS: baseline/showcase/launcher builds and validation; matching DOCX actual digest/configuration binding and zero-change41-ID round-trip.",
+    "automated": "PASS:185 tests; no failures, cancellations or skips. Includes9 new evidence/preservation regressions and the native feedback-summary keyboard regression within the M23 test. Retained checks include38 internal engine scenarios,56 mocked publisher cases and10 packaging cases.",
+    "factual": "All40 inherited keys supported by manually inspected authoritative sources;160 original option rationales added. All41 cards have inspected-source records and4 rationales. No educational/key correction required.",
+    "sequence": "164 rationales and41 overall explanations reviewed. Known source-note cues removed; shared DEMO-to-T01 teaching and uncalibrated pair-demand/coverage limits retained. Full/short Node VM journeys made3278 pre-reveal checks with simulated ticks.",
+    "windowsFocused": [
+      {
+        "browser": "Chrome",
+        "version": "155.0.8059.40",
+        "viewport": "1366x768",
+        "checks": 17,
+        "status": "passed",
+        "interruptionResumes": 0
+      },
+      {
+        "browser": "Edge",
+        "version": "155.0.4283.45",
+        "viewport": "1920x1080",
+        "checks": 17,
+        "status": "passed",
+        "interruptionResumes": 0
+      }
+    ],
+    "windowsMethod": "Actual installed headless Windows browsers and unchanged file URL; offline contexts. The M23 prior-history fixture is generated through the real engine with simulated ticks, validated/rebased with checkpoint hydration and injected through the existing test hook. Only M23 is then exercised with real clocks and native keyboard input. Decorative entrances use skipMotion. This is focused content/accessibility verification, not a full real-time journey or hardware/screen-reader test.",
+    "fullBrowserJourney": "NOT COMPLETED as a clean pass in this release task. Earlier broad harness attempts stopped on interruption pauses or unreliable animated-control activation. Their partial results are not counted as complete passes.",
+    "keyboardFix": "Reproduced Enter on a live feedback summary activating Next. Minimal native-summary exemption passes regression and actual Enter/Space expansion in both Windows browsers.",
     "macOS_Safari": "NOT ACTUALLY TESTED",
-    "hardware": "UNTESTED: physical speakers, pronunciation, projector/extended displays and Word GUI.",
-    "hosting": "Confirmed quiz Pages unpublished with source/configuration preserved; repository homepage empty, has_pages=false, former root and example endpoints404. No replacement or unrelated hosting changed.",
-    "publication": "v1.1.0 is preserved. v1.1.1 publication/download verification belongs to its exact release manifest, workflow and final report."
+    "hardware": "UNTESTED: physical speakers/pronunciation, projector/extended displays, actual screen reader and Windows Word GUI.",
+    "publication": "Existing released versions are preserved. Exact source/archive/checksum/rebuild and actual-download results are reported against their identified release package separately. Pages remains disabled."
   },
   "sha256": {
     "quiz.config.json": "ec8b2f616c6ebef07a76ef189b7e1422cbbaca67c678e498a8f4cc56f58f6b45",
-    "examples/biovista/BioVista_Quiz_Offline.html": "8bc4e813c81ab150d64fe69ed3fda5f6d21009c31485b868bfa18e5d71fd10e8",
+    "biovista.showcase.config.json": "7ec625aacc0f25dafdea263395698506f340033ab36c6661103b02b61bdf995e",
+    "examples/biovista/BioVista_Quiz_Offline.html": "ce9a683df2187cc651b6c7d85a0526a3263bcfe01d33ab9fd3629c33550b0196",
+    "examples/biovista/BioVista_Question_Bank.docx": "3779d1501bc84ec546292527022b3832159bc8841aff88a24a953d98946ca96b",
     "examples/biovista/original/BioVista_Quiz_Offline.html": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6",
-    "dist/Quiz_Offline.html": "a327b39a448ac85c747f30b3a70ff3f84e77510b2fa4ef25b8eaf71a285a310a"
+    "dist/Quiz_Offline.html": "199bf9a387e0019d0eb4572fd95898a745635f418fcf2a1b6e1c6cbf2263c6c7"
   }
 }
