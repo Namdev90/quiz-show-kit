@@ -3,7 +3,7 @@
   "kind": "current-engine-feature-showcase",
   "sourceConfiguration": "biovista.showcase.config.json",
   "profileId": "biovista-showcase-2026:542f2c34",
-  "publicExampleSha256": "d558a50ffb8d595e7ca67c5875110eede36c39efbdb0bd5a984b556c8c7f96c9",
+  "publicExampleSha256": "6082d9c580658c938dcba8a0bedd62d39d2ce4836206e25d475fea79852c75cd",
   "questions": 41,
   "options": 164,
   "preserved": "All original public question stems, answer options/keys, overall explanations, source titles/URLs, historical verificationDate values, paired inventories and scoring/timing rules. Only DEMO adds separately checked option rationales and source-review metadata; existing numerical and visual cards receive descriptive subtype labels. The current runtime and explicit optional showcase settings are regenerated from source.",

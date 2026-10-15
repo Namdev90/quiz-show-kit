@@ -6009,6 +6009,7 @@ window.BioAudio=Object.freeze({enable,cue,setMuted,setVolume,configureSpeech,lis
   // with the saved cursor, including demo, replacements, ties and truncated Undo logs.
   function validateOpportunities(s) {
     const main=buildSchedule(knownBank,s.config),ties=buildSchedule(knownBank,s.config,'tie'),demo=knownBank.find(q=>q.status==='demo');
+    const scores={main:{Bio:0,Vista:0},tie:{Bio:0,Vista:0}},outcomes=[];
     let cursor=-1,tieCursor=-1,kind='main',phase='intro',questionId=null,team=s.config.startingTeam,primaryTeam=team,turn='primary';
     const invalid=()=>{throw new Error('Saved opportunity transition does not match the reached question, team or phase.');};
     const atCard=entry=>{if(entry.questionId!==questionId||entry.team!==team)invalid();};
@@ -6017,7 +6018,7 @@ window.BioAudio=Object.freeze({enable,cue,setMuted,setVolume,configureSpeech,lis
       if(entry.type==='question-ready') {
         let card,expectedPhase;
         const replacement=s.log[index+1];
-        if(kind==='main'&&cursor>=0&&!['intro','end'].includes(phase)&&replacement?.type==='faculty-replacement'&&replacement.voidedQuestionId===questionId&&replacement.reserveId===entry.questionId) {
+        if(kind==='main'&&cursor>=0&&!['intro','end','outcome'].includes(phase)&&replacement?.type==='faculty-replacement'&&replacement.voidedQuestionId===questionId&&replacement.reserveId===entry.questionId) {
           card={...main[cursor],id:replacement.reserveId};expectedPhase='read';
         } else if(phase==='intro'&&demo&&entry.questionId===demo.id) {
           card={id:demo.id,kind:'demo',primaryTeam:s.config.startingTeam};expectedPhase='read';
@@ -6026,14 +6027,17 @@ window.BioAudio=Object.freeze({enable,cue,setMuted,setVolume,configureSpeech,lis
         } else if(kind==='main'&&phase==='reveal') {
           card=main[cursor+1];expectedPhase=card?.round===main[cursor].round?'read':'roundIntro';cursor++;
         } else if(kind==='main'&&phase==='end') {
+          if(scores.main.Bio!==scores.main.Vista)invalid();scores.tie={Bio:0,Vista:0};
           card=ties[0];tieCursor=0;expectedPhase='tieRead';
         } else if(kind==='tie'&&phase==='reveal') {
+          if(tieCursor%2===1&&scores.tie.Bio!==scores.tie.Vista)invalid();
           card=ties[++tieCursor];expectedPhase='tieRead';
         }
         if(!card||entry.questionId!==card.id||entry.team!==card.primaryTeam||entry.phase!==expectedPhase)invalid();
         questionId=card.id;kind=card.kind;primaryTeam=card.primaryTeam;team=primaryTeam;turn='primary';phase=expectedPhase;
       } else if(entry.type==='faculty-replacement') {
         if(kind!=='main'||cursor<0||questionId!==entry.reserveId||main[cursor].id!==entry.voidedQuestionId)invalid();
+        for(const row of outcomes.filter(row=>row.kind==='main'&&row.questionId===entry.voidedQuestionId))scores.main[row.team]-=row.delta;
         main[cursor].id=entry.reserveId;
       } else if(entry.type==='read-stem') {
         atCard(entry);if(phase!=='roundIntro')invalid();phase='read';
@@ -6053,6 +6057,7 @@ window.BioAudio=Object.freeze({enable,cue,setMuted,setVolume,configureSpeech,lis
         atCard(entry);
         if(!['answering','acknowledged'].includes(phase)||entry.type==='answer-confirmed'&&phase!=='acknowledged'||entry.kind!==kind||entry.turn!==turn)invalid();
         if(!s.records.some(row=>row.questionId===questionId&&row.kind===kind&&row.team===team&&row.turn===turn&&row.at===entry.at&&row.option===entry.option&&row.correct===entry.correct&&row.delta===entry.delta&&row.origin===(entry.type==='answer-confirmed'?'answer':entry.type)))invalid();
+        outcomes.push(entry);if(kind!=='demo')scores[kind][team]+=entry.delta;
         if(RULES.passingEnabled&&kind!=='tie'&&turn==='primary'&&entry.correct!==true){turn='passed';team=opposite(primaryTeam);phase='passTransition';}
         else phase='outcome';
       } else if(entry.type==='passed-turn-start') {
@@ -6060,9 +6065,11 @@ window.BioAudio=Object.freeze({enable,cue,setMuted,setVolume,configureSpeech,lis
       } else if(entry.type==='reveal') {
         atCard(entry);if(phase!=='outcome')invalid();phase='reveal';
       } else if(entry.type==='end') {
-        atCard(entry);if(phase!=='end'&&!(phase==='reveal'&&(kind==='main'?cursor===main.length-1:kind==='tie'&&tieCursor%2===1)))invalid();phase='end';
+        atCard(entry);if(phase!=='end'&&!(phase==='reveal'&&(kind==='main'?cursor===main.length-1:kind==='tie'&&tieCursor%2===1&&(tieCursor===ties.length-1||scores.tie.Bio!==scores.tie.Vista))))invalid();phase='end';
       } else if(entry.type==='tie-referred') {
         atCard(entry);if(kind!=='tie'&&phase!=='end')invalid();phase='end';
+      } else if(entry.type==='score-correction') {
+        scores[entry.kind][entry.team]+=entry.delta;
       } else if(['coin-result','gameplay-configured'].includes(entry.type)&&phase!=='intro')invalid();
     }
     if(s.cursor!==cursor||s.tieCursor!==tieCursor||s.kind!==kind||s.phase!==phase||s.questionId!==questionId||s.primaryTeam!==primaryTeam||s.activeTeam!==team||s.turn!==turn)invalid();

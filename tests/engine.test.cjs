@@ -118,4 +118,21 @@ test('Opportunity recovery preserves metrics through demo, discussion and comple
  const stats=E.stats(s);assert.equal(stats.main.teams.Bio.directOpportunities,2);assert.equal(stats.main.teams.Vista.directOpportunities,2);assert.equal(stats.main.teams.Bio.passesReached,2);assert.equal(stats.main.teams.Vista.passesReached,2);assert.equal(stats.tie.teams.Bio.directOpportunities,1);assert.equal(stats.tie.teams.Vista.directOpportunities,1);
 });
 
+function forgedTieCard(s,index){const saved=JSON.parse(JSON.stringify(s)),card=saved.tieSchedule[index];Object.assign(saved,{kind:'tie',tieCursor:index,questionId:card.id,primaryTeam:card.primaryTeam,activeTeam:card.primaryTeam,turn:'primary',phase:'tieRead',selected:null,lockedAnswer:null,timer:null,answerRemainingMs:null,winner:null});saved.log.push({id:++saved.sequence,at:s.lastNow,type:'question-ready',questionId:card.id,team:card.primaryTeam,phase:'tieRead'});return saved;}
+test('Recovery rejects a tie opportunity after unequal completed main scores',()=>{
+ const {E}=engine(runtime());let s=answer(E,begin(E,small(1)),0);s=finish(E,s);assert.notEqual(s.mainScores.Bio,s.mainScores.Vista);assert.ok(E.dispatch(s,{type:'START_TIE'},s.lastNow).error);
+ assert.throws(()=>E.hydrate(forgedTieCard(JSON.parse(E.checkpoint(s)),0)),/opportunity|transition|tie/i);
+});
+test('Recovery rejects another tie pair once a completed pair resolved the tie',()=>{
+ const {E}=engine(runtime());let s=finish(E,begin(E,small(2)));s=act(E,s,'START_TIE');s=act(E,s,'SHOW_OPTIONS');s=step(E,s,s.config.optionsIntroMs);s=answer(E,s,0);s=act(E,s,'NEXT');s=act(E,s,'SHOW_OPTIONS');s=step(E,s,s.config.optionsIntroMs);s=act(E,s,'PASS');assert.equal(E.dispatch(s,{type:'NEXT'},s.lastNow).state.phase,'end');
+ assert.throws(()=>E.hydrate(forgedTieCard(JSON.parse(E.checkpoint(s)),2)),/opportunity|transition|tie/i);
+});
+test('Recovery tie gates honor explicit score corrections and reserve score rollback',()=>{
+ for(const adjustment of ['correction','replacement']){const {E}=engine(runtime());let s=answer(E,begin(E,small(1)),0);
+  if(adjustment==='replacement')s=act(E,s,'REPLACE',{reserveId:'R',reason:'Reviewed defect',confirmed:true});s=finish(E,s);
+  if(adjustment==='correction')s=act(E,s,'CORRECT_SCORE',{team:'Vista',delta:10,reason:'Host correction',confirmed:true});
+  assert.equal(s.mainScores.Bio,s.mainScores.Vista);s=act(E,s,'START_TIE');assert.deepEqual(plain(E.hydrate(E.checkpoint(s)).mainScores),plain(s.mainScores));
+ }
+});
+
 let failed=0;for(const[name,fn]of tests){try{fn();console.log('PASS',name);}catch(error){failed++;console.error('FAIL',name,'\n ',error.message);}}console.log(`${tests.length-failed}/${tests.length} generic engine/profile tests passed`);if(failed)process.exitCode=1;
