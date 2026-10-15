@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "event": {
-    "id": "biovista-showcase-2026",
+    "id": "biovista-apex-showcase-2026",
     "title": "BioVista",
     "organization": "Parul University Goa · PCAHS",
-    "subtitle": "The BioVista example, with the current Quiz Show Kit features.",
+    "subtitle": "Try the BioVista Feature Showcase Quiz · Apex profile",
     "date": "2026-10-13",
     "introTagline": "Science. Instinct. Teamwork.",
     "introHeadline": "Let curiosity lead.",
@@ -27,7 +27,8 @@
     "surface": "#304047",
     "text": "#fff4dc",
     "font": "Segoe UI",
-    "motif": "dna"
+    "motif": "dna",
+    "style": "skeuomorphic"
   },
   "rules": {
     "primarySeconds": 15,
@@ -1649,18 +1650,19 @@
     "sound": true,
     "volume": 80,
     "spokenOptions": true,
-    "optionSpeech": "smart",
+    "optionSpeech": "full",
     "voiceName": "",
     "voiceLang": "en-IN",
     "speechRate": 1,
-    "readQuestions": false,
+    "readQuestions": true,
     "confetti": true,
     "rewards": true,
     "coinAnimation": true,
     "questionAnimation": true,
     "winnerAnimation": true,
     "intro": true,
-    "character": true
+    "character": true,
+    "characterMotion": true
   },
   "gameplay": {
     "shuffleOptions": true,
@@ -1690,5 +1692,6 @@
   "localization": {
     "language": "en",
     "labels": {}
-  }
+  },
+  "showcase": true
 }

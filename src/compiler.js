@@ -77,7 +77,8 @@ function gameplayConfig(raw,questions){
 function localizationConfig(raw){keys(raw,['language','labels'],'localization');const language=text(raw.language||'en','localization.language',35,true);if(!/^[a-z]{2,8}(?:-[a-z0-9]{1,8})*$/i.test(language))fail('localization.language','must be a language tag');if(!plain(raw.labels||{}))fail('localization.labels','must be an object');const labels={};for(const [k,v]of Object.entries(raw.labels||{})){text(k,'localization.labels key',160,true);labels[k]=text(v,'localization.labels.'+k,240,true);}if(Object.keys(labels).length>200)fail('localization.labels','supports at most 200 control labels');return {language,labels};}
 function validate(input){
  if(typeof input==='string'){if(input.length>25*1024*1024)fail('configuration','exceeds the 25 MB input limit');try{input=JSON.parse(input);}catch(_){fail('configuration','is not valid JSON');}}
- tree(input);keys(input,['$schema','schemaVersion','event','teams','theme','presentation','rules','rounds','branding','assets','questions','verification','gameplay','localization'],'configuration');
+ tree(input);keys(input,['$schema','schemaVersion','event','teams','theme','presentation','rules','rounds','branding','assets','questions','verification','gameplay','localization','showcase'],'configuration');
+ if(input.showcase!==undefined&&typeof input.showcase!=='boolean')fail('showcase','must be true or false');
  if(input.schemaVersion!==1)fail('schemaVersion','must be 1');
  keys(input.event,['id','title','organization','subtitle','date','introTagline','introHeadline','lifelineLabel'],'event');
  const event={id:text(input.event.id,'event.id',64,true),title:text(input.event.title,'event.title',80,true),organization:text(input.event.organization,'event.organization',140),subtitle:text(input.event.subtitle,'event.subtitle',160),date:text(input.event.date,'event.date',10),introTagline:text(input.event.introTagline,'event.introTagline',140),introHeadline:text(input.event.introHeadline||'Ready for the challenge?','event.introHeadline',100,true),lifelineLabel:text(input.event.lifelineLabel||'Ask a teacher','event.lifelineLabel',60,true)};
@@ -89,15 +90,15 @@ function validate(input){
  if(!['Segoe UI','Arial','Verdana','Georgia','Tahoma'].includes(theme.font))fail('theme.font','must use a supported system font');if(!['dna','none'].includes(theme.motif))fail('theme.motif','must be dna or none');
  let presentation;
  if(input.presentation!==undefined){
-  keys(input.presentation,['motion','sound','volume','spokenOptions','confetti','rewards','intro','coinAnimation','questionAnimation','winnerAnimation','optionSpeech','voiceName','voiceLang','speechRate','readQuestions','character'],'presentation');
-  presentation={motion:'cinematic',sound:true,volume:80,spokenOptions:true,confetti:true,rewards:true,intro:true,coinAnimation:true,questionAnimation:true,winnerAnimation:true,optionSpeech:'smart',voiceName:'',voiceLang:'en-IN',speechRate:1,readQuestions:false,character:Boolean(input.branding?.character),...input.presentation};
+  keys(input.presentation,['motion','sound','volume','spokenOptions','confetti','rewards','intro','coinAnimation','questionAnimation','winnerAnimation','optionSpeech','voiceName','voiceLang','speechRate','readQuestions','character','characterMotion'],'presentation');
+  presentation={motion:'cinematic',sound:true,volume:80,spokenOptions:true,confetti:true,rewards:true,intro:true,coinAnimation:true,questionAnimation:true,winnerAnimation:true,optionSpeech:'smart',voiceName:'',voiceLang:'en-IN',speechRate:1,readQuestions:false,characterMotion:false,character:Boolean(input.branding?.character),...input.presentation};
   if(!['smart','letters','full'].includes(presentation.optionSpeech))fail('presentation.optionSpeech','must be smart, letters or full');
   text(presentation.voiceName,'presentation.voiceName',160);
   if(typeof presentation.voiceLang!=='string'||presentation.voiceLang.length>35||! /^[a-z]{2,8}(?:-[a-z0-9]{1,8})*$/i.test(presentation.voiceLang))fail('presentation.voiceLang','must be a language tag such as en-IN');
   if(typeof presentation.speechRate!=='number'||!Number.isFinite(presentation.speechRate)||presentation.speechRate<.5||presentation.speechRate>2)fail('presentation.speechRate','must be from 0.5 to 2');
   if(!['cinematic','gentle','none'].includes(presentation.motion))fail('presentation.motion','must be cinematic, gentle or none');
   if(!Number.isInteger(presentation.volume)||presentation.volume<0||presentation.volume>100)fail('presentation.volume','must be an integer from 0 to 100');
-  for(const key of ['sound','spokenOptions','confetti','rewards','intro','coinAnimation','questionAnimation','winnerAnimation','readQuestions','character'])if(typeof presentation[key]!=='boolean')fail('presentation.'+key,'must be true or false');
+  for(const key of ['sound','spokenOptions','confetti','rewards','intro','coinAnimation','questionAnimation','winnerAnimation','readQuestions','character','characterMotion'])if(typeof presentation[key]!=='boolean')fail('presentation.'+key,'must be true or false');
  }
  const rules=Profile.normalizeRules(input.rules||{});
  if(!Array.isArray(input.rounds)||!input.rounds.length||input.rounds.length>20)fail('rounds','must contain 1–20 rounds');const rounds=[],ids=new Set();for(const [i,r]of input.rounds.entries()){keys(r,['id','name'],'rounds['+i+']');if(!Number.isSafeInteger(r.id)||r.id<1||r.id>1000||ids.has(r.id))fail('rounds['+i+'].id','must be a unique positive integer');ids.add(r.id);rounds.push({id:r.id,name:text(r.name,'rounds['+i+'].name',80,true)});}
@@ -116,7 +117,7 @@ function validate(input){
  const gameplay=input.gameplay===undefined?undefined:gameplayConfig(input.gameplay,questions),localization=input.localization===undefined?undefined:localizationConfig(input.localization);
  const identityQuestions=questions.map((q,i)=>{const identity=clone(q);for(const key of ['optionIds','correctOptionId','optionExplanations','subtype','topic'])if(input.questions[i][key]===undefined)delete identity[key];return identity;});
  const profileId=event.id+':'+fingerprint({eventId:event.id,rules,questions:identityQuestions,...(gameplay?{gameplay}:{})});
- return {schemaVersion:1,event,teams,theme,...(presentation?{presentation}:{}),...(gameplay?{gameplay}:{}),...(localization?{localization}:{}),rules,rounds,branding,assets,questions,profileId};
+ return {schemaVersion:1,event,teams,theme,...(presentation?{presentation}:{}),...(gameplay?{gameplay}:{}),...(localization?{localization}:{}),...(input.showcase?{showcase:true}:{}),rules,rounds,branding,assets,questions,profileId};
 }
 function rgb(hex){return [1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));}
 function blend(a,b,t){const x=rgb(a),y=rgb(b);return '#'+x.map((v,i)=>Math.round(v*(1-t)+y[i]*t).toString(16).padStart(2,'0')).join('');}

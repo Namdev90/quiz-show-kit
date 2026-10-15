@@ -20,6 +20,6 @@ The prompt launcher and generated quiz do not need API keys or a backend. Keep r
 
 ## Repository maintenance
 
-Use read-only contents permissions for ordinary CI. Restrict deployment permissions to trusted release/Pages jobs, and do not expose secrets to untrusted pull-request code. Keep action references pinned to reviewed full commit SHAs and review dependency updates. [GitHub's secure-use guidance](https://docs.github.com/en/actions/reference/security/secure-use) explains these boundaries.
+Use read-only contents permissions for ordinary CI. Restrict publication permissions to the trusted release job, keep quiz Pages hosting disabled, and do not expose secrets to untrusted pull-request code. Keep action references pinned to reviewed full commit SHAs and review dependency updates. [GitHub's secure-use guidance](https://docs.github.com/en/actions/reference/security/secure-use) explains these boundaries.
 
 The MIT license applies to the software within its stated scope. It does not transfer trademark rights or override the separate library, audio, and example-asset notices. See [third-party notices](THIRD_PARTY_NOTICES.md) and [BioVista asset notices](examples/biovista/ASSET_NOTICES.md).

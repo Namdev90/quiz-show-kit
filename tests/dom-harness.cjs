@@ -8,6 +8,7 @@ async function load(options={}){
   let time=0,next=1;const frames=new Map();const intervals=new Map(),timeouts=new Map(),memory=new Map(options.storage||[]),blobs=new Map(),notes=[],gainChanges=[],downloads=[],buffers=[],canvas=[],captures=[],recorders=[];
   const vc=new VirtualConsole();vc.on('jsdomError',e=>result.errors.push(e.message));
   const dom=new JSDOM(options.html||html,{runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
+    if(options.nativeAnimationLog)w.Element.prototype.animate=function(keyframes,timing){const animation={node:this,keyframes,timing,currentTime:0,playState:'running',effect:{getTiming:()=>timing},pause(){this.playState='paused';},cancel(){this.playState='idle';}};options.nativeAnimationLog.push(animation);return animation;};
     w.fetch=url=>{result.resourceRequests.push(String(url));throw Error('Network disabled in DOM test');};
     w.XMLHttpRequest=class{open(method,url){result.resourceRequests.push(String(url));throw Error('Network disabled in DOM test');}};
     w.WebSocket=class{constructor(url){result.resourceRequests.push(String(url));throw Error('Network disabled in DOM test');}};
@@ -15,7 +16,8 @@ async function load(options={}){
     w.setInterval=(fn,ms)=>{const id=next++;intervals.set(id,{fn,ms,nextAt:time+ms});return id;};w.clearInterval=id=>intervals.delete(id);
     w.setTimeout=(fn,ms=0)=>{const id=next++;timeouts.set(id,{fn,at:time+ms});return id;};w.clearTimeout=id=>timeouts.delete(id);
     w.requestAnimationFrame=fn=>{const id=next++;frames.set(id,fn);return id;};w.cancelAnimationFrame=id=>frames.delete(id);
-    w.matchMedia=()=>({matches:Boolean(options.reducedPreference),addEventListener(){},removeEventListener(){},addListener(){},removeListener(){}});
+    const motionListeners=new Set(),motionQuery={matches:Boolean(options.reducedPreference),media:'(prefers-reduced-motion: reduce)',addEventListener(type,listener){if(type==='change')motionListeners.add(listener);},removeEventListener(type,listener){if(type==='change')motionListeners.delete(listener);},addListener(listener){motionListeners.add(listener);},removeListener(listener){motionListeners.delete(listener);}};
+    w.matchMedia=()=>motionQuery;w.__setReducedMotion=value=>{motionQuery.matches=Boolean(value);for(const listener of motionListeners)listener({matches:motionQuery.matches,media:motionQuery.media});};
     const storage={getItem(k){if(options.denyStorage)throw Error('Test persistence denial');return memory.has(k)?memory.get(k):null;},setItem(k,v){if(options.denyStorage)throw Error('Test persistence denial');memory.set(k,String(v));},removeItem(k){if(options.denyStorage)throw Error('Test persistence denial');memory.delete(k);}};
     Object.defineProperty(w,'localStorage',{value:storage,configurable:true});
     Object.defineProperty(w.crypto,'getRandomValues',{value:array=>{array.fill(options.coinValue??1);return array;}});w.confirm=()=>w.__confirmResult!==false;w.__confirmResult=true;

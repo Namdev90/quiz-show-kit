@@ -20,7 +20,7 @@
       "text": "#fff4dc",
       "font": "Segoe UI",
       "motif": "dna",
-      "style": "flat"
+      "style": "skeuomorphic"
     },
     "presentation": {
       "motion": "cinematic",
@@ -33,11 +33,12 @@
       "coinAnimation": true,
       "questionAnimation": true,
       "winnerAnimation": true,
-      "optionSpeech": "smart",
+      "optionSpeech": "full",
       "voiceName": "",
       "voiceLang": "en-IN",
       "speechRate": 1,
-      "readQuestions": false,
+      "readQuestions": true,
+      "characterMotion": true,
       "character": true
     },
     "rules": {

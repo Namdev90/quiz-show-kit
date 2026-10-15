@@ -20,7 +20,7 @@
 | Narration routes | [Assets and voice](ASSETS_AND_VOICE.md), [voice choices](TTS_MODELS.md) | Existing recordings/local speech before new generation |
 | Reusable packages | [`vendor/manifest.json`](../../vendor/manifest.json), [`package.json`](../../package.json) | Versions, purpose and license paths; use the existing implementation |
 | Build or verify | [`scripts/`](../../scripts/), [`tests/`](../../tests/) | Relevant existing command/check |
-| Rebuild the public example | [`scripts/build-example.cjs`](../../scripts/build-example.cjs), [`requirements-authoring.txt`](../../requirements-authoring.txt) | `--authoring` regenerates the matching DOCX; the launcher build refreshes Pages copies |
+| Rebuild the public example | [`scripts/build-example.cjs`](../../scripts/build-example.cjs), [`requirements-authoring.txt`](../../requirements-authoring.txt) | `--authoring` regenerates the matching DOCX; the launcher build refreshes dormant local mirrors; GitHub release downloads are the public route |
 | Prepare a versioned release | [`release.json`](../../release.json), [release instructions](../GITHUB_SETUP.md#stable-release) | Version/notes and `npm run build:release`; identified source kit, playable files, companions and hashes |
 | Save a setup for next time | [Reuse protocol](REUSE_PROTOCOL.md) | Compact prompt plus supplied settings attachment |
 

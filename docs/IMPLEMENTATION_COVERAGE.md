@@ -1,6 +1,6 @@
 # Brief coverage and remaining decisions
 
-Scope: the consolidated implementation handoff dated 15 October 2026. Starting repository commit: `404ca0114b4815605f9726549dfb0e068d4d9fdd`. This matrix describes source changes and preserved boundaries; actual commands, browser observations and artifacts are recorded separately in [Implementation QA](IMPLEMENTATION_QA.md). Source availability does not establish factual accuracy, audio quality, platform compatibility or new rights-holder permission.
+Scope: the consolidated implementation handoff dated 15 October 2026. Starting repository commit: `404ca0114b4815605f9726549dfb0e068d4d9fdd`. This matrix describes source changes and preserved boundaries. The [current showcase audit](SHOWCASE_AUDIT.md) maps each item to implementation, tests and its actual BioVista demonstration. Current checks are in [Release QA](RELEASE_QA.md); [Implementation QA](IMPLEMENTATION_QA.md) retains earlier snapshots. Source availability does not establish factual accuracy, audio quality, platform compatibility or new rights-holder permission.
 
 **Implemented** means a source/workflow path exists with checks reported in QA. **Partial** identifies a concrete remaining limitation. **Decision/input needed** preserves an unresolved user choice or missing supplied asset. **Excluded** is deliberately outside accepted scope.
 
@@ -50,24 +50,24 @@ Scope: the consolidated implementation handoff dated 15 October 2026. Starting r
 | Import safety | Bounded DOCX ZIP/XML parsing; reject active/unsupported content, unsafe paths and imports lacking both recovery metadata and a valid QSK1 event/revision identity. Imported prose/links do not become instructions or execute. |
 | Failure and AI repair | Visible recoverable notice plus previewable/copyable local redacted handoff; no automatic upload, credentials, raw private bank content, public issue or PR. |
 | Team selection | Existing two-team coin toss preserved. More-than-two lever/reel selector and its visual iteration are **decision needed**, not represented as implemented. |
-| Branding and character | Namdev Shirodkar credit and special curation kept in entry/About/settings. Actual user-supplied Chota Namu PNG/GIF and project-scoped use/publication permission now recorded; unchanged PNG is optional on welcome/About/settings with a persistent visibility toggle. GIF remains a reference; no gaze or substitute asset added. Existing Parul/PCAHS logo provenance is recorded; broader usage permission still needs confirmation. |
+| Branding and character | Namdev Shirodkar credit and special curation kept in entry/About/settings. Actual user-supplied Chota Namu PNG/GIF and project-scoped use/publication permission now recorded; unchanged PNG is optional on welcome/About/settings with a persistent visibility toggle. GIF remains a reference. Optional pointer-responsive tilt and idle motion now use the unchanged PNG, respect system reduced motion and keep coordinates transient/local. No substitute asset is added. Existing Parul/PCAHS logo provenance is recorded; broader usage permission still needs confirmation. |
 | Responsive and keyboard behavior | Existing responsive layout plus fit-to-screen zoom and focus/keyboard checks; actual tested viewports/zoom belong to QA, not inferred guarantees. |
 | Lean library and presets | Concise START + AGENTS; five quiz and five visual presets plus Custom preserved. Relevant modules load by phase. Prompt size measured as bytes, never invented billing/token savings. |
 | Reuse and preservation | Existing licensed local components and installed DOCX tooling reused, original BioVista files preserved in `examples/biovista/original/` while the public example is rebuilt with the current features. Existing locked development dependencies were restored for checks; no new dependency/model adopted or unrelated media fetched. Rights gaps remain explicit. |
 | Recovery | Existing paused resume/checkpoint copy preserved; interrupted-event recovery must follow the tested launch route and storage behavior described in QA. |
-| Actual platforms | Linux browser testing is reported as Linux. **Actual Windows and actual macOS/Safari testing were not performed in this environment.** |
-| Repository/publication authority | Initial review was local, then the tested implementation was pushed as PR #5. The user's subsequent merge requests and instruction to add setup modes, refresh BioVista and push everything authorize completing that PR after checks. Unrelated private/event-restricted publication remains outside this scope. |
+| Actual platforms | Earlier Linux checks belong to their snapshots. Current Windows Chrome/Edge scope is recorded in Release QA. **macOS/Safari and physical event hardware remain untested.** |
+| Repository/publication authority | The user authorized scoped tested merges, a release and reversible removal of confirmed quiz hosting. GitHub is the public destination. Unrelated sites and private/event-restricted material remain outside this scope. |
 
 ## Subsequent accepted additions
 
 - **Teacher / Competition authoring modes:** the first unresolved setup question has exactly these two choices. Teacher chooses compatible defaults and asks only essentials; Competition exposes all supported controls. Switching preserves prior answers. `setup=teacher|competition` persists the choice without changing runtime rules or legacy keys.
-- **Current BioVista showcase:** latest runtime at the existing public example route, original bank/scoring retained, optional shuffle/discussion/difficulty/round rotation/statistics/revision/character demonstrated, and companion DOCX/settings/review plus a feature guide. Mutually exclusive choices and content subtypes remain documented alternatives. The historical original is archived byte for byte.
+- **Current BioVista showcase:** a release HTML download with its supported compatible Apex profile enabled and settings visible/read-only. The normal engine remains configurable and reusable settings omit the showcase lock. Original bank/scoring, companion DOCX/settings/review and the historical archive are preserved. Mutually exclusive choices and content subtypes remain documented alternatives. No hosted preview is required.
 
 ## Decisions and inputs still needed
 
 1. Whether to expand the engine beyond two teams. Only after that decision should a scalable lever/reel selector and absent-team behavior be implemented and verified together.
 2. Confirmation that the cataloged Parul/PCAHS logo is the intended authorized file for the target distribution. The actual Chota Namu artwork has now been supplied and authorized for this project/publication; unrelated reuse rights are not granted.
-3. Actual Windows and macOS/Safari execution access for platform claims; Linux WebKit or browser emulation cannot substitute for a Mac.
+3. Actual macOS/Safari and physical event hardware checks. Actual Windows browser results do not substitute for a Mac or room rehearsal.
 4. Separate authorization before publishing unrelated private/event-restricted material or changing the scope beyond this toolkit and its public BioVista example.
 
 For exact implementation files and verified commands/results, use [Implementation QA](IMPLEMENTATION_QA.md). For source fields and author-operated commands, use [Configuration](CONFIGURATION.md).

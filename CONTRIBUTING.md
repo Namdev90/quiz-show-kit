@@ -22,7 +22,7 @@ Changes to presentation need inspection at the supported display sizes and with 
 
 Keep `prompts/START.md` as the single entry contract and `docs/TEACHER_PROMPT.md` as the guided workflow. Use library modules for reusable presets, sources, difficulty, narration, assets and maintenance guidance. Keep five presets plus custom, and keep suggested controls aligned with tested capabilities. Do not reintroduce a competing website quiz editor or promise a private cipher, automatic memory, unavailable tools or untested extensions.
 
-The public root/Pages HTML is generated from `src/launcher-template.html` by `npm run build:launcher`. Original SVG documentation illustrations live in `docs/images`; label conceptual swatches clearly instead of presenting them as runtime screenshots.
+The local root launcher and dormant documentation mirror are generated from `src/launcher-template.html` by `npm run build:launcher`. The exact showcase CTA downloads the versioned GitHub release; keep quiz hosting disabled. Original SVG documentation illustrations live in `docs/images`; label conceptual swatches clearly instead of presenting them as runtime screenshots.
 
 ## Pull requests
 
