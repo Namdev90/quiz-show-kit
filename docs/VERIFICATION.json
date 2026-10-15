@@ -3,19 +3,21 @@
   "date": "2026-10-15",
   "checks": {
     "configuration": "PASS: 41 cards, 30 main, 5 rounds",
-    "automated": "PASS: npm run check; 38 top-level tests and 22 internal engine cases",
+    "automated": "PASS: npm run check; 41 top-level tests and 22 internal engine cases",
     "presets": "PASS: all 25 preset/theme combinations; custom and legacy settings restoration; relocated asset embedding",
     "voice": "PASS: 7 DOM/platform-simulation cases; no real voice-quality claim",
     "launcher": "PASS: 3 DOM tests for generated parity, exact clipboard text and denied/unavailable clipboard fallback",
-    "documentation": "PASS: 75 relative Markdown links resolve; diff whitespace check clean",
+    "documentation": "PASS: 151 relative Markdown links resolve; diff whitespace check clean",
     "originalExample": "PASS: canonical config and examples unchanged from base db4131297dca035d037ed06510702657b9fd8910",
     "browser": "BLOCKED: installed Chromium failed before page load with socket(): Operation not permitted; current rendering not verified",
     "hardware": "UNTESTED: physical speakers, projector and full recording",
     "cloudTTS": "DOCUMENTATION ONLY: official catalogs checked; no paid audio generation or audible benchmark",
     "teacherConversation": "UNTESTED: launch prompt retrieval/interview in a separate assistant conversation",
-    "ci": "Check the PR/commit checks for remote CI; this file records local verification."
+    "ci": "Check the PR/commit checks for remote CI; this file records local verification.",
+    "library": "PASS: 21 catalog files with verified paths, hashes and notices; 8 imported icons embed through existing compiler with complete license text",
+    "promptBudget": "MEASURED: startup text 39796 to 5022 UTF-8 bytes (87.4% smaller); not a token or billing measurement; see PROMPT_BUDGET.json"
   },
-  "testCases": 38,
+  "testCases": 41,
   "sha256": {
     "quiz.config.json": "ec8b2f616c6ebef07a76ef189b7e1422cbbaca67c678e498a8f4cc56f58f6b45",
     "examples/biovista/BioVista_Quiz_Offline.html": "936403df41cc07e451158550df76f32be34c717a0f2e9e1280e76d6bfc9331b6",

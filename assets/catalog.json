@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "pathBase": "repository-root",
+  "cataloguedOn": "2026-10-15",
+  "description": "Small metadata-only shelf of actual local media; no base64. New source verification is recorded only where performed. Existing asset provenance is retained from the BioVista configuration.",
+  "assets": [
+    {
+      "id": "institution",
+      "path": "assets/images/parul-goa-pcahs-transparent.png",
+      "type": "branding-image",
+      "mimeType": "image/png",
+      "tags": [
+        "branding",
+        "example",
+        "institution"
+      ],
+      "alt": "Parul University Goa and PCAHS wordmark",
+      "license": {
+        "id": "LicenseRef-Branding-Permission",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "permission-required",
+        "instructions": "Reference/event branding only. Check the rights holder policy and obtain event permission as needed; inclusion grants no general reuse or endorsement."
+      },
+      "provenance": {
+        "sourceTitle": "User-approved Parul University Goa and PCAHS logo",
+        "sourceUrl": "https://photos.app.goo.gl/Yk97qKBB3LGtPA6i9",
+        "sourceAssetUrl": "https://photos.app.goo.gl/Yk97qKBB3LGtPA6i9",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.institution",
+        "notes": "Transparent background-removal derivative of the supplied approved Parul University Goa/PCAHS logo. Outer white backing and separator removed; white lettering retained. Original user-approved PNG remains preserved. Display viewBox follows nontransparent bounds for optical alignment."
+      },
+      "sha256": "5e5bf13cdf6ed02938e757a16ee392b6a1c09f364dc5e42ab7f3d50d886db4d1",
+      "bytes": 1015602,
+      "width": 2170,
+      "height": 725
+    },
+    {
+      "id": "python",
+      "path": "assets/images/python-official.png",
+      "type": "branding-image",
+      "mimeType": "image/png",
+      "tags": [
+        "branding",
+        "example",
+        "python"
+      ],
+      "alt": "Python Software Foundation mark",
+      "license": {
+        "id": "LicenseRef-Branding-Permission",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "permission-required",
+        "instructions": "Reference/event branding only. Check the rights holder policy and obtain event permission as needed; inclusion grants no general reuse or endorsement."
+      },
+      "provenance": {
+        "sourceTitle": "Python Software Foundation - The Python Logo",
+        "sourceUrl": "https://www.python.org/community/logos/",
+        "sourceAssetUrl": "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.python",
+        "notes": "Original PSF two-snakes PNG logo device unchanged, 269:326; Python and the Python logos are trademarks or registered trademarks of the Python Software Foundation. Use only for educational identification; no sponsorship or endorsement. Add a small TM symbol alongside per PSF policy. Official SVG candidate clipped under the bundled rasterizer, so embed verified complete PNG instead."
+      },
+      "sha256": "4008a934b415c152bfa513be3e9b05de4212ae41549a27f2c6c8d41b3a24a4da",
+      "bytes": 20637
+    },
+    {
+      "id": "OpenAI",
+      "path": "assets/images/openai-white.svg",
+      "type": "branding-image",
+      "mimeType": "image/svg+xml",
+      "tags": [
+        "branding",
+        "example",
+        "openai"
+      ],
+      "alt": "OpenAI Blossom mark",
+      "license": {
+        "id": "LicenseRef-Branding-Permission",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "permission-required",
+        "instructions": "Reference/event branding only. Check the rights holder policy and obtain event permission as needed; inclusion grants no general reuse or endorsement."
+      },
+      "provenance": {
+        "sourceTitle": "OpenAI Design Guidelines",
+        "sourceUrl": "https://openai.com/brand/",
+        "sourceAssetUrl": "https://cdn.openai.com/brand/openai-logos.zip",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.OpenAI",
+        "notes": "Unmodified white official Blossom vector extracted from official logo download; 600:600. OpenAI mark owned by OpenAI, shown solely for educational identification. No endorsement or affiliation implied. Leave generous clear space."
+      },
+      "sha256": "01d158767c4eec0e47bd617e67759c33da0accd1438be1a8d29dfdb99ce87285",
+      "bytes": 2415
+    },
+    {
+      "id": "biovista",
+      "path": "assets/images/biovista-transparent-sun.png",
+      "type": "branding-image",
+      "mimeType": "image/png",
+      "tags": [
+        "branding",
+        "example",
+        "biovista"
+      ],
+      "alt": "BioVista event mark",
+      "license": {
+        "id": "LicenseRef-Branding-Permission",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "permission-required",
+        "instructions": "Reference/event branding only. Check the rights holder policy and obtain event permission as needed; inclusion grants no general reuse or endorsement."
+      },
+      "provenance": {
+        "sourceTitle": "Approved BioVista logo supplied by organiser",
+        "sourceUrl": "https://drive.google.com/file/d/1L4EDj4zvAxd50OI7xP8Z0yiE0zZAWt5B/view",
+        "sourceAssetUrl": "https://drive.google.com/file/d/1L4EDj4zvAxd50OI7xP8Z0yiE0zZAWt5B/view",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.biovista",
+        "notes": "Transparent derivative of the organiser-approved BioVista artwork edited at the organiser request. White B/O/A regions and the white separator between the sun and green V arc are now removed as explicitly requested. The sun/V separator removal was checked against the former white-band pixels and is nearly transparent, rather than filled with an opaque colour. Other recognisable artwork, lettering and proportions retained by local image review; no pixel-identical/RGB claim. Original approved JPEG and all prior transparent PNG variants remain preserved."
+      },
+      "sha256": "3168985afccdfa0400010c6161ddd2635668c8db692b62bf136bdf2ebd0f4a70",
+      "bytes": 1022274,
+      "width": 1678,
+      "height": 937
+    },
+    {
+      "id": "coinSound",
+      "path": "assets/audio/coinSound.wav",
+      "type": "sound-effect",
+      "mimeType": "audio/wav",
+      "tags": [
+        "sound",
+        "reward",
+        "coin"
+      ],
+      "alt": "Short metal-coin sound",
+      "license": {
+        "id": "CC0-1.0",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Reuse with the existing provenance; audition volume on event speakers."
+      },
+      "provenance": {
+        "sourceTitle": "StarNinjas — 12 Coin Sound Effects",
+        "sourceUrl": "https://opengameart.org/node/123368",
+        "sourceAssetUrl": "https://opengameart.org/sites/default/files/coins_-_starninjas.zip",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.coinSound",
+        "notes": "Actual creator-recorded metal coins, releasedCC0 by StarNinjas. Short coin recording decoded to WAV and linearly normalised to peak0.80; no Nintendo audio or new synthesis. Raw original OGG and source archive preserved. Audibility measured from waveform; live room-speaker audition remains required.",
+        "author": "StarNinjas",
+        "originalMember": "coin.4.ogg",
+        "originalSha256": "feb7cc60595d57e4ac6ac78e3b3091b76caae51bc2bd01be9b182a5cc83c07ee"
+      },
+      "sha256": "de73bec639551e8c4237732914ede571dc3eb561636f1d0a678ac355f1f8f3e8",
+      "bytes": 65614,
+      "durationSeconds": 0.37151927437641724
+    },
+    {
+      "id": "selectA",
+      "path": "assets/audio/selectA.wav",
+      "type": "sound-effect",
+      "mimeType": "audio/wav",
+      "tags": [
+        "sound",
+        "selection",
+        "click"
+      ],
+      "alt": "Short selection click A",
+      "license": {
+        "id": "CC0-1.0",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Reuse with the existing provenance; audition volume on event speakers."
+      },
+      "provenance": {
+        "sourceTitle": "Kenney — 51 UI sound effects (buttons, switches and clicks)",
+        "sourceUrl": "https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks",
+        "sourceAssetUrl": "https://opengameart.org/sites/default/files/UI_SFX_Set.zip",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.selectA",
+        "notes": "Real creator-published organic UI recording, downloaded from Kenney own OpenGameArt page. Linear gain normalised to peak0.65 for audibility; no new sound synthesised. Source original and archive preserved. This is a selection accent, not a spoken letter.",
+        "author": "Kenney Vleugels",
+        "originalMember": "click1.wav",
+        "originalSha256": "359c8c98ecd48368f45b84d3a9b9d7e68cf3ac2fefcdbf32367b8482da76c9c7"
+      },
+      "sha256": "eaaf042b289b3ef471f0b26fb48f4dca89d9141804a06c8cfbf431c77f5556b5",
+      "bytes": 16596,
+      "durationSeconds": 0.09383219954648526
+    },
+    {
+      "id": "selectB",
+      "path": "assets/audio/selectB.wav",
+      "type": "sound-effect",
+      "mimeType": "audio/wav",
+      "tags": [
+        "sound",
+        "selection",
+        "click"
+      ],
+      "alt": "Short selection click B",
+      "license": {
+        "id": "CC0-1.0",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Reuse with the existing provenance; audition volume on event speakers."
+      },
+      "provenance": {
+        "sourceTitle": "Kenney — 51 UI sound effects (buttons, switches and clicks)",
+        "sourceUrl": "https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks",
+        "sourceAssetUrl": "https://opengameart.org/sites/default/files/UI_SFX_Set.zip",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.selectB",
+        "notes": "Real creator-published organic UI recording, downloaded from Kenney own OpenGameArt page. Linear gain normalised to peak0.65 for audibility; no new sound synthesised. Source original and archive preserved. This is a selection accent, not a spoken letter.",
+        "author": "Kenney Vleugels",
+        "originalMember": "click2.wav",
+        "originalSha256": "366a86202b215395eb9bb7376da4200453a0fb6751884e338a9e720f036fce0a"
+      },
+      "sha256": "d11bc527258923e23472b95a659278e35536bb084328081b276f7c5be3b0ae8f",
+      "bytes": 9876,
+      "durationSeconds": 0.055736961451247166
+    },
+    {
+      "id": "selectC",
+      "path": "assets/audio/selectC.wav",
+      "type": "sound-effect",
+      "mimeType": "audio/wav",
+      "tags": [
+        "sound",
+        "selection",
+        "click"
+      ],
+      "alt": "Short selection click C",
+      "license": {
+        "id": "CC0-1.0",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Reuse with the existing provenance; audition volume on event speakers."
+      },
+      "provenance": {
+        "sourceTitle": "Kenney — 51 UI sound effects (buttons, switches and clicks)",
+        "sourceUrl": "https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks",
+        "sourceAssetUrl": "https://opengameart.org/sites/default/files/UI_SFX_Set.zip",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.selectC",
+        "notes": "Real creator-published organic UI recording, downloaded from Kenney own OpenGameArt page. Linear gain normalised to peak0.65 for audibility; no new sound synthesised. Source original and archive preserved. This is a selection accent, not a spoken letter.",
+        "author": "Kenney Vleugels",
+        "originalMember": "click3.wav",
+        "originalSha256": "9649d0ed86f2129e39568922eda43da25c287ca0d2905328ecddbd70d11fbb34"
+      },
+      "sha256": "d60831faec3164ffee7c4ca8adbb86ee4241a08ad18a008aad08af1740daaa85",
+      "bytes": 15240,
+      "durationSeconds": 0.08614512471655329
+    },
+    {
+      "id": "selectD",
+      "path": "assets/audio/selectD.wav",
+      "type": "sound-effect",
+      "mimeType": "audio/wav",
+      "tags": [
+        "sound",
+        "selection",
+        "click"
+      ],
+      "alt": "Short selection click D",
+      "license": {
+        "id": "CC0-1.0",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Reuse with the existing provenance; audition volume on event speakers."
+      },
+      "provenance": {
+        "sourceTitle": "Kenney — 51 UI sound effects (buttons, switches and clicks)",
+        "sourceUrl": "https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks",
+        "sourceAssetUrl": "https://opengameart.org/sites/default/files/UI_SFX_Set.zip",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.selectD",
+        "notes": "Real creator-published organic UI recording, downloaded from Kenney own OpenGameArt page. Linear gain normalised to peak0.65 for audibility; no new sound synthesised. Source original and archive preserved. This is a selection accent, not a spoken letter.",
+        "author": "Kenney Vleugels",
+        "originalMember": "rollover6.wav",
+        "originalSha256": "acea59ec6dfdfdf04701c646298b1d80e593f4e2ebb6702ba6dc9bb24db1b62d"
+      },
+      "sha256": "d05e6b589fb8a023368f8fa9f4d24e324e86cd11e55635aa62fd14421708651b",
+      "bytes": 30824,
+      "durationSeconds": 0.17448979591836736
+    },
+    {
+      "id": "optionA",
+      "path": "assets/audio/optionA.wav",
+      "type": "voice-clip",
+      "mimeType": "audio/wav",
+      "tags": [
+        "voice",
+        "letter",
+        "A",
+        "biovista-example"
+      ],
+      "alt": "Spoken option letter A",
+      "license": {
+        "id": "LicenseRef-Organiser-Speech",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "example-only",
+        "instructions": "Preserved original BioVista speech; no general redistribution grant. Use authorized recordings for new events."
+      },
+      "provenance": {
+        "sourceTitle": "Offline spoken option A — installed Microsoft Zira voice",
+        "sourceUrl": "",
+        "sourceAssetUrl": "",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.optionA",
+        "notes": "User-requested spoken option letter, rendered locally using the installed Windows Speech API. Silence trimmed and peak normalized; embedded for offline playback and recording. No runtime speech service or microphone."
+      },
+      "sha256": "1ed6b81bb85b7536ee2eb53adb83957181741f56f0619ecbaf30627c4eaa0523",
+      "bytes": 15016
+    },
+    {
+      "id": "optionB",
+      "path": "assets/audio/optionB.wav",
+      "type": "voice-clip",
+      "mimeType": "audio/wav",
+      "tags": [
+        "voice",
+        "letter",
+        "B",
+        "biovista-example"
+      ],
+      "alt": "Spoken option letter B",
+      "license": {
+        "id": "LicenseRef-Organiser-Speech",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "example-only",
+        "instructions": "Preserved original BioVista speech; no general redistribution grant. Use authorized recordings for new events."
+      },
+      "provenance": {
+        "sourceTitle": "Offline spoken option B — installed Microsoft Zira voice",
+        "sourceUrl": "",
+        "sourceAssetUrl": "",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.optionB",
+        "notes": "User-requested spoken option letter, rendered locally using the installed Windows Speech API. Silence trimmed and peak normalized; embedded for offline playback and recording. No runtime speech service or microphone."
+      },
+      "sha256": "e8254af6fe63f926fc284f73aaed039672cb2302d942a57401451907a01971fd",
+      "bytes": 16042
+    },
+    {
+      "id": "optionC",
+      "path": "assets/audio/optionC.wav",
+      "type": "voice-clip",
+      "mimeType": "audio/wav",
+      "tags": [
+        "voice",
+        "letter",
+        "C",
+        "biovista-example"
+      ],
+      "alt": "Spoken option letter C",
+      "license": {
+        "id": "LicenseRef-Organiser-Speech",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "example-only",
+        "instructions": "Preserved original BioVista speech; no general redistribution grant. Use authorized recordings for new events."
+      },
+      "provenance": {
+        "sourceTitle": "Offline spoken option C — installed Microsoft Zira voice",
+        "sourceUrl": "",
+        "sourceAssetUrl": "",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.optionC",
+        "notes": "User-requested spoken option letter, rendered locally using the installed Windows Speech API. Silence trimmed and peak normalized; embedded for offline playback and recording. No runtime speech service or microphone."
+      },
+      "sha256": "03d6fe52d681664874849c9ac3bfae023b444a4f0cbcd23850530776a274c3e9",
+      "bytes": 21064
+    },
+    {
+      "id": "optionD",
+      "path": "assets/audio/optionD.wav",
+      "type": "voice-clip",
+      "mimeType": "audio/wav",
+      "tags": [
+        "voice",
+        "letter",
+        "D",
+        "biovista-example"
+      ],
+      "alt": "Spoken option letter D",
+      "license": {
+        "id": "LicenseRef-Organiser-Speech",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "url": ""
+      },
+      "reuse": {
+        "scope": "example-only",
+        "instructions": "Preserved original BioVista speech; no general redistribution grant. Use authorized recordings for new events."
+      },
+      "provenance": {
+        "sourceTitle": "Offline spoken option D — installed Microsoft Zira voice",
+        "sourceUrl": "",
+        "sourceAssetUrl": "",
+        "recordedVerificationDate": "2026-10-13",
+        "metadataSource": "quiz.config.json#assets.optionD",
+        "notes": "User-requested spoken option letter, rendered locally using the installed Windows Speech API. Silence trimmed and peak normalized; embedded for offline playback and recording. No runtime speech service or microphone."
+      },
+      "sha256": "54367e3f3dedcda1f1a591e669ecc946d4e173f9c6c0e29548d9781a8237cc30",
+      "bytes": 17762
+    },
+    {
+      "id": "lucide-microscope",
+      "path": "assets/icons/lucide/microscope.svg",
+      "type": "icon",
+      "mimeType": "image/svg+xml",
+      "tags": [
+        "icon",
+        "lucide",
+        "science",
+        "laboratory",
+        "equipment"
+      ],
+      "alt": "Microscope icon",
+      "license": {
+        "id": "ISC",
+        "noticePath": "assets/LICENSES/lucide-LICENSE",
+        "url": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/LICENSE"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Retain the full license notice in every distribution. UI/illustrative icon, not a scientific diagram. Original currentColor defaults to black in image embedding; use a suitable light background or document and validate a deliberate derivative."
+      },
+      "provenance": {
+        "author": "Lucide Icons and Contributors",
+        "sourceRepository": "https://github.com/lucide-icons/lucide",
+        "sourceUrl": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/icons/microscope.svg",
+        "sourcePath": "icons/microscope.svg",
+        "sourceCommit": "d672fc43dbf60962d9d829e35bc3b3e5ed89a178",
+        "sourceBlobSha": "d843a7e7efff86d506de68ece341fc7075f2a6f7",
+        "retrievedOn": "2026-10-15",
+        "modifications": "None; byte-identical upstream SVG."
+      },
+      "sha256": "72fab65c4fdd0a7d784485dc7aaa8bf8c4fba9a4dc9ae38a6538e58bdd8b5f42",
+      "bytes": 429,
+      "width": 24,
+      "height": 24
+    },
+    {
+      "id": "lucide-flask-conical",
+      "path": "assets/icons/lucide/flask-conical.svg",
+      "type": "icon",
+      "mimeType": "image/svg+xml",
+      "tags": [
+        "icon",
+        "lucide",
+        "science",
+        "chemistry",
+        "laboratory"
+      ],
+      "alt": "Flask conical icon",
+      "license": {
+        "id": "ISC",
+        "noticePath": "assets/LICENSES/lucide-LICENSE",
+        "url": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/LICENSE"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Retain the full license notice in every distribution. UI/illustrative icon, not a scientific diagram. Original currentColor defaults to black in image embedding; use a suitable light background or document and validate a deliberate derivative."
+      },
+      "provenance": {
+        "author": "Lucide Icons and Contributors",
+        "sourceRepository": "https://github.com/lucide-icons/lucide",
+        "sourceUrl": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/icons/flask-conical.svg",
+        "sourcePath": "icons/flask-conical.svg",
+        "sourceCommit": "d672fc43dbf60962d9d829e35bc3b3e5ed89a178",
+        "sourceBlobSha": "5917608f5544aca95cb71bf19fb408a92469a6ff",
+        "retrievedOn": "2026-10-15",
+        "modifications": "None; byte-identical upstream SVG."
+      },
+      "sha256": "a2ce857c159bef4c128a6d9f0b6dcbd6504ecf1a2a670ee220efd14fd032b561",
+      "bytes": 383,
+      "width": 24,
+      "height": 24
+    },
+    {
+      "id": "lucide-dna",
+      "path": "assets/icons/lucide/dna.svg",
+      "type": "icon",
+      "mimeType": "image/svg+xml",
+      "tags": [
+        "icon",
+        "lucide",
+        "science",
+        "genetics",
+        "biology"
+      ],
+      "alt": "Dna icon",
+      "license": {
+        "id": "ISC",
+        "noticePath": "assets/LICENSES/lucide-LICENSE",
+        "url": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/LICENSE"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Retain the full license notice in every distribution. UI/illustrative icon, not a scientific diagram. Original currentColor defaults to black in image embedding; use a suitable light background or document and validate a deliberate derivative."
+      },
+      "provenance": {
+        "author": "Lucide Icons and Contributors",
+        "sourceRepository": "https://github.com/lucide-icons/lucide",
+        "sourceUrl": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/icons/dna.svg",
+        "sourcePath": "icons/dna.svg",
+        "sourceCommit": "d672fc43dbf60962d9d829e35bc3b3e5ed89a178",
+        "sourceBlobSha": "f2e63c023a05eaea3429068c3b95e26774cfbbbf",
+        "retrievedOn": "2026-10-15",
+        "modifications": "None; byte-identical upstream SVG."
+      },
+      "sha256": "fb1e39ad72394a4090aaaeb620fc8057d72e3df9497cbbbd26247ba57e747431",
+      "bytes": 614,
+      "width": 24,
+      "height": 24
+    },
+    {
+      "id": "lucide-timer",
+      "path": "assets/icons/lucide/timer.svg",
+      "type": "icon",
+      "mimeType": "image/svg+xml",
+      "tags": [
+        "icon",
+        "lucide",
+        "time",
+        "quiz",
+        "controls"
+      ],
+      "alt": "Timer icon",
+      "license": {
+        "id": "ISC",
+        "noticePath": "assets/LICENSES/lucide-LICENSE",
+        "url": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/LICENSE"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Retain the full license notice in every distribution. UI/illustrative icon, not a scientific diagram. Original currentColor defaults to black in image embedding; use a suitable light background or document and validate a deliberate derivative."
+      },
+      "provenance": {
+        "author": "Lucide Icons and Contributors",
+        "sourceRepository": "https://github.com/lucide-icons/lucide",
+        "sourceUrl": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/icons/timer.svg",
+        "sourcePath": "icons/timer.svg",
+        "sourceCommit": "d672fc43dbf60962d9d829e35bc3b3e5ed89a178",
+        "sourceBlobSha": "77bade6e355ef5c20893f0e9b718af4e108b6026",
+        "retrievedOn": "2026-10-15",
+        "modifications": "None; byte-identical upstream SVG."
+      },
+      "sha256": "6771297be65225d462c930865b6f9ee1617aa453885be4c8116a7512a77ac2b6",
+      "bytes": 327,
+      "width": 24,
+      "height": 24
+    },
+    {
+      "id": "lucide-volume-2",
+      "path": "assets/icons/lucide/volume-2.svg",
+      "type": "icon",
+      "mimeType": "image/svg+xml",
+      "tags": [
+        "icon",
+        "lucide",
+        "audio",
+        "sound",
+        "controls"
+      ],
+      "alt": "Volume 2 icon",
+      "license": {
+        "id": "ISC",
+        "noticePath": "assets/LICENSES/lucide-LICENSE",
+        "url": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/LICENSE"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Retain the full license notice in every distribution. UI/illustrative icon, not a scientific diagram. Original currentColor defaults to black in image embedding; use a suitable light background or document and validate a deliberate derivative."
+      },
+      "provenance": {
+        "author": "Lucide Icons and Contributors",
+        "sourceRepository": "https://github.com/lucide-icons/lucide",
+        "sourceUrl": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/icons/volume-2.svg",
+        "sourcePath": "icons/volume-2.svg",
+        "sourceCommit": "d672fc43dbf60962d9d829e35bc3b3e5ed89a178",
+        "sourceBlobSha": "519e6cbd4d2693a38f7db0e396354cc07b9f4e26",
+        "retrievedOn": "2026-10-15",
+        "modifications": "None; byte-identical upstream SVG."
+      },
+      "sha256": "fb404f9c128a0579de67b399177631e5edb3502fdc247ceb30e8b15754b46071",
+      "bytes": 476,
+      "width": 24,
+      "height": 24
+    },
+    {
+      "id": "lucide-trophy",
+      "path": "assets/icons/lucide/trophy.svg",
+      "type": "icon",
+      "mimeType": "image/svg+xml",
+      "tags": [
+        "icon",
+        "lucide",
+        "award",
+        "competition",
+        "winner"
+      ],
+      "alt": "Trophy icon",
+      "license": {
+        "id": "ISC",
+        "noticePath": "assets/LICENSES/lucide-LICENSE",
+        "url": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/LICENSE"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Retain the full license notice in every distribution. UI/illustrative icon, not a scientific diagram. Original currentColor defaults to black in image embedding; use a suitable light background or document and validate a deliberate derivative."
+      },
+      "provenance": {
+        "author": "Lucide Icons and Contributors",
+        "sourceRepository": "https://github.com/lucide-icons/lucide",
+        "sourceUrl": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/icons/trophy.svg",
+        "sourcePath": "icons/trophy.svg",
+        "sourceCommit": "d672fc43dbf60962d9d829e35bc3b3e5ed89a178",
+        "sourceBlobSha": "8e97a429e047c98ad8ae35eab93dc9935c841334",
+        "retrievedOn": "2026-10-15",
+        "modifications": "None; byte-identical upstream SVG."
+      },
+      "sha256": "c641553befdb899b2eb01075c0962c73b4b0e0d1835d9d407f5d5d4d70f77d03",
+      "bytes": 554,
+      "width": 24,
+      "height": 24
+    },
+    {
+      "id": "lucide-book-open",
+      "path": "assets/icons/lucide/book-open.svg",
+      "type": "icon",
+      "mimeType": "image/svg+xml",
+      "tags": [
+        "icon",
+        "lucide",
+        "learning",
+        "research",
+        "sources"
+      ],
+      "alt": "Book open icon",
+      "license": {
+        "id": "ISC",
+        "noticePath": "assets/LICENSES/lucide-LICENSE",
+        "url": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/LICENSE"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Retain the full license notice in every distribution. UI/illustrative icon, not a scientific diagram. Original currentColor defaults to black in image embedding; use a suitable light background or document and validate a deliberate derivative."
+      },
+      "provenance": {
+        "author": "Lucide Icons and Contributors",
+        "sourceRepository": "https://github.com/lucide-icons/lucide",
+        "sourceUrl": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/icons/book-open.svg",
+        "sourcePath": "icons/book-open.svg",
+        "sourceCommit": "d672fc43dbf60962d9d829e35bc3b3e5ed89a178",
+        "sourceBlobSha": "9e0ace59b788e2b45fc35d9fbf68c2a80bd518bc",
+        "retrievedOn": "2026-10-15",
+        "modifications": "None; byte-identical upstream SVG."
+      },
+      "sha256": "9b9bed0ff057283d5c5c5a1c71f8d3e927db26a56639603a92fdf7b25961510e",
+      "bytes": 387,
+      "width": 24,
+      "height": 24
+    },
+    {
+      "id": "lucide-image",
+      "path": "assets/icons/lucide/image.svg",
+      "type": "icon",
+      "mimeType": "image/svg+xml",
+      "tags": [
+        "icon",
+        "lucide",
+        "media",
+        "picture",
+        "visual"
+      ],
+      "alt": "Image icon",
+      "license": {
+        "id": "ISC",
+        "noticePath": "assets/LICENSES/lucide-LICENSE",
+        "url": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/LICENSE"
+      },
+      "reuse": {
+        "scope": "reusable",
+        "instructions": "Retain the full license notice in every distribution. UI/illustrative icon, not a scientific diagram. Original currentColor defaults to black in image embedding; use a suitable light background or document and validate a deliberate derivative."
+      },
+      "provenance": {
+        "author": "Lucide Icons and Contributors",
+        "sourceRepository": "https://github.com/lucide-icons/lucide",
+        "sourceUrl": "https://github.com/lucide-icons/lucide/blob/d672fc43dbf60962d9d829e35bc3b3e5ed89a178/icons/image.svg",
+        "sourcePath": "icons/image.svg",
+        "sourceCommit": "d672fc43dbf60962d9d829e35bc3b3e5ed89a178",
+        "sourceBlobSha": "3241134c018d44660a5af9453925118d7a95dae5",
+        "retrievedOn": "2026-10-15",
+        "modifications": "None; byte-identical upstream SVG."
+      },
+      "sha256": "619c9db58c879dce6250376ba67d9c9102ca6dbb3b1efb9294c9f180e22273a5",
+      "bytes": 358,
+      "width": 24,
+      "height": 24
+    }
+  ]
+}

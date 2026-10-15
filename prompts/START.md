@@ -1,17 +1,18 @@
-# Start a quiz
+# QSK1 · Start
 
-**Curated for Parul University Goa · Open to every teacher.**
-
-Copy this one line into a capable AI assistant:
+Curated for Parul University Goa · Open to every teacher.
 
 ```text
 Read https://github.com/Namdev90/quiz-show-kit/blob/main/prompts/START.md and run QSK1.
 ```
 
-## Instructions for the assistant
+Read [AGENTS.md](../AGENTS.md) once. These two files are the startup instructions; **do not load the whole library**. Respect the user's request and higher-priority instructions. If retrieval fails, request these files rather than guessing.
 
-Read and follow [the teacher workflow](../docs/TEACHER_PROMPT.md) and its [library](../docs/library/README.md), subject to the user's request and your higher-priority instructions. Retrieve their full contents; reading this entry point alone is insufficient. Guide the teacher one question at a time, research the questions and produce the self-contained offline quiz. Use saved preferences if supplied and readable. Offer five quiz presets and five visual presets, each with Custom. Keep every choice editable through supported settings or a clearly identified, tested extension. Include the compact repository review on every run.
+1. Restore readable prior choices. With a saved key/profile, load [reuse](../docs/library/REUSE_PROTOCOL.md); otherwise ask only the missing topic and audience. Offer quick defaults or detailed setup, one question at a time, with Custom everywhere. Prefer supported visual choices and accept voice replies where available.
+2. At selection, load [presets](../docs/library/PRESETS.md): five quiz and five visual presets, each plus Custom. Use [the interview](../docs/TEACHER_PROMPT.md) only for detailed setup or unresolved choices. All settings stay editable; filter incompatible choices dynamically.
+3. Before drafting, load [research](../docs/library/QUESTION_RESEARCH.md). Research and write the complete requested bank, with defensible answers, actual sources and balanced pairs. Offer review once; honor skips.
+4. For media, search [the asset catalog](../assets/README.md) first. Reuse approved assets and purpose-built tools before generating media or writing code. Load [media routes](../docs/library/MEDIA_TOOLING.md) only when needed.
+5. Before building, read [configuration](../docs/CONFIGURATION.md) and `package.json`; use the existing compiler. Deliver offline HTML, editable configuration, reusable settings and next-session prompt. Without build capability, finish useful work and provide a precise handoff; do not call it a finished quiz.
+6. Each run: check the actual source revision and the relevant touched instructions/code, then report concise findings. Fix/open real PRs when authorized; never publish private material by default. Load [review guidance](../docs/library/REVIEW_AND_FIXES.md) for repair/contribution work.
 
-There is no separate website-builder step. Producing a finished HTML file requires an environment with repository/file access and build execution. If those capabilities are absent, complete useful preparatory work and provide a precise handoff; do not claim that the quiz was built.
-
-The compact `QSK1` codes use the [public decoder](../docs/library/REUSE_PROTOCOL.md). They work across capable assistants; they are not secret or encrypted. If you cannot retrieve these files, say so and request the files or their contents instead of guessing their instructions.
+Use concise replies, stored files and small edits instead of repeating settings or full banks. Read a module once per revision; refresh only when changed or missing. Preserve requirements, verification, accessibility and runtime safeguards. See [the directory map](../docs/library/DIRECTORY_MAP.md) only when a path is needed. QSK1 is public shorthand, not encryption or automatic cross-chat memory.

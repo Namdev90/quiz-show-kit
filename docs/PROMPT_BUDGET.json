@@ -1,0 +1,68 @@
+{
+  "scope": "Required startup text only; detailed modules are deferred, not deleted.",
+  "units": "UTF-8 bytes and whitespace-separated words; not tokens or billing",
+  "baselineCommit": "b1efe0e15a7b5dadcea3bb49500e58828e07383b",
+  "baseline": {
+    "files": [
+      {
+        "file": "prompts/START.md",
+        "bytes": 1463,
+        "words": 201
+      },
+      {
+        "file": "AGENTS.md",
+        "bytes": 4172,
+        "words": 570
+      },
+      {
+        "file": "README.md",
+        "bytes": 5165,
+        "words": 654
+      },
+      {
+        "file": "docs/TEACHER_PROMPT.md",
+        "bytes": 9056,
+        "words": 1284
+      },
+      {
+        "file": "docs/CONFIGURATION.md",
+        "bytes": 17755,
+        "words": 2599
+      },
+      {
+        "file": "package.json",
+        "bytes": 612,
+        "words": 69
+      },
+      {
+        "file": "docs/library/README.md",
+        "bytes": 1573,
+        "words": 206
+      }
+    ],
+    "bytes": 39796,
+    "words": 5583
+  },
+  "current": {
+    "files": [
+      {
+        "file": "prompts/START.md",
+        "bytes": 2463,
+        "words": 306
+      },
+      {
+        "file": "AGENTS.md",
+        "bytes": 2559,
+        "words": 336
+      }
+    ],
+    "bytes": 5022,
+    "words": 642
+  },
+  "byteReductionPercent": 87.4,
+  "limitations": [
+    "Actual total tokens depend on the model, tokenizer, tools, task, later modules and retries.",
+    "A shallow clone may lack the baseline commit; current measurements still work.",
+    "This does not change assistant settings, install a skill or guarantee a cost reduction."
+  ]
+}

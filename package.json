@@ -12,7 +12,8 @@
     "validate": "node scripts/validate.cjs",
     "test": "node --test tests/*.test.cjs",
     "check": "npm run build && npm run build:launcher && npm run validate && npm test",
-    "build:launcher": "node scripts/build-launcher.cjs"
+    "build:launcher": "node scripts/build-launcher.cjs",
+    "measure:prompts": "node scripts/measure-prompts.cjs"
   },
   "devDependencies": {
     "jsdom": "30.1.2"

@@ -44,3 +44,7 @@ The actual BioVista example contains Parul University Goa/PCAHS and BioVista eve
 The institutional and BioVista images are approved event artwork with the documented transparency edits. Python artwork is attributed to the Python Software Foundation's [logo resources](https://www.python.org/community/logos/). OpenAI artwork is attributed to its [brand resources](https://openai.com/brand/). See the detailed [BioVista asset notices](examples/biovista/ASSET_NOTICES.md) and the asset metadata in [quiz.config.json](quiz.config.json).
 
 Question references identify sources supporting the educational content. Linking a source does not transfer rights to its full articles or images. Keep explanations original, preserve attribution, and check permission before adding third-party media. The kit uses local system fonts and does not distribute a font package.
+
+## Workflow and additional reusable assets
+
+The reuse-first workflow adapts principles from DietrichGebert/ponytail (MIT); its pinned source and full copyright/license notice are in [Ponytail provenance](docs/library/PONYTAIL.md). New Lucide/Feather-derived icons have their upstream license in [assets/LICENSES](assets/LICENSES/); exact file provenance, rights and reuse scope are recorded in [the asset catalog](assets/catalog.json). These grants do not cover event trademarks or personal voice recordings.
