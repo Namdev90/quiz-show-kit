@@ -1,6 +1,6 @@
 # Configure a quiz
 
-`quiz.config.json` is the canonical input. Its `schemaVersion` is `1`. Start with the included BioVista configuration and edit a copy for your event. Keep the actual example under `examples/biovista/` intact.
+`quiz.config.json` is the canonical input. Its `schemaVersion` is `1`. Start with the included BioVista configuration and edit a copy for your event. Preserve the historical event under `examples/biovista/original/`; `examples/biovista/` is the current enhanced showcase, rebuilt from `biovista.showcase.config.json` using `npm run build:example`.
 
 The kit supports two teams, matched pairs, four options, and one correct answer. It supports different themes and even main-question counts per round. A multiteam engine, lever/reel selector and absent-team controls require the creator's expansion decision before changing this architecture; see [the extension guide](EXTENDING_ENGINE.md). Free-text and typed-numeric grading, interactive ordering/matching and rotating team membership are outside the accepted scope. Numerical, sequence and matching content remains selectable MCQ.
 
@@ -254,17 +254,19 @@ Static SVG imports also reject namespace-prefixed elements and numeric character
 
 ## Presets and dynamic authoring choices
 
-`src/presets.js` is the public QSK1 decoder: `QSK1 preset=<id> theme=<id>`. The five quiz IDs are `friendly`, `seminar`, `revision`, `competition`, `visual-lab`; theme IDs are `classroom`, `lecture`, `midnight`, `skeuomorphic`, `glass`. Both accept `custom`. See [the preset library](library/PRESETS.md). The decoder rejects unknown versions, IDs, duplicate fields and arbitrary commands. It is a public shorthand, not encryption.
+`src/presets.js` is the public QSK1 decoder: `QSK1 [setup=teacher|competition] [preset=<id>] [theme=<id>]` (omit the brackets and choose one setup value). `setup` is optional authoring depth, not a runtime setting, quiz preset, teacher lifeline or full/short playback mode. Teacher mode chooses sensible defaults with essential questions only; Competition mode exposes granular controls. Explicit current setup takes precedence over readable saved setup; when neither exists, ask exactly Teacher mode versus Competition mode before new topic/preset questions. Never infer setup from `preset=competition`. The five quiz IDs are `friendly`, `seminar`, `revision`, `competition`, `visual-lab`; theme IDs are `classroom`, `lecture`, `midnight`, `skeuomorphic`, `glass`. Both accept `custom`. Existing keys without setup remain valid. See [the preset library](library/PRESETS.md) and [reuse protocol](library/REUSE_PROTOCOL.md). The decoder rejects unknown versions, IDs, duplicate fields and arbitrary commands. It is a public shorthand, not encryption.
 
 The assistant calls `choices(config, capabilities)` after edits and only offers active settings. Disabled paths have human-readable reasons: pass controls depend on passing, lifeline time on the lifeline, voice on sound/local voice availability, and decorative effects on motion. Structural changes are unavailable during live play. Invalid paired inventories or rule values block compilation; suggestions do not silently alter user decisions. A valid configuration still needs factual and timing review.
 
 Agent-side use:
 
 ```sh
-node scripts/preset.cjs --config quiz.config.json --key "QSK1 preset=seminar theme=glass" --output dist/custom.config.json --save-settings dist/my.qsk-settings.json
+node scripts/preset.cjs --config quiz.config.json --key "QSK1 setup=teacher preset=seminar theme=glass" --output dist/custom.config.json --save-settings dist/my.qsk-settings.json
 ```
 
 Reusable settings version 1 contains teams, theme, presentation and rules, plus optional validated `gameplay` and `localization` when supplied. Earlier version-1 files without these optional fields remain valid. Apply with `--settings FILE` after preset defaults. Without an explicit `--key`, the saved key is used. Relocated configuration outputs embed their approved source assets so their relative paths do not break. It omits event identity, questions, rounds, branding and assets; retain the complete event configuration for those. A new chat must receive the profile attachment or accessible link to restore custom choices. The short preset code alone restores only catalog defaults. No hidden cross-chat memory or automatic repository write occurs.
+
+Persist the authoring mode in the saved key with `exportSettings(config,{setup:'teacher'})` or `{setup:'competition'}`; omitting that option retains the legacy no-setup key. CLI `--save-settings` keeps saved setup when an explicit new key changes only preset/theme, and an explicit new setup overrides it. Applying either authoring mode adds no runtime mode field and changes no score rules by itself. Switching authoring depth retains existing choices and the bank; it never grants publication permission or a factual override.
 
 ## Voice recordings and TTS
 

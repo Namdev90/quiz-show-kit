@@ -1,6 +1,10 @@
 # Five starting experiences + Custom
 
-Offer the quiz experience separately from its appearance. Every preset can be changed. Use the current preset implementation as the executable source of truth and [Configuration](../CONFIGURATION.md) for accepted values. The defaults below are starting designs, not evidence that a particular class will finish in a guaranteed time.
+The first authoring choice is **Teacher mode** or **Competition mode**, unless explicitly supplied/restored. That choice controls setup depth and precedes topic/preset questions. It is separate from these quiz presets, visual styles and full/short playback; never infer it from `preset=competition`.
+
+In **Teacher mode**, select a suitable quiz/visual preset automatically from the learning brief; use `friendly` + `classroom` when no better fit is known. Ask only missing essential topic/audience, time and necessary content inputs. Choose valid complete-pair counts/rounds and ordinary defaults, then show a short summary with customization/mode switching available. Do not require the teacher to answer both preset menus or every detailed control. In **Competition mode**, expose the five quiz and five visual presets below, each plus Custom, and all compatible granular controls from [the interview](../TEACHER_PROMPT.md). Respect known choices and “choose for me”; switching mode keeps existing choices.
+
+Every preset can be changed in either mode. A requested customization in Teacher mode opens only the relevant menu/setting; it does not restart setup. Use the current preset implementation as the executable source of truth and [Configuration](../CONFIGURATION.md) for accepted values. The defaults below are starting designs, not evidence that a particular class will finish in a guaranteed time. Independent verification, privacy, asset rights and validation are identical in both modes; automatic setup does not authorize publishing or disputed-answer overrides.
 
 | Choice / ID | Best starting use | Answer / pass / consultation | Direct / passed score | Passing / consultation |
 | --- | --- | --- | --- | --- |

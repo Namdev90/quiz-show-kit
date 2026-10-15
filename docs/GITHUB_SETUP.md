@@ -20,7 +20,7 @@ Avoid running untrusted pull-request code with privileged `pull_request_target` 
 
 ## Hosted prompt launcher
 
-In **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/docs**, and save. The checked-in `docs/index.html` is built by `npm run build:launcher`; its unchanged BioVista example is copied into `docs/examples/biovista`. Publish only these intended public site files.
+In **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/docs**, and save. The checked-in `docs/index.html` is built by `npm run build:launcher`; the current BioVista showcase is regenerated and copied into `docs/examples/biovista`, with the historical original retained in `examples/biovista/original/`. Publish only these intended public site files.
 
 After deployment succeeds, open the URL reported by GitHub Pages and verify the launcher loads, copies the canonical QSK1 prompt (or offers manual selection), links to START.md and opens the preserved BioVista example. Set the repository's About website to that verified URL. Do not announce the site as live solely because workflow YAML was committed.
 

@@ -12,11 +12,11 @@ Read https://github.com/Namdev90/quiz-show-kit/blob/main/prompts/START.md and ru
 
 - The specific repository commit or release actually used.
 - The reviewed event brief and complete configuration, plus approved media and their notices.
-- Decisions already made, requested changes and unresolved questions.
+- Decisions already made, including Teacher/Competition authoring mode when selected, requested changes and unresolved questions. Preserve mode as `setup=teacher` or `setup=competition` in the reusable key; otherwise ask the first two-choice mode question before new topic/preset questions.
 - What research, builds, automated checks and actual browser/hardware checks have run.
 - A saved profile or reusable next-session prompt, when continuing an existing event.
 
-Keep the original BioVista example intact and build the new event separately. Preserve complete matched pairs and the current runtime contract unless implementing a deliberate tested extension.
+Keep the historical BioVista archive under `examples/biovista/original/` intact and build a teacher's new event separately. The current `examples/biovista/` showcase is rebuilt with approved enhancements. Preserve complete matched pairs and the current runtime contract unless implementing a deliberate tested extension.
 
 ## Deliver the quiz
 

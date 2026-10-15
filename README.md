@@ -10,9 +10,18 @@
 Read https://github.com/Namdev90/quiz-show-kit/blob/main/prompts/START.md and run QSK1.
 ```
 
-[**Copy the prompt ↗**](https://namdev90.github.io/quiz-show-kit/) · [Full workflow](prompts/START.md) · [Browse the library](docs/library/README.md) · [Try the original BioVista quiz](https://namdev90.github.io/quiz-show-kit/examples/biovista/BioVista_Quiz_Offline.html)
+[**Copy the prompt ↗**](https://namdev90.github.io/quiz-show-kit/) · [Full workflow](prompts/START.md) · [Browse the library](docs/library/README.md) · [Try the BioVista feature showcase](https://namdev90.github.io/quiz-show-kit/examples/biovista/BioVista_Quiz_Offline.html)
 
 Paste into ChatGPT or another capable assistant. It guides your choices, researches and reviews the questions, builds the quiz when file/build tools are available, and gives you a reusable prompt. **QSK1 is a public workflow shortcut**; the assistant must retrieve its instructions, or ask you to paste them. The website is now a prompt launcher.
+
+The first setup question is **Teacher mode or Competition mode?**
+
+| Mode | How setup works |
+| --- | --- |
+| **Teacher mode** | Give the topic, learner level and available time; the assistant fills the remaining gaps with sensible presets and handles the detailed setup automatically. |
+| **Competition mode** | Choose detailed settings for rounds, scoring, timing, passing, media, appearance and other supported controls, one manageable decision at a time. |
+
+Switch modes or customize a setting at any time without restarting. Both modes use the same evidence review and validation. These are authoring choices, separate from the quiz's full/short playback setting and its five experience presets.
 
 ## Five starting points. Everything adaptable.
 
@@ -56,11 +65,11 @@ Open the resulting HTML in a browser. Its scripts and approved media are embedde
 The assistant should deliver the file directly when capable. Otherwise it prepares a self-contained handoff for a build-capable assistant, with the reviewed configuration, approved assets and exact build steps. [Handoff guidance](docs/CHATGPT_HANDOFF.md)
 
 <details>
-<summary><strong>Original BioVista example</strong></summary>
+<summary><strong>BioVista feature showcase and original archive</strong></summary>
 
-The real event is preserved: **30 main questions, four reserves, six tie cards and one practice card**. Keep it separate from custom events.
+The current example runs the latest engine with **30 main questions, four reserves, six tie cards and one practice card**. Its original question content and scoring are retained, with configurable showcase settings and the supplied Chota Namu character. The feature tour explains which controls to try and which capabilities belong to the authoring workflow.
 
-[Download/open original HTML](examples/biovista/BioVista_Quiz_Offline.html) · [Question bank](examples/biovista/questions.json) · [Provenance](examples/biovista/origin.json) · [Asset notices](examples/biovista/ASSET_NOTICES.md)
+[Open current showcase](examples/biovista/BioVista_Quiz_Offline.html) · [Feature tour](examples/biovista/README.md) · [Original archived HTML](examples/biovista/original/BioVista_Quiz_Offline.html) · [Question bank](examples/biovista/questions.json) · [Provenance](examples/biovista/origin.json) · [Asset notices](examples/biovista/ASSET_NOTICES.md)
 
 </details>
 

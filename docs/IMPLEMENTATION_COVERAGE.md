@@ -43,7 +43,7 @@ Scope: the consolidated implementation handoff dated 15 October 2026. Starting r
 
 | Requirement | Coverage and remaining limit |
 | --- | --- |
-| Supplied and researched questions | Same independent verification instructions, checked-source records, option explanations, review/override choices and quality report. Legacy examples are not relabeled newly verified or silently given invented rationale. |
+| Supplied and researched questions | Same independent verification instructions, checked-source records, option explanations, review/override choices and quality report. The showcase practice question has newly checked NIST unit evidence and per-option rationale; the other 40 inherited cards retain their historical evidence gaps. No wholesale fresh verification is claimed. |
 | Evidence-backed reveal | One compact primary source after reveal, expandable extra sources/option rationale, local bibliographic notes and separate external links. Old sources retain their historical dates. |
 | Honest override | Question/source verification statuses are distinct; explicit creator override records a chosen option and unresolved disagreement. Structural validation still blocks unsafe data. |
 | MCQ subtype variety | Text, numerical, image, graph, code, sequence and matching metadata; all retain four choices and one intended key. Exact scientific figures require appropriate supplied/deterministic assets. |
@@ -53,16 +53,21 @@ Scope: the consolidated implementation handoff dated 15 October 2026. Starting r
 | Branding and character | Namdev Shirodkar credit and special curation kept in entry/About/settings. Actual user-supplied Chota Namu PNG/GIF and project-scoped use/publication permission now recorded; unchanged PNG is optional on welcome/About/settings with a persistent visibility toggle. GIF remains a reference; no gaze or substitute asset added. Existing Parul/PCAHS logo provenance is recorded; broader usage permission still needs confirmation. |
 | Responsive and keyboard behavior | Existing responsive layout plus fit-to-screen zoom and focus/keyboard checks; actual tested viewports/zoom belong to QA, not inferred guarantees. |
 | Lean library and presets | Concise START + AGENTS; five quiz and five visual presets plus Custom preserved. Relevant modules load by phase. Prompt size measured as bytes, never invented billing/token savings. |
-| Reuse and preservation | Existing licensed local components and installed DOCX tooling reused, BioVista example preserved. Existing locked development dependencies were restored for checks; no new dependency/model adopted or unrelated media fetched. Rights gaps remain explicit. |
+| Reuse and preservation | Existing licensed local components and installed DOCX tooling reused, original BioVista files preserved in `examples/biovista/original/` while the public example is rebuilt with the current features. Existing locked development dependencies were restored for checks; no new dependency/model adopted or unrelated media fetched. Rights gaps remain explicit. |
 | Recovery | Existing paused resume/checkpoint copy preserved; interrupted-event recovery must follow the tested launch route and storage behavior described in QA. |
 | Actual platforms | Linux browser testing is reported as Linux. **Actual Windows and actual macOS/Safari testing were not performed in this environment.** |
-| Repository/publication authority | Initial review package was local. The user's subsequent explicit push instruction authorizes reviewed branch publication and draft-PR preparation; the actual remote result is pending confirmation. Merge/deployment and unrelated publication remain outside that authorization. |
+| Repository/publication authority | Initial review was local, then the tested implementation was pushed as PR #5. The user's subsequent merge requests and instruction to add setup modes, refresh BioVista and push everything authorize completing that PR after checks. Unrelated private/event-restricted publication remains outside this scope. |
+
+## Subsequent accepted additions
+
+- **Teacher / Competition authoring modes:** the first unresolved setup question has exactly these two choices. Teacher chooses compatible defaults and asks only essentials; Competition exposes all supported controls. Switching preserves prior answers. `setup=teacher|competition` persists the choice without changing runtime rules or legacy keys.
+- **Current BioVista showcase:** latest runtime at the existing public example route, original bank/scoring retained, optional shuffle/discussion/difficulty/round rotation/statistics/revision/character demonstrated, and companion DOCX/settings/review plus a feature guide. Mutually exclusive choices and content subtypes remain documented alternatives. The historical original is archived byte for byte.
 
 ## Decisions and inputs still needed
 
 1. Whether to expand the engine beyond two teams. Only after that decision should a scalable lever/reel selector and absent-team behavior be implemented and verified together.
 2. Confirmation that the cataloged Parul/PCAHS logo is the intended authorized file for the target distribution. The actual Chota Namu artwork has now been supplied and authorized for this project/publication; unrelated reuse rights are not granted.
 3. Actual Windows and macOS/Safari execution access for platform claims; Linux WebKit or browser emulation cannot substitute for a Mac.
-4. Separate authorization before merging, deploying or publishing unrelated private/event-restricted material. The user's later push instruction covers the reviewed branch and draft PR, not those additional actions.
+4. Separate authorization before publishing unrelated private/event-restricted material or changing the scope beyond this toolkit and its public BioVista example.
 
 For exact implementation files and verified commands/results, use [Implementation QA](IMPLEMENTATION_QA.md). For source fields and author-operated commands, use [Configuration](CONFIGURATION.md).

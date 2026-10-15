@@ -10,6 +10,7 @@ The [one-line launcher](../../prompts/START.md) starts the staged workflow; [the
 | Reduce repeated context | [Lean workflow](LEAN_WORKFLOW.md) and [Ponytail provenance](PONYTAIL.md) |
 | Generate a missing asset | [Optional open-source tools and plugin routes](MEDIA_TOOLING.md) |
 | Choose a starting experience | [Five quiz presets + five visual presets, both with Custom](PRESETS.md) |
+| Choose Teacher-mode defaults or Competition-mode granular setup | [Authoring-mode interview](../TEACHER_PROMPT.md) when needed; the first mode choice is in START |
 | Research, ideate and calibrate questions | [Sources and difficulty rubric](QUESTION_RESEARCH.md) |
 | Edit supplied questions, review changes or export DOCX/optional print | [Question-bank workflow](QUESTION_BANK.md) |
 | Add diagrams, logos or a clear voice | [Assets and narration](ASSETS_AND_VOICE.md) |
@@ -18,6 +19,6 @@ The [one-line launcher](../../prompts/START.md) starts the staged workflow; [the
 | Choose a model or specialist tool | [Capability-based routing](MODEL_ROUTING.md) |
 | Reapply a personal setup next time | [Public QSK1 decoder and reusable settings](REUSE_PROTOCOL.md) |
 
-**Flow:** brief → presets/custom → research → optional teacher review → build and checks → offline quiz + reusable setup.
+**Flow:** Teacher mode / Competition mode → missing brief inputs → automatic settings or granular choices → research → optional teacher review → build and checks → offline quiz + reusable setup. Skip the first mode question only when the mode is explicitly supplied/restored; never infer it from the quiz preset. Both routes use the same verification and safety requirements. Switching routes retains completed work.
 
-The canonical input contract is [Configuration](../CONFIGURATION.md); the current implementation is the source of truth for availability. [Extension guidance](../EXTENDING_ENGINE.md) covers requests beyond it. Recommendations and proposed extensions are not implemented features. Preserve the real [BioVista example](../../examples/biovista/) and its [asset notices](../../examples/biovista/ASSET_NOTICES.md).
+The canonical input contract is [Configuration](../CONFIGURATION.md); the current implementation is the source of truth for availability. [Extension guidance](../EXTENDING_ENGINE.md) covers requests beyond it. Recommendations and proposed extensions are not implemented features. The [current BioVista showcase](../../examples/biovista/README.md) uses approved enhancements; preserve the [historical original](../../examples/biovista/original/) and its [asset notices](../../examples/biovista/original/ASSET_NOTICES.md). Custom teacher events remain separate.

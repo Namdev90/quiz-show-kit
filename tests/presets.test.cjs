@@ -50,3 +50,36 @@ test('Narration references require existing audio, four slots and bounded voice 
  const c=P.apply(original,'QSK1');c.assets.recording={file:'assets/audio/optionA.wav'};c.questions[0].narration={stem:'recording',options:['recording',null,null,null]};assert.doesNotThrow(()=>C.build(c,runtime(c)));
  for(const mutation of [x=>x.questions[0].narration.stem='missing',x=>x.questions[0].narration.options=['recording'],x=>x.questions[0].narration.extra=true,x=>x.presentation.speechRate=0,x=>x.presentation.voiceLang='<script>',x=>x.assets.recording={data:'data:image/png;base64,AAAA'}]){const x=structuredClone(c);mutation(x);assert.throws(()=>C.validate(x));}
 });
+
+test('Authoring setup is explicit and preserves legacy decoder/export shapes and runtime configuration',()=>{
+ assert.deepEqual(P.decode('QSK1 preset=competition'),{preset:'competition',theme:'classroom'});
+ assert.deepEqual(P.exportSettings(original,{}),P.exportSettings(original));
+ assert.equal(P.exportSettings(original).key,'QSK1 preset=custom theme=custom');
+ const baseline=P.apply(original,'QSK1 preset=seminar theme=glass');
+ for(const setup of ['teacher','competition']){
+  assert.deepEqual(P.decode('QSK1 setup='+setup),{preset:'friendly',theme:'classroom',setup});
+  const applied=P.apply(original,'QSK1 preset=seminar theme=glass setup='+setup);
+  assert.deepEqual(applied,baseline);assert.equal(applied.setup,undefined);assert.equal(applied.mode,undefined);
+  const saved=P.exportSettings(applied,{setup});assert.equal(saved.key,'QSK1 preset=custom theme=custom setup='+setup);
+  assert.deepEqual(saved.settings,P.exportSettings(baseline).settings);
+  assert.deepEqual(P.apply(original,undefined,saved),P.apply(original,undefined,P.exportSettings(baseline)));
+ }
+});
+test('Authoring setup rejects unsupported and duplicate syntax without inferring a replacement',()=>{
+ for(const key of ['QSK1 setup=unknown','QSK1 setup=Teacher','QSK1 setup=teacher setup=competition','QSK1 setup=teacher setup=teacher','QSK1 setup=teacher,competition','QSK1 setup=','QSK1 setup=full'])assert.throws(()=>P.decode(key));
+ for(const options of [{setup:'full'},{setup:null},{setup:1},{setup:'teacher',mode:'short'},[],null])assert.throws(()=>P.exportSettings(original,options),/setup/);
+ const badSaved=P.exportSettings(original);badSaved.key+=' setup=wrong';assert.throws(()=>P.apply(original,'QSK1 preset=friendly',badSaved),/authoring setup/);
+});
+test('CLI saves and restores authoring setup across preset-only keys, with explicit setup taking priority',()=>{
+ const os=require('node:os'),path=require('node:path'),cp=require('node:child_process'),root=path.resolve(__dirname,'..');
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'qsk-authoring-'));
+ try{
+  function save(name,key,settings){const output=path.join(directory,name+'.json'),args=[path.join(root,'scripts/preset.cjs'),'--config',path.join(root,'quiz.config.json'),'--save-settings',output];if(key!==undefined)args.push('--key',key);if(settings)args.push('--settings',settings);cp.execFileSync(process.execPath,args,{stdio:'pipe'});return {file:output,value:JSON.parse(fs.readFileSync(output,'utf8'))};}
+  const legacy=save('legacy','QSK1 preset=competition');assert.equal(legacy.value.key,'QSK1 preset=custom theme=custom');
+  const competition=save('competition','QSK1 preset=competition theme=midnight setup=competition');assert.equal(P.decode(competition.value.key).setup,'competition');
+  const imported=save('imported',undefined,competition.file);assert.equal(P.decode(imported.value.key).setup,'competition');
+  const changedPreset=save('preset-only','QSK1 preset=friendly theme=classroom',competition.file);assert.equal(P.decode(changedPreset.value.key).setup,'competition');
+  const teacher=save('teacher','QSK1 preset=friendly theme=classroom setup=teacher',competition.file);assert.equal(P.decode(teacher.value.key).setup,'teacher');
+  assert.deepEqual(teacher.value.settings,changedPreset.value.settings);assert.equal(teacher.value.settings.setup,undefined);assert.equal(teacher.value.settings.mode,undefined);
+ }finally{fs.rmSync(directory,{recursive:true,force:true});}
+});

@@ -1,0 +1,90 @@
+{
+  "qskPresetVersion": 1,
+  "key": "QSK1 preset=custom theme=custom setup=competition",
+  "settings": {
+    "teams": [
+      {
+        "id": "Bio",
+        "name": "Team Bio",
+        "color": "#14e07c"
+      },
+      {
+        "id": "Vista",
+        "name": "Team Vista",
+        "color": "#2c9dff"
+      }
+    ],
+    "theme": {
+      "background": "#202829",
+      "surface": "#304047",
+      "text": "#fff4dc",
+      "font": "Segoe UI",
+      "motif": "dna",
+      "style": "flat"
+    },
+    "presentation": {
+      "motion": "cinematic",
+      "sound": true,
+      "volume": 80,
+      "spokenOptions": true,
+      "confetti": true,
+      "rewards": true,
+      "intro": true,
+      "coinAnimation": true,
+      "questionAnimation": true,
+      "winnerAnimation": true,
+      "optionSpeech": "smart",
+      "voiceName": "",
+      "voiceLang": "en-IN",
+      "speechRate": 1,
+      "readQuestions": false,
+      "character": true
+    },
+    "rules": {
+      "primarySeconds": 15,
+      "passedSeconds": 7,
+      "teacherSeconds": 7,
+      "graceSeconds": 8,
+      "optionsRevealMs": 1800,
+      "passTransitionMs": 1000,
+      "scoring": {
+        "directCorrect": 10,
+        "primaryWrong": -2,
+        "passedCorrect": 2,
+        "passedWrong": -5
+      },
+      "passing": true,
+      "teacher": true,
+      "shortPairsPerRound": 2
+    },
+    "gameplay": {
+      "shuffleOptions": true,
+      "discussionSeconds": 3,
+      "difficultyOrder": "rising",
+      "difficultyLevels": [
+        "accessible",
+        "moderate",
+        "challenging"
+      ],
+      "roundOrder": "alternate",
+      "statistics": [
+        "directOpportunities",
+        "passesOffered",
+        "passesReached",
+        "attempted",
+        "correct",
+        "wrong",
+        "scores",
+        "primaryCorrect",
+        "passedCorrect",
+        "accuracy",
+        "winningChance"
+      ],
+      "revisionReport": true
+    },
+    "localization": {
+      "language": "en",
+      "labels": {}
+    }
+  }
+}

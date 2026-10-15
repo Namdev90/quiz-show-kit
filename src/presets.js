@@ -21,13 +21,16 @@ function decode(key){
  if(typeof key!=='string'||key.length>500)throw Error('QSK1 key must be text up to 500 characters.');
  const parts=key.trim().split(/\s+/);if(parts.shift()!=='QSK1')throw Error('Unsupported preset protocol; expected QSK1.');
  const result={preset:'friendly',theme:'classroom'},seen=new Set();
- for(const token of parts){const match=/^(preset|theme)=([a-z-]+)$/.exec(token);if(!match||seen.has(match[1]))throw Error('Use QSK1 preset=<id> theme=<id>, without duplicate fields.');seen.add(match[1]);result[match[1]]=match[2];}
+ for(const token of parts){const match=/^(preset|theme|setup)=([a-z-]+)$/.exec(token);if(!match||seen.has(match[1]))throw Error('Use QSK1 preset=<id> theme=<id> [setup=teacher|competition], without duplicate fields.');seen.add(match[1]);result[match[1]]=match[2];}
  if(result.preset!=='custom'&&!Object.hasOwn(quiz,result.preset))throw Error('Unknown quiz preset.');
  if(result.theme!=='custom'&&!Object.hasOwn(theme,result.theme))throw Error('Unknown theme preset.');
+ if(result.setup!==undefined&&!['teacher','competition'].includes(result.setup))throw Error('Unknown authoring setup; choose teacher or competition.');
  return result;
 }
 function apply(config,key,saved){
  const selection=decode(key??saved?.key??'QSK1'),c=copy(config);
+ // setup chooses authoring depth only. It is deliberately not copied into runtime configuration.
+ if(saved?.key!==undefined)decode(saved.key);
  if(selection.preset!=='custom'){
   c.rules=copy(quiz[selection.preset].rules);
   c.presentation={...c.presentation,motion:selection.preset==='competition'?'cinematic':'gentle',sound:true,volume:60,spokenOptions:true,optionSpeech:'smart',readQuestions:false,voiceName:'',voiceLang:'en-IN',speechRate:1};
@@ -41,10 +44,12 @@ function apply(config,key,saved){
  }
  Compiler.validate(c);return c;
 }
-function exportSettings(config){
+function exportSettings(config,options){
+ if(options!==undefined&&(!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(k=>k!=='setup')))throw Error('Settings export options support only an optional authoring setup.');
+ const setup=options?.setup;if(setup!==undefined&&!['teacher','competition'].includes(setup))throw Error('Unknown authoring setup; choose teacher or competition.');
  const validated=Compiler.validate(config);
  const presentation=validated.presentation||{motion:'cinematic',sound:true,volume:80,spokenOptions:true,confetti:true,rewards:true,intro:true,coinAnimation:true,questionAnimation:true,winnerAnimation:true,optionSpeech:'letters',voiceName:'',voiceLang:'en-IN',speechRate:1,readQuestions:false};
- return {qskPresetVersion:1,key:'QSK1 preset=custom theme=custom',settings:copy({teams:config.teams,theme:validated.theme,presentation,rules:config.rules||{},...(validated.gameplay?{gameplay:validated.gameplay}:{}),...(validated.localization?{localization:validated.localization}:{})})};
+ return {qskPresetVersion:1,key:'QSK1 preset=custom theme=custom'+(setup===undefined?'':' setup='+setup),settings:copy({teams:config.teams,theme:validated.theme,presentation,rules:config.rules||{},...(validated.gameplay?{gameplay:validated.gameplay}:{}),...(validated.localization?{localization:validated.localization}:{})})};
 }
 function choices(config,capabilities={}){
  const p=config.presentation||{},r=config.rules||{};
