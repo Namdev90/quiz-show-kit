@@ -6,6 +6,8 @@
 
 **Current toolkit: v1.1.2.** [Latest tested release and downloads](https://github.com/Namdev90/quiz-show-kit/releases/latest) · [Changes](CHANGELOG.md) · [Release contents and limits](docs/releases/v1.1.2.md)
 
+[Documentation guide](docs/README.md) · [Hosting and troubleshooting](docs/OPERATIONS.md) · [Architecture](docs/ARCHITECTURE.md) · [Project history](docs/HISTORY.md)
+
 ## Start with one prompt
 
 ```text
