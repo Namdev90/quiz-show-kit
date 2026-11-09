@@ -4,12 +4,16 @@ permissions:
   contents: read
 jobs:
   check:
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22.22.2', '24']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '24'
+          node-version: ${{ matrix.node }}
           cache: npm
       - run: npm ci --ignore-scripts
       - name: Prepare the DOCX authoring test environment
@@ -19,3 +23,5 @@ jobs:
       - run: npm run check
         env:
           QSK_PYTHON: ${{ github.workspace }}/.venv-authoring/bin/python
+      - name: Require reproducible committed quiz and launcher outputs
+        run: git diff --exit-code -- index.html docs/index.html examples/biovista docs/examples/biovista

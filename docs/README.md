@@ -35,7 +35,7 @@ The supported bundled format has two teams, four options, one correct answer and
 - [Current BioVista showcase](../examples/biovista/README.md): the fixed Apex example and its companion files.
 - [Showcase requirements audit](SHOWCASE_AUDIT.md) and [evidence review](../examples/biovista/EVIDENCE_REVIEW.md): demonstrated behavior and question-review limits.
 - [Project history](HISTORY.md) and [changelog](../CHANGELOG.md): source-linked development and release milestones.
-- [Release notes](releases/v1.1.2.md), [release QA](RELEASE_QA.md) and [machine-readable verification](VERIFICATION.json): dated evidence for the current version.
+- [Release notes](releases/v1.1.3.md), [release QA](RELEASE_QA.md) and [machine-readable verification](VERIFICATION.json): dated evidence for the unreleased source candidate.
 - [Earlier implementation QA](IMPLEMENTATION_QA.md) and [historical verification records](history/): retain their original dates and test scope.
 - [Original BioVista archive](../examples/biovista/original/README.md): preserved source material, not the current configurable toolkit.
 - [Third-party notices](../THIRD_PARTY_NOTICES.md), [asset notices](../examples/biovista/ASSET_NOTICES.md) and [MIT license](../LICENSE): different scopes of permission.

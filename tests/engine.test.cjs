@@ -135,4 +135,27 @@ test('Recovery tie gates honor explicit score corrections and reserve score roll
  }
 });
 
+test('Cancel lock preserves a paused answer clock across host pause, interruption and recovery',()=>{
+ for(const route of ['host','interruption','recovery']){
+  const {E}=engine(runtime());let s=step(E,begin(E),1200);const answerMs=E.view(s).remainingMs;
+  s=act(E,s,'STAGE',{option:0});s=step(E,s,1000);
+  s=route==='recovery'?E.hydrate(E.checkpoint(s),50000):act(E,s,route==='host'?'PAUSE':'INTERRUPT');
+  const reason=s.pauseReason;s=act(E,s,'CANCEL_ACK');
+  assert.equal(s.phase,'answering');assert.equal(s.timer.paused,true);assert.equal(s.pauseReason,reason);assert.equal(E.view(s).remainingMs,answerMs);
+  s=step(E,s,2000);assert.equal(E.view(s).remainingMs,answerMs);assert.equal(s.records.length,0);
+  s=E.hydrate(E.checkpoint(s),s.lastNow);s=act(E,s,'RESUME');s=step(E,s,100);assert.equal(E.view(s).remainingMs,answerMs-100);
+ }
+});
+test('Teacher clock changes preserve pause and restore exact answer or entry time',()=>{
+ for(const acknowledged of [false,true]){
+  const {E}=engine(runtime());let s=step(E,begin(E),1200);if(acknowledged)s=act(E,s,'STAGE',{option:0});s=step(E,s,500);
+  const originalMs=E.view(s).remainingMs,originalMode=s.timer.mode;s=act(E,s,'PAUSE');const reason=s.pauseReason;
+  s=act(E,s,'USE_LIFELINE');assert.equal(s.timer.paused,true);assert.equal(s.pauseReason,reason);assert.equal(E.view(s).remainingMs,s.config.teacherMs);
+  s=step(E,s,2000);assert.equal(E.view(s).remainingMs,s.config.teacherMs);
+  s=act(E,s,'RESUME');s=step(E,s,1000);s=E.hydrate(E.checkpoint(s),50000);const recoveredReason=s.pauseReason;
+  s=act(E,s,'RESUME_LIFELINE');assert.equal(s.lifelineActive,null);assert.equal(s.timer.mode,originalMode);assert.equal(s.timer.paused,true);assert.equal(s.pauseReason,recoveredReason);assert.equal(E.view(s).remainingMs,originalMs);
+  s=step(E,s,2000);assert.equal(E.view(s).remainingMs,originalMs);s=E.hydrate(E.checkpoint(s),s.lastNow);s=act(E,s,'RESUME');s=step(E,s,100);assert.equal(E.view(s).remainingMs,originalMs-100);
+ }
+});
+
 let failed=0;for(const[name,fn]of tests){try{fn();console.log('PASS',name);}catch(error){failed++;console.error('FAIL',name,'\n ',error.message);}}console.log(`${tests.length-failed}/${tests.length} generic engine/profile tests passed`);if(failed)process.exitCode=1;

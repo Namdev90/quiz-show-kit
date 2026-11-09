@@ -190,6 +190,13 @@
     if(s.timer && !s.timer.paused){s.timer.remainingMs=remaining(s.timer,now);s.timer.deadline=null;s.timer.paused=true;}
     s.pauseReason=reason;
   }
+  // Changing a clock's purpose must not silently resume a host pause,
+  // interruption or recovered checkpoint. Only RESUME releases that pause.
+  function replaceTimer(s,mode,ms,now) {
+    const paused=Boolean(s.timer?.paused),reason=s.pauseReason;
+    startTimer(s,mode,ms,now);
+    if(paused)pauseTimer(s,now,reason);
+  }
   function loadCard(s,item,phase,now) {
     s.questionId=item.id;s.primaryTeam=item.primaryTeam;s.activeTeam=item.primaryTeam;s.turn='primary';s.kind=item.kind;
     s.phase=phase;s.selected=null;s.lockedAnswer=null;s.timer=null;s.answerRemainingMs=null;s.pauseReason='';s.winner=null;s.lifelineActive=null;
@@ -226,9 +233,9 @@
   }
   function finishTeacher(s,effects,now,early=false) {
     const returnClock=s.lifelineActive.returnClock;
-    s.lifelineActive=null;startTimer(s,returnClock.mode,returnClock.remainingMs,now);
+    s.lifelineActive=null;replaceTimer(s,returnClock.mode,returnClock.remainingMs,now);
     recordLog(s,'lifeline-resumed',now,{early});
-    effects.push({type:'sound',cue:'lifelineResume'},{type:'notice',message:early?'Teacher consultation finished. Original clock resumes.':'Teacher time is up. Original clock resumes.'},{type:'teacher-finished',early});
+    effects.push({type:'sound',cue:'lifelineResume'},{type:'notice',message:(early?'Teacher consultation finished. ':'Teacher time is up. ')+(s.timer.paused?'Original clock stays paused.':'Original clock resumes.')},{type:'teacher-finished',early});
   }
   function tick(original,rawNow) {
     if(!stateProfileValid(original))return {state:original,effects:[],error:'This state does not match the loaded competition profile.'};
@@ -368,7 +375,7 @@
         turnOutcome(s,s.selected,'answer',effects,now);
       } else if(type==='CANCEL_ACK') {
         if(s.phase!=='acknowledged')throw new Error('There is no acknowledgement to cancel.');
-        s.phase='answering';s.selected=null;startTimer(s,'answer',s.answerRemainingMs,now);s.answerRemainingMs=null;recordLog(s,'acknowledgement-cancelled',now);effects.push({type:'sound',cue:'cancel'});
+        s.phase='answering';s.selected=null;replaceTimer(s,'answer',s.answerRemainingMs,now);s.answerRemainingMs=null;recordLog(s,'acknowledgement-cancelled',now);effects.push({type:'sound',cue:'cancel'});
       } else if(type==='PAUSE') {
         if(!s.timer || s.timer.paused)throw new Error('There is no running timer to pause.');
         pauseTimer(s,now,action.reason || 'Host pause');recordLog(s,'paused',now,{reason:s.pauseReason});effects.push({type:'sound',cue:'pause'});
@@ -383,7 +390,7 @@
         const returnClock={mode:s.timer.mode,remainingMs:remaining(s.timer,now)};
         s.lifelines[s.activeTeam]=true;s.lifelineActive={team:s.activeTeam,questionId:s.questionId,kind:s.kind,returnClock};
         s.lifelineUses.push({team:s.activeTeam,questionId:s.questionId,kind:s.kind,at:now,voided:false});
-        startTimer(s,'teacher',s.config.teacherMs,now);recordLog(s,'lifeline-used',now,{kind:s.kind,consultationMs:s.config.teacherMs});effects.push({type:'sound',cue:'lifeline'});
+        replaceTimer(s,'teacher',s.config.teacherMs,now);recordLog(s,'lifeline-used',now,{kind:s.kind,consultationMs:s.config.teacherMs});effects.push({type:'sound',cue:'lifeline'});
       } else if(type==='RESUME_LIFELINE') {
         if(!s.lifelineActive || !s.timer || s.timer.mode!=='teacher')throw new Error('There is no teacher consultation to finish.');
         finishTeacher(s,effects,now,true);
