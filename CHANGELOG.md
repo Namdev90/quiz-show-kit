@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.3 - Unreleased
+
+- Preserve host/interruption/recovery pauses when canceling an answer lock or starting/finishing a teacher consultation. Explicit Resume is still required.
+- Compile literal placeholder-like quiz text in one pass without interpreting it as another runtime insertion.
+- Update the test-only undici dependency to 8.12.4, clearing the advisory findings from the locked development tree.
+- Check both Node.js 22.22.2 and 24 in CI and reject stale committed generated quiz/launcher outputs.
+- Regenerate the current showcase and preserve original questions, archive, prior releases and dated QA evidence. See [v1.1.3 verification](docs/RELEASE_QA.md).
+
 ## 1.1.2 - 15 October 2026
 
 - Complete the 40 inherited BioVista evidence reviews with inspected primary sources and 160 original option rationales; retain all educational content, keys and scoring.

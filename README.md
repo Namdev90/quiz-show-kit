@@ -4,7 +4,7 @@
 
 **Curated for Parul University Goa · Open to every teacher.** Created by **Namdev Shirodkar**, a Parul University Goa student. Independent toolkit.
 
-**Current toolkit: v1.1.2.** [Latest tested release and downloads](https://github.com/Namdev90/quiz-show-kit/releases/latest) · [Changes](CHANGELOG.md) · [Release contents and limits](docs/releases/v1.1.2.md)
+**Source candidate: v1.1.3 (not yet released).** [Latest tested release and downloads](https://github.com/Namdev90/quiz-show-kit/releases/latest) · [Changes](CHANGELOG.md) · [Release contents and limits](docs/releases/v1.1.3.md)
 
 [Documentation guide](docs/README.md) · [Hosting and troubleshooting](docs/OPERATIONS.md) · [Architecture](docs/ARCHITECTURE.md) · [Project history](docs/HISTORY.md)
 
@@ -86,6 +86,8 @@ python3 -m venv .venv-authoring
 .venv-authoring/bin/python -m pip install -r requirements-authoring.txt
 QSK_PYTHON=.venv-authoring/bin/python npm run check
 ```
+
+For development checks, use Node.js 22.22.2+, 24.15.0+, or 26+, matching the locked jsdom support range; Node.js 24 is the recommended development line. Ordinary dependency-free builds retain Node.js 22 support.
 
 These POSIX-shell commands prepare the existing DOCX authoring toolchain, build the quiz and prompt launcher, validate the original configuration, and run the automated tests. On Windows, use the virtual environment's `Scripts/python.exe` and set `QSK_PYTHON` to that executable in your shell. An existing Python environment with the pinned packages can be selected instead. Python is needed for DOCX authoring/tests, not for building or playing an ordinary quiz. Browser layout, factual correctness and physical audio/projector quality require separate checks. The optional `node scripts/browser-smoke.cjs` checks the launcher with an installed Playwright Core and Chromium.
 

@@ -1,6 +1,6 @@
 # Architecture and source map
 
-This describes the v1.1.2 source line. The toolkit is a Node.js authoring/build project whose output is a standalone browser document. Ordinary quiz building and playback do not require the optional Python DOCX toolchain.
+This describes the v1.1.3 source line. The toolkit is a Node.js authoring/build project whose output is a standalone browser document. Ordinary quiz building and playback do not require the optional Python DOCX toolchain.
 
 ## Data flow
 

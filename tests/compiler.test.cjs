@@ -21,3 +21,20 @@ test('A local image is embedded exactly without retaining its filesystem locatio
 test('Missing local assets and incomplete runtime markers fail instead of emitting broken files',()=>{const c=custom();c.assets={missing:{file:'missing.png'}};assert.throws(()=>Compiler.build(c,Runtime.runtime(custom(),configFile)),/not loaded/);const r=Runtime.runtime(custom(),configFile);r.template=r.template.replace('__ENGINE__','');assert.throws(()=>Compiler.build(custom(),r),/__ENGINE__ must appear once/);});
 test('CLI builds a runnable candidate to an explicit portable output location',()=>{const t=temp();try{const c=custom(),p=path.join(t.directory,'quiz.json'),out=path.join(t.directory,'quiz.html');fs.writeFileSync(p,JSON.stringify(c));const text=cp.execFileSync(process.execPath,[path.join(root,'scripts/build.cjs'),'--config',p,'--output',out],{encoding:'utf8'}),result=JSON.parse(text);assert.equal(result.mainQuestions,2);assert.equal(result.totalCards,2);assert.equal(hash(fs.readFileSync(out)),result.sha256);assert.equal(data(fs.readFileSync(out,'utf8'),'kit-config').teams.Vista.name,'Nova');}finally{t.cleanup();}});
 test('Optional supplied character uses a validated static image and preserves generic defaults and scoring identity',()=>{const base=custom(),original=Compiler.validate(base);assert.equal(original.branding.character,undefined);const c=custom();c.assets.chotaNamu={file:'assets/characters/chota-namu.png',license:'LicenseRef-User-Provided-Project-Use',licenseText:fs.readFileSync(path.join(root,'assets/characters/NOTICE.md'),'utf8')};c.branding.character={asset:'chotaNamu',alt:'Chota Namu supplied by Namdev Shirodkar'};c.presentation={};const normalized=Compiler.validate(c);assert.equal(normalized.presentation.character,true);assert.equal(normalized.branding.character.asset,'chotaNamu');assert.equal(normalized.profileId,original.profileId);c.presentation.character=false;assert.equal(Compiler.validate(c).presentation.character,false);const built=build(c),embedded=data(built.html,'asset-data').chotaNamu;assert.equal(embedded.data,'data:image/png;base64,'+fs.readFileSync(path.join(root,'assets/characters/chota-namu.png')).toString('base64'));assert.match(embedded.licenseText,/project-specific user authorization/);for(const mutate of [x=>x.branding.character.asset='missing',x=>x.presentation.character='yes',x=>x.assets.chotaNamu={data:'data:audio/wav;base64,AAAA'}]){const invalid=copy(c);mutate(invalid);assert.throws(()=>Compiler.validate(invalid),/character/);}});
+
+
+test('Literal template markers in quiz text and runtime comments remain data',()=>{
+ const c=custom();c.event.title='Learn __ENGINE__ and __TITLE__';c.questions[0].stem='Which literal is __CONFIG__ or __UI__?';c.questions[0].options[0]='__QUESTIONS__';
+ c.questions[0].explanation='Keep __THEME__, __DNA3D_CSS__ and __ASSETS__ literal.';
+ const r=Runtime.runtime(c,configFile);r.scripts.engine+='\n// A source example may mention __UI__ literally.\n';
+ const built=Compiler.build(c,r);
+ assert.equal(data(built.html,'kit-config').event.title,c.event.title);
+ for(const key of ['stem','options','explanation'])assert.deepEqual(data(built.html,'quiz-data')[0][key],c.questions[0][key]);
+ assert.ok(built.html.includes('<title>Learn __ENGINE__ and __TITLE__</title>'));
+ assert.ok(built.html.includes('// A source example may mention __UI__ literally.'));
+});
+
+test('Duplicate template markers are rejected before any substitution',()=>{
+ const c=custom(),r=Runtime.runtime(c,configFile);r.template+='__ENGINE__';
+ assert.throws(()=>Compiler.build(c,r),/__ENGINE__ must appear once/);
+});
