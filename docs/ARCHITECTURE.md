@@ -58,7 +58,7 @@ The optional audience window receives only selected public display fragments. It
 
 ## Reproducibility and release boundaries
 
-[build-provenance.cjs](../scripts/build-provenance.cjs) computes `runtime-source-v1` from runtime, build, dependency and license inputs. Git state, Markdown documentation and generated outputs are outside that runtime identity. A documentation-only change does not require a new quiz profile or regenerated runtime bundle.
+[build-provenance.cjs](../scripts/build-provenance.cjs) computes `runtime-source-v1` from runtime, build, dependency and license inputs. Git state, the root README, Markdown under `docs/` and generated outputs are outside that runtime identity. Every file under `src/` is an input regardless of extension, along with the explicitly listed build, dependency and license files. An edit limited to the root README or Markdown under `docs/` does not require a new quiz profile or regenerated runtime bundle; a change to any included input does require the matching rebuild and provenance checks.
 
 The release package has a separate exact source commit/tree identity. [build-release.cjs](../scripts/build-release.cjs) checks committed artifacts, aligned versions, provenance, DOCX binding and mirror correspondence before packaging. [release.json](../release.json) selects the version and release notes; [the workflow](../.github/workflows/release.yml) limits publication to the trusted main branch.
 
