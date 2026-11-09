@@ -4,7 +4,7 @@ Use this checklist for your own reviewed event or the bundled BioVista showcase.
 
 ## Choose the right file
 
-- To try BioVista, use the versioned HTML from the [published v1.1.2 release](https://github.com/Namdev90/quiz-show-kit/releases/tag/v1.1.2). The Apex showcase intentionally exposes settings as read-only.
+- To try BioVista, use the versioned HTML from the [published v1.1.3 release](https://github.com/Namdev90/quiz-show-kit/releases/tag/v1.1.3). The Apex showcase intentionally exposes settings as read-only.
 - To create another event, use [QSK1](../prompts/START.md) or build a separate configuration. Give a new event its own ID and keep private material outside the public repository.
 - Preserve the exact file used for a live session. Do not replace it with a newly built version halfway through an event.
 - Keep the editable configuration, approved local assets and reusable settings alongside your private authoring materials. Playback needs the generated HTML, not the build toolchain.
