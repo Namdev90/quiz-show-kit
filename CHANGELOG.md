@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.3 - Unreleased
+## 1.1.3 - 9 November 2026
 
 - Preserve host/interruption/recovery pauses when canceling an answer lock or starting/finishing a teacher consultation. Explicit Resume is still required.
 - Compile literal placeholder-like quiz text in one pass without interpreting it as another runtime insertion.
